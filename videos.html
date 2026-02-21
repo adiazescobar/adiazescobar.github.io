@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Videos educativos sobre econometría, economía aplicada y métodos de investigación — Ana María Díaz Escobar.">
+  <title>Videos — Ana María Díaz Escobar</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .page { max-width: 1100px; margin: 0 auto; padding: 2.5rem 1.5rem 4rem; }
+
+    .nav-bar {
+      display: flex; justify-content: space-between; align-items: center;
+      margin-bottom: 1.75rem; flex-wrap: wrap; gap: .75rem;
+    }
+    .back-link {
+      display: inline-flex; align-items: center; gap: .35rem;
+      padding: .45rem .9rem;
+      border: 1px solid var(--border); border-radius: 999px;
+      background: var(--surface); color: var(--text);
+      font-size: .88rem; font-weight: 600;
+      box-shadow: var(--shadow); text-decoration: none;
+    }
+    .back-link:hover { background: #eef2fb; text-decoration: none; }
+
+    .page-header {
+      margin-bottom: 2rem;
+      border-bottom: 2px solid var(--accent);
+      padding-bottom: .75rem;
+    }
+    .page-header h1 {
+      font-family: "Playfair Display", Georgia, serif;
+      font-size: 2rem; font-weight: 600; margin-bottom: .25rem;
+    }
+    .page-header p { color: var(--muted); font-size: .95rem; }
+
+    /* ── Filter bar ── */
+    .filter-bar {
+      display: flex; flex-wrap: wrap; gap: .4rem; margin-bottom: 1.75rem;
+    }
+    .filter-pill {
+      padding: .3rem .8rem; border-radius: 999px;
+      border: 1px solid var(--border); background: var(--surface);
+      color: var(--muted); font-size: .83rem; font-weight: 500;
+      cursor: pointer; transition: all .15s;
+    }
+    .filter-pill:hover { color: var(--accent); border-color: #c7d4ef; }
+    .filter-pill.active {
+      background: var(--accent); border-color: var(--accent);
+      color: #fff; font-weight: 600;
+    }
+
+    /* ── Videos grid ── */
+    .videos-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+      gap: 1rem;
+    }
+    @media (max-width: 500px) { .videos-grid { grid-template-columns: 1fr 1fr; gap: .6rem; } }
+
+    /* ── Video card ── */
+    .video-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+      text-decoration: none;
+      color: var(--text);
+      display: flex; flex-direction: column;
+      transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease;
+    }
+    .video-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 4px 8px rgba(0,0,0,.07), 0 12px 28px rgba(0,0,0,.1);
+      border-color: #c7d4ef;
+      text-decoration: none;
+    }
+    .video-card.hidden { display: none; }
+
+    /* Thumbnail */
+    .thumb {
+      position: relative; width: 100%; aspect-ratio: 16/9;
+      background: #e4e8f0; overflow: hidden;
+    }
+    .thumb img {
+      width: 100%; height: 100%; object-fit: cover;
+      display: block; transition: transform .3s ease;
+    }
+    .video-card:hover .thumb img { transform: scale(1.04); }
+
+    .play-btn {
+      position: absolute; inset: 0;
+      display: flex; align-items: center; justify-content: center;
+      background: rgba(0,0,0,0); transition: background .2s;
+    }
+    .video-card:hover .play-btn { background: rgba(0,0,0,.18); }
+    .play-circle {
+      width: 38px; height: 38px; border-radius: 50%;
+      background: rgba(255,255,255,.92);
+      display: flex; align-items: center; justify-content: center;
+      opacity: 0; transition: opacity .2s;
+      box-shadow: 0 2px 8px rgba(0,0,0,.25);
+    }
+    .video-card:hover .play-circle { opacity: 1; }
+    .play-circle svg { width: 14px; height: 14px; fill: var(--accent); margin-left: 2px; }
+
+    /* Category badge */
+    .cat-badge {
+      position: absolute; top: .45rem; left: .45rem;
+      padding: .15rem .5rem; border-radius: 999px;
+      background: rgba(255,255,255,.92);
+      color: var(--accent); font-size: .7rem; font-weight: 600;
+      text-transform: uppercase; letter-spacing: .06em;
+    }
+
+    /* Info */
+    .video-info { padding: .65rem .8rem .75rem; flex: 1; }
+    .video-title {
+      font-size: .855rem; font-weight: 600; line-height: 1.4; color: var(--text);
+      display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+
+    .page-footer { margin-top: 2.5rem; text-align: center; color: var(--muted); font-size: .85rem; }
+    .page-footer a { color: var(--accent-l); }
+  </style>
+</head>
+<body>
+<div class="accent-bar"></div>
+
+<div class="page">
+  <div class="nav-bar">
+    <a href="index.html" class="back-link">← Inicio</a>
+  </div>
+
+  <header class="page-header">
+    <h1>Videos de Econometría</h1>
+    <p>Colección de videos educativos sobre econometría, economía aplicada y métodos de investigación</p>
+  </header>
+
+  <div class="filter-bar">
+    <button class="filter-pill active" data-filter="all">Todos</button>
+    <button class="filter-pill" data-filter="methods">Métodos</button>
+    <button class="filter-pill" data-filter="gender">Género</button>
+    <button class="filter-pill" data-filter="labor">Mercado Laboral</button>
+    <button class="filter-pill" data-filter="policy">Política Económica</button>
+    <button class="filter-pill" data-filter="interviews">Entrevistas</button>
+  </div>
+
+  <div class="videos-grid">
+
+    <a href="https://www.youtube.com/watch?v=iiYKRD8ochA" target="_blank" rel="noopener" class="video-card" data-category="methods">
+      <div class="thumb"><img src="https://img.youtube.com/vi/iiYKRD8ochA/mqdefault.jpg" alt="" loading="lazy"><div class="play-btn"><div class="play-circle"><svg viewBox="0 0 10 10"><polygon points="2,1 9,5 2,9"/></svg></div></div><span class="cat-badge">Métodos</span></div>
+      <div class="video-info"><div class="video-title">¿Qué hacen los economistas?</div></div>
+    </a>
+
+    <a href="https://youtu.be/ZWSv-7PjHIM" target="_blank" rel="noopener" class="video-card" data-category="labor">
+      <div class="thumb"><img src="https://img.youtube.com/vi/ZWSv-7PjHIM/mqdefault.jpg" alt="" loading="lazy"><div class="play-btn"><div class="play-circle"><svg viewBox="0 0 10 10"><polygon points="2,1 9,5 2,9"/></svg></div></div><span class="cat-badge">Mercado Laboral</span></div>
+      <div class="video-info"><div class="video-title">An Uneven Playing Field</div></div>
+    </a>
+
+    <a href="https://www.youtube.com/watch?v=cex8a3Ro05Y" target="_blank" rel="noopener" class="video-card" data-category="policy">
+      <div class="thumb"><img src="https://img.youtube.com/vi/cex8a3Ro05Y/mqdefault.jpg" alt="" loading="lazy"><div class="play-btn"><div class="play-circle"><svg viewBox="0 0 10 10"><polygon points="2,1 9,5 2,9"/></svg></div></div><span class="cat-badge">Política</span></div>
+      <div class="video-info"><div class="video-title">Major decisions for students</div></div>
+    </a>
+
+    <a href="https://youtu.be/Vkd_Y3g71aE" target="_blank" rel="noopener" class="video-card" data-category="policy">
+      <div class="thumb"><img src="https://img.youtube.com/vi/Vkd_Y3g71aE/mqdefault.jpg" alt="" loading="lazy"><div class="play-btn"><div class="play-circle"><svg viewBox="0 0 10 10"><polygon points="2,1 9,5 2,9"/></svg></div></div><span class="cat-badge">Política</span></div>
+      <div class="video-info"><div class="video-title">El desplazamiento forzado en Colombia</div></div>
+    </a>
+
+    <a href="https://youtu.be/n-gPDrBAiaw" target="_blank" rel="noopener" class="video-card" data-category="labor">
+      <div class="thumb"><img src="https://img.youtube.com/vi/n-gPDrBAiaw/mqdefault.jpg" alt="" loading="lazy"><div class="play-btn"><div class="play-circle"><svg viewBox="0 0 10 10"><polygon points="2,1 9,5 2,9"/></svg></div></div><span class="cat-badge">Mercado Laboral</span></div>
+      <div class="video-info"><div class="video-title">Why Do Companies Need Economists?</div></div>
+    </a>
+
+    <a href="https://www.youtube.com/watch?v=ishWEjT9w6g" target="_blank" rel="noopener" class="video-card" data-category="policy">
+      <div class="thumb"><img src="https://img.youtube.com/vi/ishWEjT9w6g/mqdefault.jpg" alt="" loading="lazy"><div class="play-btn"><div class="play-circle"><svg viewBox="0 0 10 10"><polygon points="2,1 9,5 2,9"/></svg></div></div><span class="cat-badge">Política</span></div>
+      <div class="video-info"><div class="video-title">Inequality and mortality</div></div>
+    </a>
+
+    <a href="https://www.youtube.com/watch?v=Rz73rBG9ggA" target="_blank" rel="noopener" class="video-card" data-category="labor">
+      <div class="thumb"><img src="https://img.youtube.com/vi/Rz73rBG9ggA/mqdefault.jpg" alt="" loading="lazy"><div class="play-btn"><div class="play-circle"><svg viewBox="0 0 10 10"><polygon points="2,1 9,5 2,9"/></svg></div></div><span class="cat-badge">Mercado Laboral</span></div>
+      <div class="video-info"><div class="video-title">The problem with "ban the box"</div></div>
+    </a>
+
+    <a href="https://youtu.be/9MKbxtodiRs" target="_blank" rel="noopener" class="video-card" data-category="policy">
+      <div class="thumb"><img src="https://img.youtube.com/vi/9MKbxtodiRs/mqdefault.jpg" alt="" loading="lazy"><div class="play-btn"><div class="play-circle"><svg viewBox="0 0 10 10"><polygon points="2,1 9,5 2,9"/></svg></div></div><span class="cat-badge">Política</span></div>
+      <div class="video-info"><div class="video-title">¿Cómo reactivar las cadenas productivas del país?</div></div>
+    </a>
+
+    <a href="https://youtu.be/BDEAgmklNyE" target="_blank" rel="noopener" class="video-card" data-category="methods">
+      <div class="thumb"><img src="https://img.youtube.com/vi/BDEAgmklNyE/mqdefault.jpg" alt="" loading="lazy"><div class="play-btn"><div class="play-circle"><svg viewBox="0 0 10 10"><polygon points="2,1 9,5 2,9"/></svg></div></div><span class="cat-badge">Métodos</span></div>
+      <div class="video-info"><div class="video-title">La tragedia de los comunes</div></div>
+    </a>
+
+    <a href="https://www.youtube.com/watch?v=0L7hi6dxpqI" target="_blank" rel="noopener" class="video-card" data-category="gender">
+      <div class="thumb"><img src="https://img.youtube.com/vi/0L7hi6dxpqI/mqdefault.jpg" alt="" loading="lazy"><div class="play-btn"><div class="play-circle"><svg viewBox="0 0 10 10"><polygon points="2,1 9,5 2,9"/></svg></div></div><span class="cat-badge">Género</span></div>
+      <div class="video-info"><div class="video-title">Do women ask?</div></div>
+    </a>
+
+    <a href="https://youtu.be/GiCW7rICDdg" target="_blank" rel="noopener" class="video-card" data-category="policy">
+      <div class="thumb"><img src="https://img.youtube.com/vi/GiCW7rICDdg/mqdefault.jpg" alt="" loading="lazy"><div class="play-btn"><div class="play-circle"><svg viewBox="0 0 10 10"><polygon points="2,1 9,5 2,9"/></svg></div></div><span class="cat-badge">Política</span></div>
+      <div class="video-info"><div class="video-title">Does debt hurt investment?</div></div>
+    </a>
+
+    <a href="https://youtu.be/-NLpb6z6GYM" target="_blank" rel="noopener" class="video-card" data-category="policy">
+      <div class="thumb"><img src="https://img.youtube.com/vi/-NLpb6z6GYM/mqdefault.jpg" alt="" loading="lazy"><div class="play-btn"><div class="play-circle"><svg viewBox="0 0 10 10"><polygon points="2,1 9,5 2,9"/></svg></div></div><span class="cat-badge">Política</span></div>
+      <div class="video-info"><div class="video-title">Do soda taxes work?</div></div>
+    </a>
+
+    <a href="https://youtu.be/09_V4LajaLA" target="_blank" rel="noopener" class="video-card" data-category="interviews">
+      <div class="thumb"><img src="https://img.youtube.com/vi/09_V4LajaLA/mqdefault.jpg" alt="" loading="lazy"><div class="play-btn"><div class="play-circle"><svg viewBox="0 0 10 10"><polygon points="2,1 9,5 2,9"/></svg></div></div><span class="cat-badge">Entrevistas</span></div>
+      <div class="video-info"><div class="video-title">Anna Schwartz</div></div>
+    </a>
+
+    <a href="https://youtu.be/uUTNeR2SUUE" target="_blank" rel="noopener" class="video-card" data-category="gender">
+      <div class="thumb"><img src="https://img.youtube.com/vi/uUTNeR2SUUE/mqdefault.jpg" alt="" loading="lazy"><div class="play-btn"><div class="play-circle"><svg viewBox="0 0 10 10"><polygon points="2,1 9,5 2,9"/></svg></div></div><span class="cat-badge">Género</span></div>
+      <div class="video-info"><div class="video-title">Gender gaps: Nature or nurture?</div></div>
+    </a>
+
+    <a href="https://youtu.be/UHzMe5dGC_8" target="_blank" rel="noopener" class="video-card" data-category="policy">
+      <div class="thumb"><img src="https://img.youtube.com/vi/UHzMe5dGC_8/mqdefault.jpg" alt="" loading="lazy"><div class="play-btn"><div class="play-circle"><svg viewBox="0 0 10 10"><polygon points="2,1 9,5 2,9"/></svg></div></div><span class="cat-badge">Política</span></div>
+      <div class="video-info"><div class="video-title">Corruption: A China case study</div></div>
+    </a>
+
+    <a href="https://youtu.be/qw7nJjueEgM" target="_blank" rel="noopener" class="video-card" data-category="interviews">
+      <div class="thumb"><img src="https://img.youtube.com/vi/qw7nJjueEgM/mqdefault.jpg" alt="" loading="lazy"><div class="play-btn"><div class="play-circle"><svg viewBox="0 0 10 10"><polygon points="2,1 9,5 2,9"/></svg></div></div><span class="cat-badge">Entrevistas</span></div>
+      <div class="video-info"><div class="video-title">Janet Yellen</div></div>
+    </a>
+
+    <a href="https://youtu.be/U5wfxjmIwtE" target="_blank" rel="noopener" class="video-card" data-category="methods">
+      <div class="thumb"><img src="https://img.youtube.com/vi/U5wfxjmIwtE/mqdefault.jpg" alt="" loading="lazy"><div class="play-btn"><div class="play-circle"><svg viewBox="0 0 10 10"><polygon points="2,1 9,5 2,9"/></svg></div></div><span class="cat-badge">Métodos</span></div>
+      <div class="video-info"><div class="video-title">Where does innovation come from?</div></div>
+    </a>
+
+    <a href="https://youtu.be/yyocez79ixM" target="_blank" rel="noopener" class="video-card" data-category="methods">
+      <div class="thumb"><img src="https://img.youtube.com/vi/yyocez79ixM/mqdefault.jpg" alt="" loading="lazy"><div class="play-btn"><div class="play-circle"><svg viewBox="0 0 10 10"><polygon points="2,1 9,5 2,9"/></svg></div></div><span class="cat-badge">Métodos</span></div>
+      <div class="video-info"><div class="video-title">Calling Biases by their Name</div></div>
+    </a>
+
+    <a href="https://youtu.be/Z3jNwf2fcvw" target="_blank" rel="noopener" class="video-card" data-category="methods">
+      <div class="thumb"><img src="https://img.youtube.com/vi/Z3jNwf2fcvw/mqdefault.jpg" alt="" loading="lazy"><div class="play-btn"><div class="play-circle"><svg viewBox="0 0 10 10"><polygon points="2,1 9,5 2,9"/></svg></div></div><span class="cat-badge">Métodos</span></div>
+      <div class="video-info"><div class="video-title">Randomized Controlled Trials</div></div>
+    </a>
+
+    <a href="https://youtu.be/8IQByrXpLos" target="_blank" rel="noopener" class="video-card" data-category="policy">
+      <div class="thumb"><img src="https://img.youtube.com/vi/8IQByrXpLos/mqdefault.jpg" alt="" loading="lazy"><div class="play-btn"><div class="play-circle"><svg viewBox="0 0 10 10"><polygon points="2,1 9,5 2,9"/></svg></div></div><span class="cat-badge">Política</span></div>
+      <div class="video-info"><div class="video-title">Future Monetary Systems</div></div>
+    </a>
+
+    <a href="https://youtu.be/HzTJ0tvr2Fw" target="_blank" rel="noopener" class="video-card" data-category="methods">
+      <div class="thumb"><img src="https://img.youtube.com/vi/HzTJ0tvr2Fw/mqdefault.jpg" alt="" loading="lazy"><div class="play-btn"><div class="play-circle"><svg viewBox="0 0 10 10"><polygon points="2,1 9,5 2,9"/></svg></div></div><span class="cat-badge">Métodos</span></div>
+      <div class="video-info"><div class="video-title">Letting the data take you in new directions</div></div>
+    </a>
+
+    <a href="https://youtu.be/CRBYyNJdwXU" target="_blank" rel="noopener" class="video-card" data-category="policy">
+      <div class="thumb"><img src="https://img.youtube.com/vi/CRBYyNJdwXU/mqdefault.jpg" alt="" loading="lazy"><div class="play-btn"><div class="play-circle"><svg viewBox="0 0 10 10"><polygon points="2,1 9,5 2,9"/></svg></div></div><span class="cat-badge">Política</span></div>
+      <div class="video-info"><div class="video-title">Escape the aspirations trap</div></div>
+    </a>
+
+    <a href="https://youtu.be/ocmO8S2G_Rc" target="_blank" rel="noopener" class="video-card" data-category="methods">
+      <div class="thumb"><img src="https://img.youtube.com/vi/ocmO8S2G_Rc/mqdefault.jpg" alt="" loading="lazy"><div class="play-btn"><div class="play-circle"><svg viewBox="0 0 10 10"><polygon points="2,1 9,5 2,9"/></svg></div></div><span class="cat-badge">Métodos</span></div>
+      <div class="video-info"><div class="video-title">The power of Edutainment</div></div>
+    </a>
+
+    <a href="https://youtu.be/Cb08Dx3isCc" target="_blank" rel="noopener" class="video-card" data-category="policy">
+      <div class="thumb"><img src="https://img.youtube.com/vi/Cb08Dx3isCc/mqdefault.jpg" alt="" loading="lazy"><div class="play-btn"><div class="play-circle"><svg viewBox="0 0 10 10"><polygon points="2,1 9,5 2,9"/></svg></div></div><span class="cat-badge">Política</span></div>
+      <div class="video-info"><div class="video-title">The Economics of Ethnic Prejudice</div></div>
+    </a>
+
+    <a href="https://youtu.be/PW6Z2vp8Vgg" target="_blank" rel="noopener" class="video-card" data-category="gender">
+      <div class="thumb"><img src="https://img.youtube.com/vi/PW6Z2vp8Vgg/mqdefault.jpg" alt="" loading="lazy"><div class="play-btn"><div class="play-circle"><svg viewBox="0 0 10 10"><polygon points="2,1 9,5 2,9"/></svg></div></div><span class="cat-badge">Género</span></div>
+      <div class="video-info"><div class="video-title">Women and Money</div></div>
+    </a>
+
+    <a href="https://youtu.be/FdUJqsEx-TU" target="_blank" rel="noopener" class="video-card" data-category="labor">
+      <div class="thumb"><img src="https://img.youtube.com/vi/FdUJqsEx-TU/mqdefault.jpg" alt="" loading="lazy"><div class="play-btn"><div class="play-circle"><svg viewBox="0 0 10 10"><polygon points="2,1 9,5 2,9"/></svg></div></div><span class="cat-badge">Mercado Laboral</span></div>
+      <div class="video-info"><div class="video-title">Managing With Style</div></div>
+    </a>
+
+    <a href="https://youtu.be/YotA3pTvgSU" target="_blank" rel="noopener" class="video-card" data-category="policy">
+      <div class="thumb"><img src="https://img.youtube.com/vi/YotA3pTvgSU/mqdefault.jpg" alt="" loading="lazy"><div class="play-btn"><div class="play-circle"><svg viewBox="0 0 10 10"><polygon points="2,1 9,5 2,9"/></svg></div></div><span class="cat-badge">Política</span></div>
+      <div class="video-info"><div class="video-title">The upward mobility of immigrants</div></div>
+    </a>
+
+    <a href="https://youtu.be/m3tkcr3yb-s" target="_blank" rel="noopener" class="video-card" data-category="policy">
+      <div class="thumb"><img src="https://img.youtube.com/vi/m3tkcr3yb-s/mqdefault.jpg" alt="" loading="lazy"><div class="play-btn"><div class="play-circle"><svg viewBox="0 0 10 10"><polygon points="2,1 9,5 2,9"/></svg></div></div><span class="cat-badge">Política</span></div>
+      <div class="video-info"><div class="video-title">How can countries grow sustainably?</div></div>
+    </a>
+
+    <a href="https://youtu.be/n3tbgbyClWc" target="_blank" rel="noopener" class="video-card" data-category="interviews">
+      <div class="thumb"><img src="https://img.youtube.com/vi/n3tbgbyClWc/mqdefault.jpg" alt="" loading="lazy"><div class="play-btn"><div class="play-circle"><svg viewBox="0 0 10 10"><polygon points="2,1 9,5 2,9"/></svg></div></div><span class="cat-badge">Entrevistas</span></div>
+      <div class="video-info"><div class="video-title">Entrevista con Claudia Goldin</div></div>
+    </a>
+
+    <a href="https://youtu.be/lT5MS8rFfnc" target="_blank" rel="noopener" class="video-card" data-category="interviews">
+      <div class="thumb"><img src="https://img.youtube.com/vi/lT5MS8rFfnc/mqdefault.jpg" alt="" loading="lazy"><div class="play-btn"><div class="play-circle"><svg viewBox="0 0 10 10"><polygon points="2,1 9,5 2,9"/></svg></div></div><span class="cat-badge">Entrevistas</span></div>
+      <div class="video-info"><div class="video-title">Oriana Bandiera at INSEAD RCT Days</div></div>
+    </a>
+
+    <a href="https://youtu.be/Q0QhCLKYXnY" target="_blank" rel="noopener" class="video-card" data-category="interviews">
+      <div class="thumb"><img src="https://img.youtube.com/vi/Q0QhCLKYXnY/mqdefault.jpg" alt="" loading="lazy"><div class="play-btn"><div class="play-circle"><svg viewBox="0 0 10 10"><polygon points="2,1 9,5 2,9"/></svg></div></div><span class="cat-badge">Entrevistas</span></div>
+      <div class="video-info"><div class="video-title">Interview with Susan Athey — Jean-Jacques Laffont Prize 2016</div></div>
+    </a>
+
+    <a href="https://youtu.be/-eVSVgiAulM" target="_blank" rel="noopener" class="video-card" data-category="methods">
+      <div class="thumb"><img src="https://img.youtube.com/vi/-eVSVgiAulM/mqdefault.jpg" alt="" loading="lazy"><div class="play-btn"><div class="play-circle"><svg viewBox="0 0 10 10"><polygon points="2,1 9,5 2,9"/></svg></div></div><span class="cat-badge">Métodos</span></div>
+      <div class="video-info"><div class="video-title">Jesse Shapiro: Media Bias</div></div>
+    </a>
+
+    <a href="https://youtu.be/s9ubO34OuTs" target="_blank" rel="noopener" class="video-card" data-category="gender">
+      <div class="thumb"><img src="https://img.youtube.com/vi/s9ubO34OuTs/mqdefault.jpg" alt="" loading="lazy"><div class="play-btn"><div class="play-circle"><svg viewBox="0 0 10 10"><polygon points="2,1 9,5 2,9"/></svg></div></div><span class="cat-badge">Género</span></div>
+      <div class="video-info"><div class="video-title">Does Language Create our Gender Biases?</div></div>
+    </a>
+
+    <a href="https://www.youtube.com/watch?v=UB1A62u9fBE" target="_blank" rel="noopener" class="video-card" data-category="methods">
+      <div class="thumb"><img src="https://img.youtube.com/vi/UB1A62u9fBE/mqdefault.jpg" alt="" loading="lazy"><div class="play-btn"><div class="play-circle"><svg viewBox="0 0 10 10"><polygon points="2,1 9,5 2,9"/></svg></div></div><span class="cat-badge">Métodos</span></div>
+      <div class="video-info"><div class="video-title">The problems with Randomised Controlled Trials</div></div>
+    </a>
+
+    <a href="https://www.youtube.com/watch?v=-RXrGLolgEc" target="_blank" rel="noopener" class="video-card" data-category="methods">
+      <div class="thumb"><img src="https://img.youtube.com/vi/-RXrGLolgEc/mqdefault.jpg" alt="" loading="lazy"><div class="play-btn"><div class="play-circle"><svg viewBox="0 0 10 10"><polygon points="2,1 9,5 2,9"/></svg></div></div><span class="cat-badge">Métodos</span></div>
+      <div class="video-info"><div class="video-title">The hidden side of clinical trials | Sile Lane | TEDxMadrid</div></div>
+    </a>
+
+    <a href="https://www.youtube.com/watch?v=DRTB_p5jHjo" target="_blank" rel="noopener" class="video-card" data-category="methods">
+      <div class="thumb"><img src="https://img.youtube.com/vi/DRTB_p5jHjo/mqdefault.jpg" alt="" loading="lazy"><div class="play-btn"><div class="play-circle"><svg viewBox="0 0 10 10"><polygon points="2,1 9,5 2,9"/></svg></div></div><span class="cat-badge">Métodos</span></div>
+      <div class="video-info"><div class="video-title">Research Transparency and Reproducibility</div></div>
+    </a>
+
+    <a href="https://www.youtube.com/watch?v=66UwN_rpgss" target="_blank" rel="noopener" class="video-card" data-category="policy">
+      <div class="thumb"><img src="https://img.youtube.com/vi/66UwN_rpgss/mqdefault.jpg" alt="" loading="lazy"><div class="play-btn"><div class="play-circle"><svg viewBox="0 0 10 10"><polygon points="2,1 9,5 2,9"/></svg></div></div><span class="cat-badge">Política</span></div>
+      <div class="video-info"><div class="video-title">The Power of Promising Free Tuition</div></div>
+    </a>
+
+    <a href="https://www.youtube.com/watch?v=GiyflAdNQ7o" target="_blank" rel="noopener" class="video-card" data-category="policy">
+      <div class="thumb"><img src="https://img.youtube.com/vi/GiyflAdNQ7o/mqdefault.jpg" alt="" loading="lazy"><div class="play-btn"><div class="play-circle"><svg viewBox="0 0 10 10"><polygon points="2,1 9,5 2,9"/></svg></div></div><span class="cat-badge">Política</span></div>
+      <div class="video-info"><div class="video-title">Intergenerational mobility</div></div>
+    </a>
+
+    <a href="https://www.youtube.com/watch?v=GDlQRBC3u2s" target="_blank" rel="noopener" class="video-card" data-category="methods">
+      <div class="thumb"><img src="https://img.youtube.com/vi/GDlQRBC3u2s/mqdefault.jpg" alt="" loading="lazy"><div class="play-btn"><div class="play-circle"><svg viewBox="0 0 10 10"><polygon points="2,1 9,5 2,9"/></svg></div></div><span class="cat-badge">Métodos</span></div>
+      <div class="video-info"><div class="video-title">Fixing society with data</div></div>
+    </a>
+
+    <a href="https://www.youtube.com/watch?v=sxRO7WOXq4Q" target="_blank" rel="noopener" class="video-card" data-category="policy">
+      <div class="thumb"><img src="https://img.youtube.com/vi/sxRO7WOXq4Q/mqdefault.jpg" alt="" loading="lazy"><div class="play-btn"><div class="play-circle"><svg viewBox="0 0 10 10"><polygon points="2,1 9,5 2,9"/></svg></div></div><span class="cat-badge">Política</span></div>
+      <div class="video-info"><div class="video-title">Gentrification &amp; a Golden Age of Data</div></div>
+    </a>
+
+  </div>
+
+  <p class="page-footer">Última actualización: Febrero 2026</p>
+</div>
+
+<script>
+  document.querySelectorAll('.filter-pill').forEach(pill => {
+    pill.addEventListener('click', () => {
+      const cat = pill.dataset.filter;
+      document.querySelectorAll('.filter-pill').forEach(p => p.classList.remove('active'));
+      pill.classList.add('active');
+      document.querySelectorAll('.video-card').forEach(card => {
+        card.classList.toggle('hidden', cat !== 'all' && card.dataset.category !== cat);
+      });
+    });
+  });
+</script>
+</body>
+</html>
