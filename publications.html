@@ -1,0 +1,714 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Publications — Ana María Díaz Escobar</title>
+  <meta name="description" content="Complete list of publications by Ana María Díaz Escobar with abstracts and links." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Crimson+Pro:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg: #050816;
+      --bg-soft: radial-gradient(circle at top left,#1e293b,#020617 55%,#000 100%);
+      --card: #020617;
+      --ink: #e5e7eb;
+      --muted: #9ca3af;
+      --accent: #60a5fa;
+      --accent-2: #e879f9;
+      --accent-soft: rgba(96,165,250,.12);
+      --border: rgba(148, 163, 184, 0.45);
+      --shadow: 0 18px 50px rgba(15,23,42,.85);
+      --radius-lg: 22px;
+      --radius-md: 18px;
+      scroll-behavior: smooth;
+    }
+
+    [data-theme="light"]{
+      --bg:#f5f7fb;
+      --bg-soft: radial-gradient(circle at top left,#e5edff,#f9fafb 55%,#ffffff 100%);
+      --card:#ffffff;
+      --ink:#020617;
+      --muted:#6b7280;
+      --accent:#1d4ed8;
+      --accent-2:#ea580c;
+      --accent-soft: rgba(59,130,246,.08);
+      --border: #d1d5db;
+      --shadow: 0 14px 40px rgba(148,163,184,.55);
+    }
+
+    *{box-sizing:border-box}
+    html,body{
+      margin:0;padding:0;background:var(--bg-soft);color:var(--ink);
+      font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+      line-height:1.6;
+    }
+    a{color:var(--accent);text-decoration:none}
+    a:hover{text-decoration:underline}
+    .page{
+      max-width:1000px;margin:2.75rem auto 3.5rem;
+      padding:0 1.25rem;
+    }
+
+    .header-bar{
+      display:flex;justify-content:space-between;align-items:center;
+      margin-bottom:1.5rem;flex-wrap:wrap;gap:1rem;
+    }
+    .back-link{
+      display:inline-flex;align-items:center;gap:.4rem;
+      padding:.5rem 1rem;border-radius:999px;
+      border:1px solid var(--border);
+      background:rgba(15,23,42,.95);
+      color:var(--ink);font-size:.9rem;
+      text-decoration:none;
+    }
+    .back-link:hover{background:var(--accent-soft);text-decoration:none}
+
+    .hero-shell{
+      position:relative;
+      border-radius:28px;
+      padding:1px;
+      background:linear-gradient(135deg,rgba(96,165,250,.8),rgba(248,250,252,0),rgba(236,72,153,.85));
+      box-shadow:var(--shadow);
+      margin-bottom:1.75rem;
+      overflow:hidden;
+    }
+    .hero{
+      background:radial-gradient(circle at 10% 0%,rgba(37,99,235,.35),transparent 55%),
+                 radial-gradient(circle at 90% 30%,rgba(236,72,153,.32),transparent 55%),
+                 linear-gradient(135deg,#020617,#030712);
+      border-radius:26px;
+      padding:1.3rem 1.6rem;
+      position:relative;
+    }
+    .hero h1{
+      margin:0 0 .3rem;font-size:1.8rem;letter-spacing:.03em;
+    }
+    .hero p{
+      margin:0;color:var(--muted);font-size:.95rem;
+    }
+
+    .card{
+      background:var(--card);
+      border:1px solid var(--border);
+      border-radius:var(--radius-md);
+      box-shadow:0 12px 32px rgba(15,23,42,.85);
+      padding:1.3rem 1.4rem;
+      margin-bottom:1.2rem;
+      position:relative;
+      overflow:hidden;
+    }
+    .card::before{
+      content:"";position:absolute;inset:0;
+      background:radial-gradient(circle at 0 0,rgba(96,165,250,.16),transparent 55%);
+      pointer-events:none;opacity:.6;
+    }
+    .card > *{position:relative;z-index:1}
+
+    .pub-header{
+      margin-bottom:.6rem;
+    }
+    .pub-title{
+      font-size:1.15rem;font-weight:650;margin-bottom:.3rem;
+      line-height:1.4;
+    }
+    .pub-title a{
+      color:inherit;text-decoration:none;border-bottom:1px dashed rgba(148,163,184,.6);
+    }
+    .pub-title a:hover{color:var(--accent);border-bottom-style:solid}
+    .pub-authors{
+      color:var(--muted);font-size:.92rem;margin-bottom:.4rem;
+    }
+    .pub-meta{
+      display:flex;flex-wrap:wrap;gap:.5rem;font-size:.85rem;color:var(--muted);
+      margin-bottom:.6rem;
+    }
+    .pub-meta-item{
+      display:flex;align-items:center;gap:.3rem;
+    }
+    .pub-links{
+      display:flex;flex-wrap:wrap;gap:.5rem;margin-bottom:.8rem;
+      font-size:.85rem;
+    }
+    .pub-link{
+      padding:.25rem .6rem;border-radius:999px;
+      border:1px solid rgba(148,163,184,.55);
+      background:rgba(15,23,42,.85);
+      color:var(--muted);
+      text-decoration:none;
+      display:inline-flex;align-items:center;gap:.3rem;
+    }
+    .pub-link:hover{
+      background:var(--accent-soft);
+      color:var(--accent);
+      border-color:var(--accent);
+      text-decoration:none;
+    }
+    .pub-abstract{
+      margin-top:.8rem;padding-top:.8rem;
+      border-top:1px solid rgba(148,163,184,.3);
+      color:var(--ink);
+      line-height:1.7;
+    }
+    .pub-abstract-title{
+      font-weight:600;margin-bottom:.4rem;color:var(--muted);
+      font-size:.85rem;text-transform:uppercase;letter-spacing:.1em;
+    }
+    .pub-abstract-text{
+      font-size:.95rem;
+    }
+    .pub-abstract-placeholder{
+      color:var(--muted);font-style:italic;font-size:.9rem;
+    }
+
+    .section-header{
+      margin:2rem 0 1rem;font-size:1.1rem;
+      text-transform:uppercase;letter-spacing:.15em;
+      color:var(--muted);
+      padding-bottom:.5rem;
+      border-bottom:1px solid rgba(148,163,184,.3);
+    }
+
+    .filter-bar{
+      display:flex;flex-wrap:wrap;gap:.4rem;margin-bottom:1rem;
+      font-size:.85rem;
+    }
+    .filter-pill{
+      border-radius:999px;
+      border:1px solid rgba(148,163,184,.55);
+      padding:.3rem .7rem;
+      cursor:pointer;
+      color:var(--muted);
+      background:rgba(15,23,42,.85);
+      transition:all .2s;
+    }
+    .filter-pill.active{
+      background:linear-gradient(135deg,#2563eb,#ec4899);
+      border:none;
+      color:white;
+    }
+    .pub[data-type]{transition:opacity .2s,transform .2s;}
+    .pub.hidden{opacity:.2;transform:scale(.98);pointer-events:none;}
+
+    .btn{
+      border-radius:999px;border:1px solid rgba(148,163,184,.55);
+      background:rgba(15,23,42,.9);color:var(--ink);
+      padding:.45rem .9rem;font-size:.85rem;font-weight:600;
+      display:inline-flex;align-items:center;gap:.35rem;
+      cursor:pointer;box-shadow:0 10px 25px rgba(15,23,42,.7);
+      backdrop-filter:blur(14px);
+    }
+    .btn:hover{filter:brightness(1.03)}
+
+    @media (max-width:700px){
+      .page{padding:0 1rem}
+      .card{padding:1rem 1.1rem}
+      .pub-title{font-size:1.05rem}
+    }
+
+    @media print{
+      body{background:#ffffff}
+      .header-bar,.filter-bar{display:none}
+      .card{page-break-inside:avoid;box-shadow:none;border-color:#d1d5db}
+      a{text-decoration:none;color:inherit}
+    }
+  </style>
+  <script>
+    const preferred = localStorage.getItem('theme');
+    if(preferred){ document.documentElement.setAttribute('data-theme', preferred); }
+  </script>
+</head>
+<body>
+  <div class="page">
+    <div class="header-bar">
+      <div style="display:flex;gap:.5rem;flex-wrap:wrap;">
+        <a href="index.html" class="back-link">← CV</a>
+        <a href="videos-econometria.html" class="back-link">🎥 Videos</a>
+      </div>
+      <button class="btn" onclick="toggleTheme()">Toggle Theme</button>
+    </div>
+
+    <header class="hero-shell">
+      <div class="hero">
+        <h1>Publications</h1>
+        <p>Ana María Díaz Escobar · Complete list with abstracts and links</p>
+      </div>
+    </header>
+
+    <div class="filter-bar">
+      <button class="filter-pill active" data-filter="all">All Publications</button>
+      <button class="filter-pill" data-filter="journal">Journal Articles</button>
+      <button class="filter-pill" data-filter="wp">Working Papers</button>
+      <button class="filter-pill" data-filter="chapter">Chapters & Reports</button>
+    </div>
+
+    <div class="section-header">Published Articles</div>
+
+    <article class="card pub" data-type="journal wp">
+      <div class="pub-header">
+        <div class="pub-title">
+          <a href="https://onlinelibrary.wiley.com/doi/10.1111/gwao.70117" target="_blank" rel="noopener">
+            What Job Would You Apply To? Findings on the Impact of Language on Job Searches
+          </a>
+        </div>
+        <div class="pub-authors">
+          with Luz Magdalena Salas, Claudia Piras, and Agustina Suaya
+        </div>
+        <div class="pub-meta">
+          <span class="pub-meta-item"><strong>Journal:</strong> Gender, Work &amp; Organization</span>
+          <span class="pub-meta-item"><strong>Year:</strong> 2026</span>
+          <span class="pub-meta-item"><strong>DOI:</strong> 10.1111/gwao.70117</span>
+        </div>
+        <div class="pub-links">
+          <a href="https://onlinelibrary.wiley.com/doi/10.1111/gwao.70117" target="_blank" rel="noopener" class="pub-link">📄 Journal Article</a>
+          <a href="https://ideas.repec.org/p/idb/brikps/12819.html" target="_blank" rel="noopener" class="pub-link">📑 IDB WP 12819</a>
+        </div>
+      </div>
+      <div class="pub-abstract">
+        <div class="pub-abstract-title">Abstract</div>
+        <div class="pub-abstract-text">
+          Using a discrete choice experiment with over 5,000 participants from five Latin American countries, we examine how language in job advertisements affects job search behavior. We find that both men and women value information and inclusive language in job postings, but women are notably more sensitive to these factors. The language used in job ads matters particularly in male-dominated occupations. Inclusive language increases women's stated interest in applying with no evidence of backlash among men, and describing skills in neutral terms raises selection probabilities for both genders by around 40 percentage points. These findings highlight that language in job postings is a powerful tool for increasing workforce diversity.
+        </div>
+      </div>
+    </article>
+
+    <article class="card pub" data-type="journal wp">
+      <div class="pub-header">
+        <div class="pub-title">
+          <a href="https://ideas.repec.org/a/ucp/ecdecc/doi10.1086-718645.html" target="_blank" rel="noopener">
+            What Is the Price of Freedom? Estimating Women's Willingness to Pay for Job Schedule Flexibility
+          </a>
+        </div>
+        <div class="pub-authors">
+          with Monserrat Bustelo, Claudia Piras, Jeanne Lafortune, José Tessada, and Luz Magdalena Salas
+        </div>
+        <div class="pub-meta">
+          <span class="pub-meta-item"><strong>Journal:</strong> Economic Development and Cultural Change</span>
+          <span class="pub-meta-item"><strong>Volume:</strong> 71(4)</span>
+          <span class="pub-meta-item"><strong>Pages:</strong> 1179–1211</span>
+          <span class="pub-meta-item"><strong>Year:</strong> 2023</span>
+        </div>
+        <div class="pub-links">
+          <a href="https://ideas.repec.org/a/ucp/ecdecc/doi10.1086-718645.html" target="_blank" rel="noopener" class="pub-link">📄 Journal Article</a>
+          <a href="https://ideas.repec.org/p/idb/brikps/10248.html" target="_blank" rel="noopener" class="pub-link">📑 Working Paper (IDB 10248)</a>
+          <a href="https://ideas.repec.org/e/pdi179.html" target="_blank" rel="noopener" class="pub-link">🔗 RePEc Profile</a>
+        </div>
+      </div>
+      <div class="pub-abstract">
+        <div class="pub-abstract-title">Abstract</div>
+        <div class="pub-abstract-text">
+          This paper estimates women's willingness to pay for job schedule flexibility using a discrete choice experiment with workers in Latin America. We find that women value flexibility significantly more than men, and this preference is particularly strong among women with children. The results suggest that policies promoting flexible work arrangements could help reduce gender gaps in labor force participation and improve work-life balance for women.
+        </div>
+      </div>
+    </article>
+
+    <article class="card pub" data-type="journal wp">
+      <div class="pub-header">
+        <div class="pub-title">
+          <a href="https://ideas.repec.org/a/bla/brjirl/v61y2023i1p159-187.html" target="_blank" rel="noopener">
+            How Does Working‑Time Flexibility Affect Workers' Productivity in a Routine Job? Evidence from a Field Experiment
+          </a>
+        </div>
+        <div class="pub-authors">
+          with Marie Boltz, Bart Cockx, and Luz Magdalena Salas
+        </div>
+        <div class="pub-meta">
+          <span class="pub-meta-item"><strong>Journal:</strong> British Journal of Industrial Relations</span>
+          <span class="pub-meta-item"><strong>Volume:</strong> 61(1)</span>
+          <span class="pub-meta-item"><strong>Year:</strong> 2023</span>
+        </div>
+        <div class="pub-links">
+          <a href="https://ideas.repec.org/a/bla/brjirl/v61y2023i1p159-187.html" target="_blank" rel="noopener" class="pub-link">📄 Journal Article</a>
+          <a href="https://ideas.repec.org/p/ces/ceswps/_8663.html" target="_blank" rel="noopener" class="pub-link">📑 CESifo WP 8663</a>
+          <a href="https://ideas.repec.org/p/iza/izadps/dp13825.html" target="_blank" rel="noopener" class="pub-link">📑 IZA DP 13825</a>
+          <a href="https://ideas.repec.org/p/ctl/louvir/2020030.html" target="_blank" rel="noopener" class="pub-link">📑 LIDAM IRES 2020030</a>
+        </div>
+      </div>
+      <div class="pub-abstract">
+        <div class="pub-abstract-title">Abstract</div>
+        <div class="pub-abstract-text">
+          We conduct a field experiment in Colombia to examine how working-time flexibility affects productivity in routine jobs. Workers were randomly assigned to flexible or fixed schedules. We find that flexibility increases overall productivity by up to 50%, with 40% of this gain driven by sorting effects (more productive workers selecting into flexible arrangements) and 60% by motivational effects (workers reducing break lengths). The results suggest that flexible work arrangements can benefit both workers and firms.
+        </div>
+      </div>
+    </article>
+
+    <article class="card pub" data-type="journal">
+      <div class="pub-header">
+        <div class="pub-title">
+          <a href="https://doi.org/10.1007/s10657-021-09714-9" target="_blank" rel="noopener">
+            Pretrial Detention and Conviction
+          </a>
+        </div>
+        <div class="pub-authors">
+          with Luz Magdalena Salas
+        </div>
+        <div class="pub-meta">
+          <span class="pub-meta-item"><strong>Journal:</strong> European Journal of Law and Economics</span>
+          <span class="pub-meta-item"><strong>Volume:</strong> 53</span>
+          <span class="pub-meta-item"><strong>Pages:</strong> 1–25</span>
+          <span class="pub-meta-item"><strong>Year:</strong> 2022</span>
+        </div>
+        <div class="pub-links">
+          <a href="https://doi.org/10.1007/s10657-021-09714-9" target="_blank" rel="noopener" class="pub-link">📄 Journal Article</a>
+        </div>
+      </div>
+      <div class="pub-abstract">
+        <div class="pub-abstract-title">Abstract</div>
+        <div class="pub-abstract-placeholder">
+          Abstract available on journal website. <a href="https://doi.org/10.1007/s10657-021-09714-9" target="_blank" rel="noopener">View full article</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="card pub" data-type="journal">
+      <div class="pub-header">
+        <div class="pub-title">
+          <a href="https://ideas.repec.org/a/eee/regeco/v83y2020ics0166046219302637.html" target="_blank" rel="noopener">
+            Do Firms Redline Workers?
+          </a>
+        </div>
+        <div class="pub-authors">
+          with Luz Magdalena Salas
+        </div>
+        <div class="pub-meta">
+          <span class="pub-meta-item"><strong>Journal:</strong> Regional Science and Urban Economics</span>
+          <span class="pub-meta-item"><strong>Volume:</strong> 83</span>
+          <span class="pub-meta-item"><strong>Article:</strong> 103541</span>
+          <span class="pub-meta-item"><strong>Year:</strong> 2020</span>
+        </div>
+        <div class="pub-links">
+          <a href="https://ideas.repec.org/a/eee/regeco/v83y2020ics0166046219302637.html" target="_blank" rel="noopener" class="pub-link">📄 Journal Article</a>
+          <a href="https://ideas.repec.org/a/col/000416/017218.html" target="_blank" rel="noopener" class="pub-link">📑 Earlier Version (Vniversitas)</a>
+        </div>
+      </div>
+      <div class="pub-abstract">
+        <div class="pub-abstract-title">Abstract</div>
+        <div class="pub-abstract-text">
+          Using a controlled field experiment in Bogotá, Colombia, we test whether firms discriminate against job applicants based on their residential location. We send fictitious resumes to real job postings, varying the neighborhood of residence while keeping other characteristics constant. We find evidence of "redlining" behavior, where firms are less likely to call back applicants from certain neighborhoods, even after controlling for observable characteristics. This spatial discrimination contributes to labor market segmentation and inequality.
+        </div>
+      </div>
+    </article>
+
+    <article class="card pub" data-type="journal wp">
+      <div class="pub-header">
+        <div class="pub-title">
+          <a href="https://ideas.repec.org/a/col/000090/016107.html" target="_blank" rel="noopener">
+            It Is Not What You Know but Who You Know: Heterogeneous Peer Effects in Education
+          </a>
+        </div>
+        <div class="pub-authors">
+          with Ignacio Penagos
+        </div>
+        <div class="pub-meta">
+          <span class="pub-meta-item"><strong>Journal:</strong> Revista Desarrollo y Sociedad</span>
+          <span class="pub-meta-item"><strong>Volume:</strong> 80(2)</span>
+          <span class="pub-meta-item"><strong>Pages:</strong> 53–88</span>
+          <span class="pub-meta-item"><strong>Year:</strong> 2018</span>
+        </div>
+        <div class="pub-links">
+          <a href="https://ideas.repec.org/a/col/000090/016107.html" target="_blank" rel="noopener" class="pub-link">📄 Journal Article</a>
+          <a href="https://ideas.repec.org/p/col/000108/015304.html" target="_blank" rel="noopener" class="pub-link">📑 Working Paper</a>
+        </div>
+      </div>
+      <div class="pub-abstract">
+        <div class="pub-abstract-title">Abstract</div>
+        <div class="pub-abstract-text">
+          We examine peer effects in education using data from a Colombian university. We find that peer effects are heterogeneous: students benefit more from high-ability peers when they themselves are high-ability, suggesting complementarities in learning. The effects are stronger for students from disadvantaged backgrounds, indicating that peer interactions can help reduce educational inequality. Our results highlight the importance of classroom composition and diversity in educational outcomes.
+        </div>
+      </div>
+    </article>
+
+    <article class="card pub" data-type="journal wp">
+      <div class="pub-header">
+        <div class="pub-title">
+          <a href="https://ideas.repec.org/a/col/000090/014290.html" target="_blank" rel="noopener">
+            Spatial Unemployment Differentials in Colombia
+          </a>
+        </div>
+        <div class="pub-authors">
+          Ana María Díaz Escobar
+        </div>
+        <div class="pub-meta">
+          <span class="pub-meta-item"><strong>Journal:</strong> Revista Desarrollo y Sociedad</span>
+          <span class="pub-meta-item"><strong>Volume:</strong> 76</span>
+          <span class="pub-meta-item"><strong>Year:</strong> 2016</span>
+        </div>
+        <div class="pub-links">
+          <a href="https://ideas.repec.org/a/col/000090/014290.html" target="_blank" rel="noopener" class="pub-link">📄 Journal Article</a>
+          <a href="https://ideas.repec.org/p/ctl/louvir/2011014.html" target="_blank" rel="noopener" class="pub-link">📑 Working Paper (LIDAM IRES 2011014)</a>
+        </div>
+      </div>
+      <div class="pub-abstract">
+        <div class="pub-abstract-title">Abstract</div>
+               <div class="pub-abstract-text">
+          This paper analyzes spatial unemployment differentials across Colombian municipalities. Using spatial econometric techniques, we document significant and persistent differences in unemployment rates across regions. We find that these differentials are driven by both demand-side factors (local economic conditions, industrial composition) and supply-side factors (human capital, migration patterns). The results suggest that regional labor market policies should account for spatial spillovers and local economic structures.
+        </div>
+      </div>
+    </article>
+
+    <article class="card pub" data-type="journal wp">
+      <div class="pub-header">
+        <div class="pub-title">
+          <a href="https://ideas.repec.org/a/bdr/ensayo/v31y2013i70p316-366.html" target="_blank" rel="noopener">
+            The Employment Advantages of Skilled Urban Municipalities in Colombia
+          </a>
+        </div>
+        <div class="pub-authors">
+          Ana María Díaz Escobar
+        </div>
+        <div class="pub-meta">
+          <span class="pub-meta-item"><strong>Journal:</strong> Ensayos sobre Política Económica</span>
+          <span class="pub-meta-item"><strong>Volume:</strong> 31(70)</span>
+          <span class="pub-meta-item"><strong>Pages:</strong> 316–366</span>
+          <span class="pub-meta-item"><strong>Year:</strong> 2013</span>
+        </div>
+        <div class="pub-links">
+          <a href="https://ideas.repec.org/a/bdr/ensayo/v31y2013i70p316-366.html" target="_blank" rel="noopener" class="pub-link">📄 Journal Article</a>
+        </div>
+      </div>
+      <div class="pub-abstract">
+        <div class="pub-abstract-title">Abstract</div>
+        <div class="pub-abstract-text">
+          We examine the relationship between human capital concentration and employment outcomes across Colombian municipalities. Using data on educational attainment and labor market indicators, we find that municipalities with higher shares of skilled workers exhibit better employment outcomes, even after controlling for local economic conditions. The results suggest that agglomeration effects and knowledge spillovers play an important role in urban labor markets, highlighting the benefits of investing in education and attracting skilled workers to cities.
+        </div>
+      </div>
+    </article>
+
+    <article class="card pub" data-type="journal wp">
+      <div class="pub-header">
+        <div class="pub-title">
+          <a href="https://ideas.repec.org/a/col/000416/010087.html" target="_blank" rel="noopener">
+            The Employment Advantages of Skilled Urban Areas
+          </a>
+        </div>
+        <div class="pub-authors">
+          Ana María Díaz Escobar
+        </div>
+        <div class="pub-meta">
+          <span class="pub-meta-item"><strong>Journal:</strong> Vniversitas Económica</span>
+          <span class="pub-meta-item"><strong>Volume:</strong> 0(0)</span>
+          <span class="pub-meta-item"><strong>Pages:</strong> 1–38</span>
+          <span class="pub-meta-item"><strong>Year:</strong> 2011</span>
+        </div>
+        <div class="pub-links">
+          <a href="https://ideas.repec.org/a/col/000416/010087.html" target="_blank" rel="noopener" class="pub-link">📄 Journal Article</a>
+          <a href="https://ideas.repec.org/p/ctl/louvir/2011015.html" target="_blank" rel="noopener" class="pub-link">📑 Working Paper (LIDAM IRES 2011015)</a>
+        </div>
+      </div>
+      <div class="pub-abstract">
+        <div class="pub-abstract-title">Abstract</div>
+        <div class="pub-abstract-placeholder">
+          Abstract available on journal website. <a href="https://ideas.repec.org/a/col/000416/010087.html" target="_blank" rel="noopener">View article</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="card pub" data-type="journal">
+      <div class="pub-header">
+        <div class="pub-title">
+          Informal Referrals, Employment, and Wages: Seeking Causal Relationships
+        </div>
+        <div class="pub-authors">
+          Ana María Díaz Escobar
+        </div>
+        <div class="pub-meta">
+          <span class="pub-meta-item"><strong>Journal:</strong> LABOUR</span>
+          <span class="pub-meta-item"><strong>Volume:</strong> 26</span>
+          <span class="pub-meta-item"><strong>Pages:</strong> 1–30</span>
+          <span class="pub-meta-item"><strong>Year:</strong> 2012</span>
+        </div>
+        <div class="pub-links">
+          <a href="#" class="pub-link">📄 Journal Article</a>
+        </div>
+      </div>
+      <div class="pub-abstract">
+        <div class="pub-abstract-title">Abstract</div>
+        <div class="pub-abstract-placeholder">
+          Abstract to be added.
+        </div>
+      </div>
+    </article>
+
+    <div class="section-header">Working Papers</div>
+
+    <article class="card pub" data-type="wp">
+      <div class="pub-header">
+        <div class="pub-title">
+          <a href="https://beta.u-strasbg.fr/WP/2025/2025-37.pdf" target="_blank" rel="noopener">
+            Norms Behind Closed Doors: Misperceptions &amp; Maternal Employment in Colombia
+          </a>
+        </div>
+        <div class="pub-authors">
+          with Marie Boltz, Monserrat Bustelo, Ana María Díaz, and Agustina Suaya
+        </div>
+        <div class="pub-meta">
+          <span class="pub-meta-item"><strong>Series:</strong> Working Papers of BETA</span>
+          <span class="pub-meta-item"><strong>Number:</strong> 2025-37</span>
+          <span class="pub-meta-item"><strong>Year:</strong> 2025</span>
+        </div>
+        <div class="pub-links">
+          <a href="https://beta.u-strasbg.fr/WP/2025/2025-37.pdf" target="_blank" rel="noopener" class="pub-link">📑 PDF</a>
+        </div>
+      </div>
+      <div class="pub-abstract">
+        <div class="pub-abstract-title">Abstract</div>
+        <div class="pub-abstract-text">
+          We conduct a field experiment with 1,732 cohabiting couples with young children in Bogotá, Colombia, to examine how misperceptions about gender norms affect maternal employment decisions. We find that despite almost universal personal support for working mothers, both men and women substantially underestimate others' support for maternal employment, particularly that of men. An intervention providing personalized information about prevailing attitudes narrowed belief gaps and led to behavioral changes: treated men were 7–8 percentage points more likely to nominate their wives for career-building opportunities, and treated women intensified job-search efforts. These results suggest that correcting misperceptions about social norms can help reduce barriers to maternal employment.
+        </div>
+      </div>
+    </article>
+
+    <article class="card pub" data-type="wp">
+      <div class="pub-header">
+        <div class="pub-title">
+          <a href="https://ideas.repec.org/p/idb/brikps/13439.html" target="_blank" rel="noopener">
+            Gender Disparities in Valuing Remote and Hybrid Work in Latin America
+          </a>
+        </div>
+        <div class="pub-authors">
+          with Luz Magdalena Salas Bahamón, Claudia Piras, and Agustina Suaya
+        </div>
+        <div class="pub-meta">
+          <span class="pub-meta-item"><strong>Series:</strong> IDB Working Papers</span>
+          <span class="pub-meta-item"><strong>Number:</strong> 13439</span>
+          <span class="pub-meta-item"><strong>Year:</strong> 2024</span>
+        </div>
+        <div class="pub-links">
+          <a href="https://ideas.repec.org/p/idb/brikps/13439.html" target="_blank" rel="noopener" class="pub-link">📑 RePEc</a>
+        </div>
+      </div>
+      <div class="pub-abstract">
+        <div class="pub-abstract-title">Abstract</div>
+        <div class="pub-abstract-placeholder">
+          Abstract available on RePEc. <a href="https://ideas.repec.org/p/idb/brikps/13439.html" target="_blank" rel="noopener">View working paper</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="card pub" data-type="wp">
+      <div class="pub-header">
+        <div class="pub-title">
+          Gender Differences in the Willingness to Pay for Flexible Work Arrangements among Workers in Latin America
+        </div>
+        <div class="pub-authors">
+          with Luz Magdalena Salas, Claudia Piras, and Agustina Suaya
+        </div>
+        <div class="pub-meta">
+          <span class="pub-meta-item"><strong>Status:</strong> Under revision</span>
+          <span class="pub-meta-item"><strong>Series:</strong> IDB Working Papers</span>
+        </div>
+        <div class="pub-links">
+          <a href="https://ideas.repec.org/s/idb/brikps.html" target="_blank" rel="noopener" class="pub-link">📑 IDB Series</a>
+        </div>
+      </div>
+      <div class="pub-abstract">
+        <div class="pub-abstract-title">Abstract</div>
+        <div class="pub-abstract-placeholder">
+          Abstract to be added upon publication.
+        </div>
+      </div>
+    </article>
+
+    <article class="card pub" data-type="wp">
+      <div class="pub-header">
+        <div class="pub-title">
+          El Acceso a Fuentes de Empleo, la Segregación Residencial, y el Empleo, el Desempleo y la Participación Laboral de las Mujeres en Bogotá
+        </div>
+        <div class="pub-authors">
+          Ana María Díaz Escobar
+        </div>
+        <div class="pub-meta">
+          <span class="pub-meta-item"><strong>Series:</strong> IDB Working Papers</span>
+          <span class="pub-meta-item"><strong>Number:</strong> 566 / 6789</span>
+        </div>
+        <div class="pub-links">
+          <a href="https://ideas.repec.org/p/idb/brikps/6789.html" target="_blank" rel="noopener" class="pub-link">📑 RePEc</a>
+        </div>
+      </div>
+      <div class="pub-abstract">
+        <div class="pub-abstract-title">Abstract</div>
+        <div class="pub-abstract-placeholder">
+          Abstract available on RePEc. <a href="https://ideas.repec.org/p/idb/brikps/6789.html" target="_blank" rel="noopener">View working paper</a>
+        </div>
+      </div>
+    </article>
+
+    <div class="section-header">Chapters &amp; Reports</div>
+
+    <article class="card pub" data-type="chapter">
+      <div class="pub-header">
+        <div class="pub-title">
+          Breaking the Cycle of Underinvestment in Human Capital in Latin America
+        </div>
+        <div class="pub-authors">
+          with O. Arias and M. Fazio
+        </div>
+        <div class="pub-meta">
+          <span class="pub-meta-item"><strong>In:</strong> Poverty Reduction and Growth: Virtuous and Vicious Circles</span>
+          <span class="pub-meta-item"><strong>Chapter:</strong> 10</span>
+          <span class="pub-meta-item"><strong>Publisher:</strong> World Bank Latin American and Caribbean Studies</span>
+          <span class="pub-meta-item"><strong>Year:</strong> 2005</span>
+        </div>
+      </div>
+      <div class="pub-abstract">
+        <div class="pub-abstract-title">Abstract</div>
+        <div class="pub-abstract-placeholder">
+          Abstract to be added.
+        </div>
+      </div>
+    </article>
+
+    <article class="card pub" data-type="chapter">
+      <div class="pub-header">
+        <div class="pub-title">
+          Conflicto, Crimen Violento y Actividad Criminal en Colombia
+        </div>
+        <div class="pub-authors">
+          with F. Sánchez
+        </div>
+        <div class="pub-meta">
+          <span class="pub-meta-item"><strong>In:</strong> Las Cuentas de la Violencia</span>
+          <span class="pub-meta-item"><strong>Publisher:</strong> Editorial Norma</span>
+          <span class="pub-meta-item"><strong>Year:</strong> 2007</span>
+        </div>
+      </div>
+      <div class="pub-abstract">
+        <div class="pub-abstract-title">Abstract</div>
+        <div class="pub-abstract-placeholder">
+          Abstract to be added.
+        </div>
+      </div>
+    </article>
+
+    <footer style="margin-top:2rem;text-align:center;color:var(--muted);font-size:.85rem;">
+      Last updated: March 2026 · <a href="index.html">Back to CV</a>
+    </footer>
+  </div>
+
+  <script>
+    function toggleTheme(){
+      const current = document.documentElement.getAttribute('data-theme') || 'dark';
+      const next = current === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', next);
+      localStorage.setItem('theme', next);
+    }
+
+    // Publication filter
+    document.querySelectorAll('.filter-pill').forEach(pill=>{
+      pill.addEventListener('click', ()=>{
+        const mode = pill.dataset.filter;
+        document.querySelectorAll('.filter-pill').forEach(p=>p.classList.remove('active'));
+        pill.classList.add('active');
+        document.querySelectorAll('.pub').forEach(pub=>{
+          if(mode === 'all' || pub.dataset.type.includes(mode)){
+            pub.classList.remove('hidden');
+          }else{
+            pub.classList.add('hidden');
+          }
+        });
+      });
+    });
+  </script>
+</body>
+</html>
