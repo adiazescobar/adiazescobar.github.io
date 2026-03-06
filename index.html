@@ -1,481 +1,109 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html lang="es">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Ana María Díaz Escobar — Curriculum Vitae</title>
-  <meta name="description" content="Academic CV of Ana María Díaz Escobar, Associate Professor of Economics at Pontificia Universidad Javeriana." />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Ana María Díaz Escobar — Economista, investigadora y profesora asociada en la Pontificia Universidad Javeriana.">
+  <title>Ana María Díaz Escobar</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Crimson+Pro:wght@400;600&display=swap" rel="stylesheet">
-  <style>
-    :root{
-      --bg: #050816;
-      --bg-soft: radial-gradient(circle at top left,#1e293b,#020617 55%,#000 100%);
-      --card: #020617;
-      --ink: #e5e7eb;
-      --muted: #9ca3af;
-      --accent: #60a5fa;
-      --accent-2: #e879f9;
-      --accent-soft: rgba(96,165,250,.12);
-      --border: rgba(148, 163, 184, 0.45);
-      --shadow: 0 18px 50px rgba(15,23,42,.85);
-      --radius-lg: 22px;
-      --radius-md: 18px;
-      scroll-behavior: smooth;
-    }
-
-    [data-theme="light"]{
-      --bg:#f5f7fb;
-      --bg-soft: radial-gradient(circle at top left,#e5edff,#f9fafb 55%,#ffffff 100%);
-      --card:#ffffff;
-      --ink:#020617;
-      --muted:#6b7280;
-      --accent:#1d4ed8;
-      --accent-2:#ea580c;
-      --accent-soft: rgba(59,130,246,.08);
-      --border: #d1d5db;
-      --shadow: 0 14px 40px rgba(148,163,184,.55);
-    }
-
-    *{box-sizing:border-box}
-    html,body{margin:0;padding:0;background:var(--bg-soft);color:var(--ink);
-      font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
-      line-height:1.5}
-    a{color:var(--accent);text-decoration:none}
-    a:hover{text-decoration:underline}
-    .wrap{max-width:1000px;margin:3rem auto;padding:0 1.25rem}
-    .header{display:grid;grid-template-columns:1fr auto;gap:1rem;align-items:center;margin-bottom:1.5rem}
-    .id{
-      background:var(--card);border:1px solid var(--border);box-shadow:var(--shadow);border-radius:22px;padding:1.25rem 1.5rem;display:grid;grid-template-columns:96px 1fr;gap:1rem;align-items:center
-    }
-    .avatar{width:96px;height:96px;border-radius:18px;background:linear-gradient(145deg,var(--accent),var(--accent-2));display:grid;place-items:center;color:white;font-weight:700;font-size:1.7rem}
-    .name{font-size:1.8rem;font-weight:700;letter-spacing:.2px}
-    .role{color:var(--muted)}
-    .chip{display:inline-block;padding:.25rem .6rem;border-radius:999px;border:1px solid var(--border);background:rgba(15,23,42,.85);color:var(--muted);font-size:.85rem;margin-right:.4rem}
-    .toolbar{display:flex;gap:.5rem}
-    .btn{border:1px solid var(--border);background:rgba(15,23,42,.9);color:var(--ink);padding:.55rem .8rem;border-radius:12px;box-shadow:var(--shadow);font-weight:600;cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;gap:.4rem}
-    .btn:hover{filter:brightness(1.03);text-decoration:none}
-    .btn.primary{background:linear-gradient(135deg,#2563eb,#ec4899);border:none;color:white}
-
-    .grid{display:grid;grid-template-columns:300px 1fr;gap:1.25rem;margin-top:1.25rem}
-    @media (max-width:900px){ .grid{grid-template-columns:1fr} .id{grid-template-columns:72px 1fr} .avatar{width:72px;height:72px} }
-
-    aside, main{display:flex;flex-direction:column;gap:1rem}
-    .card{background:var(--card);border:1px solid var(--border);border-radius:18px;box-shadow:var(--shadow);padding:1rem 1.1rem}
-    .card h2{margin:.25rem 0 0.5rem;font-size:1.05rem;letter-spacing:.2px}
-
-    .list{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:.75rem}
-    .item-title{font-weight:650}
-    .muted{color:var(--muted)}
-    .k{color:var(--muted);margin:0 .35rem}
-
-    .timeline{position:relative;padding-left:1rem}
-    .timeline::before{content:"";position:absolute;left:.32rem;top:.15rem;bottom:.2rem;width:2px;background:linear-gradient(var(--accent),var(--accent-2))}
-    .tl-item{position:relative;padding-left:1rem;margin-bottom:.9rem}
-    .tl-item::before{content:"";position:absolute;left:-.1rem;top:.35rem;width:.6rem;height:.6rem;border-radius:50%;background:var(--accent)}
-
-    details{border:1px dashed var(--border);border-radius:14px;padding:.6rem .8rem;background:color-mix(in oklab, var(--card) 85%, var(--bg))}
-    details + details{margin-top:.6rem}
-    summary{cursor:pointer;font-weight:650}
-
-    .sec h3{margin:.6rem 0 .35rem}
-    .pub{margin:.35rem 0}
-    .pub-title{font-weight:600}
-    .tag{display:inline-block;background:color-mix(in oklab, var(--accent) 12%, var(--card));color:var(--accent);border:1px solid color-mix(in oklab, var(--accent) 35%, var(--border));padding:.15rem .5rem;border-radius:999px;font-size:.78rem;margin-right:.4rem}
-
-    footer{margin:1.25rem 0;color:var(--muted);font-size:.9rem}
-
-    .pub-link-banner{
-      background:linear-gradient(135deg,rgba(37,99,235,.2),rgba(236,72,153,.2));
-      border:1px solid rgba(148,163,184,.4);
-      border-radius:14px;
-      padding:.8rem 1rem;
-      margin-bottom:1rem;
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-      flex-wrap:wrap;
-      gap:.5rem;
-    }
-    .pub-link-banner-text{
-      font-size:.9rem;
-      color:var(--ink);
-    }
-    .pub-link-banner-btn{
-      background:linear-gradient(135deg,#2563eb,#ec4899);
-      color:white;
-      padding:.5rem 1rem;
-      border-radius:999px;
-      border:none;
-      font-weight:600;
-      text-decoration:none;
-      display:inline-flex;
-      align-items:center;
-      gap:.4rem;
-    }
-    .pub-link-banner-btn:hover{
-      filter:brightness(1.1);
-      text-decoration:none;
-    }
-
-    @media print{
-      :root{scroll-behavior:auto}
-      body{background:#ffffff}
-      .toolbar,.pub-link-banner{display:none}
-      .card{page-break-inside:avoid;box-shadow:none;border-color:#d1d5db}
-      a{text-decoration:none;color:inherit}
-    }
-  </style>
-  <script>
-    const preferred = localStorage.getItem('theme');
-    if(preferred){ document.documentElement.setAttribute('data-theme', preferred); }
-  </script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="wrap">
-    <div class="header">
-      <div class="id">
-        <div class="avatar" aria-hidden="true">AM</div>
-        <div>
-          <div class="name">Ana María Díaz Escobar</div>
-          <div class="role">Associate Professor of Economics · Pontificia Universidad Javeriana (PUJ)</div>
-          <div style="margin-top:.4rem">
-            <span class="chip">Labor Economics</span>
-            <span class="chip">Gender</span>
-            <span class="chip">Causal Inference</span>
-            <span class="chip">Field Experiments</span>
-          </div>
-        </div>
+
+  <div class="accent-bar"></div>
+
+  <section class="hero">
+    <div class="container">
+      <div class="avatar">AM</div>
+      <h1>Ana María Díaz Escobar</h1>
+      <p class="role">Profesora Asociada de Economía</p>
+      <p class="institution">Pontificia Universidad Javeriana &middot; Bogotá, Colombia</p>
+      <div class="tags">
+        <span class="tag">Labor Economics</span>
+        <span class="tag">Gender &amp; Family</span>
+        <span class="tag">Field Experiments</span>
+        <span class="tag">Causal Inference</span>
       </div>
-      <div class="toolbar">
-        <a href="publications.html" class="btn primary">📚 View Publications</a>
-        <a href="videos-econometria.html" class="btn">🎥 Videos</a>
-        <button class="btn" onclick="window.print()">Download PDF</button>
-        <button class="btn" onclick="toggleTheme()" title="Toggle theme">Toggle Theme</button>
+      <div class="social">
+        <a href="mailto:a.diaze@javeriana.edu.co">Email</a>
+        <span class="sep">·</span>
+        <a href="https://ideas.repec.org/e/pdi179.html" target="_blank" rel="noopener">RePEC</a>
+        <span class="sep">·</span>
+        <a href="https://x.com/adiazescobar" target="_blank" rel="noopener">Twitter&nbsp;/&nbsp;X</a>
+        <span class="sep">·</span>
+        <a href="https://github.com/adiazescobar" target="_blank" rel="noopener">GitHub</a>
       </div>
     </div>
+  </section>
 
-    <div class="grid">
-      <aside>
-        <div class="card">
-          <h2>Contact</h2>
-          <ul class="list">
-            <li><span class="item-title">Email:</span> <a href="mailto:a.diaze@javeriana.edu.co">a.diaze@javeriana.edu.co</a></li>
-            <li><span class="item-title">Mobile:</span> <a href="tel:+573125883583">+57 312 588 3583</a></li>
-            <li><span class="item-title">Address:</span> Cra 5 No. 34‑13, Apto 401, Bogotá, Colombia</li>
-            <li><span class="item-title">RePEc:</span> <a href="https://ideas.repec.org/e/pdi179.html" target="_blank" rel="noopener">pdi179</a></li>
-            <li><span class="item-title">Twitter/X:</span> <a href="https://x.com/adiazescobar" target="_blank" rel="noopener">@adiazescobar</a></li>
-          </ul>
-        </div>
+  <section class="resources">
+    <div class="container">
+      <p class="section-label">Recursos</p>
+      <div class="grid">
 
-        <div class="card">
-          <h2>Education</h2>
-          <ul class="list">
-            <li>
-              <div class="item-title">Ph.D. Economics</div>
-              Université catholique de Louvain, Belgium, 2011
-              <div class="muted">Title: Three Essays about the Colombian Labor Market</div>
-              <div class="muted">Committee: Bart Cockx (advisor), Muriel Dejemeppe, Giordano Mion, Florian Mayneris</div>
-            </li>
-            <li><div class="item-title">M.A. Economics</div> Université catholique de Louvain, 2007</li>
-            <li><div class="item-title">M.A. Economics</div> Pontificia Universidad Javeriana, 2003</li>
-            <li><div class="item-title">B.A. Economics</div> Pontificia Universidad Javeriana, 2002</li>
-          </ul>
-        </div>
-
-        <div class="card">
-          <h2>Languages</h2>
-          <ul class="list">
-            <li>Spanish — Native</li>
-            <li>English — Excellent command</li>
-            <li>French — Good working knowledge</li>
-          </ul>
-        </div>
-
-        <div class="card">
-          <h2>Research Areas</h2>
-          <div>
-            <span class="tag">Labor Markets</span>
-            <span class="tag">Gender & Family</span>
-            <span class="tag">Flexible Work</span>
-            <span class="tag">Informality</span>
-            <span class="tag">Applied Econometrics</span>
+        <a href="https://adiazescobar.github.io/ana-maria-diaz-cv/" target="_blank" class="card">
+          <div class="card-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/>
+            </svg>
           </div>
-        </div>
-      </aside>
-
-      <main>
-        <div class="pub-link-banner">
-          <div class="pub-link-banner-text">
-            <strong>📚 Complete Publications List</strong><br>
-            View all publications with abstracts, links, and full details
+          <div class="card-body">
+            <h2>Curriculum Vitae</h2>
+            <p>Trayectoria académica, publicaciones, proyectos de investigación y financiamiento.</p>
           </div>
-          <a href="publications.html" class="pub-link-banner-btn">View Publications →</a>
-        </div>
+          <div class="card-arrow">→</div>
+        </a>
 
-        <section class="card sec">
-          <h2>Academic Positions</h2>
-          <div class="timeline">
-            <div class="tl-item">
-              <div class="item-title">Associate Professor, Department of Economics, PUJ <span class="muted">(2016–present)</span></div>
-            </div>
-            <div class="tl-item">
-              <div class="item-title">Assistant Professor, Department of Economics, PUJ <span class="muted">(2011–2016)</span></div>
-            </div>
-            <div class="tl-item">
-              <div class="item-title">Secretary, LACEA — Latin American and Caribbean Economic Association <span class="muted">(2015–2018)</span></div>
-            </div>
-            <div class="tl-item">
-              <div class="item-title">Research Associate & Co‑founder, CONTRAFACTUAL SAS <span class="muted">(2017–present)</span></div>
-            </div>
-            <div class="tl-item">
-              <div class="item-title">Junior Professional Associate, Poverty Group, World Bank (LCR) <span class="muted">(2004–2006)</span></div>
-            </div>
-            <div class="tl-item">
-              <div class="item-title">Junior Researcher, CEDE — Universidad de los Andes <span class="muted">(2002–2004)</span></div>
-            </div>
-            <div class="tl-item">
-              <div class="item-title">Research Assistant, Pontificia Universidad Javeriana <span class="muted">(2001–2002)</span></div>
-            </div>
-            <div class="tl-item">
-              <div class="item-title">Research Assistant, Bolsa Nacional Agropecuaria <span class="muted">(2001)</span></div>
-            </div>
-            <div class="tl-item">
-              <div class="item-title">Assistant, Programa de Desarrollo y Paz del Magdalena Medio <span class="muted">(2000)</span></div>
-            </div>
+        <a href="https://adiazescobar.github.io/libro-econometria/" target="_blank" class="card">
+          <div class="card-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/>
+            </svg>
           </div>
-        </section>
-
-        <section class="card sec">
-          <h2>Selected Publications</h2>
-          <p style="margin-bottom:.8rem;color:var(--muted);font-size:.9rem">
-            <a href="publications.html" style="font-weight:600">View complete list with abstracts →</a>
-          </p>
-
-          <div class="pub">
-            <div class="pub-title">
-              <a href="https://onlinelibrary.wiley.com/doi/10.1111/gwao.70117" target="_blank" rel="noopener">
-                What Job Would You Apply To? Findings on the Impact of Language on Job Searches
-              </a>
-            </div>
-            with Luz Salas, Claudia Piras, and Agustina Suaya. <em>Gender, Work &amp; Organization</em>, 2026. DOI: 10.1111/gwao.70117
+          <div class="card-body">
+            <h2>Libro de Econometría</h2>
+            <p>Fundamentos de econometría: mínimos cuadrados ordinarios, inferencia y álgebra matricial.</p>
           </div>
-          <div class="pub">
-            <div class="pub-title">
-              <a href="https://ideas.repec.org/a/ucp/ecdecc/doi10.1086-718645.html" target="_blank" rel="noopener">
-                What Is the Price of Freedom? Estimating Women's Willingness to Pay for Job Flexibility
-              </a>
-            </div>
-            with Monserrat Bustelo, Claudia Piras, Jeanne Lafortune, José Tessada, and Luz Salas. <em>Economic Development and Cultural Change</em>, 71(4): 1179–1211, July 2023.
+          <div class="card-arrow">→</div>
+        </a>
+
+        <a href="https://adiazescobar.github.io/libro_cortes/" target="_blank" class="card">
+          <div class="card-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/>
+            </svg>
           </div>
-          <div class="pub">
-            <div class="pub-title">
-              <a href="https://ideas.repec.org/a/bla/brjirl/v61y2023i1p159-187.html" target="_blank" rel="noopener">
-                How Does Working‑Time Flexibility Affect Workers' Productivity in a Routine Job? Evidence from a Field Experiment
-              </a>
-            </div>
-            with Marie Boltz, Bart Cockx, and Luz M. Salas. <em>British Journal of Industrial Relations</em>, 61(1), March 2023.
+          <div class="card-body">
+            <h2>Libro de Econometría Avanzada</h2>
+            <p>Métodos de identificación causal: RCT, diferencias en diferencias, variables instrumentales y más.</p>
           </div>
-          <div class="pub">
-            <div class="pub-title">
-              <a href="https://doi.org/10.1007/s10657-021-09714-9" target="_blank" rel="noopener">
-                Pretrial Detention and Conviction
-              </a>
-            </div>
-            with Luz Salas. <em>European Journal of Law and Economics</em>, 53: 1–25, 2022.
+          <div class="card-arrow">→</div>
+        </a>
+
+        <a href="videos.html" class="card">
+          <div class="card-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2" ry="2"/>
+            </svg>
           </div>
-          <div class="pub">
-            <div class="pub-title">
-              <a href="https://ideas.repec.org/a/eee/regeco/v83y2020ics0166046219302637.html" target="_blank" rel="noopener">
-                Do Firms Redline Workers?
-              </a>
-            </div>
-            with Luz Salas. <em>Regional Science and Urban Economics</em>, 83: 103541, July 2020.
+          <div class="card-body">
+            <h2>Videos</h2>
+            <p>Charlas, entrevistas y clases sobre economía laboral, género, métodos y política económica.</p>
           </div>
-          <div class="pub">
-            <div class="pub-title">
-              <a href="https://ideas.repec.org/a/col/000090/016107.html" target="_blank" rel="noopener">
-                It Is Not What You Know but Who You Know: Heterogeneous Peer Effects at a Colombian University
-              </a>
-            </div>
-            with Ignacio Penagos. <em>Revista Desarrollo y Sociedad</em>, 82, 2017.
-          </div>
+          <div class="card-arrow">→</div>
+        </a>
 
-          <details>
-            <summary>Show all publications</summary>
-            <div class="pub">
-              <div class="pub-title">
-                <a href="https://ideas.repec.org/a/col/000090/014290.html" target="_blank" rel="noopener">
-                  Spatial Unemployment Differentials in Colombia
-                </a>
-              </div>
-              <em>Revista Desarrollo y Sociedad</em>, 76, 2016.
-            </div>
-            <div class="pub">
-              <div class="pub-title">
-                <a href="https://ideas.repec.org/a/bdr/ensayo/v31y2013i70p316-366.html" target="_blank" rel="noopener">
-                  The Employment Advantages of Skilled Urban Municipalities in Colombia
-                </a>
-              </div>
-              <em>Ensayos sobre Política Económica</em>, 31(70), 2013.
-            </div>
-            <div class="pub">
-              <div class="pub-title">Informal Referrals, Employment, and Wages: Seeking Causal Relationships</div>
-              <em>LABOUR</em>, 26: 1–30, 2012.
-            </div>
-          </details>
-        </section>
-
-        <section class="card sec">
-          <h2>Working Papers</h2>
-          <p style="margin-bottom:.8rem;color:var(--muted);font-size:.9rem">
-            <a href="publications.html" style="font-weight:600">View complete list with abstracts →</a>
-          </p>
-          <ul class="list">
-            <li>
-              <span class="item-title">Norms Behind Closed Doors: Misperceptions & Maternal Employment in Colombia</span>
-              — with Marie Boltz, Monserrat Bustelo, Ana María Díaz, and Agustina Suaya.
-              <span class="muted"><a href="https://beta.u-strasbg.fr/WP/2025/2025-37.pdf" target="_blank" rel="noopener">BETA WP 2025-37</a></span>
-            </li>
-            <li>
-              <span class="item-title">Gender Disparities in Valuing Remote and Hybrid Work in Latin America</span>
-              — with Luz M. Salas Bahamón, Claudia Piras, and Agustina Suaya.
-              <span class="muted"><a href="https://ideas.repec.org/p/idb/brikps/13439.html" target="_blank" rel="noopener">IDB WP 13439</a></span>
-            </li>
-            <li>
-              <span class="item-title">Gender Differences in the Willingness to Pay for Flexible Work Arrangements among Workers in Latin America</span>
-              — with Luz Salas, Claudia Piras, and Agustina Suaya. <span class="muted">Under revision</span>.
-            </li>
-            <li>
-              <span class="item-title">Do Productive Workers Sort into Flexible Work Arrangements?</span> — with Marie Boltz, Bart Cockx, and Luz Salas. <span class="muted">Vniversitas Económica</span>.
-            </li>
-            <li><span class="item-title">Brecha de habilidades de los jóvenes en el mercado laboral colombiano</span> — with Luz Salas. <span class="muted">Vniversitas Económica</span>.</li>
-            <li><span class="item-title">The Effect of Job Flexibility on Labor Market Productivity</span> — with Marie Boltz, Bart Cockx, and Luz Salas.</li>
-            <li><span class="item-title">It Is Not What You Know but Who You Know: Heterogeneous Peer Effects in Education</span> — with Ignacio Penagos. <span class="muted">Documentos de Economía, 015304</span>.</li>
-            <li><span class="item-title">El Acceso a Fuentes de Empleo, la Segregación Residencial, y el Empleo, el Desempleo y la Participación Laboral de las Mujeres en Bogotá</span>. <span class="muted"><a href="https://ideas.repec.org/p/idb/brikps/6789.html" target="_blank" rel="noopener">IDB WP 566</a></span>.</li>
-            <li><span class="item-title">Evolución Geográfica del Homicidio en Colombia</span> — with Andrés Sánchez‑Jabba, Alejandro Peláez et al. <span class="muted">Banco de la República — Economía Regional</span>.</li>
-            <li><span class="item-title">Spatial Unemployment Differentials</span> — <span class="muted">IRES Discussion Paper 2011‑014, UCLouvain</span>.</li>
-            <li><span class="item-title">Educational Wage Differentials in Argentina: Who Gets More?</span> — with M. Santamaría. <span class="muted">World Bank LAC, 2005</span>.</li>
-            <li><span class="item-title">Labor Force Participation in Colombia</span> — <span class="muted">World Bank LAC, 2005</span>.</li>
-            <li><span class="item-title">Los Efectos del Conflicto Armado en el Desarrollo Social Colombiano, 1990‑2002</span> — with F. Sánchez. <span class="muted">Documentos CEDE 003167, 2005</span>.</li>
-            <li><span class="item-title">Geografía de los Cultivos Ilícitos y Conflicto Armado en Colombia</span> — with F. Sánchez. <span class="muted">Documentos CEDE 002766, 2004</span>.</li>
-            <li><span class="item-title">Conflicto, Violencia y Actividad Criminal en Colombia: un Análisis Espacial, 1990‑2002</span> — with M. Formisano & F. Sánchez. <span class="muted">Documentos CEDE 002187, 2003</span>.</li>
-            <li><span class="item-title">Determinantes de la Presencia Guerrillera en Colombia: una Aproximación desde la Econometría Espacial</span> — <span class="muted">M.A. Thesis, PUJ, 2003</span>.</li>
-          </ul>
-        </section>
-
-        <section class="card sec">
-          <h2>Research in Progress</h2>
-          <ul class="list">
-            <li>Cycling Through Congestion: Does Bike Presence Actually Slow Cars Down? — with Diego Astorga.</li>
-            <li>Misperceived Gender Norms and the Gender Gap in Labor Force Participation: Experimental Evidence from Couples in Colombia — with Marie Boltz, Monserrat Bustelo, Ana María Díaz, and Agustina Suaya.</li>
-            <li>Bridging the Gap: The Role of Flexibility in Promoting Gender Equality and Work‑Family Balance — with Luz Salas and Marie Boltz.</li>
-            <li>Skill Mismatch and Labor Outcomes in Colombia using matched job‑seeker/employer data from the Public Employment Service — with Luz Salas and the Public Employment Service Unit.</li>
-            <li>Care at Home for Individuals with Disabilities — with Marcela Perticara.</li>
-          </ul>
-        </section>
-
-        <section class="card sec">
-          <h2>Grants & Fellowships</h2>
-          <ul class="list">
-            <li>Delivery Associates — Bogotá's Global Mayors Challenge project: <span class="item-title">USD 25,000</span> (with Marcela Perticara and Claudia Martínez), 2024.</li>
-            <li>IADB — Gender Norms and Employment: <span class="item-title">USD 130,000</span> (with Marie Boltz, Monserrat Bustelo, Agustina Suaya), 2021–2023.</li>
-            <li>IADB — Gender Differences in WTP for Flexible Work Arrangements: <span class="item-title">USD 100,000</span> (with Luz M. Salas, Claudia Piras, Agustina Suaya), 2021–2023.</li>
-            <li>JPAL — Gender norms, couples' labor supply decisions, and flexibility in working conditions in Colombia: <span class="item-title">USD 65,000</span> (with Luz Salas, Marie Boltz), 2022–2023.</li>
-            <li>PUJ — Labor Market Flexibility and Productivity: <span class="item-title">USD 20,000</span> (with Luz Salas, Marie Boltz), 2017–2019.</li>
-            <li>IADB — Labor Market Flexibility and Female Participation: <span class="item-title">USD 100,000</span> (with Luz M. Salas, Jeanne Lafortune, José Tessada), 2016–2021.</li>
-            <li>CAF — Do Firms Redline Workers? (Bogotá): <span class="item-title">USD 10,000</span> (with Luz Salas), 2016–present.</li>
-            <li>IADB — El Acceso a Fuentes de Empleo, Segregación Residencial y Resultados Laborales de Mujeres en Bogotá: <span class="item-title">USD 20,000</span>, 2014.</li>
-          </ul>
-        </section>
-
-        <section class="card sec">
-          <h2>Teaching</h2>
-          <ul class="list">
-            <li><span class="item-title">Advanced Econometrics</span> — PUJ, Bogotá: 2011–present. Also at Banco de la República (2014).</li>
-            <li><span class="item-title">Microeconomics</span> — PUJ, Bogotá: 2011–present.</li>
-            <li><span class="item-title">Impact Evaluation</span> — M.A. Economics, PUJ Bogotá (2012–2016), PUJ Cali (2014).</li>
-          </ul>
-        </section>
-
-        <section class="card sec">
-          <h2>Conferences & Seminars (selected)</h2>
-          <details open>
-            <summary>Recent</summary>
-            <ul class="list">
-              <li>3rd Annual IZA/World Bank/NJD/UNU‑WIDER Jobs and Development Conference — Sep 1–2, 2020.</li>
-              <li>LACEA (Annual Meeting) — Puebla, Mexico, 2019.</li>
-              <li>Formal & Informal Institutions for Development — Sorbonne, Paris, Nov 22–23, 2019.</li>
-              <li>ERSA — Netherlands, Aug 2017. <em>Do Firms Redline Workers?</em></li>
-              <li>LACEA Annual Meeting — Colombia, Nov 2016. <em>Do Firms Redline Workers?</em></li>
-            </ul>
-          </details>
-          <details>
-            <summary>Earlier highlights</summary>
-            <ul class="list">
-              <li>IZA/World Bank Conference: Employment & Development — Lima, Peru, June 2014.</li>
-              <li>IX Seminario de la revista ESPE — Bogotá, Nov 2012.</li>
-              <li>IZA/World Bank Conference — Cape Town, May 2010.</li>
-              <li>Social Capital Conference — Malta, Sep 2008.</li>
-              <li>LACEA Annual Meeting — Mexico, Nov 2006; Puebla, Oct 2003.</li>
-              <li>Making Peace Work — Helsinki, June 2004.</li>
-              <li>LSE Seminar — London, June 2004.</li>
-            </ul>
-          </details>
-        </section>
-
-        <section class="card sec">
-          <h2>Chapters & Reports</h2>
-          <ul class="list">
-            <li>Breaking the Cycle of Underinvestment in Human Capital in Latin America — with O. Arias & M. Fazio. In <em>Poverty Reduction and Growth: Virtuous and Vicious Circles</em>, World Bank LAC, 2005.</li>
-            <li>Conflicto, Crimen Violento y Actividad Criminal en Colombia — with F. Sánchez. In <em>Las Cuentas de la Violencia</em>, Editorial Norma, 2007.</li>
-            <li>Geografía de los Cultivos Ilícitos y Conflicto Armado en Colombia — with F. Sánchez. In <em>Las Cuentas de la Violencia</em>, Editorial Norma, 2007.</li>
-            <li>Los Efectos del Conflicto Armado en el Desarrollo Social Colombiano — with F. Sánchez. In <em>Las Cuentas de la Violencia</em>, Editorial Norma, 2007.</li>
-            <li>Crime, Violence, and Development: Trends, Costs, and Policy Options in the Caribbean — World Bank, 2007.</li>
-            <li>La Informalidad Laboral en el Gran Buenos Aires: una Nueva Mirada — World Bank, 2006.</li>
-            <li>Labor Market Adjustment, Reform and Productivity in Colombia — World Bank, 2005.</li>
-          </ul>
-        </section>
-
-        <footer>
-          Last updated: March 2026 · Bogotá, Colombia · © Ana María Díaz Escobar
-        </footer>
-      </main>
+      </div>
     </div>
-  </div>
+  </section>
 
-  <script>
-    function toggleTheme(){
-      const current = document.documentElement.getAttribute('data-theme') || 'dark';
-      const next = current === 'dark' ? 'light' : 'dark';
-      document.documentElement.setAttribute('data-theme', next);
-      localStorage.setItem('theme', next);
-    }
-  </script>
+  <footer>
+    <div class="container">
+      <p>&copy; 2026 Ana María Díaz Escobar &middot; Bogotá, Colombia</p>
+    </div>
+  </footer>
 
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Person",
-    "name": "Ana María Díaz Escobar",
-    "jobTitle": "Associate Professor of Economics",
-    "worksFor": {
-      "@type": "CollegeOrUniversity",
-      "name": "Pontificia Universidad Javeriana"
-    },
-    "address": {
-      "@type": "PostalAddress",
-      "addressLocality": "Bogotá",
-      "addressCountry": "CO"
-    },
-    "email": "mailto:a.diaze@javeriana.edu.co",
-    "telephone": "+573125883583",
-    "sameAs": [
-      "https://ideas.repec.org/e/pdi179.html",
-      "https://x.com/adiazescobar"
-    ]
-  }
-  </script>
 </body>
 </html>
