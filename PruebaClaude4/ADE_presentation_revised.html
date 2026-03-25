@@ -1,0 +1,2067 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>¿A qué trabajo te postularías? — ADE Bogotá, Marzo 2026</title>
+<style>
+  :root {
+    --navy: #003366;
+    --navy-light: #1a4d8f;
+    --orange: #D95C20;
+    --orange-light: #FFF3EC;
+    --dark: #1a1a1a;
+    --gray: #555;
+    --light-gray: #f4f4f4;
+    --border: #ddd;
+    --white: #ffffff;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: -apple-system, 'Helvetica Neue', Arial, sans-serif;
+    font-size: 17px;
+    background: #111;
+    overflow: hidden;
+    height: 100vh;
+    width: 100vw;
+  }
+
+  /* ─── SLIDE CONTAINER ─── */
+  .presentation {
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+  }
+
+  .slide {
+    display: none;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0; left: 0;
+    padding: 48px 64px 70px 64px;
+    flex-direction: column;
+    background: var(--white);
+    overflow: hidden;
+  }
+  .slide.active { display: flex; }
+
+  /* ─── SECTION DIVIDERS ─── */
+  .slide.divider {
+    background: var(--navy);
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 40px;
+  }
+  .divider .section-number {
+    color: rgba(255,255,255,0.4);
+    font-size: 1.1em;
+    font-weight: 600;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+  }
+  .divider h2 {
+    color: white;
+    font-size: 3.3em;
+    font-weight: 800;
+    line-height: 1.15;
+    max-width: 700px;
+  }
+  .divider .divider-sub {
+    color: rgba(255,255,255,0.65);
+    font-size: 1.2em;
+    margin-top: 20px;
+  }
+
+  /* ─── COVER SLIDE ─── */
+  .slide.cover {
+    background: var(--navy);
+    justify-content: center;
+    align-items: flex-start;
+    padding: 64px 72px;
+  }
+  .cover-tag {
+    color: var(--orange);
+    font-size: 0.95em;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 28px;
+  }
+  .cover h1 {
+    color: white;
+    font-size: 3.5em;
+    font-weight: 800;
+    line-height: 1.15;
+    max-width: 780px;
+    margin-bottom: 20px;
+  }
+  .cover h2 {
+    color: rgba(255,255,255,0.75);
+    font-size: 1.55em;
+    font-weight: 400;
+    max-width: 680px;
+    line-height: 1.5;
+    margin-bottom: 48px;
+  }
+  .cover-meta {
+    color: rgba(255,255,255,0.55);
+    font-size: 0.9em;
+    line-height: 1.8;
+  }
+  .cover-meta strong { color: rgba(255,255,255,0.8); }
+
+  /* ─── SLIDE HEADER ─── */
+  .slide-header {
+    border-bottom: 3px solid var(--navy);
+    padding-bottom: 16px;
+    margin-bottom: 28px;
+    flex-shrink: 0;
+  }
+  .slide-section-tag {
+    color: var(--orange);
+    font-size: 0.78em;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 6px;
+  }
+  .slide-header h1 {
+    color: var(--navy);
+    font-size: 2em;
+    font-weight: 800;
+    line-height: 1.2;
+  }
+
+  /* ─── SLIDE BODY ─── */
+  .slide-body {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    overflow: hidden;
+  }
+
+  /* ─── CONTENT ELEMENTS ─── */
+  .big-bullets {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  .big-bullets li {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    font-size: 1.28em;
+    line-height: 1.5;
+    color: var(--dark);
+  }
+  .big-bullets li::before {
+    content: "▶";
+    color: var(--orange);
+    font-size: 0.7em;
+    margin-top: 5px;
+    flex-shrink: 0;
+  }
+
+  .highlight { color: var(--orange); font-weight: 700; }
+  .highlight-navy { color: var(--navy); font-weight: 700; }
+  .subtle { color: var(--gray); font-size: 0.9em; }
+
+  /* ─── KEY FINDING BOX ─── */
+  .finding-box {
+    background: var(--navy);
+    color: white;
+    border-radius: 10px;
+    padding: 20px 26px;
+    margin-top: 20px;
+    font-size: 1.1em;
+    line-height: 1.5;
+  }
+  .finding-box strong { color: #FFD700; }
+
+  .insight-box {
+    background: var(--orange-light);
+    border-left: 5px solid var(--orange);
+    border-radius: 4px;
+    padding: 16px 20px;
+    margin-top: 16px;
+    font-size: 1.05em;
+    line-height: 1.5;
+    color: var(--dark);
+  }
+
+  .warning-box {
+    background: #fff8e1;
+    border-left: 5px solid #f9a825;
+    border-radius: 4px;
+    padding: 14px 18px;
+    margin-top: 14px;
+    font-size: 1em;
+    line-height: 1.5;
+    color: var(--dark);
+  }
+
+  /* ─── BIG NUMBERS ─── */
+  .big-numbers-row {
+    display: flex;
+    gap: 24px;
+    margin: 16px 0;
+    flex-wrap: wrap;
+  }
+  .big-number-box {
+    flex: 1;
+    min-width: 150px;
+    text-align: center;
+    padding: 20px 16px;
+    border-radius: 10px;
+    background: var(--light-gray);
+  }
+  .big-number-box .num {
+    font-size: 3em;
+    font-weight: 800;
+    line-height: 1;
+    margin-bottom: 6px;
+  }
+  .big-number-box .num.orange { color: var(--orange); }
+  .big-number-box .num.navy { color: var(--navy); }
+  .big-number-box .label {
+    font-size: 0.85em;
+    color: var(--gray);
+    line-height: 1.3;
+  }
+
+  /* ─── BAR CHARTS ─── */
+  .chart-area {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 6px;
+    overflow: hidden;
+  }
+
+  .chart-row {
+    display: flex;
+    align-items: center;
+    gap: 0;
+    margin-bottom: 4px;
+  }
+  .chart-row-label {
+    width: 240px;
+    font-size: 0.92em;
+    font-weight: 600;
+    color: var(--dark);
+    flex-shrink: 0;
+    text-align: right;
+    padding-right: 14px;
+    line-height: 1.3;
+  }
+  .chart-bars-col {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+  .bar-track {
+    height: 30px;
+    background: #eee;
+    border-radius: 4px;
+    overflow: hidden;
+    position: relative;
+  }
+  .bar-fill {
+    height: 100%;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    padding: 0 10px;
+    font-size: 0.92em;
+    font-weight: 700;
+    color: white;
+    transition: width 0.8s ease;
+    white-space: nowrap;
+    min-width: 36px;
+  }
+  .bar-fill.women { background: var(--orange); }
+  .bar-fill.men   { background: var(--navy); }
+
+  .chart-legend {
+    display: flex;
+    gap: 24px;
+    margin-top: 12px;
+    font-size: 0.82em;
+    color: var(--gray);
+  }
+  .legend-dot {
+    width: 14px; height: 14px;
+    border-radius: 3px;
+    display: inline-block;
+    margin-right: 6px;
+    vertical-align: middle;
+  }
+
+  /* ─── TREATMENT BOXES (4-grid) ─── */
+  .treatment-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 14px;
+    flex: 1;
+  }
+  .treatment-box {
+    background: var(--light-gray);
+    border-radius: 10px;
+    padding: 18px 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    border-top: 4px solid var(--navy);
+  }
+  .treatment-box.highlight-t { border-top-color: var(--orange); background: var(--orange-light); }
+  .treatment-box .t-label {
+    font-size: 0.75em;
+    font-weight: 700;
+    color: var(--orange);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+  .treatment-box .t-name {
+    font-size: 1.1em;
+    font-weight: 800;
+    color: var(--navy);
+    line-height: 1.2;
+  }
+  .treatment-box .t-desc {
+    font-size: 0.93em;
+    color: var(--gray);
+    line-height: 1.4;
+    flex: 1;
+  }
+  .treatment-box .t-example {
+    font-size: 0.88em;
+    color: var(--dark);
+    background: white;
+    border-radius: 5px;
+    padding: 8px 10px;
+    line-height: 1.4;
+    border-left: 3px solid var(--orange);
+  }
+
+  /* ─── ADS COMPARISON ─── */
+  .ads-grid {
+    display: grid;
+    grid-template-columns: 1fr 60px 1fr;
+    gap: 10px;
+    flex: 1;
+    align-items: stretch;
+  }
+  .ad-box {
+    border-radius: 10px;
+    padding: 22px 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .ad-box.control {
+    background: #f9f9f9;
+    border: 2px solid #ccc;
+  }
+  .ad-box.treatment {
+    background: var(--orange-light);
+    border: 2px solid var(--orange);
+  }
+  .ad-box .ad-tag {
+    font-size: 0.82em;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--gray);
+  }
+  .ad-box.treatment .ad-tag { color: var(--orange); }
+  .ad-box .ad-title {
+    font-size: 1.1em;
+    font-weight: 700;
+    color: var(--navy);
+  }
+  .ad-text {
+    font-size: 1em;
+    color: var(--dark);
+    line-height: 1.6;
+    flex: 1;
+  }
+  .ad-text .word-old { background: #ffdcdc; color: #c00; padding: 2px 4px; border-radius: 3px; font-weight: 600; }
+  .ad-text .word-new { background: #d4edda; color: #155724; padding: 2px 4px; border-radius: 3px; font-weight: 600; }
+  .vs-col {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4em;
+    font-weight: 800;
+    color: var(--gray);
+  }
+  .ad-result {
+    margin-top: auto;
+    font-size: 0.82em;
+    font-weight: 700;
+    padding: 6px 10px;
+    border-radius: 5px;
+    text-align: center;
+  }
+  .ad-result.ctrl { background: #eee; color: var(--gray); }
+  .ad-result.trt { background: var(--orange); color: white; }
+
+  /* ─── COLUMNS ─── */
+  .two-col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 28px;
+    flex: 1;
+  }
+  .three-col {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 20px;
+    flex: 1;
+  }
+
+  /* ─── CHANNEL BOXES ─── */
+  .channel-box {
+    background: var(--light-gray);
+    border-radius: 10px;
+    padding: 20px 18px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .channel-box .ch-num {
+    font-size: 2em;
+    font-weight: 800;
+    color: var(--orange);
+    line-height: 1;
+  }
+  .channel-box .ch-title {
+    font-size: 1.1em;
+    font-weight: 700;
+    color: var(--navy);
+    line-height: 1.3;
+  }
+  .channel-box .ch-desc {
+    font-size: 1em;
+    color: var(--gray);
+    line-height: 1.5;
+  }
+
+  /* ─── CONCLUSION LIST ─── */
+  .conclusion-list {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+  }
+  .conclusion-item {
+    display: flex;
+    gap: 18px;
+    align-items: flex-start;
+  }
+  .conclusion-num {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: var(--navy);
+    color: white;
+    font-size: 1.1em;
+    font-weight: 800;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+  .conclusion-text {
+    flex: 1;
+    font-size: 1.18em;
+    line-height: 1.5;
+    color: var(--dark);
+    padding-top: 8px;
+  }
+
+  /* ─── RCT DESIGN ─── */
+  .rct-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+    flex: 1;
+  }
+  .rct-box {
+    background: var(--light-gray);
+    border-radius: 10px;
+    padding: 18px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+  .rct-box .rct-label {
+    font-size: 0.72em;
+    font-weight: 700;
+    color: var(--orange);
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+  }
+  .rct-box .rct-title {
+    font-size: 1em;
+    font-weight: 700;
+    color: var(--navy);
+  }
+  .rct-box .rct-desc {
+    font-size: 0.85em;
+    color: var(--gray);
+    line-height: 1.5;
+  }
+
+  /* ─── TABLE ─── */
+  .simple-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 1em;
+  }
+  .simple-table th {
+    background: var(--navy);
+    color: white;
+    padding: 10px 14px;
+    text-align: left;
+    font-weight: 600;
+  }
+  .simple-table td {
+    padding: 10px 14px;
+    border-bottom: 1px solid var(--border);
+    color: var(--dark);
+  }
+  .simple-table tr:nth-child(even) td { background: var(--light-gray); }
+
+  /* ─── FINAL SLIDE ─── */
+  .slide.final {
+    background: var(--navy);
+    justify-content: space-between;
+    padding: 52px 72px;
+  }
+  .final .final-title {
+    color: white;
+    font-size: 1.5em;
+    font-weight: 800;
+    margin-bottom: 32px;
+  }
+  .final-messages {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    flex: 1;
+  }
+  .final-message {
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+    padding: 14px 18px;
+    background: rgba(255,255,255,0.1);
+    border-radius: 8px;
+    border-left: 4px solid var(--orange);
+  }
+  .final-message .msg-num {
+    color: var(--orange);
+    font-size: 1.4em;
+    font-weight: 800;
+    flex-shrink: 0;
+    line-height: 1;
+    margin-top: 2px;
+  }
+  .final-message .msg-text {
+    color: white;
+    font-size: 0.95em;
+    line-height: 1.5;
+  }
+  .final-contact {
+    color: rgba(255,255,255,0.55);
+    font-size: 0.82em;
+    line-height: 1.8;
+    border-top: 1px solid rgba(255,255,255,0.15);
+    padding-top: 18px;
+    margin-top: 18px;
+  }
+  .final-contact strong { color: rgba(255,255,255,0.8); }
+
+  /* ─── NAVIGATION ─── */
+  .nav-bar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 48px;
+    background: rgba(0,0,0,0.85);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 24px;
+    z-index: 100;
+  }
+  .nav-counter {
+    color: rgba(255,255,255,0.6);
+    font-size: 0.8em;
+    min-width: 90px;
+  }
+  .nav-dots {
+    display: flex;
+    gap: 5px;
+    flex-wrap: wrap;
+    justify-content: center;
+    max-width: 60%;
+  }
+  .nav-dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.25);
+    cursor: pointer;
+    transition: background 0.2s;
+  }
+  .nav-dot.active { background: var(--orange); }
+  .nav-dot.divider-dot { background: rgba(255,255,255,0.15); border-radius: 2px; }
+  .nav-arrows {
+    display: flex;
+    gap: 12px;
+  }
+  .nav-btn {
+    background: rgba(255,255,255,0.15);
+    border: none;
+    color: white;
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    font-size: 1.1em;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s;
+  }
+  .nav-btn:hover { background: rgba(255,255,255,0.3); }
+
+  /* ─── PROGRESS BAR ─── */
+  .progress-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 4px;
+    background: var(--orange);
+    transition: width 0.3s ease;
+    z-index: 101;
+  }
+
+  /* ─── PRINT / PDF ─── */
+  @media print {
+    body { background: white; overflow: visible; height: auto; }
+    .presentation { height: auto; }
+    .slide { display: flex !important; position: relative; height: 100vh; page-break-after: always; }
+    .nav-bar, .progress-bar { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<div class="progress-bar" id="progress"></div>
+
+<div class="presentation" id="pres">
+
+  <!-- ══════════════════════════════════════════
+       SLIDE 1 — PORTADA
+  ══════════════════════════════════════════ -->
+  <div class="slide cover active" data-n="1">
+    <div class="cover-tag">Agencia Distrital de Empleo — Bogotá, Marzo 2026</div>
+    <h1>¿A qué trabajo te postularías?</h1>
+    <h2>Evidencia experimental sobre el impacto del lenguaje en la búsqueda de empleo en América Latina</h2>
+    <div class="cover-meta">
+      Ana María Díaz Escobar — Pontificia Universidad Javeriana<br>
+      Luz Magdalena Salas — ANIF<br>
+      Claudia Piras · Agustina Suaya — Banco Interamericano de Desarrollo<br>
+      <br>
+      <span style="color:rgba(255,255,255,0.35); font-size:0.85em;">Usa ← → para navegar · Espacio para avanzar</span>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════
+       SLIDE 2 — SECCIÓN DIVIDER: EL PROBLEMA
+  ══════════════════════════════════════════ -->
+  <div class="slide divider" data-n="2">
+    <div class="section-number">Parte 1</div>
+    <h2>El problema</h2>
+    <div class="divider-sub">¿Por qué el lenguaje de las vacantes importa?</div>
+  </div>
+
+  <!-- ══════════════════════════════════════════
+       SLIDE 3 — BRECHA DE GÉNERO
+  ══════════════════════════════════════════ -->
+  <div class="slide" data-n="3">
+    <div class="slide-header">
+      <div class="slide-section-tag">Motivación</div>
+      <h1>Los mercados laborales de ALC siguen siendo desiguales</h1>
+    </div>
+    <div class="slide-body">
+      <ul class="big-bullets">
+        <li>En América Latina, las mujeres participan <span class="highlight">20–30%</span> menos que los hombres en el mercado laboral formal.</li>
+        <li>La segregación sectorial persiste: las mujeres son minoría en <span class="highlight">construcción, manufactura y tecnología</span> — sectores de alta productividad y salarios.</li>
+        <li>Hay muchas causas: formación, cuidado, discriminación. Hoy hablamos de una que es <span class="highlight">fácil de cambiar</span>: el lenguaje de las vacantes.</li>
+        <li>El lenguaje puede filtrar candidatos <span class="highlight-navy">antes de que comience cualquier proceso de selección.</span></li>
+      </ul>
+      <div class="insight-box">
+        <strong>La pregunta central:</strong> ¿Cuánto de la sub-representación femenina en ciertos sectores empieza en el momento en que una mujer lee el anuncio de trabajo — y decide no aplicar a la vacante?
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════
+       SLIDE 4 — LENGUAJE COMO BARRERA
+  ══════════════════════════════════════════ -->
+  <div class="slide" data-n="4">
+    <div class="slide-header">
+      <div class="slide-section-tag">El Problema</div>
+      <h1>El lenguaje puede excluir de dos formas</h1>
+    </div>
+    <div class="slide-body">
+      <div class="two-col" style="gap:32px; margin-bottom:20px;">
+        <div>
+          <div style="font-size:1em; font-weight:700; color:var(--navy); margin-bottom:10px; padding-bottom:8px; border-bottom:2px solid #ccc;">
+            🚫 Barrera Explícita
+          </div>
+          <p style="font-size:0.95em; line-height:1.6; color:var(--dark); margin-bottom:10px;">
+            Palabras que <strong>directamente</strong> favorecen o piden un género específico.
+          </p>
+          <div style="background:#ffdcdc; border-radius:6px; padding:12px 14px; font-size:0.88em; color:#800; font-style:italic; line-height:1.5;">
+            "Se busca <strong>ingeniero</strong> para el puesto."<br>
+            "Queremos un <strong>hombre dinámico</strong>."
+          </div>
+          <p style="font-size:0.82em; color:var(--gray); margin-top:8px;">Cada vez más raro. Algunos países lo regulan explícitamente.</p>
+        </div>
+        <div>
+          <div style="font-size:1em; font-weight:700; color:var(--navy); margin-bottom:10px; padding-bottom:8px; border-bottom:2px solid var(--orange);">
+            ⚠️ Barrera Implícita
+          </div>
+          <p style="font-size:0.95em; line-height:1.6; color:var(--dark); margin-bottom:10px;">
+            Palabras neutras que <strong>culturalmente</strong> se asocian con masculinidad.
+          </p>
+          <div style="background:var(--orange-light); border-radius:6px; padding:12px 14px; font-size:0.88em; color:#5a2000; font-style:italic; line-height:1.5;">
+            "Buscamos un líder <strong>audaz, asertivo y competitivo</strong>."<br>
+            "Perfil: <strong>autónomo, decidido, con iniciativa</strong>."
+          </div>
+          <p style="font-size:0.82em; color:var(--gray); margin-top:8px;">Muy común. Más difícil de detectar. Más difícil de corregir.</p>
+        </div>
+      </div>
+      <div class="finding-box">
+        El lenguaje implícito activa una pregunta en la mente del lector: <strong>"¿Soy yo el tipo de persona que esta empresa busca?"</strong> — Si la respuesta es no, no se postula.
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════
+       SLIDE 5 — PREGUNTA DE INVESTIGACIÓN
+  ══════════════════════════════════════════ -->
+  <div class="slide" data-n="5">
+    <div class="slide-header">
+      <div class="slide-section-tag">El Problema</div>
+      <h1>¿Si cambiamos las palabras, cambia la decisión de postularse?</h1>
+    </div>
+    <div class="slide-body">
+      <div style="font-size:1.5em; font-weight:700; color:var(--navy); text-align:center; padding:20px; background:var(--light-gray); border-radius:10px; margin-bottom:24px; line-height:1.4;">
+        Pregunta principal: <span class="highlight">¿Qué tipos de cambios en el lenguaje de una vacante aumentan la probabilidad de que una mujer quiera postularse?</span>
+      </div>
+      <ul class="big-bullets">
+        <li><span class="highlight">Pregunta 1:</span> ¿Cuánto importa describir la habilidad en lugar de solo nombrarla?</li>
+        <li><span class="highlight">Pregunta 2:</span> ¿Vale la pena agregar una declaración explícita de diversidad e inclusión?</li>
+        <li><span class="highlight">Pregunta 3:</span> ¿El lenguaje inclusivo (supervisor/a) ayuda a las mujeres sin perjudicar a los hombres?</li>
+      </ul>
+      <div class="insight-box" style="margin-top:20px;">
+        <strong>Esta tercera pregunta es clave para la política:</strong> muchas organizaciones resisten el lenguaje inclusivo por temor al "backlash" masculino. Hoy traemos datos para responder si ese temor es fundado.
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════
+       SLIDE 6 — RELEVANCIA PARA LA ADE
+  ══════════════════════════════════════════ -->
+  <div class="slide" data-n="6">
+    <div class="slide-header">
+      <div class="slide-section-tag">El Problema</div>
+      <h1>¿Por qué esto importa directamente para la ADE?</h1>
+    </div>
+    <div class="slide-body">
+      <div class="three-col">
+        <div class="channel-box" style="border-top: 4px solid var(--navy);">
+          <div class="ch-num">1</div>
+          <div class="ch-title">Primero contacto</div>
+          <div class="ch-desc">La ADE controla o facilita el texto de vacantes que ven miles de buscadores. Ese texto es el <strong>primer filtro</strong> entre una candidata y una oportunidad.</div>
+        </div>
+        <div class="channel-box" style="border-top: 4px solid var(--orange);">
+          <div class="ch-num">2</div>
+          <div class="ch-title">Asesoría a empresas</div>
+          <div class="ch-desc">Cuando las empresas publican vacantes con la ADE, hay una ventana para recomendar mejores prácticas de lenguaje antes de que la vacante salga al mercado.</div>
+        </div>
+        <div class="channel-box" style="border-top: 4px solid var(--navy);">
+          <div class="ch-num">3</div>
+          <div class="ch-title">Orientación laboral</div>
+          <div class="ch-desc">Entender cómo el lenguaje afecta a las mujeres permite orientarlas mejor: saber que "asertivo" en una vacante no significa "solo para hombres."</div>
+        </div>
+      </div>
+      <div class="finding-box" style="margin-top:20px;">
+        La ADE tiene acceso al primer momento de la cadena laboral. <strong>Los hallazgos que vamos a compartir son directamente aplicables a lo que hace esta institución.</strong>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════
+       SLIDE 7 — SECCIÓN: EL ESTUDIO
+  ══════════════════════════════════════════ -->
+  <div class="slide divider" data-n="7">
+    <div class="section-number">Parte 2</div>
+    <h2>El estudio</h2>
+    <div class="divider-sub">Diseño, muestra y metodología</div>
+  </div>
+
+  <!-- ══════════════════════════════════════════
+       SLIDE 8 — EL EXPERIMENTO
+  ══════════════════════════════════════════ -->
+  <div class="slide" data-n="8">
+    <div class="slide-header">
+      <div class="slide-section-tag">El Estudio</div>
+      <h1>No opiniones — decisiones reales entre pares de anuncios</h1>
+    </div>
+    <div class="slide-body" style="flex-direction:row; gap:20px;">
+      <!-- Left 40%: steps top + ad example bottom -->
+      <div style="flex:2; display:flex; flex-direction:column; gap:14px;">
+        <!-- Steps + insight -->
+        <div style="display:flex; flex-direction:column; gap:10px;">
+          <div style="background:var(--light-gray); border-radius:10px; padding:14px 18px;">
+            <div style="font-size:0.75em; font-weight:700; color:var(--orange); letter-spacing:1.5px; text-transform:uppercase; margin-bottom:8px;">Cada participante</div>
+            <div style="font-size:0.93em; line-height:1.8; color:var(--dark);">
+              <span style="color:var(--navy); font-weight:700;">① Elige un sector</span> donde quisiera trabajar<br>
+              <span style="color:var(--navy); font-weight:700;">② Ve dos anuncios</span> del mismo cargo, lado a lado<br>
+              <span style="color:var(--navy); font-weight:700;">③ Elige cuál preferiría</span> para postularse<br>
+              <span style="color:var(--navy); font-weight:700;">④ Repite 9 veces</span> con pares distintos
+            </div>
+          </div>
+          <div class="insight-box" style="margin-top:0; font-size:0.88em;">
+            Los anuncios son idénticos en cargo, salario y condiciones. La <strong>única diferencia es el lenguaje</strong>. Los participantes no sabían que el estudio era sobre género.
+          </div>
+        </div>
+        <!-- Ad example -->
+        <div style="background:#f8f9fa; border:2px dashed #ccc; border-radius:10px; padding:12px 14px; flex:1; display:flex; flex-direction:column; justify-content:center;">
+          <div style="font-size:0.68em; font-weight:700; color:var(--gray); letter-spacing:1px; text-transform:uppercase; margin-bottom:10px; text-align:center;">Ejemplo de lo que veían en pantalla</div>
+          <div style="display:grid; grid-template-columns:1fr 32px 1fr; gap:8px; align-items:stretch;">
+            <div style="background:white; border:2px solid #ddd; border-radius:8px; padding:10px 12px; display:flex; flex-direction:column; gap:7px;">
+              <div style="font-size:0.68em; font-weight:700; color:var(--gray); text-transform:uppercase;">Anuncio A</div>
+              <div style="font-size:0.88em; font-weight:700; color:var(--navy);">Supervisor de Operaciones</div>
+              <div style="font-size:0.82em; color:var(--dark); line-height:1.5; flex:1;">Buscamos supervisor que sea <span style="background:#ffdcdc; color:#c00; padding:1px 4px; border-radius:3px; font-weight:600;">asertivo</span> en su gestión.</div>
+              <div style="background:#eee; border-radius:5px; padding:5px; text-align:center; font-size:0.72em; color:#666;">Preferiría postularme aquí</div>
+            </div>
+            <div style="display:flex; align-items:center; justify-content:center; font-size:1em; font-weight:800; color:#bbb;">VS</div>
+            <div style="background:var(--orange-light); border:2px solid var(--orange); border-radius:8px; padding:10px 12px; display:flex; flex-direction:column; gap:7px;">
+              <div style="font-size:0.68em; font-weight:700; color:var(--orange); text-transform:uppercase;">Anuncio B</div>
+              <div style="font-size:0.88em; font-weight:700; color:var(--navy);">Supervisor(a) de Operaciones</div>
+              <div style="font-size:0.82em; color:var(--dark); line-height:1.5; flex:1;">Buscamos supervisor(a) que sea <span style="background:#d4edda; color:#155724; padding:1px 4px; border-radius:3px; font-weight:600;">asertivo(a)</span> en su gestión.</div>
+              <div style="background:var(--orange); border-radius:5px; padding:5px; text-align:center; font-size:0.72em; color:white;">Preferiría postularme aquí</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Right: full-height navy box with big numbers -->
+      <div style="flex:3; background:var(--navy); border-radius:14px; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:28px; padding:32px 24px;">
+        <div style="text-align:center;">
+          <div style="font-size:4.5em; font-weight:800; color:var(--orange); line-height:1;">5,679</div>
+          <div style="font-size:1em; color:rgba(255,255,255,0.8); margin-top:6px; letter-spacing:0.3px;">participantes · 5 países</div>
+        </div>
+        <div style="width:60px; height:1px; background:rgba(255,255,255,0.2);"></div>
+        <div style="text-align:center;">
+          <div style="font-size:4.5em; font-weight:800; color:var(--orange); line-height:1;">91,998</div>
+          <div style="font-size:1em; color:rgba(255,255,255,0.8); margin-top:6px;">elecciones registradas</div>
+        </div>
+        <div style="width:60px; height:1px; background:rgba(255,255,255,0.2);"></div>
+        <div style="text-align:center;">
+          <div style="font-size:4.5em; font-weight:800; color:var(--orange); line-height:1;">4</div>
+          <div style="font-size:1em; color:rgba(255,255,255,0.8); margin-top:6px;">cambios de lenguaje probados</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════
+       SLIDE 9 — LA MUESTRA
+  ══════════════════════════════════════════ -->
+  <div class="slide" data-n="9">
+    <div class="slide-header">
+      <div class="slide-section-tag">El Estudio</div>
+      <h1>Muestra: trabajadores y buscadores de empleo activos — panel IPSOS</h1>
+    </div>
+    <div class="slide-body" style="gap:12px;">
+      <div style="display:flex; gap:14px; flex:1; min-height:0;">
+
+        <!-- Column 1: Demographics with sub-groups -->
+        <div style="flex:1.2; display:flex; flex-direction:column; gap:0;">
+          <div style="font-size:0.72em; font-weight:700; color:var(--navy); text-transform:uppercase; letter-spacing:1px; border-bottom:2px solid var(--navy); padding-bottom:4px; margin-bottom:6px;">Perfil demográfico</div>
+          <!-- Género -->
+          <div style="font-size:0.68em; font-weight:700; color:var(--gray); text-transform:uppercase; letter-spacing:0.8px; margin-bottom:2px;">Género</div>
+          <div style="display:flex; justify-content:space-between; align-items:center; padding:5px 0; border-bottom:1px solid #eee;">
+            <span style="font-size:0.88em; color:var(--dark);">Mujeres</span>
+            <span style="font-size:1.3em; font-weight:800; color:var(--orange);">46%</span>
+          </div>
+          <div style="display:flex; justify-content:space-between; align-items:center; padding:5px 0; border-bottom:1px solid #eee;">
+            <span style="font-size:0.88em; color:var(--dark);">Hombres</span>
+            <span style="font-size:1.3em; font-weight:800; color:var(--navy);">54%</span>
+          </div>
+          <!-- Edad -->
+          <div style="font-size:0.68em; font-weight:700; color:var(--gray); text-transform:uppercase; letter-spacing:0.8px; margin-top:8px; margin-bottom:2px;">Edad</div>
+          <div style="display:flex; justify-content:space-between; align-items:center; padding:5px 0; border-bottom:1px solid #eee;">
+            <span style="font-size:0.88em; color:var(--dark);">18–34 años</span>
+            <span style="font-size:1.3em; font-weight:800; color:var(--navy);">32%</span>
+          </div>
+          <div style="display:flex; justify-content:space-between; align-items:center; padding:5px 0; border-bottom:1px solid #eee;">
+            <span style="font-size:0.88em; color:var(--dark);">35–54 años</span>
+            <span style="font-size:1.3em; font-weight:800; color:var(--navy);">51%</span>
+          </div>
+          <div style="display:flex; justify-content:space-between; align-items:center; padding:5px 0; border-bottom:1px solid #eee;">
+            <span style="font-size:0.88em; color:var(--dark);">55+ años</span>
+            <span style="font-size:1.3em; font-weight:800; color:var(--navy);">17%</span>
+          </div>
+          <!-- Educación -->
+          <div style="font-size:0.68em; font-weight:700; color:var(--gray); text-transform:uppercase; letter-spacing:0.8px; margin-top:8px; margin-bottom:2px;">Educación</div>
+          <div style="display:flex; justify-content:space-between; align-items:center; padding:5px 0; border-bottom:1px solid #eee;">
+            <span style="font-size:0.88em; color:var(--dark);">Universitaria</span>
+            <span style="font-size:1.3em; font-weight:800; color:var(--navy);">58%</span>
+          </div>
+          <div style="display:flex; justify-content:space-between; align-items:center; padding:5px 0; border-bottom:1px solid #eee;">
+            <span style="font-size:0.88em; color:var(--dark);">Secundaria</span>
+            <span style="font-size:1.3em; font-weight:800; color:var(--navy);">39%</span>
+          </div>
+          <!-- Origen -->
+          <div style="font-size:0.68em; font-weight:700; color:var(--gray); text-transform:uppercase; letter-spacing:0.8px; margin-top:8px; margin-bottom:2px;">Origen</div>
+          <div style="display:flex; justify-content:space-between; align-items:center; padding:5px 0;">
+            <span style="font-size:0.88em; color:var(--dark);">Migrantes</span>
+            <span style="font-size:1.3em; font-weight:800; color:var(--navy);">12%</span>
+          </div>
+        </div>
+
+        <!-- Column 2: Situación laboral + Hogar -->
+        <div style="flex:0.9; display:flex; flex-direction:column; gap:0;">
+          <div style="font-size:0.72em; font-weight:700; color:var(--navy); text-transform:uppercase; letter-spacing:1px; border-bottom:2px solid var(--navy); padding-bottom:4px; margin-bottom:6px;">Situación laboral</div>
+          <div style="display:flex; justify-content:space-between; align-items:center; padding:5px 0; border-bottom:1px solid #eee;">
+            <span style="font-size:0.88em; color:var(--dark);">Empleados</span>
+            <span style="font-size:1.3em; font-weight:800; color:var(--orange);">71%</span>
+          </div>
+          <div style="display:flex; justify-content:space-between; align-items:center; padding:5px 0; border-bottom:1px solid #eee;">
+            <span style="font-size:0.88em; color:var(--dark);">No empleados</span>
+            <span style="font-size:1.3em; font-weight:800; color:var(--navy);">29%</span>
+          </div>
+          <div style="display:flex; justify-content:space-between; align-items:center; padding:5px 0; border-bottom:2px solid var(--navy);">
+            <span style="font-size:0.88em; color:var(--dark);">Horas / semana</span>
+            <span style="font-size:1.3em; font-weight:800; color:var(--orange);">38 h</span>
+          </div>
+          <!-- Hogar sub-section below -->
+          <div style="font-size:0.72em; font-weight:700; color:var(--navy); text-transform:uppercase; letter-spacing:1px; padding-top:10px; padding-bottom:4px; margin-bottom:6px;">Hogar</div>
+          <div style="display:flex; justify-content:space-between; align-items:center; padding:5px 0; border-bottom:1px solid #eee;">
+            <span style="font-size:0.88em; color:var(--dark);">Tamaño del hogar <span style="font-size:0.85em; color:var(--gray); font-weight:400;">(pers.)</span></span>
+            <span style="font-size:1.3em; font-weight:800; color:var(--navy);">4.1</span>
+          </div>
+          <div style="display:flex; justify-content:space-between; align-items:center; padding:5px 0;">
+            <span style="font-size:0.88em; color:var(--dark);">Con dependientes</span>
+            <span style="font-size:1.3em; font-weight:800; color:var(--navy);">27%</span>
+          </div>
+        </div>
+
+        <!-- Column 3: Countries -->
+        <div style="flex:1; display:flex; flex-direction:column; gap:8px;">
+          <div style="font-size:0.72em; font-weight:700; color:var(--navy); text-transform:uppercase; letter-spacing:1px; border-bottom:2px solid var(--navy); padding-bottom:4px; margin-bottom:2px;">Distribución por país</div>
+          <div style="display:flex; justify-content:space-between; align-items:center; padding:8px 0; border-bottom:1px solid #eee;">
+            <span style="font-size:0.9em; color:var(--dark);">🇲🇽 México</span>
+            <span style="font-size:1.4em; font-weight:800; color:var(--navy);">25% <span style="font-size:0.55em; color:var(--gray); font-weight:400;">(1,420)</span></span>
+          </div>
+          <div style="display:flex; justify-content:space-between; align-items:center; padding:8px 0; border-bottom:1px solid #eee; background:var(--orange-light); border-radius:6px; padding-left:6px; padding-right:6px;">
+            <span style="font-size:0.9em; color:var(--dark); font-weight:600;">🇨🇴 Colombia</span>
+            <span style="font-size:1.4em; font-weight:800; color:var(--orange);">21% <span style="font-size:0.55em; color:var(--gray); font-weight:400;">(1,192)</span></span>
+          </div>
+          <div style="display:flex; justify-content:space-between; align-items:center; padding:8px 0; border-bottom:1px solid #eee;">
+            <span style="font-size:0.9em; color:var(--dark);">🇵🇪 Perú</span>
+            <span style="font-size:1.4em; font-weight:800; color:var(--navy);">19% <span style="font-size:0.55em; color:var(--gray); font-weight:400;">(1,080)</span></span>
+          </div>
+          <div style="display:flex; justify-content:space-between; align-items:center; padding:8px 0; border-bottom:1px solid #eee;">
+            <span style="font-size:0.9em; color:var(--dark);">🇨🇱 Chile</span>
+            <span style="font-size:1.4em; font-weight:800; color:var(--navy);">18% <span style="font-size:0.55em; color:var(--gray); font-weight:400;">(1,022)</span></span>
+          </div>
+          <div style="display:flex; justify-content:space-between; align-items:center; padding:8px 0;">
+            <span style="font-size:0.9em; color:var(--dark);">🇦🇷 Argentina</span>
+            <span style="font-size:1.4em; font-weight:800; color:var(--navy);">17% <span style="font-size:0.55em; color:var(--gray); font-weight:400;">(965)</span></span>
+          </div>
+        </div>
+
+      </div>
+      <!-- Bottom insight -->
+      <div class="insight-box" style="margin-top:0; flex-shrink:0; font-size:0.9em;">
+        Reclutados por <strong>IPSOS</strong> como trabajadores activos o buscadores de empleo en Argentina, Chile, Colombia, México y Perú.
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════
+       SLIDE 10 — SECTORES Y OCUPACIONES
+  ══════════════════════════════════════════ -->
+  <div class="slide" data-n="10">
+    <div class="slide-header">
+      <div class="slide-section-tag">El Estudio</div>
+      <h1>Solo sectores donde las mujeres son minoría</h1>
+    </div>
+    <div class="slide-body">
+      <table class="simple-table">
+        <thead>
+          <tr>
+            <th>Sector</th>
+            <th>Ocupaciones estudiadas</th>
+            <th>Atributos en el "anuncio base"</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>🏗️ Construcción</strong></td>
+            <td>Albañil · Electricista</td>
+            <td>Proactivo · Autónomo · Competente</td>
+          </tr>
+          <tr>
+            <td><strong>⚙️ Manufactura</strong></td>
+            <td>Operario · Supervisor de Operaciones</td>
+            <td>Asertivo · Seguro de sí mismo · Líder</td>
+          </tr>
+          <tr>
+            <td><strong>💻 TIC</strong></td>
+            <td>Desarrollador de Software · Ingeniero</td>
+            <td>Persistente · Decidido · Competente</td>
+          </tr>
+        </tbody>
+      </table>
+      <div style="display:grid; grid-template-columns:3fr 2fr; gap:16px; margin-top:14px; align-items:start;">
+        <div class="insight-box" style="margin-top:0;">
+          <strong>Diseño deliberado:</strong> Cada participante eligió su sector antes de ver los anuncios. Solo veía vacantes del sector que escogió, con interés previo garantizado. El objetivo: exponer a mujeres a sectores masculinizados y medir si el lenguaje amplificaba o reducía esa barrera.
+        </div>
+        <div style="background:#f9f9f9; border:2px solid #ccc; border-radius:8px; padding:12px 14px;">
+          <div style="font-size:0.72em; font-weight:700; color:var(--gray); text-transform:uppercase; letter-spacing:1px; margin-bottom:6px;">Anuncio base (lenguaje masculinizado)</div>
+          <div style="font-size:0.88em; font-weight:700; color:var(--navy); margin-bottom:4px;">Supervisor de Operaciones</div>
+          <div style="font-size:0.85em; color:var(--dark); line-height:1.5;">La empresa busca un supervisor de operaciones que sea <span style="background:#ffdcdc; color:#c00; padding:1px 3px; border-radius:2px; font-weight:600;">asertivo</span> para trabajar. Horario: de lunes a viernes de 8 a.m. a 5 p.m. en el centro de la ciudad.</div>
+          <div style="font-size:0.75em; color:var(--gray); margin-top:6px;">Este es el anuncio "control" contra el que se prueban los 4 tratamientos.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════
+       SLIDE 11 — LOS 4 CAMBIOS
+  ══════════════════════════════════════════ -->
+  <div class="slide" data-n="11">
+    <div class="slide-header">
+      <div class="slide-section-tag">El Estudio</div>
+      <h1>Cuatro cambios de lenguaje, todos comparados contra el anuncio base</h1>
+    </div>
+    <div class="slide-body">
+      <div class="treatment-grid">
+        <div class="treatment-box">
+          <div class="t-label">T1</div>
+          <div class="t-name">Describir la habilidad</div>
+          <div class="t-desc">Reemplazar el atributo masculino por su definición funcional. El cargo se mantiene en masculino.</div>
+          <div class="t-example">"que <strong>tenga iniciativa y anticipe los problemas</strong>"<br><span style="color:var(--gray)">(en vez de "proactivo")</span></div>
+        </div>
+        <div class="treatment-box">
+          <div class="t-label">T2</div>
+          <div class="t-name">Eliminar la habilidad</div>
+          <div class="t-desc">Quitar completamente cualquier referencia a atributos o competencias. Solo el cargo y condiciones.</div>
+          <div class="t-example">"La empresa busca Supervisor de Operaciones. Horario lunes a viernes..."</div>
+        </div>
+        <div class="treatment-box highlight-t">
+          <div class="t-label">T3</div>
+          <div class="t-name">Declaración de Diversidad</div>
+          <div class="t-desc">El anuncio base se mantiene igual, pero se agrega una frase al final.</div>
+          <div class="t-example" style="border-color:var(--navy);">"...Estamos comprometidos a proporcionar igualdad de oportunidades en el empleo independientemente del género, orientación sexual, discapacidad, nacionalidad y edad."</div>
+        </div>
+        <div class="treatment-box highlight-t">
+          <div class="t-label">T4</div>
+          <div class="t-name">Lenguaje Inclusivo</div>
+          <div class="t-desc">Usar terminación femenina y masculina en el cargo y los atributos.</div>
+          <div class="t-example" style="border-color:var(--navy);">"...busca un <strong>supervisor(a)</strong> de operaciones que sea <strong>asertivo(a)</strong>..."</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════
+       SLIDE 12 — EJEMPLO: BASE vs T1
+  ══════════════════════════════════════════ -->
+  <div class="slide" data-n="12">
+    <div class="slide-header">
+      <div class="slide-section-tag">Ejemplos Concretos</div>
+      <h1>Esto es lo que los participantes veían: Base vs. T1</h1>
+    </div>
+    <div class="slide-body">
+      <div class="ads-grid" style="margin-bottom:16px;">
+        <div class="ad-box control">
+          <div class="ad-tag">Anuncio Base — Control</div>
+          <div class="ad-title">Supervisor de Operaciones</div>
+          <div class="ad-text">
+            "La empresa busca un supervisor de operaciones que sea
+            <span class="word-old">asertivo</span> para trabajar.
+            Horario: de lunes a viernes de 8 a.m. a 5 p.m. en el centro de la ciudad."
+          </div>
+          <div class="ad-result ctrl">♀ 36% lo elegirían · ♂ 43%</div>
+        </div>
+        <div class="vs-col">VS</div>
+        <div class="ad-box treatment">
+          <div class="ad-tag">T1 — Descripción Funcional</div>
+          <div class="ad-title">Supervisor de Operaciones</div>
+          <div class="ad-text">
+            "La empresa busca un supervisor de operaciones que sea
+            <span class="word-new">capaz de expresar sus opiniones de forma clara y respetuosa</span> para trabajar.
+            Horario: de lunes a viernes de 8 a.m. a 5 p.m. en el centro de la ciudad."
+          </div>
+          <div class="ad-result trt">♀ 77% lo elegirían · ♂ 83%</div>
+        </div>
+      </div>
+      <div class="warning-box">
+        ⚠️ El único cambio fue reemplazar "<strong>asertivo</strong>" por su definición funcional. El cargo sigue en masculino. El efecto es casi idéntico para hombres y mujeres: +41pp y +40pp respectivamente.
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════
+       SLIDE 13 — EJEMPLO: BASE vs T2
+  ══════════════════════════════════════════ -->
+  <div class="slide" data-n="13">
+    <div class="slide-header">
+      <div class="slide-section-tag">Ejemplos Concretos</div>
+      <h1>Esto es lo que los participantes veían: Base vs. T2</h1>
+    </div>
+    <div class="slide-body">
+      <div class="ads-grid" style="margin-bottom:16px;">
+        <div class="ad-box control">
+          <div class="ad-tag">Anuncio Base — Control</div>
+          <div class="ad-title">Supervisor de Operaciones</div>
+          <div class="ad-text">
+            "La empresa busca un supervisor de operaciones que sea
+            <span class="word-old">asertivo</span> para trabajar.
+            Horario: de lunes a viernes de 8 a.m. a 5 p.m. en el centro de la ciudad."
+          </div>
+          <div class="ad-result ctrl">♀ 36% lo elegirían · ♂ 43%</div>
+        </div>
+        <div class="vs-col">VS</div>
+        <div class="ad-box treatment">
+          <div class="ad-tag">T2 — Sin Descripción de Habilidad</div>
+          <div class="ad-title">Supervisor de Operaciones</div>
+          <div class="ad-text">
+            "La empresa busca <span class="word-new">Supervisor de Operaciones</span>.
+            Horario: de lunes a viernes de 8 a.m. a 5 p.m. en el centro de la ciudad."
+          </div>
+          <div class="ad-result ctrl" style="background:#fca5a5; color:#7f1d1d;">♀ 6% lo elegirían · ♂ 10%</div>
+        </div>
+      </div>
+      <div class="warning-box">
+        ⚠️ El cambio fue <strong>eliminar</strong> la referencia a la habilidad. Resultado: nadie quiere postularse. <strong>La información sobre perfil importa</strong> — lo que hay que cambiar es <em>cómo</em> se expresa, no suprimirla.
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════
+       SLIDE 14 (renumb.) — EJEMPLO: BASE vs T3
+  ══════════════════════════════════════════ -->
+  <div class="slide" data-n="12">
+    <div class="slide-header">
+      <div class="slide-section-tag">Ejemplos Concretos</div>
+      <h1>Esto es lo que los participantes veían: Base vs. T3</h1>
+    </div>
+    <div class="slide-body">
+      <div class="ads-grid" style="margin-bottom:16px;">
+        <div class="ad-box control">
+          <div class="ad-tag">Anuncio Base — Control</div>
+          <div class="ad-title">Supervisor de Operaciones</div>
+          <div class="ad-text">
+            "La empresa busca un supervisor de operaciones que sea
+            <span class="word-old">asertivo</span> para trabajar.
+            Horario: de lunes a viernes de 8 a.m. a 5 p.m. en el centro de la ciudad."
+          </div>
+          <div class="ad-result ctrl">♀ 36% lo elegirían · ♂ 43%</div>
+        </div>
+        <div class="vs-col">VS</div>
+        <div class="ad-box treatment">
+          <div class="ad-tag">T3 — Declaración de Diversidad</div>
+          <div class="ad-title">Supervisor de Operaciones</div>
+          <div class="ad-text">
+            "La empresa busca un supervisor de operaciones que sea
+            <span class="word-old">asertivo</span> para trabajar.
+            Horario: de lunes a viernes de 8 a.m. a 5 p.m. en el centro de la ciudad.
+            <span class="word-new">Estamos comprometidos a proporcionar igualdad de oportunidades en el empleo independientemente del género, orientación sexual, situación de discapacidad, nacionalidad y edad.</span>"
+          </div>
+          <div class="ad-result trt">♀ 94% lo elegirían · ♂ 81%</div>
+        </div>
+      </div>
+      <div class="warning-box">
+        ⚠️ El único cambio fue agregar esa frase al final. El cargo, la habilidad y las condiciones son idénticos.
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════
+       SLIDE 15 — EJEMPLO: BASE vs T4
+  ══════════════════════════════════════════ -->
+  <div class="slide" data-n="13">
+    <div class="slide-header">
+      <div class="slide-section-tag">Ejemplos Concretos</div>
+      <h1>Esto es lo que los participantes veían: Base vs. T4 — lenguaje inclusivo</h1>
+    </div>
+    <div class="slide-body">
+      <div class="ads-grid" style="margin-bottom:16px;">
+        <div class="ad-box control">
+          <div class="ad-tag">Anuncio Base — Control</div>
+          <div class="ad-title">Supervisor de Operaciones</div>
+          <div class="ad-text">
+            "La empresa busca un
+            <span class="word-old">supervisor</span> de operaciones que sea
+            <span class="word-old">asertivo</span> para trabajar.
+            Horario: de lunes a viernes de 8 a.m. a 5 p.m. en el centro de la ciudad."
+          </div>
+          <div class="ad-result ctrl">♀ 36% lo elegirían · ♂ 43%</div>
+        </div>
+        <div class="vs-col">VS</div>
+        <div class="ad-box treatment">
+          <div class="ad-tag">T4 — Lenguaje Inclusivo</div>
+          <div class="ad-title">Supervisor(a) de Operaciones</div>
+          <div class="ad-text">
+            "La empresa busca un
+            <span class="word-new">supervisor(a)</span> de operaciones que sea
+            <span class="word-new">asertivo(a)</span> para trabajar.
+            Horario: de lunes a viernes de 8 a.m. a 5 p.m. en el centro de la ciudad."
+          </div>
+          <div class="ad-result trt">♀ 79% lo elegirían · ♂ 53%</div>
+        </div>
+      </div>
+      <div class="warning-box">
+        ⚠️ El cambio fue agregar "<strong>(a)</strong>": <strong>supervisor(a)</strong> y <strong>asertivo(a)</strong>. Tres caracteres adicionales por palabra. Eso fue todo lo que cambió en el diseño original.
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════
+       SLIDE 14 — SECCIÓN: HALLAZGOS
+  ══════════════════════════════════════════ -->
+  <div class="slide divider" data-n="14">
+    <div class="section-number">Parte 3</div>
+    <h2>Hallazgos</h2>
+    <div class="divider-sub">¿Qué cambia cuando cambia el lenguaje?</div>
+  </div>
+
+  <!-- ══════════════════════════════════════════
+       SLIDE 15 — EL PUNTO DE PARTIDA
+  ══════════════════════════════════════════ -->
+  <div class="slide" data-n="15">
+    <div class="slide-header">
+      <div class="slide-section-tag">Hallazgos — Punto de Partida</div>
+      <h1>Con lenguaje masculinizado, las mujeres ya parten en desventaja</h1>
+    </div>
+    <div class="slide-body">
+      <div style="flex:1; display:flex; align-items:center; gap:40px;">
+        <div style="flex:1;">
+          <div class="chart-area">
+            <div class="chart-row">
+              <div class="chart-row-label">Mujeres ♀</div>
+              <div class="chart-bars-col">
+                <div class="bar-track"><div class="bar-fill women" style="width:36%">36%</div></div>
+              </div>
+            </div>
+            <div class="chart-row">
+              <div class="chart-row-label">Hombres ♂</div>
+              <div class="chart-bars-col">
+                <div class="bar-track"><div class="bar-fill men" style="width:43%">43%</div></div>
+              </div>
+            </div>
+          </div>
+          <div style="margin-top:20px; font-size:0.85em; color:var(--gray); text-align:right; padding-right:10px;">Base = 100% del ancho del gráfico</div>
+        </div>
+        <div style="flex:1; display:flex; flex-direction:column; gap:16px;">
+          <div style="text-align:center; background:var(--light-gray); border-radius:10px; padding:20px;">
+            <div style="font-size:3em; font-weight:800; color:var(--orange);">−7pp</div>
+            <div style="font-size:0.9em; color:var(--gray);">brecha inicial a favor de hombres</div>
+          </div>
+          <div class="finding-box">
+            Las mujeres son <strong>7 puntos porcentuales menos propensas</strong> que los hombres en considerar esa vacante con lenguaje masculinizado. El filtro de género opera antes de cualquier proceso de selección.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════
+       SLIDE 16 — T1: DESCRIBIR LA HABILIDAD
+  ══════════════════════════════════════════ -->
+  <div class="slide" data-n="16">
+    <div class="slide-header">
+      <div class="slide-section-tag">Hallazgos — T1</div>
+      <h1>Describir la habilidad atrae a todos por igual: +41pp mujeres, +40pp hombres</h1>
+    </div>
+    <div class="slide-body">
+      <div style="display:flex; gap:28px; align-items:stretch; flex:1;">
+        <div style="flex:2; display:flex; flex-direction:column; gap:12px;">
+          <div class="chart-area" style="flex:1;">
+            <div class="chart-row" style="margin-bottom:2px;">
+              <div class="chart-row-label" style="color:#999; font-weight:500; font-size:0.9em;">♀ Base</div>
+              <div class="chart-bars-col"><div class="bar-track"><div class="bar-fill" style="width:36%; background:#ccc; color:#666;">36 de cada 100</div></div></div>
+            </div>
+            <div class="chart-row" style="margin-bottom:14px;">
+              <div class="chart-row-label" style="color:var(--orange);">♀ Con T1<br><span style="font-weight:700; font-size:0.95em;">+41pp ↑</span></div>
+              <div class="chart-bars-col"><div class="bar-track"><div class="bar-fill women" style="width:77%">77 de cada 100</div></div></div>
+            </div>
+            <div class="chart-row" style="margin-bottom:2px;">
+              <div class="chart-row-label" style="color:#999; font-weight:500; font-size:0.9em;">♂ Base</div>
+              <div class="chart-bars-col"><div class="bar-track"><div class="bar-fill" style="width:43%; background:#bbb; color:#666;">43 de cada 100</div></div></div>
+            </div>
+            <div class="chart-row">
+              <div class="chart-row-label" style="color:var(--navy);">♂ Con T1<br><span style="font-weight:700; font-size:0.95em;">+40pp ↑</span></div>
+              <div class="chart-bars-col"><div class="bar-track"><div class="bar-fill men" style="width:83%">83 de cada 100</div></div></div>
+            </div>
+          </div>
+        </div>
+        <div style="flex:1; display:flex; flex-direction:column; gap:14px; justify-content:center;">
+          <div class="insight-box" style="margin-top:0;">
+            El efecto es casi idéntico para hombres y mujeres: <strong>+41pp y +40pp</strong>. Esta intervención <strong>cierra la brecha</strong> sin perjudicar a nadie.
+          </div>
+          <div class="finding-box" style="margin-top:0;">
+            <strong>TIP para agencias de empleo:</strong><br>
+            Pedirle a la empresa que explique qué significa "proactivo" en ese puesto específico es una orientación concreta, gratuita y de alto impacto.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════
+       SLIDE 17 — T2: ELIMINAR LA HABILIDAD
+  ══════════════════════════════════════════ -->
+  <div class="slide" data-n="17">
+    <div class="slide-header">
+      <div class="slide-section-tag">Hallazgos — T2</div>
+      <h1>Vacantes vagas no atraen a nadie: −30pp mujeres, −33pp hombres</h1>
+    </div>
+    <div class="slide-body">
+      <div style="display:flex; gap:28px; align-items:stretch; flex:1;">
+        <div style="flex:2; display:flex; flex-direction:column; gap:12px;">
+          <div class="chart-area" style="flex:1;">
+            <div class="chart-row" style="margin-bottom:2px;">
+              <div class="chart-row-label" style="color:#999; font-weight:500; font-size:0.9em;">♀ Base</div>
+              <div class="chart-bars-col"><div class="bar-track"><div class="bar-fill" style="width:36%; background:#ccc; color:#666;">36 de cada 100</div></div></div>
+            </div>
+            <div class="chart-row" style="margin-bottom:14px;">
+              <div class="chart-row-label" style="color:#c00;">♀ Con T2<br><span style="font-weight:700; font-size:0.95em;">−30pp ↓</span></div>
+              <div class="chart-bars-col"><div class="bar-track"><div class="bar-fill" style="width:6%; min-width:48px; background:#ef4444; color:#fff;">6</div></div></div>
+            </div>
+            <div class="chart-row" style="margin-bottom:2px;">
+              <div class="chart-row-label" style="color:#999; font-weight:500; font-size:0.9em;">♂ Base</div>
+              <div class="chart-bars-col"><div class="bar-track"><div class="bar-fill" style="width:43%; background:#bbb; color:#666;">43 de cada 100</div></div></div>
+            </div>
+            <div class="chart-row">
+              <div class="chart-row-label" style="color:#c00;">♂ Con T2<br><span style="font-weight:700; font-size:0.95em;">−33pp ↓</span></div>
+              <div class="chart-bars-col"><div class="bar-track"><div class="bar-fill" style="width:10%; min-width:52px; background:#475569; color:#fff;">10</div></div></div>
+            </div>
+          </div>
+        </div>
+        <div style="flex:1; display:flex; flex-direction:column; gap:14px; justify-content:center;">
+          <div class="insight-box" style="margin-top:0;">
+            <strong>La información sobre perfil importa.</strong> Sin ella, ni hombres ni mujeres quieren postularse. La vacante vacía no funciona para nadie.
+          </div>
+          <div class="warning-box" style="margin-top:0;">
+            ⚠️ <strong>Conclusión clave:</strong> Una vacante sin información del perfil no atrae a nadie — ni mujeres ni hombres. El camino no es eliminar el contenido, sino redactarlo mejor.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════
+       SLIDE 18 — T3: DECLARACIÓN DE DIVERSIDAD
+  ══════════════════════════════════════════ -->
+  <div class="slide" data-n="18">
+    <div class="slide-header">
+      <div class="slide-section-tag">Hallazgos — T3</div>
+      <h1>La declaración de diversidad: el mayor impacto para mujeres (+58pp)</h1>
+    </div>
+    <div class="slide-body">
+      <div style="display:flex; gap:28px; align-items:stretch; flex:1;">
+        <div style="flex:2; display:flex; flex-direction:column; gap:12px;">
+          <div class="chart-area" style="flex:1;">
+            <div class="chart-row" style="margin-bottom:2px;">
+              <div class="chart-row-label" style="color:#999; font-weight:500; font-size:0.9em;">♀ Base</div>
+              <div class="chart-bars-col"><div class="bar-track"><div class="bar-fill" style="width:36%; background:#ccc; color:#666;">36 de cada 100</div></div></div>
+            </div>
+            <div class="chart-row" style="margin-bottom:14px;">
+              <div class="chart-row-label" style="color:var(--orange);">♀ Con T3<br><span style="font-weight:700; font-size:0.95em;">+58pp ★ ↑</span></div>
+              <div class="chart-bars-col"><div class="bar-track"><div class="bar-fill women" style="width:94%">94 de cada 100</div></div></div>
+            </div>
+            <div class="chart-row" style="margin-bottom:2px;">
+              <div class="chart-row-label" style="color:#999; font-weight:500; font-size:0.9em;">♂ Base</div>
+              <div class="chart-bars-col"><div class="bar-track"><div class="bar-fill" style="width:43%; background:#bbb; color:#666;">43 de cada 100</div></div></div>
+            </div>
+            <div class="chart-row">
+              <div class="chart-row-label" style="color:var(--navy);">♂ Con T3<br><span style="font-weight:700; font-size:0.95em;">+38pp ↑</span></div>
+              <div class="chart-bars-col"><div class="bar-track"><div class="bar-fill men" style="width:81%">81 de cada 100</div></div></div>
+            </div>
+          </div>
+        </div>
+        <div style="flex:1; display:flex; flex-direction:column; gap:14px; justify-content:center;">
+          <div style="text-align:center; background:var(--orange-light); border-radius:10px; padding:16px;">
+            <div style="font-size:2.5em; font-weight:800; color:var(--orange);">+20pp</div>
+            <div style="font-size:0.9em; color:var(--gray);">efecto extra para mujeres<br>vs. hombres</div>
+          </div>
+          <div class="insight-box" style="margin-top:0;">
+            Los hombres también suben +38pp. <strong>Nadie pierde.</strong> La señal de diversidad beneficia a todos.
+          </div>
+          <div class="finding-box" style="margin-top:0;">
+            <strong>TIP para agencias de empleo:</strong><br>
+            Agregar una cláusula de igualdad de oportunidades al final de cada vacante es automático si se configura como plantilla.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════
+       SLIDE 19 — T4: LENGUAJE INCLUSIVO ← CLAVE
+  ══════════════════════════════════════════ -->
+  <div class="slide" data-n="19">
+    <div class="slide-header">
+      <div class="slide-section-tag">Hallazgos — T4 — HALLAZGO CENTRAL</div>
+      <h1>El lenguaje inclusivo ayuda a las mujeres y NO perjudica a los hombres</h1>
+    </div>
+    <div class="slide-body">
+      <div style="display:flex; gap:28px; align-items:stretch; flex:1;">
+        <div style="flex:2; display:flex; flex-direction:column; gap:12px;">
+          <div class="chart-area" style="flex:1;">
+            <div class="chart-row" style="margin-bottom:2px;">
+              <div class="chart-row-label" style="color:#999; font-weight:500; font-size:0.9em;">♀ Base</div>
+              <div class="chart-bars-col"><div class="bar-track"><div class="bar-fill" style="width:36%; background:#ccc; color:#666;">36 de cada 100</div></div></div>
+            </div>
+            <div class="chart-row" style="margin-bottom:14px;">
+              <div class="chart-row-label" style="color:var(--orange);">♀ Con T4<br><span style="font-weight:700; font-size:0.95em;">+43pp ↑</span></div>
+              <div class="chart-bars-col"><div class="bar-track"><div class="bar-fill women" style="width:79%">79 de cada 100</div></div></div>
+            </div>
+            <div class="chart-row" style="margin-bottom:2px;">
+              <div class="chart-row-label" style="color:#999; font-weight:500; font-size:0.9em;">♂ Base</div>
+              <div class="chart-bars-col"><div class="bar-track"><div class="bar-fill" style="width:43%; background:#bbb; color:#666;">43 de cada 100</div></div></div>
+            </div>
+            <div class="chart-row">
+              <div class="chart-row-label" style="color:var(--navy);">♂ Con T4<br><span style="font-weight:700; font-size:0.95em;">+10pp ↑ sin backlash</span></div>
+              <div class="chart-bars-col"><div class="bar-track"><div class="bar-fill men" style="width:53%">53 de cada 100</div></div></div>
+            </div>
+          </div>
+        </div>
+        <div style="flex:1; display:flex; flex-direction:column; gap:14px; justify-content:center;">
+          <div class="finding-box" style="margin-top:0;">
+            <strong>El "backlash" masculino no existe en los datos.</strong><br><br>
+            Los hombres también prefieren más el anuncio inclusivo (+10pp). No hay penalización. El temor a perder candidatos masculinos no está respaldado por evidencia.
+          </div>
+          <div class="insight-box" style="margin-top:0;">
+            <strong>TIP para agencias de empleo:</strong><br>
+            Recomendar "supervisor(a)" en lugar de "supervisor" en los cargos es un cambio de 3 caracteres. El retorno es grande.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════
+       SLIDE 20 — RESUMEN VISUAL: TODOS LOS TRATAMIENTOS
+  ══════════════════════════════════════════ -->
+  <div class="slide" data-n="20">
+    <div class="slide-header">
+      <div class="slide-section-tag">Hallazgos — Resumen</div>
+      <h1>El panorama completo: todos los tratamientos de un vistazo</h1>
+    </div>
+    <div class="slide-body">
+      <div class="chart-area">
+        <div style="font-size:0.8em; color:var(--gray); margin-bottom:6px; font-weight:600;">Tasa de selección del anuncio (% de veces que se elige)</div>
+
+        <div class="chart-row">
+          <div class="chart-row-label" style="font-weight:700;">T3: Diversidad</div>
+          <div class="chart-bars-col">
+            <div class="bar-track"><div class="bar-fill women" style="width:94%">♀ 94% (+58pp)</div></div>
+            <div class="bar-track"><div class="bar-fill men"   style="width:81%">♂ 81% (+38pp)</div></div>
+          </div>
+        </div>
+
+        <div class="chart-row">
+          <div class="chart-row-label" style="font-weight:700;">T1: Descripción</div>
+          <div class="chart-bars-col">
+            <div class="bar-track"><div class="bar-fill women" style="width:77%">♀ 77% (+41pp)</div></div>
+            <div class="bar-track"><div class="bar-fill men"   style="width:83%">♂ 83% (+40pp)</div></div>
+          </div>
+        </div>
+
+        <div class="chart-row">
+          <div class="chart-row-label" style="font-weight:700;">T4: Inclusivo</div>
+          <div class="chart-bars-col">
+            <div class="bar-track"><div class="bar-fill women" style="width:79%">♀ 79% (+43pp)</div></div>
+            <div class="bar-track"><div class="bar-fill men"   style="width:53%">♂ 53% (+10pp)</div></div>
+          </div>
+        </div>
+
+        <div class="chart-row">
+          <div class="chart-row-label" style="color:var(--gray);">Base (masculino)</div>
+          <div class="chart-bars-col">
+            <div class="bar-track"><div class="bar-fill" style="width:36%; background:#aaa;">♀ 36% (referencia)</div></div>
+            <div class="bar-track"><div class="bar-fill" style="width:43%; background:#888;">♂ 43% (referencia)</div></div>
+          </div>
+        </div>
+
+        <div class="chart-row">
+          <div class="chart-row-label" style="color:var(--gray);">T2: Sin habilidad</div>
+          <div class="chart-bars-col">
+            <div class="bar-track"><div class="bar-fill" style="width:6%; background:#ccc; min-width:36px; color:#333;">♀ 6%</div></div>
+            <div class="bar-track"><div class="bar-fill" style="width:10%; background:#bbb; min-width:40px; color:#333;">♂ 10%</div></div>
+          </div>
+        </div>
+
+        <div class="chart-legend">
+          <span><span class="legend-dot" style="background:var(--orange);"></span>Mujeres (♀)</span>
+          <span><span class="legend-dot" style="background:var(--navy);"></span>Hombres (♂)</span>
+          <span style="margin-left:16px; color:var(--dark);">En <strong>ningún caso</strong> los cambios de lenguaje perjudican a los hombres.</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════
+       SLIDE 21 — COLOMBIA
+  ══════════════════════════════════════════ -->
+  <div class="slide" data-n="21">
+    <div class="slide-header">
+      <div class="slide-section-tag">Colombia</div>
+      <h1>En Colombia: resultados igualmente fuertes</h1>
+    </div>
+    <div class="slide-body">
+      <div class="chart-area">
+        <div style="font-size:0.82em; color:var(--gray); margin-bottom:8px; font-weight:600;">Colombia — Tasa de selección (N = 1,192 participantes)</div>
+
+        <div class="chart-row">
+          <div class="chart-row-label" style="font-weight:700;">T3: Diversidad</div>
+          <div class="chart-bars-col">
+            <div class="bar-track"><div class="bar-fill women" style="width:94%">♀ 94% (+56pp)</div></div>
+            <div class="bar-track"><div class="bar-fill men"   style="width:87%">♂ 87% (+44pp)</div></div>
+          </div>
+        </div>
+
+        <div class="chart-row">
+          <div class="chart-row-label" style="font-weight:700;">T1: Descripción</div>
+          <div class="chart-bars-col">
+            <div class="bar-track"><div class="bar-fill women" style="width:75%">♀ 75% (+37pp)</div></div>
+            <div class="bar-track"><div class="bar-fill men"   style="width:86%">♂ 86% (+43pp)</div></div>
+          </div>
+        </div>
+
+        <div class="chart-row">
+          <div class="chart-row-label" style="font-weight:700;">T4: Inclusivo</div>
+          <div class="chart-bars-col">
+            <div class="bar-track"><div class="bar-fill women" style="width:74%">♀ 74% (+36pp)</div></div>
+            <div class="bar-track"><div class="bar-fill men"   style="width:51%">♂ 51% (+8pp)</div></div>
+          </div>
+        </div>
+
+        <div class="chart-row">
+          <div class="chart-row-label" style="color:var(--gray);">Base (masculino)</div>
+          <div class="chart-bars-col">
+            <div class="bar-track"><div class="bar-fill" style="width:38%; background:#aaa;">♀ 38%</div></div>
+            <div class="bar-track"><div class="bar-fill" style="width:43%; background:#888;">♂ 43%</div></div>
+          </div>
+        </div>
+      </div>
+      <div class="insight-box" style="margin-top:12px;">
+        Los resultados de Colombia son prácticamente idénticos al promedio regional. En T3, las mujeres colombianas llegan al 94% — el mismo resultado que el total. <strong>No es un fenómeno lejano: es aquí, en Bogotá.</strong>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════
+       SLIDE 22 — SECCIÓN: MÁS ALLÁ DEL PROMEDIO
+  ══════════════════════════════════════════ -->
+  <div class="slide divider" data-n="22">
+    <div class="section-number">Parte 4</div>
+    <h2>¿Funciona para todos?</h2>
+    <div class="divider-sub">Consistencia y mecanismo</div>
+  </div>
+
+  <!-- ══════════════════════════════════════════
+       SLIDE 23 — CONSISTENTE EN TODOS LOS GRUPOS
+  ══════════════════════════════════════════ -->
+  <div class="slide" data-n="23">
+    <div class="slide-header">
+      <div class="slide-section-tag">Robustez</div>
+      <h1>Los efectos no varían por perfil demográfico</h1>
+    </div>
+    <div class="slide-body">
+      <div class="two-col">
+        <div>
+          <p style="font-size:1em; font-weight:700; color:var(--navy); margin-bottom:14px;">✅ Consistente en todos estos grupos:</p>
+          <ul class="big-bullets" style="gap:12px;">
+            <li>Por <span class="highlight">nivel educativo</span>: sin secundaria, secundaria, universitaria — iguales.</li>
+            <li>Por <span class="highlight">situación de empleo</span>: empleados y desempleados responden igual.</li>
+            <li>Por <span class="highlight">edad</span>: jóvenes (18–34), adultos (35–54) y mayores (55+).*</li>
+            <li>Por <span class="highlight">condición migrante</span>: locales y migrantes iguales.</li>
+            <li>Por <span class="highlight">sector</span>: Construcción, Manufactura y TIC — todos consistentes.</li>
+          </ul>
+          <div style="font-size:0.8em; color:var(--gray); margin-top:10px;">* Excepción menor: hombres mayores de 55 son más sensibles a vacantes sin información (T2).</div>
+        </div>
+        <div>
+          <div class="finding-box">
+            <strong>¿Por qué importa esto?</strong><br><br>
+            La sensibilidad al lenguaje de vacantes no es un privilegio de mujeres calificadas ni de cierto grupo etario. Es una respuesta <strong>universal</strong> a señales de pertenencia o exclusión en el texto.
+          </div>
+          <div class="insight-box" style="margin-top:16px;">
+            <strong>Para la ADE:</strong> Cambiar el lenguaje de una vacante no es una medida para un grupo específico. Beneficia a todos los buscadores que la lean.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════
+       SLIDE 24 — EL MECANISMO
+  ══════════════════════════════════════════ -->
+  <div class="slide" data-n="24">
+    <div class="slide-header">
+      <div class="slide-section-tag">Mecanismo</div>
+      <h1>¿Por qué funciona? La percepción del sesgo de género</h1>
+    </div>
+    <div class="slide-body" style="gap:14px;">
+      <p style="font-size:1em; color:var(--dark); line-height:1.5;">Preguntamos a los participantes si percibían cada habilidad como más "masculina", "femenina" o "neutral". Esto reveló el mecanismo detrás de los resultados:</p>
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:14px; flex:1;">
+        <div style="background:#fef3c7; border-radius:10px; padding:18px; border-left:5px solid #f59e0b;">
+          <div style="font-size:0.82em; font-weight:700; color:#92400e; text-transform:uppercase; letter-spacing:1px; margin-bottom:8px;">Habilidad percibida como MASCULINA ("asertivo", "líder")</div>
+          <p style="font-size:1em; color:var(--dark); line-height:1.5;">El efecto del lenguaje inclusivo <strong>cae a casi cero para hombres</strong>: lo perciben como una "corrección" innecesaria y reaccionan con indiferencia.<br>
+          Para las mujeres el efecto <strong>se mantiene fuerte</strong>.</p>
+        </div>
+        <div style="background:#dcfce7; border-radius:10px; padding:18px; border-left:5px solid #16a34a;">
+          <div style="font-size:0.82em; font-weight:700; color:#166534; text-transform:uppercase; letter-spacing:1px; margin-bottom:8px;">Habilidad percibida como NEUTRAL</div>
+          <p style="font-size:1em; color:var(--dark); line-height:1.5;">Los hombres también responden positivamente al lenguaje inclusivo — porque no sienten que el cambio va "en su contra".</p>
+        </div>
+      </div>
+      <div class="finding-box" style="margin-top:0;">
+        <strong>TIP para agencias de empleo:</strong> El lenguaje inclusivo es <em>más</em> necesario en sectores masculinizados (construcción, manufactura, TIC) — precisamente los sectores donde mayor brecha hay. El potencial de impacto es mayor exactamente donde más falta hace.
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════
+       SLIDE 25 — SECCIÓN: ¿QUÉ SIGNIFICA PARA LA ADE?
+  ══════════════════════════════════════════ -->
+  <div class="slide divider" data-n="25">
+    <div class="section-number">Parte 5</div>
+    <h2>¿Qué significa esto en la práctica?</h2>
+    <div class="divider-sub">Implicaciones para la Agencia Distrital de Empleo</div>
+  </div>
+
+  <!-- ══════════════════════════════════════════
+       SLIDE 26 — NÚMEROS CONCRETOS
+  ══════════════════════════════════════════ -->
+  <div class="slide" data-n="26">
+    <div class="slide-header">
+      <div class="slide-section-tag">Implicaciones</div>
+      <h1>De 36 a 94: las mismas vacantes, muchas más candidatas</h1>
+    </div>
+    <div class="slide-body">
+      <div style="flex:1; display:flex; flex-direction:column; justify-content:center; gap:16px;">
+        <p style="font-size:1.1em; color:var(--dark);">Supongamos que la ADE facilita <strong>100 vacantes</strong> en sectores masculinizados con el lenguaje actual. Por cada 100 mujeres que las ven:</p>
+        <div class="big-numbers-row">
+          <div class="big-number-box">
+            <div class="num orange">36</div>
+            <div class="label">considerarían postularse<br>con lenguaje base actual</div>
+          </div>
+          <div style="display:flex; align-items:center; font-size:2em; color:var(--gray);">→</div>
+          <div class="big-number-box" style="background:var(--orange-light); border:2px solid var(--orange);">
+            <div class="num orange">79</div>
+            <div class="label">con lenguaje inclusivo (T4)<br><em>+43 mujeres adicionales</em></div>
+          </div>
+          <div style="display:flex; align-items:center; font-size:2em; color:var(--gray);">o</div>
+          <div class="big-number-box" style="background:var(--orange-light); border:2px solid var(--orange);">
+            <div class="num orange">94</div>
+            <div class="label">con declaración de diversidad (T3)<br><em>+58 mujeres adicionales</em></div>
+          </div>
+        </div>
+        <div class="finding-box">
+          Las mismas empresas. Las mismas vacantes. Las mismas condiciones laborales. <strong>Solo cambió el texto del anuncio.</strong> — Y los hombres no bajan: suben de 43 a 53 (T4) o a 81 (T3).
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════
+       SLIDE 26b — T1 Y T2: NÚMEROS CONCRETOS
+  ══════════════════════════════════════════ -->
+  <div class="slide" data-n="26b">
+    <div class="slide-header">
+      <div class="slide-section-tag">Implicaciones</div>
+      <h1>T1 también duplica candidatas — y T2 nos enseña que la información sí importa</h1>
+    </div>
+    <div class="slide-body">
+      <div class="big-numbers-row" style="margin-bottom:16px;">
+        <div class="big-number-box">
+          <div class="num navy">36</div>
+          <div class="label">de cada 100 mujeres<br>con lenguaje base</div>
+        </div>
+        <div style="display:flex; align-items:center; font-size:2em; color:var(--gray);">→</div>
+        <div class="big-number-box" style="background:var(--orange-light); border:2px solid var(--orange);">
+          <div class="num orange">77</div>
+          <div class="label">con descripción funcional (T1)<br><em>+41 mujeres adicionales</em></div>
+        </div>
+        <div style="display:flex; align-items:center; font-size:2em; color:var(--gray);">pero</div>
+        <div class="big-number-box" style="background:#fef2f2; border:2px solid #ef4444;">
+          <div class="num" style="color:#c00;">6</div>
+          <div class="label">si se elimina la habilidad (T2)<br><em>−30 mujeres</em></div>
+        </div>
+      </div>
+      <div class="finding-box">
+        T1 casi duplica la tasa de postulación femenina con solo describir qué significa "asertivo" en ese puesto. T2 confirma que el problema no es mencionar la habilidad — es <strong>cómo se expresa</strong>. Suprimir la información no ayuda a nadie: los hombres también caen a 10.
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════
+       SLIDE 27 — EL COSTO ES MÍNIMO
+  ══════════════════════════════════════════ -->
+  <div class="slide" data-n="27">
+    <div class="slide-header">
+      <div class="slide-section-tag">Implicaciones</div>
+      <h1>El costo de implementar estos cambios es mínimo</h1>
+    </div>
+    <div class="slide-body">
+      <div class="three-col">
+        <div style="background:var(--light-gray); border-radius:10px; padding:20px; display:flex; flex-direction:column; gap:10px; border-top:4px solid var(--orange);">
+          <div style="font-size:0.75em; font-weight:700; color:var(--orange); letter-spacing:1.5px; text-transform:uppercase;">T3 — Declaración de diversidad</div>
+          <div style="font-size:1em; font-weight:700; color:var(--navy);">Agregar una frase estándar</div>
+          <div style="font-size:0.85em; color:var(--gray); line-height:1.5;">Si se implementa como plantilla en el sistema, el tiempo por vacante es <strong>cero</strong>. Se agrega automáticamente.</div>
+          <div style="font-size:0.85em; color:var(--dark); background:white; border-radius:5px; padding:8px; border-left:3px solid var(--orange);">Costo: configurar la plantilla una vez.</div>
+        </div>
+        <div style="background:var(--light-gray); border-radius:10px; padding:20px; display:flex; flex-direction:column; gap:10px; border-top:4px solid var(--navy);">
+          <div style="font-size:0.75em; font-weight:700; color:var(--navy); letter-spacing:1.5px; text-transform:uppercase;">T4 — Lenguaje inclusivo</div>
+          <div style="font-size:1em; font-weight:700; color:var(--navy);">Cambiar el cargo y el atributo</div>
+          <div style="font-size:0.85em; color:var(--gray); line-height:1.5;">"supervisor" → "supervisor/a". Dos ediciones por vacante. <strong>3–5 minutos</strong> si es manual; cero si hay revisión automatizada.</div>
+          <div style="font-size:0.85em; color:var(--dark); background:white; border-radius:5px; padding:8px; border-left:3px solid var(--navy);">Costo: protocolo de edición o regla automática.</div>
+        </div>
+        <div style="background:var(--light-gray); border-radius:10px; padding:20px; display:flex; flex-direction:column; gap:10px; border-top:4px solid var(--navy);">
+          <div style="font-size:0.75em; font-weight:700; color:var(--navy); letter-spacing:1.5px; text-transform:uppercase;">T1 — Descripción funcional</div>
+          <div style="font-size:1em; font-weight:700; color:var(--navy);">Banco de definiciones</div>
+          <div style="font-size:0.85em; color:var(--gray); line-height:1.5;">Un banco de 10–15 habilidades con su definición funcional, elaborado una vez, reutilizable en todas las vacantes. Trabajo de <strong>medio día</strong>.</div>
+          <div style="font-size:0.85em; color:var(--dark); background:white; border-radius:5px; padding:8px; border-left:3px solid var(--navy);">Costo: construir el banco de definiciones.</div>
+        </div>
+      </div>
+      <div class="insight-box" style="margin-top:16px;">
+        <strong>Ninguna de estas intervenciones requiere cambiar procesos, tecnología compleja ni estructura organizacional.</strong> Son cambios de texto.
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════
+       SLIDE 28 — TRES CANALES DE ACCIÓN
+  ══════════════════════════════════════════ -->
+  <div class="slide" data-n="28">
+    <div class="slide-header">
+      <div class="slide-section-tag">Implicaciones</div>
+      <h1>La ADE puede actuar por tres canales</h1>
+    </div>
+    <div class="slide-body">
+      <div class="three-col">
+        <div class="channel-box">
+          <div class="ch-num">1</div>
+          <div class="ch-title">Vacantes propias y facilitadas</div>
+          <div class="ch-desc">Adoptar un protocolo de lenguaje inclusivo para todas las vacantes que la ADE publica o facilita. Impacto inmediato, directo y sin costo para las empresas.</div>
+        </div>
+        <div class="channel-box" style="background:var(--orange-light);">
+          <div class="ch-num" style="color:var(--orange);">2</div>
+          <div class="ch-title">Asesoría a empresas</div>
+          <div class="ch-desc">Cuando una empresa llega a publicar una vacante, sugerir ajustes de lenguaje: "Con este cambio, su vacante llegará a más candidatas calificadas — sin perder candidatos masculinos."</div>
+        </div>
+        <div class="channel-box">
+          <div class="ch-num">3</div>
+          <div class="ch-title">Orientación a buscadoras</div>
+          <div class="ch-desc">Capacitar a mujeres en búsqueda activa para entender que el lenguaje masculinizado no significa "solo para hombres" — aumenta su tasa de postulación a sectores no-tradicionales.</div>
+        </div>
+      </div>
+      <div class="finding-box" style="margin-top:18px;">
+        Los tres canales son complementarios. El más fácil de empezar hoy es el primero. El de mayor impacto sistémico es el segundo (cambia las prácticas de las empresas).
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════
+       SLIDE 29 — SECCIÓN: LIMITACIONES
+  ══════════════════════════════════════════ -->
+  <div class="slide divider" data-n="29">
+    <div class="section-number">Parte 6</div>
+    <h2>Limitaciones y conclusiones</h2>
+  </div>
+
+  <!-- ══════════════════════════════════════════
+       SLIDE 30 — LIMITACIONES
+  ══════════════════════════════════════════ -->
+  <div class="slide" data-n="30">
+    <div class="slide-header">
+      <div class="slide-section-tag">Limitaciones</div>
+      <h1>Qué nos dice este estudio — y qué no</h1>
+    </div>
+    <div class="slide-body" style="gap:14px;">
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:18px; flex:1;">
+        <div style="background:#fef2f2; border-radius:10px; padding:18px 20px; border-top:4px solid #ef4444;">
+          <p style="font-size:0.85em; font-weight:700; color:#991b1b; text-transform:uppercase; letter-spacing:1px; margin-bottom:12px;">Lo que este estudio NO puede decir</p>
+          <ul style="list-style:none; display:flex; flex-direction:column; gap:10px;">
+            <li style="font-size:0.98em; color:var(--dark); line-height:1.4; padding-left:20px; position:relative;"><span style="position:absolute;left:0;color:#ef4444;">✗</span> <strong>No es comportamiento real.</strong> Medimos preferencias, no postulaciones efectivas.</li>
+            <li style="font-size:0.98em; color:var(--dark); line-height:1.4; padding-left:20px; position:relative;"><span style="position:absolute;left:0;color:#ef4444;">✗</span> <strong>No mide contratación.</strong> Más candidatas no garantiza más contrataciones si hay otros sesgos.</li>
+            <li style="font-size:0.98em; color:var(--dark); line-height:1.4; padding-left:20px; position:relative;"><span style="position:absolute;left:0;color:#ef4444;">✗</span> <strong>Muestra online.</strong> Puede sobre-representar a usuarios con acceso a internet.</li>
+          </ul>
+        </div>
+        <div style="background:#f0fdf4; border-radius:10px; padding:18px 20px; border-top:4px solid #16a34a;">
+          <p style="font-size:0.85em; font-weight:700; color:#166534; text-transform:uppercase; letter-spacing:1px; margin-bottom:12px;">Lo que sí podemos afirmar</p>
+          <ul style="list-style:none; display:flex; flex-direction:column; gap:10px;">
+            <li style="font-size:0.98em; color:var(--dark); line-height:1.4; padding-left:20px; position:relative;"><span style="position:absolute;left:0;color:#16a34a;">✔</span> El lenguaje importa para las decisiones de postulación.</li>
+            <li style="font-size:0.98em; color:var(--dark); line-height:1.4; padding-left:20px; position:relative;"><span style="position:absolute;left:0;color:#16a34a;">✔</span> Efectos <strong>grandes, robustos y replicables</strong> en 5 países.</li>
+            <li style="font-size:0.98em; color:var(--dark); line-height:1.4; padding-left:20px; position:relative;"><span style="position:absolute;left:0;color:#16a34a;">✔</span> Los cambios benefician a mujeres <strong>sin perjudicar a hombres</strong>.</li>
+            <li style="font-size:0.98em; color:var(--dark); line-height:1.4; padding-left:20px; position:relative;"><span style="position:absolute;left:0;color:#16a34a;">✔</span> Resultados consistentes para Colombia.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="insight-box" style="margin-top:0;">
+        La forma de superar estas limitaciones es exactamente el experimento que proponemos: medir comportamiento real en la plataforma de la ADE.
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════
+       SLIDE 31 — CUATRO CONCLUSIONES
+  ══════════════════════════════════════════ -->
+  <div class="slide" data-n="31">
+    <div class="slide-header">
+      <div class="slide-section-tag">Conclusiones</div>
+      <h1>Cuatro conclusiones para llevar de esta charla</h1>
+    </div>
+    <div class="slide-body">
+      <div class="conclusion-list">
+        <div class="conclusion-item">
+          <div class="conclusion-num">1</div>
+          <div class="conclusion-text"><strong>El lenguaje de las vacantes actúa como filtro antes de la selección.</strong> Las mujeres son 7pp menos propensas que los hombres a considerar una vacante con lenguaje masculinizado. La barrera opera antes de que comience cualquier proceso formal.</div>
+        </div>
+        <div class="conclusion-item">
+          <div class="conclusion-num">2</div>
+          <div class="conclusion-text"><strong>Los cambios son fáciles y baratos.</strong> Describir habilidades (+41pp mujeres), declaración de diversidad (+58pp mujeres), lenguaje inclusivo (+43pp mujeres). Todos de bajo costo de implementación.</div>
+        </div>
+        <div class="conclusion-item">
+          <div class="conclusion-num" style="background:var(--orange);">3</div>
+          <div class="conclusion-text"><strong>El lenguaje inclusivo no penaliza a los hombres.</strong> Este es el hallazgo más importante para política: el temor al "backlash" masculino no tiene sustento en los datos. Los hombres también prefieren anuncios inclusivos (+10pp en T4, +38pp en T3).</div>
+        </div>
+        <div class="conclusion-item">
+          <div class="conclusion-num">4</div>
+          <div class="conclusion-text"><strong>Los resultados son robustos y aplicables en Colombia.</strong> Consistentes en 5 países, en todos los sectores, en todos los grupos demográficos. Los resultados de Colombia son idénticos al promedio regional.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════
+       SLIDE 32 — SECCIÓN: PROPUESTA EXPERIMENTAL
+  ══════════════════════════════════════════ -->
+  <div class="slide divider" data-n="32">
+    <div class="section-number">Parte 7</div>
+    <h2>Una propuesta de colaboración</h2>
+    <div class="divider-sub">¿Qué podríamos aprender juntos?</div>
+  </div>
+
+  <!-- ══════════════════════════════════════════
+       SLIDE 33 — LA OPORTUNIDAD
+  ══════════════════════════════════════════ -->
+  <div class="slide" data-n="33">
+    <div class="slide-header">
+      <div class="slide-section-tag">Propuesta</div>
+      <h1>La ADE tiene lo que ningún laboratorio tiene</h1>
+    </div>
+    <div class="slide-body" style="gap:16px;">
+      <div style="display:flex; gap:18px; align-items:stretch; flex:1;">
+        <div style="flex:1; display:flex; flex-direction:column; gap:12px; justify-content:center;">
+          <div style="background:var(--light-gray); border-radius:10px; padding:16px 18px; border-left:5px solid var(--gray);">
+            <div style="font-size:0.8em; font-weight:700; color:var(--gray); text-transform:uppercase; letter-spacing:1px; margin-bottom:6px;">Nuestro estudio</div>
+            <div style="font-size:1em; color:var(--dark); line-height:1.5;">Preferencias <strong>declaradas</strong> — personas eligiendo en una pantalla. Valioso, pero no es una postulación real.</div>
+          </div>
+          <div style="font-size:2em; text-align:center; color:var(--orange);">↓</div>
+          <div style="background:var(--orange-light); border-radius:10px; padding:16px 18px; border-left:5px solid var(--orange);">
+            <div style="font-size:0.8em; font-weight:700; color:var(--orange); text-transform:uppercase; letter-spacing:1px; margin-bottom:6px;">Lo que la ADE puede hacer</div>
+            <div style="font-size:1em; color:var(--dark); line-height:1.5;">Evidencia de <strong>comportamiento real</strong>: vacantes reales, candidatos reales, datos de postulación y contratación. La más valiosa para política pública.</div>
+          </div>
+        </div>
+        <div style="flex:1; background:var(--navy); border-radius:12px; padding:24px; color:white; display:flex; flex-direction:column; justify-content:center; gap:16px;">
+          <div style="font-size:1em; color:rgba(255,255,255,0.7); line-height:1.4;">La pregunta que podríamos responder juntos:</div>
+          <div style="font-size:1.2em; font-weight:700; line-height:1.5; color:var(--orange);">"¿Cambiar el lenguaje de las vacantes en la plataforma ADE aumenta la tasa de postulación de mujeres a empleos en sectores masculinizados?"</div>
+          <div style="font-size:0.9em; color:rgba(255,255,255,0.65); border-top:1px solid rgba(255,255,255,0.2); padding-top:12px;">Sería la <strong style="color:white;">primera evidencia de comportamiento real</strong> de este tipo en Colombia.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════
+       SLIDE 34 — IDEAS PRELIMINARES
+  ══════════════════════════════════════════ -->
+  <div class="slide" data-n="34">
+    <div class="slide-header">
+      <div class="slide-section-tag">Ideas para explorar</div>
+      <h1>Algunas ideas preliminares — para discutir juntos</h1>
+    </div>
+    <div class="slide-body" style="gap:16px;">
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:16px; flex:1;">
+        <div style="background:#f0fdf4; border-radius:10px; padding:20px; border-top:4px solid #16a34a;">
+          <div style="font-size:0.75em; font-weight:700; color:#166534; text-transform:uppercase; letter-spacing:1px; margin-bottom:8px;">Idea 1 — Vacantes reales</div>
+          <div style="font-size:1em; font-weight:700; color:var(--navy); margin-bottom:10px; line-height:1.4;">Implementar los mismos tratamientos del paper en vacantes reales de la plataforma ADE</div>
+          <div style="font-size:0.9em; color:var(--dark); line-height:1.6;">Permitiría pasar de preferencias declaradas (experimento de encuesta) a comportamiento real: postulaciones, entrevistas, contratación.</div>
+        </div>
+        <div style="background:var(--orange-light); border-radius:10px; padding:20px; border-top:4px solid var(--orange);">
+          <div style="font-size:0.75em; font-weight:700; color:var(--orange); text-transform:uppercase; letter-spacing:1px; margin-bottom:8px;">Idea 2 — Orientación laboral</div>
+          <div style="font-size:1em; font-weight:700; color:var(--navy); margin-bottom:10px; line-height:1.4;">Incorporar un módulo sobre lenguaje de vacantes en las sesiones de orientación que ya ofrece la ADE</div>
+          <div style="font-size:0.9em; color:var(--dark); line-height:1.6;">¿Reconocer las barreras del lenguaje aumenta las postulaciones de mujeres a empleos no tradicionales?</div>
+        </div>
+      </div>
+      <div class="insight-box">
+        <strong>Nota:</strong> Estas son ideas preliminares. El diseño concreto dependería de cómo opera la plataforma, qué datos existen y cómo se definen las vacantes — preguntas que queremos explorar en esta reunión.
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════
+       SLIDE 36 — ¿QUÉ APRENDERÍAMOS?
+  ══════════════════════════════════════════ -->
+  <div class="slide" data-n="36">
+    <div class="slide-header">
+      <div class="slide-section-tag">Propuesta</div>
+      <h1>¿Qué lograría este experimento para la ADE?</h1>
+    </div>
+    <div class="slide-body">
+      <div class="three-col">
+        <div class="channel-box" style="border-top: 4px solid var(--orange);">
+          <div class="ch-num">📊</div>
+          <div class="ch-title">Evidencia propia</div>
+          <div class="ch-desc">La ADE tendría datos propios sobre el impacto del lenguaje en postulaciones reales — no solo preferencias declaradas. Eso justifica políticas con respaldo científico propio.</div>
+        </div>
+        <div class="channel-box" style="border-top: 4px solid var(--navy);">
+          <div class="ch-num">🏆</div>
+          <div class="ch-title">Referente regional</div>
+          <div class="ch-desc">Sería la primera evaluación de este tipo en Colombia y una de las primeras en ALC. Posiciona a la ADE como agencia de vanguardia en intermediación laboral con perspectiva de género.</div>
+        </div>
+        <div class="channel-box" style="border-top: 4px solid var(--orange);">
+          <div class="ch-num">🤝</div>
+          <div class="ch-title">Colaboración</div>
+          <div class="ch-desc">Un acuerdo de investigación entre la Javeriana, ANIF Lab y la ADE que puede generar publicaciones, visibilidad y potencial financiamiento de agencias multilaterales interesadas en género y empleo.</div>
+        </div>
+      </div>
+      <div class="insight-box" style="margin-top:18px;">
+        <strong>Próximos pasos:</strong> Entender cómo opera la plataforma y cómo se definen las vacantes · Explorar qué datos de postulación existen · Con esa información, definir juntos el diseño más adecuado.
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════
+       SLIDE 37 — CIERRE FINAL
+  ══════════════════════════════════════════ -->
+  <div class="slide final active" data-n="37" style="display:none;">
+    <div class="final-title">Mensajes clave para la ADE</div>
+    <div class="final-messages">
+      <div class="final-message">
+        <div class="msg-num">1</div>
+        <div class="msg-text"><strong>El lenguaje importa.</strong> Las palabras de una vacante ya filtran candidatas antes de que comience el proceso de selección. Con lenguaje masculinizado, las mujeres son un 7pp menos propensas a considerar el trabajo.</div>
+      </div>
+      <div class="final-message">
+        <div class="msg-num">2</div>
+        <div class="msg-text"><strong>Cambiar es fácil y barato.</strong> Una declaración de diversidad lleva a las mujeres de 36% a 94%. El lenguaje inclusivo, de 36% a 79%. El costo: una frase o seis caracteres adicionales por vacante.</div>
+      </div>
+      <div class="final-message">
+        <div class="msg-num">3</div>
+        <div class="msg-text"><strong>Los hombres no pierden.</strong> En todos los tratamientos, los hombres también prefieren más el anuncio modificado. El lenguaje inclusivo no penaliza a nadie.</div>
+      </div>
+      <div class="final-message">
+        <div class="msg-num">4</div>
+        <div class="msg-text"><strong>Hay una oportunidad de generar nueva evidencia.</strong> Un piloto experimental en la plataforma ADE generaría la primera evidencia de comportamiento real en Colombia — y posicionaría a la Agencia como referente regional.</div>
+      </div>
+    </div>
+    <div class="final-contact">
+      <a href="https://onlinelibrary.wiley.com/doi/10.1111/gwao.70117?af=R" target="_blank" style="color:var(--orange); text-decoration:underline;">Ver paper completo</a>
+    </div>
+  </div>
+
+</div><!-- /presentation -->
+
+<!-- ═══════════════ NAVIGATION ═══════════════ -->
+<div class="nav-bar">
+  <div class="nav-counter" id="counter">1 / 39</div>
+  <div class="nav-dots" id="dots"></div>
+  <div class="nav-arrows">
+    <button class="nav-btn" id="prev" onclick="go(-1)">&#8592;</button>
+    <button class="nav-btn" id="next" onclick="go(1)">&#8594;</button>
+  </div>
+</div>
+
+<script>
+  const slides = document.querySelectorAll('.slide');
+  const total = slides.length;
+  let current = 0;
+
+  // Build dots
+  const dotsEl = document.getElementById('dots');
+  slides.forEach((s, i) => {
+    const d = document.createElement('div');
+    d.className = 'nav-dot' + (s.classList.contains('divider') || s.classList.contains('cover') || s.classList.contains('final') ? ' divider-dot' : '');
+    d.title = 'Slide ' + (i+1);
+    d.onclick = () => jump(i);
+    dotsEl.appendChild(d);
+  });
+
+  function jump(n) {
+    slides[current].classList.remove('active');
+    current = Math.max(0, Math.min(total - 1, n));
+    slides[current].classList.remove('active');
+    slides[current].style.display = 'flex';
+    slides[current].classList.add('active');
+    update();
+  }
+
+  function go(dir) { jump(current + dir); }
+
+  function update() {
+    document.getElementById('counter').textContent = (current + 1) + ' / ' + total;
+    document.querySelectorAll('.nav-dot').forEach((d, i) => d.classList.toggle('active', i === current));
+    document.getElementById('progress').style.width = ((current + 1) / total * 100) + '%';
+    // Fix initial hidden slides
+    slides.forEach((s, i) => {
+      if (i !== current) { s.classList.remove('active'); s.style.display = 'none'; }
+    });
+    slides[current].style.display = 'flex';
+  }
+
+  document.addEventListener('keydown', e => {
+    if (e.key === 'ArrowRight' || e.key === ' ' || e.key === 'ArrowDown') { e.preventDefault(); go(1); }
+    if (e.key === 'ArrowLeft'  || e.key === 'ArrowUp') { e.preventDefault(); go(-1); }
+    if (e.key === 'Home') jump(0);
+    if (e.key === 'End') jump(total - 1);
+  });
+
+  // Touch / swipe
+  let tx = 0;
+  document.addEventListener('touchstart', e => { tx = e.touches[0].clientX; });
+  document.addEventListener('touchend', e => {
+    const dx = e.changedTouches[0].clientX - tx;
+    if (Math.abs(dx) > 50) go(dx < 0 ? 1 : -1);
+  });
+
+  // Init
+  slides.forEach((s, i) => { s.style.display = i === 0 ? 'flex' : 'none'; });
+  update();
+</script>
+
+</body>
+</html>
