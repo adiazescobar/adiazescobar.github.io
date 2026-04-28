@@ -3656,5 +3656,72 @@ ul.bul li.gap { margin-top:10px; }
 </div>
 
 
+<script>
+const slides = Array.from(document.querySelectorAll('.slide'));
+const prog   = document.getElementById('prog');
+const hint   = document.getElementById('hint');
+let cur = 0;
+let appendixFirst = -1;
+
+// Find first appendix slide
+slides.forEach((s, i) => {
+  if (s.dataset.section === 'Appendix' && appendixFirst === -1) appendixFirst = i;
+});
+
+function go(n) {
+  slides[cur].classList.remove('active');
+  cur = Math.max(0, Math.min(n, slides.length - 1));
+  slides[cur].classList.add('active');
+  prog.style.width = ((cur + 1) / slides.length * 100) + '%';
+  // Update footer slide numbers dynamically
+}
+
+document.addEventListener('keydown', e => {
+  // Don't hijack arrows when the audience slider is focused
+  if (e.target && e.target.tagName === 'INPUT' && e.target.type === 'range') return;
+  if (e.key === 'ArrowRight' || e.key === ' ')  { e.preventDefault(); go(cur + 1); }
+  if (e.key === 'ArrowLeft')                     { e.preventDefault(); go(cur - 1); }
+  if (e.key === 'ArrowUp')                       { e.preventDefault(); go(cur - 1); }
+  if (e.key === 'ArrowDown')                     { e.preventDefault(); go(cur + 1); }
+  if (e.key === 'Home')                          { e.preventDefault(); go(0); }
+  if (e.key === 'End')                           { e.preventDefault(); go(slides.length - 1); }
+  if ((e.key === 'a' || e.key === 'A') && appendixFirst > -1) { go(appendixFirst); }
+  if (e.key === 'g' || e.key === 'G') {
+    const n = parseInt(prompt('Go to slide:'), 10);
+    if (!isNaN(n)) go(n - 1);
+  }
+  if (e.key === 'f' || e.key === 'F') {
+    if (!document.fullscreenElement) document.documentElement.requestFullscreen();
+    else document.exitFullscreen();
+  }
+  // Show hint
+  hint.classList.add('show');
+  clearTimeout(window._ht);
+  window._ht = setTimeout(() => hint.classList.remove('show'), 2000);
+});
+
+// Touch support
+let tx = 0;
+document.addEventListener('touchstart', e => tx = e.touches[0].clientX);
+document.addEventListener('touchend',   e => {
+  const dx = e.changedTouches[0].clientX - tx;
+  if (Math.abs(dx) > 40) go(dx < 0 ? cur + 1 : cur - 1);
+});
+
+// Click right side to advance, left to go back
+document.getElementById('pres').addEventListener('click', e => {
+  if (e.target.closest('button, a, input[type=range]')) return;
+  go(e.clientX > window.innerWidth / 2 ? cur + 1 : cur - 1);
+});
+
+// Audience poll slider — live update of displayed value
+const pollSlider = document.getElementById('poll-slider');
+const pollVal    = document.getElementById('poll-val');
+if (pollSlider && pollVal) {
+  pollSlider.addEventListener('input', () => { pollVal.textContent = pollSlider.value; });
+}
+
+go(0);
+</script>
 </body>
 </html>
