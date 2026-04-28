@@ -1799,6 +1799,17 @@ ul.bul li.gap { margin-top:10px; }
     <h2>Addressing Two Sources of Non-Random Selection</h2>
   </div>
   <div class="content">
+    <div class="box navy" style="margin-bottom:10px;">
+      <p style="font-size:.94em;"><strong>Target estimand — ATT (Average Treatment effect on the Treated):</strong></p>
+      <p style="text-align:center; font-family:'Times New Roman', serif; font-size:1.05em; padding:4px 0; color:var(--navy);">
+        ATT = E[ Y<sub>i</sub>(1) − Y<sub>i</sub>(0) │ D<sub>i</sub> = 1 ]&nbsp;&nbsp;⟸&nbsp;&nbsp;CATE: τ(x) = E[ Y(1) − Y(0) │ X = x ]
+      </p>
+      <p style="text-align:center; font-family:'Times New Roman', serif; font-size:.98em; padding:4px 0; color:var(--navy);">
+        Baseline regression (Eq. 1):&nbsp; y<sub>i</sub> = β<sub>0</sub> + β<sub>1</sub>D<sub>i</sub> + ρ y<sub>i0</sub> + X<sub>i</sub>'γ + ε<sub>i</sub>
+      </p>
+      <p style="font-size:.84em; color:var(--gray); text-align:center;">β<sub>1</sub> = ATT (within strata, clustered SE at household, Fisher exact p-values).</p>
+    </div>
+
     <div class="cols c2" style="flex:none; margin-bottom:10px; gap:14px;">
       <div class="box">
         <p><strong>Problem 1 — Attrition:</strong> not all baseline respondents observed in midline/endline → may threaten internal validity if selection correlates with potential outcomes.</p>
