@@ -1799,32 +1799,34 @@ ul.bul li.gap { margin-top:10px; }
     <h2>Addressing Two Sources of Non-Random Selection</h2>
   </div>
   <div class="content">
-    <div class="box navy" style="margin-bottom:12px;">
-      <p style="text-align:center; font-size:1.05em;"><strong>Target estimand — CATE / ATT:</strong></p>
-      <p style="text-align:center; font-family:'Courier New', monospace; font-size:1.15em; padding:8px 0; color:var(--navy);">
-        τ(x) = E[ Y<sub>i</sub>(1) − Y<sub>i</sub>(0) │ T<sub>i</sub> = 1, X<sub>i</sub> = x ]
-      </p>
-      <p style="font-size:.88em; color:var(--gray); text-align:center;">Average effect for treated couples, conditional on baseline covariates X (stratification + behavioral controls).</p>
+    <div class="cols c2" style="flex:none; margin-bottom:10px; gap:14px;">
+      <div class="box">
+        <p><strong>Problem 1 — Attrition:</strong> not all baseline respondents observed in midline/endline → may threaten internal validity if selection correlates with potential outcomes.</p>
+      </div>
+      <div class="box">
+        <p><strong>Problem 2 — Selective engagement:</strong> only a subset of treated respondents engages with the WhatsApp module → covariates can become imbalanced within the realized sample.</p>
+      </div>
     </div>
 
-    <div class="cols c2" style="flex:none; margin-bottom:12px; gap:14px;">
-      <div class="box">
-        <p><strong>Problem 1 — Attrition (40% endline):</strong> Endline completion may correlate with potential outcomes → biased ATT.</p>
-        <p style="margin-top:6px; font-size:.92em;"><strong>Fix:</strong> IPW #1 — model P(endline | X) on ~50 baseline covariates; reweight by inverse probability of observation.</p>
-      </div>
-      <div class="box">
-        <p><strong>Problem 2 — Selective engagement (36% take-up):</strong> Engagers differ from non-engagers (more inactive, more care burden) → ATT among engagers ≠ ITT.</p>
-        <p style="margin-top:6px; font-size:.92em;"><strong>Fix:</strong> IPW #2 — model P(engage | X, T=1); reweight engagers to recover treated-sample ATT.</p>
-      </div>
+    <div class="box navy" style="margin-bottom:10px;">
+      <p style="font-size:.94em;"><strong>Step 1 — Selection model.</strong> For each sample S ∈ {midline, endline, both, endline-only}, estimate via probit:</p>
+      <p style="text-align:center; font-family:'Times New Roman', serif; font-size:1.05em; padding:4px 0; color:var(--navy);">
+        p<sub>i</sub><sup>S</sup> = Pr(S<sub>i</sub> = 1 │ D<sub>i</sub>, X<sub>i</sub>)&nbsp;&nbsp;⟹&nbsp;&nbsp;w<sub>i</sub><sup>S</sup> = Pr(S=1) / p̂<sub>i</sub><sup>S</sup>
+      </p>
+      <p style="font-size:.85em; color:var(--gray);">X<sub>i</sub> ≈ 50 baseline covariates (demographics, household, labor, beliefs, strata). Weights stabilized around 1; estimated separately by gender.</p>
     </div>
 
     <div class="box" style="border-left-color:var(--green); background:#EBF6EE; margin-bottom:10px;">
-      <p style="font-size:.94em;"><strong>IPWRA = IPW × RA (doubly robust):</strong> after weighting, run outcome regression on weighted sample. Consistent if <em>either</em> the selection model or the outcome model is correctly specified.</p>
+      <p style="font-size:.94em;"><strong>Step 2 — IPWRA within each sample S</strong> (doubly robust ATT):</p>
+      <p style="text-align:center; font-family:'Times New Roman', serif; font-size:.98em; padding:6px 0; color:var(--navy); line-height:1.6;">
+        ATT̂ = (1/N<sub>T</sub><sup>w</sup>) Σ<sub>i</sub> w<sub>i</sub><sup>S</sup> [ D<sub>i</sub>(Y<sub>i</sub> − m̂<sub>0</sub>) + (1−D<sub>i</sub>)·(ê<sub>i</sub>/(1−ê<sub>i</sub>))·(m̂<sub>1</sub> − m̂<sub>0</sub>) ]
+      </p>
+      <p style="font-size:.84em; color:var(--gray);">e(·) = treatment model Pr(D=1│X<sup>D</sup>, strata); m<sub>d</sub>(·) = outcome model E[Y│D=d, X<sup>D</sup>, strata]. Step 1 weights enter as pweights. Consistent if <em>either</em> e(·) or m<sub>d</sub>(·) is correctly specified.</p>
     </div>
 
-    <ul class="bul" style="font-size:.92em;">
-      <li><strong>Validation, not separate tests:</strong> the "engagers placebo" and "near-miss timing" exercises check that the IPW correction works — they show no spurious effects show up in the placebo (green-transport) arm or among near-attriters once weights are applied.</li>
-      <li><strong>Inference:</strong> Fisher exact (randomization) p-values; Romano-Wolf step-down for multiple outcomes; Lee (2009) sharp bounds for attrition.</li>
+    <ul class="bul" style="font-size:.88em;">
+      <li><strong>Robustness (4 weight specs):</strong> baseline probit-PS · winsorised p95 · trimmed (drop PS &lt; 0.10) · logit PS — Appendix Table A.IPWRAsens.</li>
+      <li><strong>Inference:</strong> Fisher exact (randomization) p-values primary; Romano-Wolf step-down for outcome families; Lee (2009) sharp bounds; near-miss timing diagnostic — these <em>validate</em> the IPW correction, not separate tests.</li>
     </ul>
   </div>
   <div class="footer">
