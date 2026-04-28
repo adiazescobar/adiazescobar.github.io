@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Norms Behind Closed Doors — STATA Conference 2026, Aix-Marseille University</title>
+<title>Norms Behind Closed Doors — STATA Conference 2026, Aix-Marseille</title>
 <style>
 /* ─── VARIABLES ─── */
 :root {
@@ -646,9 +646,10 @@ ul.bul li.gap { margin-top:10px; }
   <div class="div-sub">Where this paper comes from — and why it is the natural next step</div>
   <div class="div-roadmap">
     <span class="active-sec">Research Agenda</span>
-    <span>Design</span>
-    <span>Empirical Strategy</span>
+    <span>Experimental Design</span>
+    <span>Baseline Facts</span>
     <span>Results</span>
+    <span>Heterogeneity</span>
     <span>Conclusions</span>
     <span>Next: YouTube</span>
   </div>
@@ -3655,7 +3656,6 @@ ul.bul li.gap { margin-top:10px; }
   </div>
 </div>
 
-
 <script>
 const slides = Array.from(document.querySelectorAll('.slide'));
 const prog   = document.getElementById('prog');
@@ -3673,11 +3673,9 @@ function go(n) {
   cur = Math.max(0, Math.min(n, slides.length - 1));
   slides[cur].classList.add('active');
   prog.style.width = ((cur + 1) / slides.length * 100) + '%';
-  // Update footer slide numbers dynamically
 }
 
 document.addEventListener('keydown', e => {
-  // Don't hijack arrows when the audience slider is focused
   if (e.target && e.target.tagName === 'INPUT' && e.target.type === 'range') return;
   if (e.key === 'ArrowRight' || e.key === ' ')  { e.preventDefault(); go(cur + 1); }
   if (e.key === 'ArrowLeft')                     { e.preventDefault(); go(cur - 1); }
@@ -3694,13 +3692,11 @@ document.addEventListener('keydown', e => {
     if (!document.fullscreenElement) document.documentElement.requestFullscreen();
     else document.exitFullscreen();
   }
-  // Show hint
   hint.classList.add('show');
   clearTimeout(window._ht);
   window._ht = setTimeout(() => hint.classList.remove('show'), 2000);
 });
 
-// Touch support
 let tx = 0;
 document.addEventListener('touchstart', e => tx = e.touches[0].clientX);
 document.addEventListener('touchend',   e => {
@@ -3708,13 +3704,11 @@ document.addEventListener('touchend',   e => {
   if (Math.abs(dx) > 40) go(dx < 0 ? cur + 1 : cur - 1);
 });
 
-// Click right side to advance, left to go back
 document.getElementById('pres').addEventListener('click', e => {
   if (e.target.closest('button, a, input[type=range]')) return;
   go(e.clientX > window.innerWidth / 2 ? cur + 1 : cur - 1);
 });
 
-// Audience poll slider — live update of displayed value
 const pollSlider = document.getElementById('poll-slider');
 const pollVal    = document.getElementById('poll-val');
 if (pollSlider && pollVal) {
