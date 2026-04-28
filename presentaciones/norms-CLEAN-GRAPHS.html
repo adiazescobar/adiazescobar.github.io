@@ -1799,25 +1799,32 @@ ul.bul li.gap { margin-top:10px; }
     <h2>Addressing Two Sources of Non-Random Selection</h2>
   </div>
   <div class="content">
+    <div class="box navy" style="margin-bottom:12px;">
+      <p style="text-align:center; font-size:1.05em;"><strong>Target estimand — CATE / ATT:</strong></p>
+      <p style="text-align:center; font-family:'Courier New', monospace; font-size:1.15em; padding:8px 0; color:var(--navy);">
+        τ(x) = E[ Y<sub>i</sub>(1) − Y<sub>i</sub>(0) │ T<sub>i</sub> = 1, X<sub>i</sub> = x ]
+      </p>
+      <p style="font-size:.88em; color:var(--gray); text-align:center;">Average effect for treated couples, conditional on baseline covariates X (stratification + behavioral controls).</p>
+    </div>
+
     <div class="cols c2" style="flex:none; margin-bottom:12px; gap:14px;">
       <div class="box">
-        <p><strong>Problem 1 — Attrition:</strong> Only 40% of baseline respondents complete the endline phone survey. If survey completion is correlated with potential outcomes, naïve estimates are biased.</p>
+        <p><strong>Problem 1 — Attrition (40% endline):</strong> Endline completion may correlate with potential outcomes → biased ATT.</p>
+        <p style="margin-top:6px; font-size:.92em;"><strong>Fix:</strong> IPW #1 — model P(endline | X) on ~50 baseline covariates; reweight by inverse probability of observation.</p>
       </div>
       <div class="box">
-        <p><strong>Problem 2 — Imperfect take-up:</strong> Only 36% engage with the WhatsApp chatbot. Engagers differ from non-engagers (more inactive, more care burden).</p>
+        <p><strong>Problem 2 — Selective engagement (36% take-up):</strong> Engagers differ from non-engagers (more inactive, more care burden) → ATT among engagers ≠ ITT.</p>
+        <p style="margin-top:6px; font-size:.92em;"><strong>Fix:</strong> IPW #2 — model P(engage | X, T=1); reweight engagers to recover treated-sample ATT.</p>
       </div>
     </div>
-    <div class="box navy" style="margin-bottom:12px;">
-      <p><strong>Solution: Two-step IPWRA</strong><br>
-        Step 1 — Selection model: predict probability of appearing in each analysis sample using ~50 baseline covariates. Construct stabilized IPW weights.<br>
-        Step 2 — Treatment model: within each sample, estimate ATT using IPWRA (doubly robust — consistent if either model is correct).
-      </p>
+
+    <div class="box" style="border-left-color:var(--green); background:#EBF6EE; margin-bottom:10px;">
+      <p style="font-size:.94em;"><strong>IPWRA = IPW × RA (doubly robust):</strong> after weighting, run outcome regression on weighted sample. Consistent if <em>either</em> the selection model or the outcome model is correctly specified.</p>
     </div>
-    <ul class="bul">
-      <li><strong>Inference:</strong> Fisher exact (randomization-inference) p-values as primary; cluster-robust SE at household level</li>
-      <li><strong>Multiple testing:</strong> Romano-Wolf step-down p-values for each outcome family (F1: community beliefs, F2: course, F3/F4: labor)</li>
-      <li><strong>Attrition robustness:</strong> Lee (2009) sharp bounds; near-miss timing placebo; IPWRA sensitivity (winsorized, trimmed, logit PS)</li>
-      <li><strong>Diagnostics:</strong> Max SMD &lt;0.10 after weighting; ESS large; p-score overlap confirmed — see Appendix</li>
+
+    <ul class="bul" style="font-size:.92em;">
+      <li><strong>Validation, not separate tests:</strong> the "engagers placebo" and "near-miss timing" exercises check that the IPW correction works — they show no spurious effects show up in the placebo (green-transport) arm or among near-attriters once weights are applied.</li>
+      <li><strong>Inference:</strong> Fisher exact (randomization) p-values; Romano-Wolf step-down for multiple outcomes; Lee (2009) sharp bounds for attrition.</li>
     </ul>
   </div>
   <div class="footer">
