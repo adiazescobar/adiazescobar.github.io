@@ -3887,17 +3887,16 @@ ul.bul li.gap { margin-top:10px; }
   <div class="div-sub">Full tables · Robustness · Diagnostics · Additional results</div>
   <div class="div-roadmap">
     <span>A2 Full beliefs</span>
-    <span>A3 Romano-Wolf</span>
-    <span>A4 Lee bounds</span>
-    <span>A5 IPWRA sensitivity</span>
+    <span>A3 Romano-Wolf (+ intuition)</span>
+    <span>A4 Lee bounds (+ intuition)</span>
+    <span>A5 IPWRA sensitivity (+ intuition)</span>
     <span>A6 Balance tests</span>
     <span>A7 Attrition</span>
     <span>A8 PS overlap</span>
     <span>A9 OLS vs IPWRA</span>
     <span>A10 Het table</span>
     <span>A11 Indirect effects</span>
-    <span>A12 Near-miss</span>
-    <span>A13 Engagers</span>
+    <span>A12 Near-miss + Engagers (+ intuition)</span>
   </div>
   <div class="footer">
     <span class="fl">Boltz · Bustelo · Díaz · Suaya</span>
@@ -3946,6 +3945,36 @@ ul.bul li.gap { margin-top:10px; }
 </div>
 
 
+<!-- SLIDE A3a · ROMANO-WOLF EXPLAINED -->
+<div class="slide" data-section="Appendix">
+  <div class="app-badge">Appendix</div>
+  <div class="sh">
+    <div class="sec-tag">Appendix · Multiple Testing — What does it do?</div>
+    <h2>Romano-Wolf Step-Down: Intuition</h2>
+  </div>
+  <div class="content">
+    <div class="box navy" style="margin-bottom:12px;">
+      <p><strong>The threat:</strong> when we test many outcomes (beliefs, course, labor), the chance of finding <em>at least one</em> spurious "significant" result rises. Pure luck can produce false positives.</p>
+    </div>
+    <div class="box" style="margin-bottom:12px;">
+      <p><strong>What we do:</strong> Romano-Wolf adjusts each p-value by simulating the joint distribution of all test statistics under the null (1,000 bootstrap replications, clustered by household). It produces a <strong>family-wise error rate</strong>–controlled p-value for every outcome, accounting for the dependence structure between them.</p>
+    </div>
+    <div class="box" style="border-left-color:var(--green); background:#EBF6EE;">
+      <p><strong>Plain English:</strong> "Even if I throw lots of outcomes at this experiment, here is the p-value adjusted for the fact that I am fishing in many ponds. Results that survive RW are not lucky strikes."</p>
+    </div>
+    <ul class="bul" style="font-size:.92em; margin-top:10px;">
+      <li><strong>Computed on unweighted OLS</strong> — conservative relative to IPWRA</li>
+      <li><strong>Outcome families:</strong> F1 community beliefs · F2 spousal beliefs · F3 course allocation · F4 labor</li>
+      <li><strong>Headline:</strong> women's job mobility survives (RW p = 0.013); men's course nomination is marginal (RW p = 0.077)</li>
+    </ul>
+  </div>
+  <div class="footer">
+    <span class="fl">Boltz · Bustelo · Díaz · Suaya</span>
+    <span class="fc">Appendix · A3a</span>
+  </div>
+</div>
+
+
 <!-- SLIDE A3 · ROMANO-WOLF -->
 <div class="slide" data-section="Appendix">
   <div class="app-badge">Appendix</div>
@@ -3986,6 +4015,36 @@ ul.bul li.gap { margin-top:10px; }
 </div>
 
 
+<!-- SLIDE A4a · LEE BOUNDS EXPLAINED -->
+<div class="slide" data-section="Appendix">
+  <div class="app-badge">Appendix</div>
+  <div class="sh">
+    <div class="sec-tag">Appendix · Attrition Robustness — What does it do?</div>
+    <h2>Lee (2009) Sharp Bounds: Intuition</h2>
+  </div>
+  <div class="content">
+    <div class="box navy" style="margin-bottom:12px;">
+      <p><strong>The threat:</strong> IPW corrects attrition only on <em>observable</em> covariates. What if dropouts are different on <em>unobservables</em> correlated with the outcome (e.g., motivation)?</p>
+    </div>
+    <div class="box" style="margin-bottom:12px;">
+      <p><strong>What we do:</strong> Trim observations from the lower-attrition arm to make response rates equal across treatment and control. Then compute the <strong>worst-case</strong> and <strong>best-case</strong> ATT — the interval brackets all possible values consistent with monotonicity (treatment doesn't change who attrits).</p>
+    </div>
+    <div class="box" style="border-left-color:var(--green); background:#EBF6EE;">
+      <p><strong>Plain English:</strong> "Imagine the absolute worst possible scenario about who dropped out. Even then, my treatment effect lies somewhere in this range. If both ends of the range exclude zero, my result holds even under unobservable bias."</p>
+    </div>
+    <ul class="bul" style="font-size:.92em; margin-top:10px;">
+      <li><strong>Headline:</strong> Both bounds strictly positive for men's course nomination and women's job search</li>
+      <li><strong>Belief outcomes:</strong> bounds include zero — consistent with no robust belief effects</li>
+      <li><strong>Key assumption:</strong> monotonicity (treatment doesn't push you to drop out)</li>
+    </ul>
+  </div>
+  <div class="footer">
+    <span class="fl">Boltz · Bustelo · Díaz · Suaya</span>
+    <span class="fc">Appendix · A4a</span>
+  </div>
+</div>
+
+
 <!-- SLIDE A4 · LEE BOUNDS -->
 <div class="slide" data-section="Appendix">
   <div class="app-badge">Appendix</div>
@@ -4022,6 +4081,38 @@ ul.bul li.gap { margin-top:10px; }
   <div class="footer">
     <span class="fl">Boltz · Bustelo · Díaz · Suaya</span>
     <span class="fc">Appendix</span>
+  </div>
+</div>
+
+
+<!-- SLIDE A5a · IPWRA SENSITIVITY EXPLAINED -->
+<div class="slide" data-section="Appendix">
+  <div class="app-badge">Appendix</div>
+  <div class="sh">
+    <div class="sec-tag">Appendix · IPWRA Sensitivity — What does it do?</div>
+    <h2>IPWRA Sensitivity: Intuition</h2>
+  </div>
+  <div class="content">
+    <div class="box navy" style="margin-bottom:12px;">
+      <p><strong>The threat:</strong> attrition propensity scores range from 0.06 to 0.76. A few observations get very large weights (≈ 1/0.06 ≈ 17). Those few units could drive the entire ATT.</p>
+    </div>
+    <div class="box" style="margin-bottom:12px;">
+      <p><strong>What we do:</strong> re-estimate the IPWRA ATT under <strong>4 alternative weight constructions</strong> to check that headline results don't depend on the most extreme weights:</p>
+      <ul class="bul" style="margin-top:6px; font-size:.9em;">
+        <li>(i) <em>Baseline:</em> probit propensity score (preferred)</li>
+        <li>(ii) <em>Winsorised:</em> cap weights at 95th percentile</li>
+        <li>(iii) <em>Trimmed:</em> drop observations with PS &lt; 0.10 (≈ 1% of obs)</li>
+        <li>(iv) <em>Logit PS:</em> alternative functional form for the selection model</li>
+      </ul>
+    </div>
+    <div class="box" style="border-left-color:var(--green); background:#EBF6EE;">
+      <p><strong>Plain English:</strong> "If a handful of unusual observations were driving my result, the estimate would change a lot when I cap or drop them. It doesn't change → my result is robust, not artifact of extreme weights."</p>
+    </div>
+    <p style="font-size:.85em; color:var(--gray); margin-top:8px;"><strong>Headline:</strong> men's course estimate stable at 0.091–0.094 across all 4 specs; women's job mobility stable at 0.091–0.096.</p>
+  </div>
+  <div class="footer">
+    <span class="fl">Boltz · Bustelo · Díaz · Suaya</span>
+    <span class="fc">Appendix · A5a</span>
   </div>
 </div>
 
@@ -4250,6 +4341,33 @@ ul.bul li.gap { margin-top:10px; }
   <div class="footer">
     <span class="fl">Boltz · Bustelo · Díaz · Suaya</span>
     <span class="fc">Appendix</span>
+  </div>
+</div>
+
+
+<!-- SLIDE A12a · NEAR-MISS + ENGAGER EXPLAINED -->
+<div class="slide" data-section="Appendix">
+  <div class="app-badge">Appendix</div>
+  <div class="sh">
+    <div class="sec-tag">Appendix · Validity Checks — What do they do?</div>
+    <h2>Near-Miss &amp; Engager Diagnostics: Intuition</h2>
+  </div>
+  <div class="content">
+    <div class="box navy" style="margin-bottom:10px;">
+      <p><strong>Near-miss timing:</strong> compare respondents reached <em>easily</em> at endline (November) vs. those reached only after extra effort (December–January). The hard-to-reach are a proxy for would-be attriters.</p>
+      <p style="margin-top:6px; font-size:.92em;"><strong>Plain English:</strong> "If the people who barely picked up the phone are statistically the same as easy-to-reach respondents on the variable I'm measuring, then the people who never picked up are probably also similar — so attrition isn't biasing my result."</p>
+    </div>
+    <div class="box" style="border-left-color:var(--green); background:#EBF6EE; margin-bottom:10px;">
+      <p><strong>Engager characterization (selective take-up):</strong> only 36% engage with the WhatsApp module. We compare engagers vs. non-engagers on (a) demographics and (b) the <em>targeted second-order belief</em>.</p>
+      <p style="margin-top:6px; font-size:.92em;"><strong>Plain English:</strong> "Engagers are more inactive (selection on demographics — fix with IPW step 2). But they hold the same prior on community support as non-engagers — so the disclosed norm is accurate <em>for them</em>, the people who actually received it."</p>
+    </div>
+    <div class="box" style="border-left-color:var(--orange);">
+      <p><strong>Reference-group accuracy:</strong> max deviation of any subgroup's mean SOB from city-wide average is 3.3 pp. The misperception we are correcting is 28 pp → reference-group mismatch is &lt; 12% of the corrected signal. Disclosed Bogotá-average norm is a valid proxy for every demographic subgroup.</p>
+    </div>
+  </div>
+  <div class="footer">
+    <span class="fl">Boltz · Bustelo · Díaz · Suaya</span>
+    <span class="fc">Appendix · A12a</span>
   </div>
 </div>
 
