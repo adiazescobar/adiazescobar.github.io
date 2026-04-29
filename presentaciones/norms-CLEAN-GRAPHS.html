@@ -3781,34 +3781,36 @@ ul.bul li.gap { margin-top:10px; }
 <div class="slide" data-section="Next: YouTube">
   <div class="sh">
     <div class="sec-tag">Next Steps · YouTube Project</div>
-    <h2>Suppressed Voices: What We Have</h2>
+    <h2>Suppressed Voices: Pluralistic Ignorance in the Wild</h2>
   </div>
   <div class="content">
     <div class="box navy" style="margin-bottom:14px;">
-      <p><strong>The core finding:</strong> People privately support progressive gender norms but won't say so publicly — because they think everyone else disagrees. We measure pluralistic ignorance in the wild, at scale, on YouTube using revealed preference (likes vs. replies).</p>
+      <p><strong>The core idea:</strong> people privately support progressive gender norms but won't say so publicly — because they think everyone else disagrees. We measure this <em>pluralistic ignorance</em> at scale on YouTube using revealed preference: <strong>likes</strong> (private, silent) vs. <strong>replies</strong> (public, costly).</p>
     </div>
     <div class="cols c2" style="flex:none; gap:14px;">
       <div>
         <div class="col-head">The Data</div>
         <ul class="bul" style="font-size:.95em;">
-          <li><strong>35 channels</strong> collected across 8 countries (CO, MX, AR, CL, PE, ES, EC, GT)</li>
+          <li><strong>35 channels</strong> across 8 countries (CO, MX, AR, CL, PE, ES, EC, GT)</li>
           <li><strong>18.85M comments</strong> total (13.1M top-level)</li>
-          <li><strong>57.6K videos</strong> · Full backfill, no sampling</li>
+          <li><strong>57.6K videos</strong> · full backfill, no sampling</li>
           <li>Classified panel: <strong>202K challenging</strong>, <strong>20K enforcing</strong></li>
           <li>NLP classifier (keyword + context), RA-validated on n=500</li>
         </ul>
-        <div style="font-size:12px; color:#888; margin-top:8px;"><strong>YouTube Researcher Programme:</strong> Approved April 2026 · 110K API units/day</div>
+        <div class="box navy" style="margin-top:10px; padding:8px 12px;">
+          <p style="font-size:.85em;"><strong>YouTube Researcher Programme:</strong> Approved April 2026 · 110K API units/day</p>
+        </div>
       </div>
       <div>
         <div class="col-head">Key Observational Finding</div>
-        <div class="highlight">
-          <p><strong>Challenging comments get more likes, enforcing comments get more replies.</strong></p>
+        <div class="box" style="border-left-color:var(--orange); margin-bottom:8px;">
+          <p style="font-size:.95em;"><strong>Challenging (progressive) comments get more likes; enforcing (traditional) comments get more replies.</strong></p>
         </div>
-        <ul class="bul" style="font-size:.95em; margin-top:8px;">
+        <ul class="bul" style="font-size:.92em;">
           <li>Baseline challenging: <strong>+0.173*** log-likes</strong>, <strong>+0.043*** log-replies</strong></li>
           <li>Vos Podés (female-centered): +0.156 gap***</li>
           <li>Los Hombres Sí Lloran (male-centered): −0.023 (inverse)</li>
-          <li><strong>Interpretation:</strong> Progressive views attract silent approval; traditional views provoke public pushback</li>
+          <li><strong>Interpretation:</strong> progressive views attract <em>silent</em> approval; traditional views provoke <em>public</em> pushback — the behavioral signature of pluralistic ignorance.</li>
         </ul>
       </div>
     </div>
@@ -3829,28 +3831,36 @@ ul.bul li.gap { margin-top:10px; }
     <h2>The RCT: Can One Comment Break the Silence?</h2>
   </div>
   <div class="content">
-    <div class="cols c2" style="flex:none; gap:14px; margin-bottom:12px;">
+    <div class="cols c2" style="flex:none; gap:14px;">
       <div>
         <div class="col-head">Design</div>
-        <ul class="bul" style="font-size:.93em;">
+        <ul class="bul" style="font-size:.92em;">
           <li>Researcher posts <strong>one comment</strong> within 2h of upload</li>
           <li>Unit of randomization: <strong>video</strong> (sequential, pre-registered)</li>
           <li>Two norm domains: <strong>FLFP</strong> + <strong>Caregiving</strong></li>
           <li><strong>MAMS adaptive:</strong> Stage 1 (30 vids/arm) → Bayesian interim → Stage 2 (40 vids/arm)</li>
           <li><strong>Primary outcome:</strong> ≥1 organic norm-challenging comment in days 2–7</li>
-          <li><strong>Power:</strong> 80% at 15pp effect; 70 vids/arm pooled</li>
+          <li><strong>Power:</strong> 80% at 15 pp effect; 70 vids/arm pooled</li>
         </ul>
       </div>
       <div>
         <div class="col-head">Treatment Arms</div>
-        <div style="font-size:12px; line-height:1.7; color:#ddd;">
-          <p><strong style="color:#68d391;">T0 (Control):</strong> No seeded comment — baseline silence</p>
-          <p><strong style="color:#68d391;">T1 (Norm-expr. FLFP):</strong> "El trabajo de las mujeres fuera del hogar beneficia…"</p>
-          <p><strong style="color:#68d391;">T2 (Social-proof FLFP):</strong> "En encuestas, más del 59% apoya que las mujeres trabajen…"</p>
-          <p><strong style="color:#68d391;">T3 (Norm-expr. Care):</strong> "Los hombres en el cuidado son mejores padres y parejas…"</p>
-          <p><strong style="color:#68d391;">T4 (Social-proof Care):</strong> "Según encuestas, más hombres quieren participar en el hogar…"</p>
-          <p style="margin-top:6px; font-size:11px; color:#888;">T1/T3 restricted from male-centered channels. T2/T4 + polls run everywhere.</p>
+        <div class="box" style="border-left-color:var(--gray); background:var(--light); margin-bottom:6px; padding:8px 12px;">
+          <p style="font-size:.85em;"><strong style="color:var(--navy);">T0 (Control):</strong> no seeded comment — baseline silence</p>
         </div>
+        <div class="box" style="border-left-color:var(--orange); margin-bottom:6px; padding:8px 12px;">
+          <p style="font-size:.85em;"><strong style="color:var(--orange);">T1 — Norm-expr. FLFP:</strong> "El trabajo de las mujeres fuera del hogar beneficia…"</p>
+        </div>
+        <div class="box navy" style="margin-bottom:6px; padding:8px 12px;">
+          <p style="font-size:.85em;"><strong>T2 — Social-proof FLFP:</strong> "En encuestas, más del 59% apoya que las mujeres trabajen…"</p>
+        </div>
+        <div class="box" style="border-left-color:var(--orange); margin-bottom:6px; padding:8px 12px;">
+          <p style="font-size:.85em;"><strong style="color:var(--orange);">T3 — Norm-expr. Care:</strong> "Los hombres en el cuidado son mejores padres y parejas…"</p>
+        </div>
+        <div class="box navy" style="padding:8px 12px;">
+          <p style="font-size:.85em;"><strong>T4 — Social-proof Care:</strong> "Según encuestas, más hombres quieren participar en el hogar…"</p>
+        </div>
+        <p style="font-size:.78em; color:var(--gray); margin-top:6px; font-style:italic;">T1/T3 restricted from male-centered channels. T2/T4 + polls run everywhere.</p>
       </div>
     </div>
   </div>
@@ -3870,33 +3880,33 @@ ul.bul li.gap { margin-top:10px; }
     <h2>The Poll Arm: Revealed Preference for Gender Norms</h2>
   </div>
   <div class="content">
-    <div class="highlight" style="margin-bottom:12px;">
-      <p>On <em>every</em> experimental video (all arms including T0) — two poll-style comments posted in randomized order invite likes to endorse progressive vs. conservative norms. The like-ratio measures private attitude distribution <em>in situ.</em></p>
+    <div class="box navy" style="margin-bottom:12px;">
+      <p>On <em>every</em> experimental video (all arms including T0), two poll-style comments are posted in randomized order, inviting likes to endorse progressive vs. conservative norms. The <strong>like-ratio</strong> measures the private attitude distribution <em>in situ</em>.</p>
     </div>
-    <div class="cols c3" style="flex:none; gap:14px;">
-      <div class="card">
-        <h3>Poll-Progressive</h3>
-        <p style="font-size:12.5px; font-style:italic; color:#68d391;">
+    <div class="cards c3" style="margin-bottom:10px;">
+      <div class="card or">
+        <h5 style="color:var(--orange);">Poll — Progressive</h5>
+        <p style="font-size:.86em; font-style:italic; color:var(--dark); line-height:1.4;">
           "Si crees que los hombres deberían participar más en el cuidado del hogar, dale like a este comentario 👍"
         </p>
       </div>
       <div class="card">
-        <h3>Poll-Conservative</h3>
-        <p style="font-size:12.5px; font-style:italic; color:#f6ad55;">
+        <h5 style="color:var(--navy);">Poll — Conservative</h5>
+        <p style="font-size:.86em; font-style:italic; color:var(--dark); line-height:1.4;">
           "Si crees que los roles tradicionales en el hogar funcionan bien, dale like a este comentario 👍"
         </p>
       </div>
-      <div class="card">
-        <h3>Mechanism Test</h3>
-        <ul style="font-size:12px;">
-          <li><strong>T2/T4 shifts ratio</strong> → belief-updating</li>
-          <li><strong>T1/T3 effect without shift</strong> → imitation</li>
-          <li>Both pre-specified in AEA Registry</li>
+      <div class="card gn">
+        <h5 style="color:var(--green);">Mechanism Test</h5>
+        <ul style="font-size:.84em; color:var(--dark); list-style:none; line-height:1.5;">
+          <li>• <strong>T2/T4 shifts ratio</strong> → belief-updating</li>
+          <li>• <strong>T1/T3 effect without shift</strong> → imitation</li>
+          <li>• Both pre-specified in AEA Registry</li>
         </ul>
       </div>
     </div>
-    <div class="box" style="margin-top:12px;">
-      <p><strong>Why this matters:</strong> The poll transforms a single-outcome RCT into a mechanism-identification design. It's also immediately replicable by any practitioner on any platform — a standalone policy tool for mapping community norm misperceptions in real time.</p>
+    <div class="box">
+      <p style="font-size:.92em;"><strong>Why this matters:</strong> the poll transforms a single-outcome RCT into a mechanism-identification design. It is also immediately replicable by any practitioner on any platform — a standalone policy tool for mapping community-norm misperceptions in real time.</p>
     </div>
   </div>
   <div class="footer">
@@ -3916,9 +3926,9 @@ ul.bul li.gap { margin-top:10px; }
   </div>
   <div class="content">
     <div class="cols c2" style="flex:none; gap:14px; margin-bottom:12px;">
-      <div>
-        <div class="col-head" style="color:#68d391;">Completed ✓</div>
-        <ul style="font-size:.93em; color:#ddd;">
+      <div class="box" style="border-left-color:var(--green); background:#EBF6EE;">
+        <div class="col-head" style="color:var(--green);">Completed ✓</div>
+        <ul class="bul" style="font-size:.9em;">
           <li>~18.85M comments collected, classified, validated</li>
           <li>Observational regressions run (key findings confirmed)</li>
           <li>YouTube Researcher Programme approved (April 2026)</li>
@@ -3926,22 +3936,25 @@ ul.bul li.gap { margin-top:10px; }
           <li>IRB draft (v4) — in progress</li>
         </ul>
       </div>
-      <div>
-        <div class="col-head" style="color:#f6ad55;">To Do</div>
-        <ul style="font-size:.93em; color:#ddd;">
+      <div class="box" style="border-left-color:var(--orange);">
+        <div class="col-head" style="color:var(--orange);">To Do</div>
+        <ul class="bul" style="font-size:.9em;">
           <li>IRB approval at PUJ (PROYRECUPR)</li>
           <li>AEA RCT pre-registration</li>
           <li>Google/YouTube notification (7 days before start)</li>
-          <li>Build <code style="font-size:11px; color:#f6ad55;">rct_manager.py</code> (video detection → arm draw → post → log)</li>
+          <li>Build <code style="font-size:.85em; background:var(--orange-lt); color:var(--orange); padding:1px 5px; border-radius:3px;">rct_manager.py</code> (video detection → arm draw → post → log)</li>
           <li>Start Stage 1 data collection</li>
         </ul>
       </div>
     </div>
-    <ul class="bul" style="margin-top:12px;">
-      <li><strong>Paper 1 (descriptive):</strong> Like/reply asymmetry across channels and norm-types → AER Insights / JDE</li>
-      <li><strong>Paper 2 (RCT):</strong> Does one public comment break the cascade? Connect to social norms and cascades literature</li>
-      <li><strong>Long-run agenda:</strong> YouTube as low-cost monitoring instrument for gender norm change at city/country level</li>
-    </ul>
+    <div class="box navy">
+      <p style="font-size:.92em; margin-bottom:6px;"><strong>Research agenda:</strong></p>
+      <ul class="bul" style="font-size:.9em;">
+        <li><strong>Paper 1 (descriptive):</strong> like / reply asymmetry across channels and norm-types → AER Insights / JDE</li>
+        <li><strong>Paper 2 (RCT):</strong> does one public comment break the cascade? Connect to social-norms and cascades literature</li>
+        <li><strong>Long-run agenda:</strong> YouTube as a low-cost monitoring instrument for gender-norm change at city / country level</li>
+      </ul>
+    </div>
   </div>
   <div class="footer">
     <span class="fl">Díaz · Boltz · Salas (in progress)</span>
