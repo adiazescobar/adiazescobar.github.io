@@ -3470,37 +3470,75 @@ ul.bul li.gap { margin-top:10px; }
 
 
 <!-- ══════════════════════════════════════════════
-     SLIDE 41 · MECHANISM 3: LABOR ATTACHMENT
+     SLIDE 41 · HETEROGENEITY BY LABOR ATTACHMENT
 ═══════════════════════════════════════════════ -->
 <div class="slide" data-section="Results">
   <div class="sh">
-    <div class="sec-tag">Results · Mechanisms</div>
-    <h2>Mechanism 3: Social Permission Constraint (Labor Attachment)</h2>
+    <div class="sec-tag">Results · Heterogeneity (mechanism evidence)</div>
+    <h2>Where the treatment works: heterogeneity by wife's labor attachment</h2>
   </div>
-  <div class="content" style="display:flex; flex-direction:column; align-items:center; justify-content:center; flex:1;">
-    <img src="../Slides/Figure_Mechanism_3_LaborHet.png" alt="Heterogeneity by wife's labor attachment" style="max-height:85%; max-width:90%; object-fit:contain;" />
+  <div class="content">
+    <div class="box navy" style="margin-bottom:8px; padding:10px 14px;">
+      <p style="font-size:.9em;"><strong>Setup:</strong> interaction model with Z<sub>i</sub> = 1 if wife is inactive at baseline. Wife inactivity is a <em>stratification variable</em>, so the heterogeneity is causal:</p>
+      <p style="text-align:center; font-family:'Times New Roman', serif; font-size:.95em; padding:4px 0; color:var(--navy);">
+        Y<sub>i</sub> = α + β D<sub>i</sub> + γ Z<sub>i</sub> + δ (D<sub>i</sub> × Z<sub>i</sub>) + X<sub>i</sub>'θ + λ<sub>s</sub> + ε<sub>i</sub>
+      </p>
+    </div>
+    <div class="img-wrap" style="max-height:42%; margin-bottom:6px;">
+      <img src="../Slides/Figure_Mechanism_3_LaborHet.png" alt="Heterogeneity by wife's labor attachment" style="max-height:100%; max-width:90%; object-fit:contain;" />
+    </div>
+    <div class="cols c2" style="flex:none; gap:14px;">
+      <div class="box" style="border-left-color:var(--green); background:#EBF6EE;">
+        <p style="font-size:.86em;"><strong>Active wives:</strong> beliefs +3.2/+5.3 pp · spousal +6.2 pp · course +11–13 pp · job search increases</p>
+      </div>
+      <div class="box" style="border-left-color:var(--red); background:#FDF0F0;">
+        <p style="font-size:.86em;"><strong>Inactive wives:</strong> belief updating ≈ 0 · course allocation ≈ 0 · <em>exception:</em> work-family balance concentrates here</p>
+      </div>
+    </div>
+    <div class="box" style="margin-top:6px;">
+      <p style="font-size:.86em;"><strong>Why this is "mechanism evidence" (not just heterogeneity):</strong> the pattern <em>discriminates between hypotheses</em>. If treatment moved <em>preferences</em>, effects should be uniform. The fact that only labor-attached households respond is consistent with information lifting a <strong>social-permission constraint</strong> that binds only when structural barriers (childcare, demand) are already low. Information complements — not substitutes for — structural policy.</p>
+    </div>
   </div>
   <div class="footer">
     <span class="fl">Boltz · Bustelo · Díaz · Suaya</span>
-    <span class="fc">Results</span>
+    <span class="fc">Results · Heterogeneity</span>
   </div>
 </div>
 
 
 <!-- ══════════════════════════════════════════════
-     SLIDE 42 · MECHANISM 4: INFORMATION DIFFUSION
+     SLIDE 42 · WITHIN-COUPLE EXPOSURE (DESCRIPTIVE)
 ═══════════════════════════════════════════════ -->
 <div class="slide" data-section="Results">
   <div class="sh">
-    <div class="sec-tag">Results · Mechanisms</div>
-    <h2>Mechanism 4: Information Diffusion Within Couples</h2>
+    <div class="sec-tag">Results · Within-couple exposure (descriptive)</div>
+    <h2>Information does not diffuse automatically within couples</h2>
   </div>
-  <div class="content" style="display:flex; flex-direction:column; align-items:center; justify-content:center; flex:1;">
-    <img src="../Slides/Figure_Mechanism_4_Diffusion.png" alt="Information diffusion patterns" style="max-height:85%; max-width:90%; object-fit:contain;" />
+  <div class="content">
+    <div class="box" style="border-left-color:var(--red); background:#FDF0F0; margin-bottom:8px; padding:10px 14px;">
+      <p style="font-size:.9em;"><strong>⚠ Caveat — endogeneity:</strong> we did <em>not</em> randomize <em>which</em> spouse engaged with the WhatsApp module. Direct / indirect / joint exposure configurations are <strong>endogenous</strong>. We therefore interpret these results as <em>descriptive</em>, not causal.</p>
+    </div>
+    <div class="img-wrap" style="max-height:48%; margin-bottom:6px;">
+      <img src="../Slides/Figure_Mechanism_4_Diffusion.png" alt="Information diffusion patterns" style="max-height:100%; max-width:90%; object-fit:contain;" />
+    </div>
+    <div class="cols c3" style="flex:none; gap:10px;">
+      <div class="box" style="border-left-color:var(--orange);">
+        <p style="font-size:.82em;"><strong>Direct (own engagement):</strong> spousal SOB +6.2 pp — replicates main result</p>
+      </div>
+      <div class="box" style="border-left-color:var(--gray); background:#f5f5f5;">
+        <p style="font-size:.82em;"><strong>Indirect (only partner):</strong> spousal SOB ≈ 0; men's 1st-order ↓ 4–6 pp (possible reactance)</p>
+      </div>
+      <div class="box" style="border-left-color:var(--green); background:#EBF6EE;">
+        <p style="font-size:.82em;"><strong>Joint (both partners):</strong> spousal SOB +8.9 pp; course allocation +9–10 pp — strongest</p>
+      </div>
+    </div>
+    <div class="box navy" style="margin-top:6px;">
+      <p style="font-size:.86em;"><strong>Policy implication:</strong> ensure <em>both</em> partners receive the information directly. Don't rely on within-couple diffusion — bilateral exposure delivers the largest and most coherent updates. The asymmetric indirect-exposure pattern (men retreat when info comes via wife) suggests possible reactance.</p>
+    </div>
   </div>
   <div class="footer">
     <span class="fl">Boltz · Bustelo · Díaz · Suaya</span>
-    <span class="fc">Results</span>
+    <span class="fc">Results · Exposure</span>
   </div>
 </div>
 
