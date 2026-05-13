@@ -836,7 +836,8 @@ ul.bul li.gap { margin-top:10px; }
     <div class="box" style="border-left-color:var(--green); background:#EBF6EE; margin-bottom:10px;">
       <p><strong>The implication.</strong> If the inferred signal is biased — if everyone underestimates how acceptable maternal employment really is — then household decisions are <strong>inefficient</strong>. Wives don't pursue work they would have wanted; husbands don't propose support they would have offered. The misperception is a coordination failure inside the couple.</p>
     </div>
-    <p style="font-size:.88em; color:var(--dark); margin:0; text-align:center;"><em>This is why we randomize at the couple level and measure both partners. Mechanism formalized in §6 (Nash bargaining).</em></p>
+    <p style="font-size:.88em; color:var(--dark); margin:0 0 6px 0; text-align:center;"><em>This is why we randomize at the couple level and measure both partners. Mechanism formalized in §6 (Nash bargaining).</em></p>
+    <p style="font-size:.86em; color:var(--gray); margin:0; text-align:center;"><strong>Preview of findings:</strong> (i) own attitudes don't move, (ii) beliefs about the partner do, (iii) decisions follow — (iv) but only where structural barriers are already low.</p>
   </div>
   <div class="footer">
     <span class="fl">Boltz · Bustelo · Díaz · Suaya</span>
@@ -3240,7 +3241,7 @@ ul.bul li.gap { margin-top:10px; }
 
 
 <!-- ══════════════════════════════════════════════
-     SLIDE 41 · HETEROGENEITY BY LABOR ATTACHMENT
+     SLIDE 41 · HETEROGENEITY FIGURE (full-page)
 ═══════════════════════════════════════════════ -->
 <div class="slide" data-section="Results">
   <div class="sh">
@@ -3248,30 +3249,56 @@ ul.bul li.gap { margin-top:10px; }
     <h2>Where the treatment works: heterogeneity by wife's labor attachment</h2>
   </div>
   <div class="content">
-    <div class="box navy" style="margin-bottom:8px; padding:10px 14px;">
-      <p style="font-size:.9em;"><strong>Setup:</strong> interaction model with Z<sub>i</sub> = 1 if wife is inactive at baseline. Wife inactivity is a <em>stratification variable</em>, so the heterogeneity is causal:</p>
-      <p style="text-align:center; font-family:'Times New Roman', serif; font-size:.95em; padding:4px 0; color:var(--navy);">
-        Y<sub>i</sub> = α + β D<sub>i</sub> + γ Z<sub>i</sub> + δ (D<sub>i</sub> × Z<sub>i</sub>) + X<sub>i</sub>'θ + λ<sub>s</sub> + ε<sub>i</sub>
-      </p>
+    <div class="img-wrap">
+      <img src="../Slides/Figure_Mechanism_3_LaborHet.png" alt="Heterogeneity by wife's labor attachment" />
     </div>
-    <div class="img-wrap" style="max-height:42%; margin-bottom:6px;">
-      <img src="../Slides/Figure_Mechanism_3_LaborHet.png" alt="Heterogeneity by wife's labor attachment" style="max-height:100%; max-width:90%; object-fit:contain;" />
-    </div>
-    <div class="cols c2" style="flex:none; gap:14px;">
-      <div class="box" style="border-left-color:var(--green); background:#EBF6EE;">
-        <p style="font-size:.86em;"><strong>Active wives:</strong> beliefs +3.2/+5.3 pp · spousal +6.2 pp · course +11–13 pp · job search increases</p>
-      </div>
-      <div class="box" style="border-left-color:var(--red); background:#FDF0F0;">
-        <p style="font-size:.86em;"><strong>Inactive wives:</strong> belief updating ≈ 0 · course allocation ≈ 0 · <em>exception:</em> work-family balance concentrates here</p>
-      </div>
-    </div>
-    <div class="box" style="margin-top:6px;">
-      <p style="font-size:.86em;"><strong>Why this is "mechanism evidence" (not just heterogeneity):</strong> the pattern <em>discriminates between hypotheses</em>. If treatment moved <em>preferences</em>, effects should be uniform. The fact that only labor-attached households respond is consistent with information lifting a <strong>social-permission constraint</strong> that binds only when structural barriers (childcare, demand) are already low. Information complements — not substitutes for — structural policy.</p>
-    </div>
+    <div class="img-cap"><strong>Active wives</strong> (green): beliefs, spousal SOB, course, and job search all move. <strong>Inactive wives</strong> (red): null across the chain — exception is work–family balance. Interaction model with Z<sub>i</sub>=1 if wife is inactive at baseline (stratification variable → heterogeneity is causal).</div>
   </div>
   <div class="footer">
     <span class="fl">Boltz · Bustelo · Díaz · Suaya</span>
     <span class="fc">Results · Heterogeneity</span>
+  </div>
+</div>
+
+
+<!-- ══════════════════════════════════════════════
+     SLIDE 41b · SYNTHESIS: BOUNDARY OF THE NORMS CHANNEL  (BARBADOS — new 2026-05-13)
+═══════════════════════════════════════════════ -->
+<div class="slide" data-section="Results">
+  <div class="sh">
+    <div class="sec-tag">Results · Synthesis (the couples lens)</div>
+    <h2>The boundary of the norms channel</h2>
+  </div>
+  <div class="content">
+    <div class="box navy" style="margin-bottom:10px;">
+      <p style="font-size:.92em;"><strong>Putting the four results together through the couples lens:</strong> the experiment traces a causal chain that operates <em>inside the household</em> — and reveals where that chain runs and where it stops.</p>
+    </div>
+    <div class="cols c2" style="gap:14px; flex:1;">
+      <div class="box" style="border-left-color:var(--green); background:#EBF6EE;">
+        <h5 style="color:var(--green); margin-bottom:6px;">Where it binds: labor-attached households</h5>
+        <ol style="font-size:.88em; padding-left:18px; line-height:1.55;">
+          <li><strong>Own attitudes don't move</strong> — already supportive; no room to update <em>(FOB null)</em></li>
+          <li><strong>Beliefs about the partner do move</strong> — spousal SOB <strong>+6.2 pp</strong>; community SOB <strong>+3–5 pp</strong></li>
+          <li><strong>Decisions follow</strong> — course nomination <strong>+11–13 pp</strong>; women's job mobility <strong>+9.6 pp</strong></li>
+          <li><strong>The friction was intra-household</strong>, not against society — community signal works as a <em>proxy for the partner</em></li>
+        </ol>
+      </div>
+      <div class="box" style="border-left-color:var(--red); background:#FDF0F0;">
+        <h5 style="color:var(--red); margin-bottom:6px;">Where it stops: inactive women</h5>
+        <ul class="bul" style="font-size:.88em; line-height:1.55;">
+          <li>Belief updating ≈ 0 · course ≈ 0 · job search ≈ 0</li>
+          <li>Only work–family balance moves — consistent with shifted aspirations but no margin to act</li>
+          <li>Structural barriers (childcare, labor demand, certification) are the <em>first-order</em> constraint here — information about norms is not enough</li>
+        </ul>
+      </div>
+    </div>
+    <div class="box" style="border-left-color:var(--orange); margin-top:10px;">
+      <p style="font-size:.92em;"><strong>The contribution.</strong> We identify the <strong>boundary</strong> of the intra-household norms channel: where structural barriers are already low, correcting mutual misperception unblocks couple-level bargaining and moves women's labor decisions. Where structural barriers bind, information alone is silent. <em>Both findings are policy-relevant — the first tells us where information has traction, the second tells us where to invest in structural policy instead.</em></p>
+    </div>
+  </div>
+  <div class="footer">
+    <span class="fl">Boltz · Bustelo · Díaz · Suaya</span>
+    <span class="fc">Results · Synthesis</span>
   </div>
 </div>
 
@@ -3558,27 +3585,27 @@ ul.bul li.gap { margin-top:10px; }
   <div class="content">
     <div class="cards c2" style="flex:1; gap:12px;">
       <div class="card navy" style="display:flex; flex-direction:column;">
-        <h5>✓ Beliefs Are Correctable</h5>
+        <h5>① Own attitudes don't move — beliefs about the partner do</h5>
         <div class="desc" style="font-size:.9em; color:var(--dark); flex:1; margin-top:6px;">
-          A one-time WhatsApp message corrects misperceptions about community support by 3–5 pp and updates perceived spousal support by 6 pp. Even a light-touch digital intervention moves beliefs in the direction of truth.
+          First-order beliefs (own support for women's work) are already high and don't shift. The channel runs through <strong>second-order beliefs about the partner</strong>: spousal SOB +6.2 pp; community SOB +3–5 pp. The friction is informational, not preferences.
         </div>
       </div>
       <div class="card or" style="display:flex; flex-direction:column;">
-        <h5>✓ Norms Shift Within-Couple Decisions</h5>
+        <h5>② Within-couple decisions move</h5>
         <div class="desc" style="font-size:.9em; color:var(--dark); flex:1; margin-top:6px;">
-          Treated men are 9.1 pp (+23%) more likely to nominate their wife for a career-development course. A zero-sum choice with direct personal cost — a lower bound on the willingness to invest in the wife's career.
+          Treated men are <strong>9.1 pp (+23%)</strong> more likely to nominate their wife for a career-development course. A zero-sum allocation with direct personal cost — a lower bound on the willingness to invest in the wife's career.
         </div>
       </div>
       <div class="card gn" style="display:flex; flex-direction:column;">
-        <h5>✓ Women Respond with More Job Search</h5>
+        <h5>③ Women's labor decisions follow</h5>
         <div class="desc" style="font-size:.9em; color:var(--dark); flex:1; margin-top:6px;">
-          Treated women report +9.6 pp more job mobility in 1–2 months (p=0.006; RW p=0.013). Placebo timing check rules out social desirability. Effects driven by already labor-market attached women.
+          Treated women report <strong>+9.6 pp</strong> more job mobility in 1–2 months (p=0.006; RW p=0.013). Placebo timing check rules out social desirability. The behavioral chain — SOB → bargaining → action — runs end-to-end.
         </div>
       </div>
       <div class="card" style="display:flex; flex-direction:column;">
-        <h5>⚠ Inactive Women Respond Little</h5>
+        <h5>④ The boundary: only where structural barriers are low</h5>
         <div class="desc" style="font-size:.9em; color:var(--dark); flex:1; margin-top:6px;">
-          For women out of the labor force, correcting norms alone is insufficient. Structural barriers — childcare, workplace flexibility — dominate. Norm feedback and structural policies are complements.
+          The chain operates among labor-attached households. For inactive women, the chain breaks at step one — beliefs don't update because there is no margin to act on. <strong>Information about norms complements, not substitutes for, structural policy.</strong>
         </div>
       </div>
     </div>
@@ -3600,9 +3627,9 @@ ul.bul li.gap { margin-top:10px; }
   </div>
   <div class="content">
     <ul class="bul">
-      <li class="gap"><strong>The binding constraint is informational, not attitudinal.</strong> In contexts where private support for women's work is already high, the gap between attitudes and behavior may be sustained not by deep preferences but by inaccurate beliefs about peers. Policy that targets the information friction can shift behavior at low cost.</li>
-      <li class="gap"><strong>Couples matter as a unit.</strong> Studying a single respondent misses the mutual misperception dynamic and the within-household allocation channel. Information that corrects community-level beliefs also changes how each spouse perceives the other — with behavioral implications for the husband's course choice and the wife's job search.</li>
-      <li class="gap"><strong>For whom does information work?</strong> Effects concentrate among women who are already employed or actively seeking work. For inactive women, norm feedback is not enough — complementary policies addressing structural barriers (childcare, flexible hours, labor demand) are needed to move them into the labor market.</li>
+      <li class="gap"><strong>The binding constraint is intra-household coordination — where structural barriers are already low.</strong> In a "modern" equilibrium with high private support, the gap between attitudes and behavior is sustained by mutual misperception <em>between spouses</em>, not by deep preferences. Correcting that misperception unblocks couple-level bargaining at low cost.</li>
+      <li class="gap"><strong>Couples are the right unit of analysis.</strong> Single-respondent designs miss the spousal second-order channel, the within-household allocation margin, and the asymmetric updates between partners. The information that travels through community signals is processed by each spouse as a <em>proxy for the other</em> — making the household, not the individual, the decision unit.</li>
+      <li class="gap"><strong>We identify the boundary of the norms channel.</strong> The chain runs end-to-end (SOB → bargaining → labor decisions) among labor-attached households and is silent among inactive women. The asymmetry is itself a policy lesson: information is a low-cost tool for the first group; structural policy (childcare, demand, certification) is the binding tool for the second. <em>Norms and structure are complements, not substitutes.</em></li>
       <li class="gap"><strong>Scalability:</strong> WhatsApp-based norm correction is low-cost and digitally deliverable at scale in LAC cities. Engagement rates (~36%) are typical for low-cost digital interventions but underscore the importance of sustained exposure (endline reinforcement was necessary to achieve the full effect).</li>
     </ul>
   </div>
