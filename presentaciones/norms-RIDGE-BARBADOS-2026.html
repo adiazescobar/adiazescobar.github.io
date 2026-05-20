@@ -105,8 +105,8 @@ body {
   padding-bottom: 10px; margin-bottom: 20px; flex-shrink:0;
 }
 .sh .sec-tag {
-  color:var(--orange); font-size:.68em; font-weight:700;
-  letter-spacing:2px; text-transform:uppercase; margin-bottom:3px;
+  color:var(--orange); font-size:.82em; font-weight:700;
+  letter-spacing:1.5px; text-transform:uppercase; margin-bottom:4px;
 }
 .sh h2 { color:var(--navy); font-size:1.7em; font-weight:700; line-height:1.2; }
 
@@ -1358,52 +1358,15 @@ ul.bul li.gap { margin-top:10px; }
 </div>
 
 
-<!-- ══════════════════════════════════════════════
-     SLIDE 22 · BASELINE BELIEFS TABLE
-═══════════════════════════════════════════════ -->
-<div class="slide" data-section="Baseline Facts">
-  <div class="sh">
-    <div class="sec-tag">Baseline Facts · Beliefs</div>
-    <h2>Baseline Beliefs: Target Norm & Placebo</h2>
-  </div>
-  <div class="content" style="display:flex; justify-content:center;">
-    <table class="tbl" style="font-size:0.88em; width:80%;">
-      <thead>
-        <tr>
-          <th class="tl" style="width:45%;">Belief Type</th>
-          <th>Husbands</th>
-          <th>Wives</th>
-          <th>Difference</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr class="ph"><td colspan="4"><strong>A. Target Norm: "Mothers of children &lt;6 should be free to work"</strong></td></tr>
-        <tr><td class="tl"><strong>First-order</strong> (own view)</td><td><strong>88.5%</strong></td><td><strong>90.5%</strong></td><td>−2.0 pp**</td></tr>
-        <tr><td class="tl"><strong>Second-order: Men</strong> (estimate of fathers)</td><td class="sig2">61.0%</td><td class="sig2">55.7%</td><td class="sig">+5.3 pp***</td></tr>
-        <tr><td class="tl"><strong>Second-order: Women</strong> (estimate of mothers)</td><td>79.6%</td><td>80.0%</td><td>−0.4 pp</td></tr>
-        <tr><td class="tl"><strong>Spousal second-order</strong></td><td>93.9%</td><td>89.9%</td><td class="sig">+4.1 pp***</td></tr>
-
-        <tr class="ph"><td colspan="4"><strong>B. Placebo Norm: "Companies should subsidize public transport"</strong></td></tr>
-        <tr><td class="tl"><strong>First-order</strong> (own view)</td><td>93.5%</td><td>94.9%</td><td>−1.4 pp***</td></tr>
-      </tbody>
-    </table>
-  </div>
-  <div style="margin-top:12px; font-size:0.9em; text-align:center; color:#555;">
-    <p><strong>N = 1,732 couples.</strong> High first-order support for both norms (88–95%). Misperception concentrated on father's support for maternal employment (gap: 27–33 pp). Placebo norm shows no such gap.</p>
-  </div>
-  <div class="footer">
-    <span class="fl">Boltz · Bustelo · Díaz · Suaya</span>
-    <span class="fc">Baseline Facts</span>
-  </div>
-</div>
+<!-- Baseline beliefs table moved to Appendix (linked from the figures slide) -->
 
 
 <!-- ══════════════════════════════════════════════
      SLIDE 23 · FIGURES: MEN'S + WOMEN'S SUPPORT MISPERCEPTION (projection-resistant)
 ═══════════════════════════════════════════════ -->
-<div class="slide" data-section="Baseline Facts">
+<div class="slide" data-section="Baseline Facts" id="baseline-beliefs-main">
   <div class="sh">
-    <div class="sec-tag">Baseline Facts · Misperception of community support</div>
+    <div class="sec-tag">Baseline Facts · Misperception of community support &nbsp; <a href="javascript:void(0)" onclick="goToId('baseline-beliefs-table')" style="font-size:.82em; color:var(--navy); text-decoration:underline; font-weight:600;">📊 full table</a></div>
     <h2>Both sexes underestimate community support — sharply for men, mildly for women</h2>
   </div>
   <div class="content">
@@ -1843,20 +1806,14 @@ ul.bul li.gap { margin-top:10px; }
           </div>
         </div>
 
-        <!-- Working mothers block -->
-        <div style="font-size:.78em; color:var(--gray); text-transform:uppercase; letter-spacing:.5px; margin:6px 0 4px 0;">Working mothers</div>
-        <table style="width:100%; border-collapse:collapse; font-size:.86em;">
+        <table style="width:100%; border-collapse:collapse; font-size:.92em;">
           <tr style="border-bottom:1px solid #eee;">
-            <td style="padding:4px 0; color:var(--gray);">Own (FOB)</td>
-            <td style="text-align:right; color:#bbb; font-weight:600;">━ null</td>
+            <td style="padding:7px 0; color:var(--gray);">Own attitude (first-order belief)</td>
+            <td style="text-align:right; color:#bbb; font-weight:600;">━ &nbsp;null</td>
           </tr>
           <tr style="background:#F0EBFA;">
-            <td style="padding:7px 6px;"><strong style="color:var(--navy);">⚡ Belief about ♀'s support</strong></td>
-            <td style="text-align:right; padding:7px 6px;"><strong style="color:var(--red); font-size:1.15em;">+5.9 pp</strong> <span style="color:var(--red); font-weight:700;">★★</span></td>
-          </tr>
-          <tr>
-            <td style="padding:4px 0; color:var(--gray);">Misperception of ♀'s</td>
-            <td style="text-align:right; color:#bbb; font-weight:600;">━ null</td>
+            <td style="padding:10px 6px;"><strong style="color:var(--navy);">⚡ Belief about ♀'s support</strong></td>
+            <td style="text-align:right; padding:10px 6px;"><strong style="color:var(--red); font-size:1.2em;">+5.9 pp</strong> <span style="color:var(--red); font-weight:700;">★★</span></td>
           </tr>
         </table>
 
@@ -1872,20 +1829,14 @@ ul.bul li.gap { margin-top:10px; }
           </div>
         </div>
 
-        <!-- Working mothers block -->
-        <div style="font-size:.78em; color:var(--gray); text-transform:uppercase; letter-spacing:.5px; margin:6px 0 4px 0;">Working mothers</div>
-        <table style="width:100%; border-collapse:collapse; font-size:.86em;">
+        <table style="width:100%; border-collapse:collapse; font-size:.92em;">
           <tr style="border-bottom:1px solid #eee;">
-            <td style="padding:4px 0; color:var(--gray);">Own (FOB)</td>
-            <td style="text-align:right; color:#bbb; font-weight:600;">━ null</td>
+            <td style="padding:7px 0; color:var(--gray);">Own attitude (first-order belief)</td>
+            <td style="text-align:right; color:#bbb; font-weight:600;">━ &nbsp;null</td>
           </tr>
           <tr style="background:#F0EBFA;">
-            <td style="padding:7px 6px;"><strong style="color:var(--orange);">⚡ Belief about ♂'s support</strong></td>
-            <td style="text-align:right; padding:7px 6px;"><strong style="color:var(--red); font-size:1.15em;">+6.3 pp</strong> <span style="color:var(--red); font-weight:700;">★★</span></td>
-          </tr>
-          <tr>
-            <td style="padding:4px 0; color:var(--gray);">Misperception of ♂'s</td>
-            <td style="text-align:right; color:#bbb; font-weight:600;">━ null</td>
+            <td style="padding:10px 6px;"><strong style="color:var(--orange);">⚡ Belief about ♂'s support</strong></td>
+            <td style="text-align:right; padding:10px 6px;"><strong style="color:var(--red); font-size:1.2em;">+6.3 pp</strong> <span style="color:var(--red); font-weight:700;">★★</span></td>
           </tr>
         </table>
 
@@ -2080,21 +2031,21 @@ ul.bul li.gap { margin-top:10px; }
           </div>
         </div>
 
-        <table style="width:100%; border-collapse:collapse; font-size:.88em;">
+        <table style="width:100%; border-collapse:collapse; font-size:.92em;">
           <tr style="border-bottom:1px solid #eee;">
-            <td style="padding:6px 0; color:var(--gray);">Job mobility</td>
-            <td style="text-align:right; color:#bbb; font-weight:600;">━ null</td>
+            <td style="padding:7px 0; color:var(--gray);">Job mobility</td>
+            <td style="text-align:right; color:#bbb; font-weight:600;">━ &nbsp;null</td>
           </tr>
           <tr style="border-bottom:1px solid #eee;">
-            <td style="padding:6px 0; color:var(--gray);">LM aspirations</td>
-            <td style="text-align:right; color:#bbb; font-weight:600;">━ null</td>
+            <td style="padding:7px 0; color:var(--gray);">LM aspirations</td>
+            <td style="text-align:right; color:#bbb; font-weight:600;">━ &nbsp;null</td>
           </tr>
-          <tr style="background:#F0EBFA;">
-            <td style="padding:9px 6px;"><strong style="color:var(--navy); font-size:1.0em;">⚡ Work–family balance</strong></td>
-            <td style="text-align:right; padding:9px 6px;"><strong style="color:var(--red); font-size:1.2em;">+11 pp</strong> <span style="color:var(--red); font-weight:700;">★</span></td>
+          <tr>
+            <td style="padding:7px 0;">Work–family balance <span style="color:var(--gray); font-size:.85em;">(stated preference)</span></td>
+            <td style="text-align:right;"><strong>+11 pp</strong> <span style="color:var(--gray); font-weight:700;">★</span></td>
           </tr>
         </table>
-        <p style="font-size:.78em; color:var(--gray); margin:6px 0 0 0;">Control mean 32 % → treated 43 % (+35 % relative). Robust in Sample 3 (+6.6 pp ★).</p>
+        <p style="font-size:.78em; color:var(--gray); margin:6px 0 0 0;">WFB is a stated preference — interpret with caution (possible social-desirability echo; see SDB slide). The clear behavioural result is on the women's side.</p>
       </div>
 
       <!-- WOMEN COLUMN -->
@@ -2880,6 +2831,46 @@ ul.bul li.gap { margin-top:10px; }
   </div>
 </div>
 
+
+
+<!-- SLIDE A1c · BASELINE BELIEFS TABLE (moved from Baseline Facts) -->
+<div class="slide" data-section="Appendix" id="baseline-beliefs-table">
+  <div class="app-badge">Appendix · backup table</div>
+  <div class="sh">
+    <div class="sec-tag">Appendix · Baseline beliefs — full table</div>
+    <h2>Baseline Beliefs: Target Norm &amp; Placebo</h2>
+  </div>
+  <div class="content" style="display:flex; flex-direction:column; align-items:center; justify-content:flex-start;">
+    <table class="tbl" style="font-size:0.88em; width:80%;">
+      <thead>
+        <tr>
+          <th class="tl" style="width:45%;">Belief Type</th>
+          <th>Husbands</th>
+          <th>Wives</th>
+          <th>Difference</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="ph"><td colspan="4"><strong>A. Target Norm: "Mothers of children &lt;6 should be free to work"</strong></td></tr>
+        <tr><td class="tl"><strong>First-order</strong> (own view)</td><td><strong>88.5%</strong></td><td><strong>90.5%</strong></td><td>−2.0 pp**</td></tr>
+        <tr><td class="tl"><strong>Second-order: Men</strong> (estimate of fathers)</td><td class="sig2">61.0%</td><td class="sig2">55.7%</td><td class="sig">+5.3 pp***</td></tr>
+        <tr><td class="tl"><strong>Second-order: Women</strong> (estimate of mothers)</td><td>79.6%</td><td>80.0%</td><td>−0.4 pp</td></tr>
+        <tr><td class="tl"><strong>Spousal second-order</strong></td><td>93.9%</td><td>89.9%</td><td class="sig">+4.1 pp***</td></tr>
+
+        <tr class="ph"><td colspan="4"><strong>B. Placebo Norm: "Companies should subsidize public transport"</strong></td></tr>
+        <tr><td class="tl"><strong>First-order</strong> (own view)</td><td>93.5%</td><td>94.9%</td><td>−1.4 pp***</td></tr>
+      </tbody>
+    </table>
+    <div style="margin-top:12px; font-size:0.9em; text-align:center; color:#555;">
+      <p><strong>N = 1,732 couples.</strong> High first-order support for both norms (88–95%). Misperception concentrated on father's support for maternal employment (gap: 27–33 pp). Placebo norm shows no such gap.</p>
+    </div>
+  </div>
+  <div class="footer">
+    <span class="fl">Boltz · Bustelo · Díaz · Suaya</span>
+    <span class="fc">Backup · Baseline beliefs</span>
+    <span class="fr"><a href="javascript:void(0)" onclick="goToId('baseline-beliefs-main')" style="color:var(--orange); text-decoration:underline; font-weight:600;">← back to main slide</a></span>
+  </div>
+</div>
 
 
 <!-- SLIDE A1b · WITHIN-COUPLE EXPOSURE (moved from main results) -->
