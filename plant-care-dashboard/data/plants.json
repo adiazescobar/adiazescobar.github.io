@@ -1,10 +1,1622 @@
 {
   "metadata": {
-    "source": "clean-start",
+    "source": "/Users/adiazescobar/Downloads/plantas_cuidado_dashboard_actualizado.xlsx",
     "generatedAt": "2026-05-25",
-    "description": "Base reiniciada para reconstruir planta por planta con fotos y comentarios confirmados."
+    "description": "Datos reconstruidos desde Excel actualizado con fotos asociadas."
   },
-  "plants": [],
+  "plants": [
+    {
+      "id": 1,
+      "slug": "monstera-adansonii",
+      "commonName": "Monstera adansonii",
+      "probableSpecies": "Monstera adansonii",
+      "location": "Por definir",
+      "zone": "normal",
+      "plantType": "tropical_exigente",
+      "humidifierPriority": "no",
+      "currentPH": 6.9,
+      "currentMoisture": 57,
+      "currentLight": 777,
+      "temperature": "Por medir",
+      "generalState": "Estable",
+      "diagnosis": "Hojas bajas amarillas; sustrato algo compacto",
+      "mainProblem": "Hojas bajas amarillas; sustrato algo compacto",
+      "urgentActions": "Flush suave si hay sales; retirar hojas agotadas",
+      "maintenanceActions": "Mejorar aireación en próximo cambio; riego con pH 6.0–6.5",
+      "reviewFrequency": "Semanal",
+      "lastReviewDate": "2026-05-25",
+      "nextRecommendedAction": "Mejorar aireación en próximo cambio; riego con pH 6.0–6.5",
+      "notes": "pH casi tolerable",
+      "initialHumidifierNote": "No obligatorio",
+      "measurements": [
+        {
+          "date": "2026-05-25",
+          "ph": 6.9,
+          "moisture": 57,
+          "light": 777,
+          "state": "Estable",
+          "note": "Medición inicial importada desde Excel actualizado"
+        }
+      ],
+      "photos": [
+        {
+          "date": "2026-05-25",
+          "src": "photos/plant-01-01-img-fd042c56-527b-49e2-af5c-b04bdfff413e.jpg",
+          "caption": "principal: IMG_FD042C56-527B-49E2-AF5C-B04BDFFF413E.jpeg",
+          "type": "principal",
+          "originalName": "IMG_FD042C56-527B-49E2-AF5C-B04BDFFF413E.jpeg"
+        },
+        {
+          "date": "2026-05-25",
+          "src": "photos/plant-01-02-img-25f1949d-5397-401f-bb23-5a98946c2e98.jpg",
+          "caption": "diagnóstico: IMG_25F1949D-5397-401F-BB23-5A98946C2E98.jpeg",
+          "type": "diagnóstico",
+          "originalName": "IMG_25F1949D-5397-401F-BB23-5A98946C2E98.jpeg"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "slug": "anthurium-velvet-queen",
+      "commonName": "Anthurium velvet / Queen",
+      "probableSpecies": "Anthurium warocqueanum o híbrido velvet",
+      "location": "Por definir",
+      "zone": "humidificador",
+      "plantType": "tropical_exigente",
+      "humidifierPriority": "alta",
+      "currentPH": 7.3,
+      "currentMoisture": 38,
+      "currentLight": 1980,
+      "temperature": "Por medir",
+      "generalState": "Estrés moderado",
+      "diagnosis": "Bordes secos; humedad ambiental baja; pH alto",
+      "mainProblem": "Bordes secos; humedad ambiental baja; pH alto",
+      "urgentActions": "Agrupar en zona húmeda y poner humidificador",
+      "maintenanceActions": "Flush suave; mantener sustrato aireado; no sol directo",
+      "reviewFrequency": "Semanal",
+      "lastReviewDate": "2026-05-25",
+      "nextRecommendedAction": "Flush suave; mantener sustrato aireado; no sol directo",
+      "notes": "Planta diva premium",
+      "initialHumidifierNote": "SÍ, sí o sí",
+      "measurements": [
+        {
+          "date": "2026-05-25",
+          "ph": 7.3,
+          "moisture": 38,
+          "light": 1980,
+          "state": "Estrés moderado",
+          "note": "Medición inicial importada desde Excel actualizado"
+        }
+      ],
+      "photos": [
+        {
+          "date": "2026-05-25",
+          "src": "photos/plant-02-01-img-6097a9dd-5af1-4c93-92e9-37decb09bf6d.jpg",
+          "caption": "principal: IMG_6097A9DD-5AF1-4C93-92E9-37DECB09BF6D.jpeg",
+          "type": "principal",
+          "originalName": "IMG_6097A9DD-5AF1-4C93-92E9-37DECB09BF6D.jpeg"
+        },
+        {
+          "date": "2026-05-25",
+          "src": "photos/plant-02-02-img-e7128130-ee08-43cb-ad1b-ec9acaab98af.jpg",
+          "caption": "diagnóstico: IMG_E7128130-EE08-43CB-AD1B-EC9ACAAB98AF.jpeg",
+          "type": "diagnóstico",
+          "originalName": "IMG_E7128130-EE08-43CB-AD1B-EC9ACAAB98AF.jpeg"
+        },
+        {
+          "date": "2026-05-25",
+          "src": "photos/plant-02-03-img-180f6291-12b8-476a-b10b-924680b9597f.jpg",
+          "caption": "confirmación/adicional: IMG_180F6291-12B8-476A-B10B-924680B9597F.jpeg",
+          "type": "confirmación/adicional",
+          "originalName": "IMG_180F6291-12B8-476A-B10B-924680B9597F.jpeg"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "slug": "peperomia-colgante",
+      "commonName": "Peperomia colgante",
+      "probableSpecies": "Peperomia rotundifolia / similar",
+      "location": "Por definir",
+      "zone": "normal",
+      "plantType": "tropical",
+      "humidifierPriority": "no",
+      "currentPH": 7.9,
+      "currentMoisture": 27,
+      "currentLight": 862,
+      "temperature": "Por medir",
+      "generalState": "Estresada",
+      "diagnosis": "Tallos desnudos; pH alto; sustrato agotado",
+      "mainProblem": "Tallos desnudos; pH alto; sustrato agotado",
+      "urgentActions": "Podar y propagar puntas vivas",
+      "maintenanceActions": "Trasplante a mezcla drenante; más luz indirecta",
+      "reviewFrequency": "Semanal",
+      "lastReviewDate": "2026-05-25",
+      "nextRecommendedAction": "Trasplante a mezcla drenante; más luz indirecta",
+      "notes": "No humidificador directo",
+      "initialHumidifierNote": "No",
+      "measurements": [
+        {
+          "date": "2026-05-25",
+          "ph": 7.9,
+          "moisture": 27,
+          "light": 862,
+          "state": "Estresada",
+          "note": "Medición inicial importada desde Excel actualizado"
+        }
+      ],
+      "photos": [
+        {
+          "date": "2026-05-25",
+          "src": "photos/plant-03-01-img-8fb340c2-da16-4b4e-b595-d452cbd2b702.jpg",
+          "caption": "principal: IMG_8FB340C2-DA16-4B4E-B595-D452CBD2B702.jpeg",
+          "type": "principal",
+          "originalName": "IMG_8FB340C2-DA16-4B4E-B595-D452CBD2B702.jpeg"
+        },
+        {
+          "date": "2026-05-25",
+          "src": "photos/plant-03-02-img-037cc7a7-d79c-4058-b4ca-06a47d2fc430.jpg",
+          "caption": "diagnóstico: IMG_037CC7A7-D79C-4058-B4CA-06A47D2FC430.jpeg",
+          "type": "diagnóstico",
+          "originalName": "IMG_037CC7A7-D79C-4058-B4CA-06A47D2FC430.jpeg"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "slug": "alocasia-silver-dragon-like",
+      "commonName": "Alocasia Silver Dragon-like",
+      "probableSpecies": "Alocasia baginda / Silver Dragon-type",
+      "location": "Por definir",
+      "zone": "humidificador",
+      "plantType": "tropical_exigente",
+      "humidifierPriority": "alta",
+      "currentPH": 6.7,
+      "currentMoisture": 73,
+      "currentLight": 1165,
+      "temperature": "Por medir",
+      "generalState": "Estrés moderado",
+      "diagnosis": "Sustrato demasiado húmedo; bordes secos por baja humedad ambiental",
+      "mainProblem": "Sustrato demasiado húmedo; bordes secos por baja humedad ambiental",
+      "urgentActions": "No regar hasta bajar humedad; ubicar en zona húmeda con aire",
+      "maintenanceActions": "Mezcla más aireada si persiste; revisar raíces",
+      "reviewFrequency": "Semanal",
+      "lastReviewDate": "2026-05-25",
+      "nextRecommendedAction": "Mezcla más aireada si persiste; revisar raíces",
+      "notes": "Humedad ambiental sí, encharcamiento no",
+      "initialHumidifierNote": "SÍ, sí o sí",
+      "measurements": [
+        {
+          "date": "2026-05-25",
+          "ph": 6.7,
+          "moisture": 73,
+          "light": 1165,
+          "state": "Estrés moderado",
+          "note": "Medición inicial importada desde Excel actualizado"
+        }
+      ],
+      "photos": [
+        {
+          "date": "2026-05-25",
+          "src": "photos/plant-04-01-img-38bde1c7-3ab5-40da-b524-316107e5c2e0.jpg",
+          "caption": "principal: IMG_38BDE1C7-3AB5-40DA-B524-316107E5C2E0.jpeg",
+          "type": "principal",
+          "originalName": "IMG_38BDE1C7-3AB5-40DA-B524-316107E5C2E0.jpeg"
+        },
+        {
+          "date": "2026-05-25",
+          "src": "photos/plant-04-02-img-346ac274-96ae-41e6-999a-43609960c9ae.jpg",
+          "caption": "diagnóstico: IMG_346AC274-96AE-41E6-999A-43609960C9AE.jpeg",
+          "type": "diagnóstico",
+          "originalName": "IMG_346AC274-96AE-41E6-999A-43609960C9AE.jpeg"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "slug": "anthurium-oscuro-con-espatas",
+      "commonName": "Anthurium oscuro con espatas",
+      "probableSpecies": "Anthurium andraeanum/híbrido oscuro",
+      "location": "Por definir",
+      "zone": "normal",
+      "plantType": "tropical_exigente",
+      "humidifierPriority": "media",
+      "currentPH": 6.4,
+      "currentMoisture": 95,
+      "currentLight": 527,
+      "temperature": "Por medir",
+      "generalState": "Estable",
+      "diagnosis": "Sustrato demasiado húmedo; luz baja para floración",
+      "mainProblem": "Sustrato demasiado húmedo; luz baja para floración",
+      "urgentActions": "Suspender riego y verificar drenaje",
+      "maintenanceActions": "Más luz indirecta; airear sustrato",
+      "reviewFrequency": "Semanal",
+      "lastReviewDate": "2026-05-25",
+      "nextRecommendedAction": "Más luz indirecta; airear sustrato",
+      "notes": "pH perfecto",
+      "initialHumidifierNote": "Opcional",
+      "measurements": [
+        {
+          "date": "2026-05-25",
+          "ph": 6.4,
+          "moisture": 95,
+          "light": 527,
+          "state": "Estable",
+          "note": "Medición inicial importada desde Excel actualizado"
+        }
+      ],
+      "photos": [
+        {
+          "date": "2026-05-25",
+          "src": "photos/plant-05-01-img-7c83e1e0-7347-4f7f-aadd-87eac509955c.jpg",
+          "caption": "principal: IMG_7C83E1E0-7347-4F7F-AADD-87EAC509955C.jpeg",
+          "type": "principal",
+          "originalName": "IMG_7C83E1E0-7347-4F7F-AADD-87EAC509955C.jpeg"
+        },
+        {
+          "date": "2026-05-25",
+          "src": "photos/plant-05-02-img-ce30b783-6b92-4fdd-90e1-d7914637a081.jpg",
+          "caption": "diagnóstico: IMG_CE30B783-6B92-4FDD-90E1-D7914637A081.jpeg",
+          "type": "diagnóstico",
+          "originalName": "IMG_CE30B783-6B92-4FDD-90E1-D7914637A081.jpeg"
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "slug": "ficus-lyrata-1",
+      "commonName": "Ficus lyrata 1",
+      "probableSpecies": "Ficus lyrata",
+      "location": "Por definir",
+      "zone": "normal",
+      "plantType": "tropical",
+      "humidifierPriority": "no",
+      "currentPH": 7,
+      "currentMoisture": null,
+      "currentLight": 3920,
+      "temperature": "Por medir",
+      "generalState": "Estable",
+      "diagnosis": "Sustrato envejecido; hojas viejas secas",
+      "mainProblem": "Sustrato envejecido; hojas viejas secas",
+      "urgentActions": "Retirar hojas muertas; revisar drenaje",
+      "maintenanceActions": "Renovar capa superficial; flush mensual",
+      "reviewFrequency": "Mensual",
+      "lastReviewDate": "2026-05-25",
+      "nextRecommendedAction": "Renovar capa superficial; flush mensual",
+      "notes": "Tolerante",
+      "initialHumidifierNote": "No",
+      "measurements": [
+        {
+          "date": "2026-05-25",
+          "ph": 7,
+          "moisture": null,
+          "light": 3920,
+          "state": "Estable",
+          "note": "Medición inicial importada desde Excel actualizado"
+        }
+      ],
+      "photos": [
+        {
+          "date": "2026-05-25",
+          "src": "photos/plant-06-01-img-d051e249-78db-4f0c-b253-d9a3babb3479.jpg",
+          "caption": "principal: IMG_D051E249-78DB-4F0C-B253-D9A3BABB3479.jpeg",
+          "type": "principal",
+          "originalName": "IMG_D051E249-78DB-4F0C-B253-D9A3BABB3479.jpeg"
+        },
+        {
+          "date": "2026-05-25",
+          "src": "photos/plant-06-02-img-fcc42942-304d-4ba5-97f1-cb33e7594466.jpg",
+          "caption": "diagnóstico: IMG_FCC42942-304D-4BA5-97F1-CB33E7594466.jpeg",
+          "type": "diagnóstico",
+          "originalName": "IMG_FCC42942-304D-4BA5-97F1-CB33E7594466.jpeg"
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "slug": "ficus-lyrata-2",
+      "commonName": "Ficus lyrata 2",
+      "probableSpecies": "Ficus lyrata",
+      "location": "Por definir",
+      "zone": "normal",
+      "plantType": "tropical",
+      "humidifierPriority": "no",
+      "currentPH": 8.8,
+      "currentMoisture": null,
+      "currentLight": null,
+      "temperature": "Por medir",
+      "generalState": "Estrés moderado",
+      "diagnosis": "pH extremadamente alto; clorosis inicial",
+      "mainProblem": "pH extremadamente alto; clorosis inicial",
+      "urgentActions": "Lavar sales con riego profundo si hay drenaje",
+      "maintenanceActions": "Renovar sustrato parcial; micronutrientes quelatados después del flush",
+      "reviewFrequency": "Semanal",
+      "lastReviewDate": "2026-05-25",
+      "nextRecommendedAction": "Renovar sustrato parcial; micronutrientes quelatados después del flush",
+      "notes": "Evitar fertilización fuerte antes de lavar sales",
+      "initialHumidifierNote": "No",
+      "measurements": [
+        {
+          "date": "2026-05-25",
+          "ph": 8.8,
+          "moisture": null,
+          "light": null,
+          "state": "Estrés moderado",
+          "note": "Medición inicial importada desde Excel actualizado"
+        }
+      ],
+      "photos": [
+        {
+          "date": "2026-05-25",
+          "src": "photos/plant-07-01-img-8f312b35-9a06-41a1-9830-5cb34e15c830.jpg",
+          "caption": "principal: IMG_8F312B35-9A06-41A1-9830-5CB34E15C830.jpeg",
+          "type": "principal",
+          "originalName": "IMG_8F312B35-9A06-41A1-9830-5CB34E15C830.jpeg"
+        },
+        {
+          "date": "2026-05-25",
+          "src": "photos/plant-07-02-img-f10b84c6-e6ed-4af4-80b2-e9ad965a9297.jpg",
+          "caption": "diagnóstico: IMG_F10B84C6-E6ED-4AF4-80B2-E9AD965A9297.jpeg",
+          "type": "diagnóstico",
+          "originalName": "IMG_F10B84C6-E6ED-4AF4-80B2-E9AD965A9297.jpeg"
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "slug": "philodendron-lemon-lime",
+      "commonName": "Philodendron Lemon Lime",
+      "probableSpecies": "Philodendron hederaceum Lemon Lime",
+      "location": "Por definir",
+      "zone": "normal",
+      "plantType": "tropical_exigente",
+      "humidifierPriority": "baja",
+      "currentPH": 6.9,
+      "currentMoisture": 59,
+      "currentLight": 35,
+      "temperature": "Por medir",
+      "generalState": "Estable",
+      "diagnosis": "Luz baja; tutor seco",
+      "mainProblem": "Luz baja; tutor seco",
+      "urgentActions": "Más luz indirecta; humedecer tutor",
+      "maintenanceActions": "Fertilización suave; bajar pH levemente",
+      "reviewFrequency": "Mensual",
+      "lastReviewDate": "2026-05-25",
+      "nextRecommendedAction": "Fertilización suave; bajar pH levemente",
+      "notes": "No todo amarillo es enfermedad",
+      "initialHumidifierNote": "Opcional",
+      "measurements": [
+        {
+          "date": "2026-05-25",
+          "ph": 6.9,
+          "moisture": 59,
+          "light": 35,
+          "state": "Estable",
+          "note": "Medición inicial importada desde Excel actualizado"
+        }
+      ],
+      "photos": [
+        {
+          "date": "2026-05-25",
+          "src": "photos/plant-08-01-img-5ed4d366-c7d0-424d-8afa-a6de5d3c9117.jpg",
+          "caption": "principal: IMG_5ED4D366-C7D0-424D-8AFA-A6DE5D3C9117.jpeg",
+          "type": "principal",
+          "originalName": "IMG_5ED4D366-C7D0-424D-8AFA-A6DE5D3C9117.jpeg"
+        },
+        {
+          "date": "2026-05-25",
+          "src": "photos/plant-08-02-img-8ba9bf7b-5d8d-4c3e-acee-b472e3a4425c.jpg",
+          "caption": "diagnóstico: IMG_8BA9BF7B-5D8D-4C3E-ACEE-B472E3A4425C.jpeg",
+          "type": "diagnóstico",
+          "originalName": "IMG_8BA9BF7B-5D8D-4C3E-ACEE-B472E3A4425C.jpeg"
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "slug": "dracaena-grande",
+      "commonName": "Dracaena grande",
+      "probableSpecies": "Dracaena fragrans",
+      "location": "Por definir",
+      "zone": "normal",
+      "plantType": "tropical",
+      "humidifierPriority": "no",
+      "currentPH": 8.7,
+      "currentMoisture": 9,
+      "currentLight": 50,
+      "temperature": "Por medir",
+      "generalState": "Estresada crónica",
+      "diagnosis": "Sequía severa + pH alto + sales",
+      "mainProblem": "Sequía severa + pH alto + sales",
+      "urgentActions": "Riego profundo gradual; revisar si sustrato hidrofóbico",
+      "maintenanceActions": "Agua menos mineralizada; renovar sustrato superficial",
+      "reviewFrequency": "Semanal",
+      "lastReviewDate": "2026-05-25",
+      "nextRecommendedAction": "Agua menos mineralizada; renovar sustrato superficial",
+      "notes": "Dracaena sensible a sales/fluoruros",
+      "initialHumidifierNote": "No",
+      "measurements": [
+        {
+          "date": "2026-05-25",
+          "ph": 8.7,
+          "moisture": 9,
+          "light": 50,
+          "state": "Estresada crónica",
+          "note": "Medición inicial importada desde Excel actualizado"
+        }
+      ],
+      "photos": [
+        {
+          "date": "2026-05-25",
+          "src": "photos/plant-09-01-img-e8505526-4927-4692-9208-b7aceff91125.jpg",
+          "caption": "principal: IMG_E8505526-4927-4692-9208-B7ACEFF91125.jpeg",
+          "type": "principal",
+          "originalName": "IMG_E8505526-4927-4692-9208-B7ACEFF91125.jpeg"
+        },
+        {
+          "date": "2026-05-25",
+          "src": "photos/plant-09-02-img-a699e0c0-270d-464d-bc4f-2030e0904162.jpg",
+          "caption": "diagnóstico: IMG_A699E0C0-270D-464D-BC4F-2030E0904162.jpeg",
+          "type": "diagnóstico",
+          "originalName": "IMG_A699E0C0-270D-464D-BC4F-2030E0904162.jpeg"
+        },
+        {
+          "date": "2026-05-25",
+          "src": "photos/plant-09-03-img-5aaa1e2d-22e5-4dd2-a4a5-a481e0386760.jpg",
+          "caption": "diagnóstico: IMG_5AAA1E2D-22E5-4DD2-A4A5-A481E0386760.jpeg",
+          "type": "diagnóstico",
+          "originalName": "IMG_5AAA1E2D-22E5-4DD2-A4A5-A481E0386760.jpeg"
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "slug": "ficus-elastica-burgundy",
+      "commonName": "Ficus elastica Burgundy",
+      "probableSpecies": "Ficus elastica Burgundy",
+      "location": "Por definir",
+      "zone": "normal",
+      "plantType": "tropical",
+      "humidifierPriority": "no",
+      "currentPH": 8.8,
+      "currentMoisture": 5,
+      "currentLight": 0,
+      "temperature": "Por medir",
+      "generalState": "Estrés moderado",
+      "diagnosis": "Sequía severa + pH alto; sustrato hidrofóbico",
+      "mainProblem": "Sequía severa + pH alto; sustrato hidrofóbico",
+      "urgentActions": "Rehidratar lentamente y profundo",
+      "maintenanceActions": "Trasplante parcial; agua menos alcalina",
+      "reviewFrequency": "Semanal",
+      "lastReviewDate": "2026-05-25",
+      "nextRecommendedAction": "Trasplante parcial; agua menos alcalina",
+      "notes": "Resistente, pero con estrés acumulado",
+      "initialHumidifierNote": "No",
+      "measurements": [
+        {
+          "date": "2026-05-25",
+          "ph": 8.8,
+          "moisture": 5,
+          "light": 0,
+          "state": "Estrés moderado",
+          "note": "Medición inicial importada desde Excel actualizado"
+        }
+      ],
+      "photos": [
+        {
+          "date": "2026-05-25",
+          "src": "photos/plant-10-01-img-4dbffbf3-7676-42c1-8536-da2474e5eac6.jpg",
+          "caption": "principal: IMG_4DBFFBF3-7676-42C1-8536-DA2474E5EAC6.jpeg",
+          "type": "principal",
+          "originalName": "IMG_4DBFFBF3-7676-42C1-8536-DA2474E5EAC6.jpeg"
+        },
+        {
+          "date": "2026-05-25",
+          "src": "photos/plant-10-02-img-55b60319-17d6-42dc-9985-dcffe01a2685.jpg",
+          "caption": "diagnóstico: IMG_55B60319-17D6-42DC-9985-DCFFE01A2685.jpeg",
+          "type": "diagnóstico",
+          "originalName": "IMG_55B60319-17D6-42DC-9985-DCFFE01A2685.jpeg"
+        },
+        {
+          "date": "2026-05-25",
+          "src": "photos/plant-10-03-img-232af3d9-2175-4514-8b85-4476e667ebf2.jpg",
+          "caption": "diagnóstico: IMG_232AF3D9-2175-4514-8B85-4476E667EBF2.jpeg",
+          "type": "diagnóstico",
+          "originalName": "IMG_232AF3D9-2175-4514-8B85-4476E667EBF2.jpeg"
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "slug": "dracaena-fragrans-seca",
+      "commonName": "Dracaena fragrans seca",
+      "probableSpecies": "Dracaena fragrans",
+      "location": "Por definir",
+      "zone": "normal",
+      "plantType": "tropical",
+      "humidifierPriority": "no",
+      "currentPH": 7,
+      "currentMoisture": 5,
+      "currentLight": 0,
+      "temperature": "Por medir",
+      "generalState": "Estresada",
+      "diagnosis": "Sequía extrema; posible sustrato hidrofóbico",
+      "mainProblem": "Sequía extrema; posible sustrato hidrofóbico",
+      "urgentActions": "Riego profundo gradual",
+      "maintenanceActions": "Flush; renovar sustrato si compactado",
+      "reviewFrequency": "Semanal",
+      "lastReviewDate": "2026-05-25",
+      "nextRecommendedAction": "Flush; renovar sustrato si compactado",
+      "notes": "pH no es el problema principal",
+      "initialHumidifierNote": "No",
+      "measurements": [
+        {
+          "date": "2026-05-25",
+          "ph": 7,
+          "moisture": 5,
+          "light": 0,
+          "state": "Estresada",
+          "note": "Medición inicial importada desde Excel actualizado"
+        }
+      ],
+      "photos": [
+        {
+          "date": "2026-05-25",
+          "src": "photos/plant-11-01-img-726e3c4d-f401-4ed1-97c9-4ebcc6478e0a.jpg",
+          "caption": "principal: IMG_726E3C4D-F401-4ED1-97C9-4EBCC6478E0A.jpeg",
+          "type": "principal",
+          "originalName": "IMG_726E3C4D-F401-4ED1-97C9-4EBCC6478E0A.jpeg"
+        },
+        {
+          "date": "2026-05-25",
+          "src": "photos/plant-11-02-img-9d808f06-cda5-4ca2-b1d7-07992c82b42b.jpg",
+          "caption": "diagnóstico: IMG_9D808F06-CDA5-4CA2-B1D7-07992C82B42B.jpeg",
+          "type": "diagnóstico",
+          "originalName": "IMG_9D808F06-CDA5-4CA2-B1D7-07992C82B42B.jpeg"
+        },
+        {
+          "date": "2026-05-25",
+          "src": "photos/plant-11-03-img-d737a50e-63ca-455f-81fc-28bb50e68ecf.jpg",
+          "caption": "diagnóstico: IMG_D737A50E-63CA-455F-81FC-28BB50E68ECF.jpeg",
+          "type": "diagnóstico",
+          "originalName": "IMG_D737A50E-63CA-455F-81FC-28BB50E68ECF.jpeg"
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "slug": "pachira-aquatica-1",
+      "commonName": "Pachira aquatica 1",
+      "probableSpecies": "Pachira aquatica",
+      "location": "Por definir",
+      "zone": "normal",
+      "plantType": "tropical",
+      "humidifierPriority": "no",
+      "currentPH": 8.4,
+      "currentMoisture": 15,
+      "currentLight": 0,
+      "temperature": "Por medir",
+      "generalState": "Estable con estrés",
+      "diagnosis": "pH alto; sequía leve; compactación",
+      "mainProblem": "pH alto; sequía leve; compactación",
+      "urgentActions": "Riego profundo cuando toque; revisar drenaje",
+      "maintenanceActions": "Flush ocasional; mejorar agua",
+      "reviewFrequency": "Semanal",
+      "lastReviewDate": "2026-05-25",
+      "nextRecommendedAction": "Flush ocasional; mejorar agua",
+      "notes": "No humidificador prioritario",
+      "initialHumidifierNote": "No",
+      "measurements": [
+        {
+          "date": "2026-05-25",
+          "ph": 8.4,
+          "moisture": 15,
+          "light": 0,
+          "state": "Estable con estrés",
+          "note": "Medición inicial importada desde Excel actualizado"
+        }
+      ],
+      "photos": [
+        {
+          "date": "2026-05-25",
+          "src": "photos/plant-12-01-img-679f9add-db6d-4045-8e20-56c736afac5c.jpg",
+          "caption": "principal: IMG_679F9ADD-DB6D-4045-8E20-56C736AFAC5C.jpeg",
+          "type": "principal",
+          "originalName": "IMG_679F9ADD-DB6D-4045-8E20-56C736AFAC5C.jpeg"
+        },
+        {
+          "date": "2026-05-25",
+          "src": "photos/plant-12-02-img-be26bb49-a2dd-49b2-8add-66cd9b512a58.jpg",
+          "caption": "diagnóstico: IMG_BE26BB49-A2DD-49B2-8ADD-66CD9B512A58.jpeg",
+          "type": "diagnóstico",
+          "originalName": "IMG_BE26BB49-A2DD-49B2-8ADD-66CD9B512A58.jpeg"
+        },
+        {
+          "date": "2026-05-25",
+          "src": "photos/plant-12-03-img-6db0e384-c36e-4175-88ac-48fd9d70de24.jpg",
+          "caption": "diagnóstico: IMG_6DB0E384-C36E-4175-88AC-48FD9D70DE24.jpeg",
+          "type": "diagnóstico",
+          "originalName": "IMG_6DB0E384-C36E-4175-88AC-48FD9D70DE24.jpeg"
+        }
+      ]
+    },
+    {
+      "id": 13,
+      "slug": "euphorbia-cactus-grande",
+      "commonName": "Euphorbia/cactus grande",
+      "probableSpecies": "Euphorbia trigona / cactus-like",
+      "location": "Por definir",
+      "zone": "seca",
+      "plantType": "cactus_sansevieria",
+      "humidifierPriority": "no",
+      "currentPH": 7.9,
+      "currentMoisture": 25,
+      "currentLight": 0,
+      "temperature": "Por medir",
+      "generalState": "Saludable",
+      "diagnosis": "Luz algo baja; pH tolerable para especie",
+      "mainProblem": "Luz algo baja; pH tolerable para especie",
+      "urgentActions": "No regar por ahora",
+      "maintenanceActions": "Mover a más luz si posible",
+      "reviewFrequency": "Mensual",
+      "lastReviewDate": "2026-05-25",
+      "nextRecommendedAction": "Mover a más luz si posible",
+      "notes": "Mantener seca",
+      "initialHumidifierNote": "No",
+      "measurements": [
+        {
+          "date": "2026-05-25",
+          "ph": 7.9,
+          "moisture": 25,
+          "light": 0,
+          "state": "Saludable",
+          "note": "Medición inicial importada desde Excel actualizado"
+        }
+      ],
+      "photos": [
+        {
+          "date": "2026-05-25",
+          "src": "photos/plant-13-01-img-86894138-34fc-4e4d-9f09-c862330c21dd.jpg",
+          "caption": "principal: IMG_86894138-34FC-4E4D-9F09-C862330C21DD.jpeg",
+          "type": "principal",
+          "originalName": "IMG_86894138-34FC-4E4D-9F09-C862330C21DD.jpeg"
+        },
+        {
+          "date": "2026-05-25",
+          "src": "photos/plant-13-02-img-3237727c-2c8c-41ef-a735-aee2d6491083.jpg",
+          "caption": "diagnóstico: IMG_3237727C-2C8C-41EF-A735-AEE2D6491083.jpeg",
+          "type": "diagnóstico",
+          "originalName": "IMG_3237727C-2C8C-41EF-A735-AEE2D6491083.jpeg"
+        },
+        {
+          "date": "2026-05-25",
+          "src": "photos/plant-13-03-img-89f5de3b-147f-42e2-96a6-9cd967db3fbe.jpg",
+          "caption": "diagnóstico: IMG_89F5DE3B-147F-42E2-96A6-9CD967DB3FBE.jpeg",
+          "type": "diagnóstico",
+          "originalName": "IMG_89F5DE3B-147F-42E2-96A6-9CD967DB3FBE.jpeg"
+        }
+      ]
+    },
+    {
+      "id": 14,
+      "slug": "pachira-aquatica-2",
+      "commonName": "Pachira aquatica 2",
+      "probableSpecies": "Pachira aquatica",
+      "location": "Por definir",
+      "zone": "normal",
+      "plantType": "tropical",
+      "humidifierPriority": "no",
+      "currentPH": 8,
+      "currentMoisture": 24,
+      "currentLight": 950,
+      "temperature": "Por medir",
+      "generalState": "Bastante saludable",
+      "diagnosis": "pH alto leve; depósitos minerales en hojas",
+      "mainProblem": "pH alto leve; depósitos minerales en hojas",
+      "urgentActions": "Mantener manejo; limpiar hojas",
+      "maintenanceActions": "Mejorar calidad del agua gradualmente",
+      "reviewFrequency": "Mensual",
+      "lastReviewDate": "2026-05-25",
+      "nextRecommendedAction": "Mejorar calidad del agua gradualmente",
+      "notes": "No requiere humidificador",
+      "initialHumidifierNote": "No",
+      "measurements": [
+        {
+          "date": "2026-05-25",
+          "ph": 8,
+          "moisture": 24,
+          "light": 950,
+          "state": "Bastante saludable",
+          "note": "Medición inicial importada desde Excel actualizado"
+        }
+      ],
+      "photos": [
+        {
+          "date": "2026-05-25",
+          "src": "photos/plant-14-01-img-a4147e09-bd0c-4d77-80b9-5e81a53f9d43.jpg",
+          "caption": "principal: IMG_A4147E09-BD0C-4D77-80B9-5E81A53F9D43.jpeg",
+          "type": "principal",
+          "originalName": "IMG_A4147E09-BD0C-4D77-80B9-5E81A53F9D43.jpeg"
+        },
+        {
+          "date": "2026-05-25",
+          "src": "photos/plant-14-02-img-2454afb5-002c-413e-9bf2-c3aa8ad31257.jpg",
+          "caption": "diagnóstico: IMG_2454AFB5-002C-413E-9BF2-C3AA8AD31257.jpeg",
+          "type": "diagnóstico",
+          "originalName": "IMG_2454AFB5-002C-413E-9BF2-C3AA8AD31257.jpeg"
+        },
+        {
+          "date": "2026-05-25",
+          "src": "photos/plant-14-03-img-2a88f92a-9f1b-414f-9d90-a2ede989d701.jpg",
+          "caption": "diagnóstico: IMG_2A88F92A-9F1B-414F-9D90-A2EDE989D701.jpeg",
+          "type": "diagnóstico",
+          "originalName": "IMG_2A88F92A-9F1B-414F-9D90-A2EDE989D701.jpeg"
+        }
+      ]
+    },
+    {
+      "id": 15,
+      "slug": "pink-princess",
+      "commonName": "Pink Princess",
+      "probableSpecies": "Philodendron erubescens 'Pink Princess'",
+      "location": "Por definir",
+      "zone": "normal",
+      "plantType": "tropical_exigente",
+      "humidifierPriority": "media",
+      "currentPH": 7.2,
+      "currentMoisture": 40,
+      "currentLight": 1200,
+      "temperature": "Por medir",
+      "generalState": "Saludable",
+      "diagnosis": "Luz insuficiente para variegación óptima",
+      "mainProblem": "Luz insuficiente para variegación óptima",
+      "urgentActions": "Zona húmeda con humidificador",
+      "maintenanceActions": "Mantener tutor; humedad moderada ayuda",
+      "reviewFrequency": "Semanal",
+      "lastReviewDate": "2026-05-25",
+      "nextRecommendedAction": "Mantener tutor; humedad moderada ayuda",
+      "notes": "No tan urgente como anthurium/alocasia",
+      "initialHumidifierNote": "Opcional alto",
+      "measurements": [
+        {
+          "date": "2026-05-25",
+          "ph": 7.2,
+          "moisture": 40,
+          "light": 1200,
+          "state": "Saludable",
+          "note": "Medición inicial importada desde Excel actualizado"
+        }
+      ],
+      "photos": [
+        {
+          "date": "2026-05-25",
+          "src": "photos/plant-15-01-img-e59ed9b8-5708-4f74-9ce2-e978dfd2c991.jpg",
+          "caption": "principal: IMG_E59ED9B8-5708-4F74-9CE2-E978DFD2C991.jpeg",
+          "type": "principal",
+          "originalName": "IMG_E59ED9B8-5708-4F74-9CE2-E978DFD2C991.jpeg"
+        },
+        {
+          "date": "2026-05-25",
+          "src": "photos/plant-15-02-img-7d8f4544-20ac-4943-aa8f-3ffd39c942b9.jpg",
+          "caption": "diagnóstico: IMG_7D8F4544-20AC-4943-AA8F-3FFD39C942B9.jpeg",
+          "type": "diagnóstico",
+          "originalName": "IMG_7D8F4544-20AC-4943-AA8F-3FFD39C942B9.jpeg"
+        },
+        {
+          "date": "2026-05-25",
+          "src": "photos/plant-15-03-img-f1098a45-d885-4a46-b180-dd72ba547074.jpg",
+          "caption": "diagnóstico: IMG_F1098A45-D885-4A46-B180-DD72BA547074.jpeg",
+          "type": "diagnóstico",
+          "originalName": "IMG_F1098A45-D885-4A46-B180-DD72BA547074.jpeg"
+        }
+      ]
+    },
+    {
+      "id": 16,
+      "slug": "philodendron-gloriosum-1",
+      "commonName": "Philodendron gloriosum 1",
+      "probableSpecies": "Philodendron gloriosum/plowmanii",
+      "location": "Por definir",
+      "zone": "humidificador",
+      "plantType": "tropical_exigente",
+      "humidifierPriority": "alta",
+      "currentPH": 8.9,
+      "currentMoisture": 5,
+      "currentLight": 1600,
+      "temperature": "Por medir",
+      "generalState": "Estrés moderado",
+      "diagnosis": "Deshidratación; pH crítico; pecíolos largos por luz insuficiente",
+      "mainProblem": "Deshidratación; pH crítico; pecíolos largos por luz insuficiente",
+      "urgentActions": "Riego profundo; mover a zona húmeda",
+      "maintenanceActions": "Mezcla aroide aireada; agua menos alcalina",
+      "reviewFrequency": "Semanal",
+      "lastReviewDate": "2026-05-25",
+      "nextRecommendedAction": "Mezcla aroide aireada; agua menos alcalina",
+      "notes": "Humedad alta ayuda a hojas nuevas",
+      "initialHumidifierNote": "SÍ, muy recomendable",
+      "measurements": [
+        {
+          "date": "2026-05-25",
+          "ph": 8.9,
+          "moisture": 5,
+          "light": 1600,
+          "state": "Estrés moderado",
+          "note": "Medición inicial importada desde Excel actualizado"
+        }
+      ],
+      "photos": [
+        {
+          "date": "2026-05-25",
+          "src": "photos/plant-16-01-img-1003c526-9b8e-4894-a8cd-fc9ffccacdee.jpg",
+          "caption": "principal: IMG_1003C526-9B8E-4894-A8CD-FC9FFCCACDEE.jpeg",
+          "type": "principal",
+          "originalName": "IMG_1003C526-9B8E-4894-A8CD-FC9FFCCACDEE.jpeg"
+        },
+        {
+          "date": "2026-05-25",
+          "src": "photos/plant-16-02-img-0d74bc06-0c08-448e-92c2-21bf9206c75f.jpg",
+          "caption": "diagnóstico: IMG_0D74BC06-0C08-448E-92C2-21BF9206C75F.jpeg",
+          "type": "diagnóstico",
+          "originalName": "IMG_0D74BC06-0C08-448E-92C2-21BF9206C75F.jpeg"
+        },
+        {
+          "date": "2026-05-25",
+          "src": "photos/plant-16-03-img-20c2a3f3-d5f1-4bf1-af81-b5b68b59ced6.jpg",
+          "caption": "diagnóstico: IMG_20C2A3F3-D5F1-4BF1-AF81-B5B68B59CED6.jpeg",
+          "type": "diagnóstico",
+          "originalName": "IMG_20C2A3F3-D5F1-4BF1-AF81-B5B68B59CED6.jpeg"
+        },
+        {
+          "date": "2026-05-25",
+          "src": "photos/plant-16-04-img-68a9b62a-9a4f-40e5-b24c-dbf9fc1d5851.jpg",
+          "caption": "confirmación/adicional: IMG_68A9B62A-9A4F-40E5-B24C-DBF9FC1D5851.jpeg",
+          "type": "confirmación/adicional",
+          "originalName": "IMG_68A9B62A-9A4F-40E5-B24C-DBF9FC1D5851.jpeg"
+        }
+      ]
+    },
+    {
+      "id": 17,
+      "slug": "philodendron-gloriosum-2",
+      "commonName": "Philodendron gloriosum 2",
+      "probableSpecies": "Philodendron gloriosum/plowmanii",
+      "location": "Por definir",
+      "zone": "humidificador",
+      "plantType": "tropical_exigente",
+      "humidifierPriority": "alta",
+      "currentPH": 8.7,
+      "currentMoisture": 6,
+      "currentLight": 2050,
+      "temperature": "Por medir",
+      "generalState": "Estrés moderado-alto",
+      "diagnosis": "Manchas cloróticas; deformación foliar; sequía",
+      "mainProblem": "Manchas cloróticas; deformación foliar; sequía",
+      "urgentActions": "Poner en zona húmeda; no regar hasta bajar",
+      "maintenanceActions": "Agua menos alcalina; mezcla aroide futura",
+      "reviewFrequency": "Semanal",
+      "lastReviewDate": "2026-05-25",
+      "nextRecommendedAction": "Agua menos alcalina; mezcla aroide futura",
+      "notes": "Revisar raíces si no mejora",
+      "initialHumidifierNote": "SÍ, muy recomendable",
+      "measurements": [
+        {
+          "date": "2026-05-25",
+          "ph": 8.7,
+          "moisture": 6,
+          "light": 2050,
+          "state": "Estrés moderado-alto",
+          "note": "Medición inicial importada desde Excel actualizado"
+        }
+      ],
+      "photos": [
+        {
+          "date": "2026-05-25",
+          "src": "photos/plant-17-01-img-076291e1-d766-466d-8759-e28c008bae65.jpg",
+          "caption": "principal: IMG_076291E1-D766-466D-8759-E28C008BAE65.jpeg",
+          "type": "principal",
+          "originalName": "IMG_076291E1-D766-466D-8759-E28C008BAE65.jpeg"
+        },
+        {
+          "date": "2026-05-25",
+          "src": "photos/plant-17-02-img-4fca3959-6ea3-4b3a-959e-3d9263548a95.jpg",
+          "caption": "diagnóstico: IMG_4FCA3959-6EA3-4B3A-959E-3D9263548A95.jpeg",
+          "type": "diagnóstico",
+          "originalName": "IMG_4FCA3959-6EA3-4B3A-959E-3D9263548A95.jpeg"
+        },
+        {
+          "date": "2026-05-25",
+          "src": "photos/plant-17-03-img-48fafe8e-d339-4b72-b65c-856111def41d.jpg",
+          "caption": "diagnóstico: IMG_48FAFE8E-D339-4B72-B65C-856111DEF41D.jpeg",
+          "type": "diagnóstico",
+          "originalName": "IMG_48FAFE8E-D339-4B72-B65C-856111DEF41D.jpeg"
+        },
+        {
+          "date": "2026-05-25",
+          "src": "photos/plant-16-04-img-68a9b62a-9a4f-40e5-b24c-dbf9fc1d5851.jpg",
+          "caption": "confirmación/adicional: IMG_68A9B62A-9A4F-40E5-B24C-DBF9FC1D5851.jpeg",
+          "type": "confirmación/adicional",
+          "originalName": "IMG_68A9B62A-9A4F-40E5-B24C-DBF9FC1D5851.jpeg"
+        }
+      ]
+    },
+    {
+      "id": 18,
+      "slug": "philodendron-melanochrysum",
+      "commonName": "Philodendron melanochrysum",
+      "probableSpecies": "Philodendron melanochrysum",
+      "location": "Por definir",
+      "zone": "humidificador",
+      "plantType": "tropical_exigente",
+      "humidifierPriority": "alta",
+      "currentPH": 7.3,
+      "currentMoisture": 38,
+      "currentLight": 3480,
+      "temperature": "Por medir",
+      "generalState": "Bueno/estable",
+      "diagnosis": "Tutor seco; daño mecánico leve; pH algo alto",
+      "mainProblem": "Tutor seco; daño mecánico leve; pH algo alto",
+      "urgentActions": "Humidificador + humedecer tutor",
+      "maintenanceActions": "Mantener sustrato chunky; no empapar",
+      "reviewFrequency": "Semanal",
+      "lastReviewDate": "2026-05-25",
+      "nextRecommendedAction": "Mantener sustrato chunky; no empapar",
+      "notes": "Gran candidata para zona húmeda",
+      "initialHumidifierNote": "SÍ, muy recomendable",
+      "measurements": [
+        {
+          "date": "2026-05-25",
+          "ph": 7.3,
+          "moisture": 38,
+          "light": 3480,
+          "state": "Bueno/estable",
+          "note": "Medición inicial importada desde Excel actualizado"
+        }
+      ],
+      "photos": [
+        {
+          "date": "2026-05-25",
+          "src": "photos/plant-18-01-img-ff3fedd2-4953-413d-874f-1a0804bb3f4d.jpg",
+          "caption": "principal: IMG_FF3FEDD2-4953-413D-874F-1A0804BB3F4D.jpeg",
+          "type": "principal",
+          "originalName": "IMG_FF3FEDD2-4953-413D-874F-1A0804BB3F4D.jpeg"
+        },
+        {
+          "date": "2026-05-25",
+          "src": "photos/plant-18-02-img-92e471f0-a2e7-4540-878f-fd7670281777.jpg",
+          "caption": "diagnóstico: IMG_92E471F0-A2E7-4540-878F-FD7670281777.jpeg",
+          "type": "diagnóstico",
+          "originalName": "IMG_92E471F0-A2E7-4540-878F-FD7670281777.jpeg"
+        },
+        {
+          "date": "2026-05-25",
+          "src": "photos/plant-18-03-img-62dc64fb-68de-4d06-83a5-7ea86b18502a.jpg",
+          "caption": "confirmación/adicional: IMG_62DC64FB-68DE-4D06-83A5-7EA86B18502A.jpeg",
+          "type": "confirmación/adicional",
+          "originalName": "IMG_62DC64FB-68DE-4D06-83A5-7EA86B18502A.jpeg"
+        }
+      ]
+    },
+    {
+      "id": 19,
+      "slug": "ficus-lyrata-3",
+      "commonName": "Ficus lyrata 3",
+      "probableSpecies": "Ficus lyrata",
+      "location": "Por definir",
+      "zone": "normal",
+      "plantType": "tropical",
+      "humidifierPriority": "no",
+      "currentPH": 5.8,
+      "currentMoisture": 95,
+      "currentLight": 5200,
+      "temperature": "Por medir",
+      "generalState": "Estrés moderado",
+      "diagnosis": "Exceso severo de humedad; riesgo radicular",
+      "mainProblem": "Exceso severo de humedad; riesgo radicular",
+      "urgentActions": "Suspender riego; airear sustrato",
+      "maintenanceActions": "Trasplante a mezcla más aireada",
+      "reviewFrequency": "Semanal",
+      "lastReviewDate": "2026-05-25",
+      "nextRecommendedAction": "Trasplante a mezcla más aireada",
+      "notes": "pH perfecto",
+      "initialHumidifierNote": "No",
+      "measurements": [
+        {
+          "date": "2026-05-25",
+          "ph": 5.8,
+          "moisture": 95,
+          "light": 5200,
+          "state": "Estrés moderado",
+          "note": "Medición inicial importada desde Excel actualizado"
+        }
+      ],
+      "photos": [
+        {
+          "date": "2026-05-25",
+          "src": "photos/plant-19-01-img-0b87475e-11b2-4534-aa71-0819b928ef7d.jpg",
+          "caption": "principal: IMG_0B87475E-11B2-4534-AA71-0819B928EF7D.jpeg",
+          "type": "principal",
+          "originalName": "IMG_0B87475E-11B2-4534-AA71-0819B928EF7D.jpeg"
+        },
+        {
+          "date": "2026-05-25",
+          "src": "photos/plant-19-02-img-4b260d68-746e-4d75-9cee-7c5324bc0d63.jpg",
+          "caption": "diagnóstico: IMG_4B260D68-746E-4D75-9CEE-7C5324BC0D63.jpeg",
+          "type": "diagnóstico",
+          "originalName": "IMG_4B260D68-746E-4D75-9CEE-7C5324BC0D63.jpeg"
+        },
+        {
+          "date": "2026-05-25",
+          "src": "photos/plant-19-03-img-8c185a8a-4ef2-4246-add4-852fe33551c7.jpg",
+          "caption": "diagnóstico: IMG_8C185A8A-4EF2-4246-ADD4-852FE33551C7.jpeg",
+          "type": "diagnóstico",
+          "originalName": "IMG_8C185A8A-4EF2-4246-ADD4-852FE33551C7.jpeg"
+        }
+      ]
+    },
+    {
+      "id": 20,
+      "slug": "alocasia-frydek-amazonica",
+      "commonName": "Alocasia Frydek/amazonica",
+      "probableSpecies": "Alocasia micholitziana Frydek / amazonica",
+      "location": "Por definir",
+      "zone": "humidificador",
+      "plantType": "tropical_exigente",
+      "humidifierPriority": "alta",
+      "currentPH": 8,
+      "currentMoisture": 23,
+      "currentLight": 0,
+      "temperature": "Por medir",
+      "generalState": "Saludable con estrés",
+      "diagnosis": "pH alto + sustrato seco",
+      "mainProblem": "pH alto + sustrato seco",
+      "urgentActions": "Riego profundo y poner en zona húmeda",
+      "maintenanceActions": "Agua menos alcalina; luz indirecta brillante",
+      "reviewFrequency": "Semanal",
+      "lastReviewDate": "2026-05-25",
+      "nextRecommendedAction": "Agua menos alcalina; luz indirecta brillante",
+      "notes": "Alocasia confirmada por foto",
+      "initialHumidifierNote": "SÍ, sí o sí",
+      "measurements": [
+        {
+          "date": "2026-05-25",
+          "ph": 8,
+          "moisture": 23,
+          "light": 0,
+          "state": "Saludable con estrés",
+          "note": "Medición inicial importada desde Excel actualizado"
+        }
+      ],
+      "photos": [
+        {
+          "date": "2026-05-25",
+          "src": "photos/plant-20-01-img-9bc9f1c8-8514-4911-a859-b879af0e4aed.jpg",
+          "caption": "principal: IMG_9BC9F1C8-8514-4911-A859-B879AF0E4AED.jpeg",
+          "type": "principal",
+          "originalName": "IMG_9BC9F1C8-8514-4911-A859-B879AF0E4AED.jpeg"
+        },
+        {
+          "date": "2026-05-25",
+          "src": "photos/plant-20-02-img-e85888de-a262-4143-8ef7-cb9d572da728.jpg",
+          "caption": "diagnóstico: IMG_E85888DE-A262-4143-8EF7-CB9D572DA728.jpeg",
+          "type": "diagnóstico",
+          "originalName": "IMG_E85888DE-A262-4143-8EF7-CB9D572DA728.jpeg"
+        },
+        {
+          "date": "2026-05-25",
+          "src": "photos/plant-20-03-img-362fefd3-d2d3-4671-82fa-1eac64cf934d.jpg",
+          "caption": "diagnóstico: IMG_362FEFD3-D2D3-4671-82FA-1EAC64CF934D.jpeg",
+          "type": "diagnóstico",
+          "originalName": "IMG_362FEFD3-D2D3-4671-82FA-1EAC64CF934D.jpeg"
+        },
+        {
+          "date": "2026-05-25",
+          "src": "photos/plant-20-04-img-3679e685-f212-40e9-bcfe-045d6fc160d1.jpg",
+          "caption": "confirmación/adicional: IMG_3679E685-F212-40E9-BCFE-045D6FC160D1.jpeg",
+          "type": "confirmación/adicional",
+          "originalName": "IMG_3679E685-F212-40E9-BCFE-045D6FC160D1.jpeg"
+        }
+      ]
+    },
+    {
+      "id": 21,
+      "slug": "philodendron-rojo-oscuro",
+      "commonName": "Philodendron rojo oscuro",
+      "probableSpecies": "Philodendron erubescens hybrid",
+      "location": "Por definir",
+      "zone": "normal",
+      "plantType": "tropical_exigente",
+      "humidifierPriority": "media",
+      "currentPH": 7,
+      "currentMoisture": 5,
+      "currentLight": 1430,
+      "temperature": "Por medir",
+      "generalState": "Estable pero seca",
+      "diagnosis": "Sequía extrema; posible rootbound",
+      "mainProblem": "Sequía extrema; posible rootbound",
+      "urgentActions": "Riego profundo y vaciar contenedor externo",
+      "maintenanceActions": "Trasplante a mezcla aireada",
+      "reviewFrequency": "Semanal",
+      "lastReviewDate": "2026-05-25",
+      "nextRecommendedAction": "Trasplante a mezcla aireada",
+      "notes": "Humedad ayuda, pero no es sí o sí",
+      "initialHumidifierNote": "Opcional alto",
+      "measurements": [
+        {
+          "date": "2026-05-25",
+          "ph": 7,
+          "moisture": 5,
+          "light": 1430,
+          "state": "Estable pero seca",
+          "note": "Medición inicial importada desde Excel actualizado"
+        }
+      ],
+      "photos": [
+        {
+          "date": "2026-05-25",
+          "src": "photos/plant-21-01-img-0030a389-3675-46bd-8dcd-e1690da53e28.jpg",
+          "caption": "principal: IMG_0030A389-3675-46BD-8DCD-E1690DA53E28.jpeg",
+          "type": "principal",
+          "originalName": "IMG_0030A389-3675-46BD-8DCD-E1690DA53E28.jpeg"
+        },
+        {
+          "date": "2026-05-25",
+          "src": "photos/plant-21-02-img-c9f98632-61cc-4f2c-9c92-31ac0af5d6e5.jpg",
+          "caption": "diagnóstico: IMG_C9F98632-61CC-4F2C-9C92-31AC0AF5D6E5.jpeg",
+          "type": "diagnóstico",
+          "originalName": "IMG_C9F98632-61CC-4F2C-9C92-31AC0AF5D6E5.jpeg"
+        },
+        {
+          "date": "2026-05-25",
+          "src": "photos/plant-21-03-img-c4d3870f-139c-4fae-bbc3-70f1470a5c5e.jpg",
+          "caption": "diagnóstico: IMG_C4D3870F-139C-4FAE-BBC3-70F1470A5C5E.jpeg",
+          "type": "diagnóstico",
+          "originalName": "IMG_C4D3870F-139C-4FAE-BBC3-70F1470A5C5E.jpeg"
+        }
+      ]
+    },
+    {
+      "id": 22,
+      "slug": "monstera-thai-constellation",
+      "commonName": "Monstera Thai Constellation",
+      "probableSpecies": "Monstera deliciosa Thai Constellation",
+      "location": "Por definir",
+      "zone": "normal",
+      "plantType": "tropical_exigente",
+      "humidifierPriority": "media",
+      "currentPH": 6.9,
+      "currentMoisture": 49,
+      "currentLight": 22,
+      "temperature": "Por medir",
+      "generalState": "Saludable",
+      "diagnosis": "Leves daños mecánicos; necesita buena luz",
+      "mainProblem": "Leves daños mecánicos; necesita buena luz",
+      "urgentActions": "Mantener riego; evitar agua estancada",
+      "maintenanceActions": "Más luz indirecta; fertilización suave",
+      "reviewFrequency": "Semanal",
+      "lastReviewDate": "2026-05-25",
+      "nextRecommendedAction": "Más luz indirecta; fertilización suave",
+      "notes": "No humidificador imprescindible",
+      "initialHumidifierNote": "Opcional",
+      "measurements": [
+        {
+          "date": "2026-05-25",
+          "ph": 6.9,
+          "moisture": 49,
+          "light": 22,
+          "state": "Saludable",
+          "note": "Medición inicial importada desde Excel actualizado"
+        }
+      ],
+      "photos": [
+        {
+          "date": "2026-05-25",
+          "src": "photos/plant-22-01-img-2805bbe5-50f1-420f-9ae7-e8e08f15155c.jpg",
+          "caption": "principal: IMG_2805BBE5-50F1-420F-9AE7-E8E08F15155C.jpeg",
+          "type": "principal",
+          "originalName": "IMG_2805BBE5-50F1-420F-9AE7-E8E08F15155C.jpeg"
+        },
+        {
+          "date": "2026-05-25",
+          "src": "photos/plant-22-03-img-99abaaef-6aa7-4996-a722-8791990b40ef.jpg",
+          "caption": "diagnóstico: IMG_99ABAAEF-6AA7-4996-A722-8791990B40EF.jpeg",
+          "type": "diagnóstico",
+          "originalName": "IMG_99ABAAEF-6AA7-4996-A722-8791990B40EF.jpeg"
+        },
+        {
+          "date": "2026-05-25",
+          "src": "photos/plant-22-03-img-6bb8d875-7573-4384-abbf-de2cefdad992.jpg",
+          "caption": "diagnóstico: IMG_6BB8D875-7573-4384-ABBF-DE2CEFDAD992.jpeg",
+          "type": "diagnóstico",
+          "originalName": "IMG_6BB8D875-7573-4384-ABBF-DE2CEFDAD992.jpeg"
+        }
+      ]
+    },
+    {
+      "id": 23,
+      "slug": "ficus-elastica-tineke",
+      "commonName": "Ficus elastica Tineke",
+      "probableSpecies": "Ficus elastica Tineke",
+      "location": "Por definir",
+      "zone": "normal",
+      "plantType": "tropical",
+      "humidifierPriority": "no",
+      "currentPH": 8.8,
+      "currentMoisture": 5,
+      "currentLight": 0,
+      "temperature": "Por medir",
+      "generalState": "Estrés moderado",
+      "diagnosis": "Sequía severa + pH alto; sustrato hidrofóbico",
+      "mainProblem": "Sequía severa + pH alto; sustrato hidrofóbico",
+      "urgentActions": "Rehidratación profunda lenta",
+      "maintenanceActions": "Trasplante a mezcla aireada; agua menos alcalina",
+      "reviewFrequency": "Semanal",
+      "lastReviewDate": "2026-05-25",
+      "nextRecommendedAction": "Trasplante a mezcla aireada; agua menos alcalina",
+      "notes": "No humidificador",
+      "initialHumidifierNote": "No",
+      "measurements": [
+        {
+          "date": "2026-05-25",
+          "ph": 8.8,
+          "moisture": 5,
+          "light": 0,
+          "state": "Estrés moderado",
+          "note": "Medición inicial importada desde Excel actualizado"
+        }
+      ],
+      "photos": [
+        {
+          "date": "2026-05-25",
+          "src": "photos/plant-23-01-img-01e3537c-36ce-49dc-9788-4d63507656c1.jpg",
+          "caption": "principal: IMG_01E3537C-36CE-49DC-9788-4D63507656C1.jpeg",
+          "type": "principal",
+          "originalName": "IMG_01E3537C-36CE-49DC-9788-4D63507656C1.jpeg"
+        },
+        {
+          "date": "2026-05-25",
+          "src": "photos/plant-23-02-img-65c5bc41-e170-49e0-8382-84dc170f279b.jpg",
+          "caption": "diagnóstico: IMG_65C5BC41-E170-49E0-8382-84DC170F279B.jpeg",
+          "type": "diagnóstico",
+          "originalName": "IMG_65C5BC41-E170-49E0-8382-84DC170F279B.jpeg"
+        },
+        {
+          "date": "2026-05-25",
+          "src": "photos/plant-23-03-img-56bcbe8c-1273-4bef-bd9f-a3f6a72c777b.jpg",
+          "caption": "diagnóstico: IMG_56BCBE8C-1273-4BEF-BD9F-A3F6A72C777B.jpeg",
+          "type": "diagnóstico",
+          "originalName": "IMG_56BCBE8C-1273-4BEF-BD9F-A3F6A72C777B.jpeg"
+        }
+      ]
+    },
+    {
+      "id": 24,
+      "slug": "dracaena-grande-triste",
+      "commonName": "Dracaena grande triste",
+      "probableSpecies": "Dracaena fragrans",
+      "location": "Por definir",
+      "zone": "normal",
+      "plantType": "tropical",
+      "humidifierPriority": "no",
+      "currentPH": 6.9,
+      "currentMoisture": 51,
+      "currentLight": 730,
+      "temperature": "Por medir",
+      "generalState": "Muy estresada",
+      "diagnosis": "Probable daño radicular; matera demasiado grande",
+      "mainProblem": "Probable daño radicular; matera demasiado grande",
+      "urgentActions": "Revisar raíces YA",
+      "maintenanceActions": "Reducir matera; sustrato aireado; más luz indirecta",
+      "reviewFrequency": "Mensual",
+      "lastReviewDate": "2026-05-25",
+      "nextRecommendedAction": "Reducir matera; sustrato aireado; más luz indirecta",
+      "notes": "Humidificador no resuelve el problema",
+      "initialHumidifierNote": "No",
+      "measurements": [
+        {
+          "date": "2026-05-25",
+          "ph": 6.9,
+          "moisture": 51,
+          "light": 730,
+          "state": "Muy estresada",
+          "note": "Medición inicial importada desde Excel actualizado"
+        }
+      ],
+      "photos": [
+        {
+          "date": "2026-05-25",
+          "src": "photos/plant-24-01-img-a46474c3-2c74-46fb-931d-4eddb7a2b070.jpg",
+          "caption": "principal: IMG_A46474C3-2C74-46FB-931D-4EDDB7A2B070.jpeg",
+          "type": "principal",
+          "originalName": "IMG_A46474C3-2C74-46FB-931D-4EDDB7A2B070.jpeg"
+        },
+        {
+          "date": "2026-05-25",
+          "src": "photos/plant-24-02-img-d1d8c953-6a18-4a52-bbc7-b15a02147df4.jpg",
+          "caption": "diagnóstico: IMG_D1D8C953-6A18-4A52-BBC7-B15A02147DF4.jpeg",
+          "type": "diagnóstico",
+          "originalName": "IMG_D1D8C953-6A18-4A52-BBC7-B15A02147DF4.jpeg"
+        },
+        {
+          "date": "2026-05-25",
+          "src": "photos/plant-24-03-img-afd68577-0c44-4616-9d7c-d339709e848e.jpg",
+          "caption": "diagnóstico: IMG_AFD68577-0C44-4616-9D7C-D339709E848E.jpeg",
+          "type": "diagnóstico",
+          "originalName": "IMG_AFD68577-0C44-4616-9D7C-D339709E848E.jpeg"
+        }
+      ]
+    },
+    {
+      "id": 25,
+      "slug": "dracaena-compacta",
+      "commonName": "Dracaena compacta",
+      "probableSpecies": "Dracaena fragrans compacta",
+      "location": "Por definir",
+      "zone": "normal",
+      "plantType": "tropical",
+      "humidifierPriority": "no",
+      "currentPH": 7.4,
+      "currentMoisture": 36,
+      "currentLight": 227,
+      "temperature": "Por medir",
+      "generalState": "Saludable",
+      "diagnosis": "Luz baja; sustrato compacto",
+      "mainProblem": "Luz baja; sustrato compacto",
+      "urgentActions": "Regar pronto si baja más",
+      "maintenanceActions": "Aumentar luz indirecta; airear capa superior",
+      "reviewFrequency": "Mensual",
+      "lastReviewDate": "2026-05-25",
+      "nextRecommendedAction": "Aumentar luz indirecta; airear capa superior",
+      "notes": "No humidificador",
+      "initialHumidifierNote": "No",
+      "measurements": [
+        {
+          "date": "2026-05-25",
+          "ph": 7.4,
+          "moisture": 36,
+          "light": 227,
+          "state": "Saludable",
+          "note": "Medición inicial importada desde Excel actualizado"
+        }
+      ],
+      "photos": [
+        {
+          "date": "2026-05-25",
+          "src": "photos/plant-25-01-img-d118f40c-8554-46ee-8ac9-6dc8b8a95eb2.jpg",
+          "caption": "principal: IMG_D118F40C-8554-46EE-8AC9-6DC8B8A95EB2.jpeg",
+          "type": "principal",
+          "originalName": "IMG_D118F40C-8554-46EE-8AC9-6DC8B8A95EB2.jpeg"
+        },
+        {
+          "date": "2026-05-25",
+          "src": "photos/plant-25-02-img-73132171-0b1d-4559-9b0d-5b07c566e98e.jpg",
+          "caption": "diagnóstico: IMG_73132171-0B1D-4559-9B0D-5B07C566E98E.jpeg",
+          "type": "diagnóstico",
+          "originalName": "IMG_73132171-0B1D-4559-9B0D-5B07C566E98E.jpeg"
+        },
+        {
+          "date": "2026-05-25",
+          "src": "photos/plant-25-03-img-2af4406e-7d1f-4f2c-817b-16e7c0ef4237.jpg",
+          "caption": "diagnóstico: IMG_2AF4406E-7D1F-4F2C-817B-16E7C0EF4237.jpeg",
+          "type": "diagnóstico",
+          "originalName": "IMG_2AF4406E-7D1F-4F2C-817B-16E7C0EF4237.jpeg"
+        }
+      ]
+    },
+    {
+      "id": 26,
+      "slug": "sansevieria-1",
+      "commonName": "Sansevieria 1",
+      "probableSpecies": "Sansevieria trifasciata",
+      "location": "Por definir",
+      "zone": "seca",
+      "plantType": "cactus_sansevieria",
+      "humidifierPriority": "no",
+      "currentPH": 7.9,
+      "currentMoisture": 26,
+      "currentLight": 0,
+      "temperature": "Por medir",
+      "generalState": "Saludable",
+      "diagnosis": "pH alto pero tolerado; luz baja",
+      "mainProblem": "pH alto pero tolerado; luz baja",
+      "urgentActions": "No regar todavía",
+      "maintenanceActions": "Mejorar drenaje en próximo trasplante",
+      "reviewFrequency": "Mensual",
+      "lastReviewDate": "2026-05-25",
+      "nextRecommendedAction": "Mejorar drenaje en próximo trasplante",
+      "notes": "Prefiere seco",
+      "initialHumidifierNote": "No",
+      "measurements": [
+        {
+          "date": "2026-05-25",
+          "ph": 7.9,
+          "moisture": 26,
+          "light": 0,
+          "state": "Saludable",
+          "note": "Medición inicial importada desde Excel actualizado"
+        }
+      ],
+      "photos": [
+        {
+          "date": "2026-05-25",
+          "src": "photos/plant-26-01-img-fbaa5e89-45ce-4240-b2b3-d3d6fa193edc.jpg",
+          "caption": "principal: IMG_FBAA5E89-45CE-4240-B2B3-D3D6FA193EDC.jpeg",
+          "type": "principal",
+          "originalName": "IMG_FBAA5E89-45CE-4240-B2B3-D3D6FA193EDC.jpeg"
+        },
+        {
+          "date": "2026-05-25",
+          "src": "photos/plant-26-02-img-ae0831f0-49c7-473e-91f8-2163258e0eed.jpg",
+          "caption": "diagnóstico: IMG_AE0831F0-49C7-473E-91F8-2163258E0EED.jpeg",
+          "type": "diagnóstico",
+          "originalName": "IMG_AE0831F0-49C7-473E-91F8-2163258E0EED.jpeg"
+        },
+        {
+          "date": "2026-05-25",
+          "src": "photos/plant-26-03-img-bf8a964e-534c-466f-9f1f-008c8bf4a153.jpg",
+          "caption": "diagnóstico: IMG_BF8A964E-534C-466F-9F1F-008C8BF4A153.jpeg",
+          "type": "diagnóstico",
+          "originalName": "IMG_BF8A964E-534C-466F-9F1F-008C8BF4A153.jpeg"
+        }
+      ]
+    },
+    {
+      "id": 27,
+      "slug": "sansevieria-2",
+      "commonName": "Sansevieria 2",
+      "probableSpecies": "Sansevieria trifasciata",
+      "location": "Por definir",
+      "zone": "seca",
+      "plantType": "cactus_sansevieria",
+      "humidifierPriority": "no",
+      "currentPH": 7.4,
+      "currentMoisture": 37,
+      "currentLight": 0,
+      "temperature": "Por medir",
+      "generalState": "Excelente",
+      "diagnosis": "Sustrato compacto; leve alcalinidad",
+      "mainProblem": "Sustrato compacto; leve alcalinidad",
+      "urgentActions": "No regar aún",
+      "maintenanceActions": "Mantener ubicación; mejorar drenaje futuro",
+      "reviewFrequency": "Mensual",
+      "lastReviewDate": "2026-05-25",
+      "nextRecommendedAction": "Mantener ubicación; mejorar drenaje futuro",
+      "notes": "Prefiere seco",
+      "initialHumidifierNote": "No",
+      "measurements": [
+        {
+          "date": "2026-05-25",
+          "ph": 7.4,
+          "moisture": 37,
+          "light": 0,
+          "state": "Excelente",
+          "note": "Medición inicial importada desde Excel actualizado"
+        }
+      ],
+      "photos": [
+        {
+          "date": "2026-05-25",
+          "src": "photos/plant-27-01-img-e48e71bd-9fd6-4508-861a-87ccf81535e8.jpg",
+          "caption": "principal: IMG_E48E71BD-9FD6-4508-861A-87CCF81535E8.jpeg",
+          "type": "principal",
+          "originalName": "IMG_E48E71BD-9FD6-4508-861A-87CCF81535E8.jpeg"
+        },
+        {
+          "date": "2026-05-25",
+          "src": "photos/plant-27-02-img-cd0bea89-a4a9-43b8-adf6-6738a1ad1d09.jpg",
+          "caption": "diagnóstico: IMG_CD0BEA89-A4A9-43B8-ADF6-6738A1AD1D09.jpeg",
+          "type": "diagnóstico",
+          "originalName": "IMG_CD0BEA89-A4A9-43B8-ADF6-6738A1AD1D09.jpeg"
+        },
+        {
+          "date": "2026-05-25",
+          "src": "photos/plant-27-03-img-8afe5031-7d78-4ca0-8209-1a327b2e8f55.jpg",
+          "caption": "diagnóstico: IMG_8AFE5031-7D78-4CA0-8209-1A327B2E8F55.jpeg",
+          "type": "diagnóstico",
+          "originalName": "IMG_8AFE5031-7D78-4CA0-8209-1A327B2E8F55.jpeg"
+        }
+      ]
+    },
+    {
+      "id": 28,
+      "slug": "fairy-castle-cactus",
+      "commonName": "Fairy Castle cactus",
+      "probableSpecies": "Cereus tetragonus-like",
+      "location": "Por definir",
+      "zone": "seca",
+      "plantType": "cactus_sansevieria",
+      "humidifierPriority": "no",
+      "currentPH": 7,
+      "currentMoisture": 5,
+      "currentLight": 0,
+      "temperature": "Por medir",
+      "generalState": "Bueno",
+      "diagnosis": "Poca luz relativa",
+      "mainProblem": "Poca luz relativa",
+      "urgentActions": "Mover a más luz",
+      "maintenanceActions": "Riego profundo solo cuando toque",
+      "reviewFrequency": "Mensual",
+      "lastReviewDate": "2026-05-25",
+      "nextRecommendedAction": "Riego profundo solo cuando toque",
+      "notes": "No humidificador",
+      "initialHumidifierNote": "No",
+      "measurements": [
+        {
+          "date": "2026-05-25",
+          "ph": 7,
+          "moisture": 5,
+          "light": 0,
+          "state": "Bueno",
+          "note": "Medición inicial importada desde Excel actualizado"
+        }
+      ],
+      "photos": [
+        {
+          "date": "2026-05-25",
+          "src": "photos/plant-28-01-img-db49f863-cf90-4191-b84a-6a57e0fe7586.jpg",
+          "caption": "principal: IMG_DB49F863-CF90-4191-B84A-6A57E0FE7586.jpeg",
+          "type": "principal",
+          "originalName": "IMG_DB49F863-CF90-4191-B84A-6A57E0FE7586.jpeg"
+        },
+        {
+          "date": "2026-05-25",
+          "src": "photos/plant-28-02-img-843efc42-049a-4204-941f-de2ffd78c099.jpg",
+          "caption": "diagnóstico: IMG_843EFC42-049A-4204-941F-DE2FFD78C099.jpeg",
+          "type": "diagnóstico",
+          "originalName": "IMG_843EFC42-049A-4204-941F-DE2FFD78C099.jpeg"
+        }
+      ]
+    },
+    {
+      "id": 29,
+      "slug": "calathea-stromanthe-roja",
+      "commonName": "Calathea/Stromanthe roja",
+      "probableSpecies": "Calathea/Stromanthe/Marantaceae",
+      "location": "Por definir",
+      "zone": "humidificador",
+      "plantType": "tropical_exigente",
+      "humidifierPriority": "alta",
+      "currentPH": 7.6,
+      "currentMoisture": 33,
+      "currentLight": 0,
+      "temperature": "Por medir",
+      "generalState": "Estresada",
+      "diagnosis": "Hojas caídas; bordes secos; poca luz; pH alto",
+      "mainProblem": "Hojas caídas; bordes secos; poca luz; pH alto",
+      "urgentActions": "Mover a luz indirecta y humidificador",
+      "maintenanceActions": "Agua filtrada/lluvia; revisar raíces",
+      "reviewFrequency": "Semanal",
+      "lastReviewDate": "2026-05-25",
+      "nextRecommendedAction": "Agua filtrada/lluvia; revisar raíces",
+      "notes": "Muy sensible a humedad baja y agua dura",
+      "initialHumidifierNote": "SÍ, sí o sí",
+      "measurements": [
+        {
+          "date": "2026-05-25",
+          "ph": 7.6,
+          "moisture": 33,
+          "light": 0,
+          "state": "Estresada",
+          "note": "Medición inicial importada desde Excel actualizado"
+        }
+      ],
+      "photos": [
+        {
+          "date": "2026-05-25",
+          "src": "photos/plant-29-01-img-45288170-be30-4bb9-91d1-10b9a51cc7a8.jpg",
+          "caption": "principal: IMG_45288170-BE30-4BB9-91D1-10B9A51CC7A8.jpeg",
+          "type": "principal",
+          "originalName": "IMG_45288170-BE30-4BB9-91D1-10B9A51CC7A8.jpeg"
+        },
+        {
+          "date": "2026-05-25",
+          "src": "photos/plant-29-02-img-4c4b28db-2600-4c2d-8830-4de6d0d9494d.jpg",
+          "caption": "diagnóstico: IMG_4C4B28DB-2600-4C2D-8830-4DE6D0D9494D.jpeg",
+          "type": "diagnóstico",
+          "originalName": "IMG_4C4B28DB-2600-4C2D-8830-4DE6D0D9494D.jpeg"
+        }
+      ]
+    }
+  ],
   "activityLog": [],
   "completedTasks": []
 }

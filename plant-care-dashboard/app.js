@@ -1,5 +1,5 @@
-const STORAGE_KEY = "plantCareDashboard.cleanStart.v1";
-const LEGACY_STORAGE_KEYS = ["plantCareDashboard.v1"];
+const STORAGE_KEY = "plantCareDashboard.photoMapped.v1";
+const LEGACY_STORAGE_KEYS = ["plantCareDashboard.v1", "plantCareDashboard.cleanStart.v1"];
 const todayISO = () => new Date().toISOString().slice(0, 10);
 
 const state = {
