@@ -513,7 +513,7 @@ function renderPlantDetail() {
   $("#plantDetail").innerHTML = `
     <section class="detail-grid">
       <article class="panel">
-        <h2>${escapeHtml(plant.commonName)}</h2>
+        <h2 class="plant-detail-title">${escapeHtml(plant.commonName)}</h2>
         <p class="muted">${escapeHtml(plant.probableSpecies || "")}</p>
         <div class="chips">
           <span class="chip">${labelZone(plant.zone)}</span>
@@ -544,10 +544,16 @@ function renderPlantDetail() {
     <section class="panel">
       <h2>Fotos y progreso visual</h2>
       <div class="photo-grid">
-        ${(plant.photos || []).map((photo) => `
+        ${(plant.photos || []).map((photo, index) => `
           <figure class="photo-card">
-            <img src="${photo.src}" alt="Foto de ${escapeHtml(plant.commonName)}">
-            <p>${escapeHtml(photo.date)} · ${escapeHtml(photo.caption || "")}</p>
+            <button class="photo-open" type="button" data-photo-src="${escapeHtml(photo.src)}" aria-label="Ver foto grande">
+              <img src="${photo.src}" loading="lazy" alt="Foto de ${escapeHtml(plant.commonName)}">
+            </button>
+            <figcaption>
+              <span>${escapeHtml(photo.type || "foto")} · ${escapeHtml(photo.date || "")}</span>
+              <small>${escapeHtml(photo.originalName || photo.caption || "")}</small>
+            </figcaption>
+            <button class="ghost delete-photo" type="button" data-plant-id="${plant.id}" data-photo-index="${index}">Eliminar foto</button>
           </figure>
         `).join("") || `<p class="empty">Agrega fotos desde la bitácora para comparar el progreso.</p>`}
       </div>
@@ -556,6 +562,22 @@ function renderPlantDetail() {
   drawChart($("#phChart"), plant.measurements || [], "ph", "#477a52");
   drawChart($("#moistureChart"), plant.measurements || [], "moisture", "#7aa7a0");
   drawChart($("#lightChart"), plant.measurements || [], "light", "#d6a334");
+  $$(".delete-photo").forEach((button) => {
+    button.addEventListener("click", () => deletePlantPhoto(Number(button.dataset.plantId), Number(button.dataset.photoIndex)));
+  });
+  $$(".photo-open").forEach((button) => {
+    button.addEventListener("click", () => window.open(button.dataset.photoSrc, "_blank", "noopener"));
+  });
+}
+
+function deletePlantPhoto(plantId, photoIndex) {
+  const plant = findPlant(plantId);
+  if (!plant?.photos?.[photoIndex]) return;
+  const ok = window.confirm("¿Eliminar esta foto de la planta?");
+  if (!ok) return;
+  plant.photos.splice(photoIndex, 1);
+  save();
+  renderPlantDetail();
 }
 
 function renderMeasurementHistory(plant) {

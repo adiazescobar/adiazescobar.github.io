@@ -75,6 +75,11 @@ h2 {
   margin-bottom: 0.35rem;
 }
 
+.plant-detail-title {
+  font-size: clamp(1.25rem, 3vw, 1.8rem);
+  line-height: 1.15;
+}
+
 h3 {
   font-size: 1rem;
   margin-bottom: 0.25rem;
@@ -428,8 +433,8 @@ canvas {
 
 .photo-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
-  gap: 0.7rem;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1rem;
 }
 
 .photo-card {
@@ -437,20 +442,48 @@ canvas {
   border: 1px solid var(--line);
   border-radius: 8px;
   overflow: hidden;
+  display: grid;
 }
 
 .photo-card img {
-  aspect-ratio: 1;
+  aspect-ratio: 4 / 5;
   display: block;
-  object-fit: cover;
+  object-fit: contain;
   width: 100%;
+  background: #eef4e7;
 }
 
-.photo-card p {
+.photo-open {
+  background: transparent;
+  border: 0;
+  min-height: 0;
+  padding: 0;
+}
+
+.photo-card figcaption {
+  display: grid;
+  gap: 0.15rem;
+  padding: 0.65rem;
+}
+
+.photo-card figcaption span {
+  color: var(--green-dark);
+  font-size: 0.82rem;
+  font-weight: 800;
+  text-transform: capitalize;
+}
+
+.photo-card figcaption small {
   color: var(--muted);
-  font-size: 0.78rem;
-  margin: 0;
-  padding: 0.5rem;
+  font-size: 0.72rem;
+  overflow-wrap: anywhere;
+}
+
+.photo-card .delete-photo {
+  border-radius: 0;
+  border-width: 1px 0 0;
+  box-shadow: none;
+  min-height: 2.4rem;
 }
 
 dialog {
