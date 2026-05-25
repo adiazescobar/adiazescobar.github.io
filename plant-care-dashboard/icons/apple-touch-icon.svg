@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 180" role="img" aria-label="Mis plantas">
+  <rect width="180" height="180" rx="38" fill="#2f5e3d"/>
+  <circle cx="55" cy="58" r="30" fill="#dcebd4"/>
+  <circle cx="128" cy="55" r="34" fill="#7aa7a0"/>
+  <path d="M91 135c-21-25-26-56-13-81 10 26 30 41 59 46-15 26-32 37-46 35Z" fill="#f5f7ef"/>
+  <path d="M89 135c-28-14-43-36-43-67 24 10 41 27 50 51-1 6-4 12-7 16Z" fill="#9fc58f"/>
+  <path d="M91 138c-3-32 6-60 28-85" fill="none" stroke="#2f5e3d" stroke-width="7" stroke-linecap="round"/>
+  <path d="M91 138c-7-27-20-47-38-60" fill="none" stroke="#2f5e3d" stroke-width="7" stroke-linecap="round"/>
+  <rect x="60" y="128" width="62" height="20" rx="8" fill="#d6a334"/>
+</svg>

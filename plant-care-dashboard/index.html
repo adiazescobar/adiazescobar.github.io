@@ -1,0 +1,194 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#2f5e3d">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="Mis plantas">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <title>Jardín interior | Dashboard de plantas</title>
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="icons/icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="app-header">
+    <div>
+      <p class="eyebrow">Jardín interior</p>
+      <h1>Seguimiento de plantas</h1>
+      <p class="subtitle">Prioriza riegos, humedad, luz, pH y cuidados con una bitácora viva.</p>
+    </div>
+    <div class="header-actions">
+      <button class="ghost" id="enableNotificationsBtn">Activar avisos</button>
+      <button class="ghost" id="exportJsonBtn">Exportar JSON</button>
+      <label class="ghost file-button">
+        Importar JSON
+        <input type="file" id="importJsonInput" accept="application/json">
+      </label>
+      <button class="primary" id="addPlantBtn">Nueva planta</button>
+    </div>
+  </header>
+
+  <main>
+    <nav class="tabs" aria-label="Vistas principales">
+      <button class="tab active" data-view="dashboard">Dashboard</button>
+      <button class="tab" data-view="tasks">Plan de acción</button>
+      <button class="tab" data-view="log">Bitácora</button>
+      <button class="tab" data-view="plants">Plantas</button>
+    </nav>
+
+    <section class="view active" id="dashboardView">
+      <section class="alert-banner" id="todayAlerts"></section>
+      <section class="summary-grid" id="summaryGrid"></section>
+
+      <section class="toolbar" aria-label="Filtros">
+        <label>
+          Zona
+          <select id="zoneFilter">
+            <option value="all">Todas</option>
+            <option value="humidificador">Humidificador</option>
+            <option value="normal">Normal</option>
+            <option value="seca">Seca</option>
+          </select>
+        </label>
+        <label>
+          Prioridad
+          <select id="priorityFilter">
+            <option value="all">Todas</option>
+            <option value="alta">Alta</option>
+            <option value="media">Media</option>
+            <option value="baja">Baja</option>
+            <option value="no">No</option>
+          </select>
+        </label>
+        <label>
+          Acción pendiente
+          <select id="actionFilter">
+            <option value="all">Todas</option>
+            <option value="riego">Riego</option>
+            <option value="trasplante">Trasplante</option>
+            <option value="humidificador">Humidificador</option>
+            <option value="raíces">Revisión de raíces</option>
+            <option value="ubicación">Cambio de ubicación</option>
+            <option value="pH">Corrección de pH</option>
+          </select>
+        </label>
+      </section>
+
+      <section class="plant-grid" id="plantGrid"></section>
+    </section>
+
+    <section class="view" id="tasksView">
+      <div class="section-title">
+        <div>
+          <h2>Plan de acción</h2>
+          <p>Tareas generadas con las reglas de decisión y el diagnóstico inicial.</p>
+        </div>
+        <button class="ghost" id="clearCompletedBtn">Ocultar completadas</button>
+      </div>
+      <div class="task-board" id="taskBoard"></div>
+    </section>
+
+    <section class="view" id="logView">
+      <div class="log-layout">
+        <form class="panel form-panel" id="activityForm">
+          <h2>Registrar actividad</h2>
+          <div class="form-grid">
+            <label>Fecha<input type="date" name="date" required></label>
+            <label>Planta<select name="plantId" required></select></label>
+            <label>Actividad
+              <select name="activity" required>
+                <option>riego</option>
+                <option>poda</option>
+                <option>trasplante</option>
+                <option>fertilización</option>
+                <option>medición pH</option>
+                <option>medición humedad</option>
+                <option>cambio de lugar</option>
+                <option>revisión de raíces</option>
+                <option>humidificador</option>
+              </select>
+            </label>
+            <label>Nuevo pH<input type="number" name="ph" step="0.1" min="0" max="14"></label>
+            <label>Nueva humedad %<input type="number" name="moisture" step="1" min="0" max="100"></label>
+            <label>Nueva luz lux<input type="number" name="light" step="1" min="0"></label>
+            <label>Estado después<input type="text" name="state" placeholder="Ej. mejor, estable, estresada"></label>
+            <label>Foto opcional<input type="file" name="photo" accept="image/*"></label>
+          </div>
+          <label>Observaciones<textarea name="notes" rows="3" placeholder="Qué viste, qué cambió, qué revisar después"></textarea></label>
+          <button class="primary" type="submit">Guardar actividad</button>
+        </form>
+
+        <section class="panel">
+          <div class="section-title compact">
+            <h2>Bitácora</h2>
+            <button class="ghost" id="exportCsvBtn">Exportar CSV</button>
+          </div>
+          <div class="log-list" id="logList"></div>
+        </section>
+      </div>
+    </section>
+
+    <section class="view" id="plantsView">
+      <div class="section-title">
+        <div>
+          <h2>Ficha individual</h2>
+          <p>Historial, fotos, gráficas y recomendaciones actuales por planta.</p>
+        </div>
+        <select id="plantSelect"></select>
+      </div>
+      <section class="detail" id="plantDetail"></section>
+    </section>
+  </main>
+
+  <dialog id="plantDialog">
+    <form class="modal" id="plantForm">
+      <div class="section-title compact">
+        <h2>Nueva planta</h2>
+        <button class="icon-button" type="button" id="closePlantDialogBtn" aria-label="Cerrar">×</button>
+      </div>
+      <div class="form-grid">
+        <label>Nombre común<input name="commonName" required></label>
+        <label>Especie probable<input name="probableSpecies"></label>
+        <label>Ubicación<input name="location" placeholder="Sala, balcón, estudio"></label>
+        <label>Zona
+          <select name="zone">
+            <option value="humidificador">Humidificador</option>
+            <option value="normal" selected>Normal</option>
+            <option value="seca">Seca</option>
+          </select>
+        </label>
+        <label>Tipo
+          <select name="plantType">
+            <option value="tropical">Tropical</option>
+            <option value="tropical_exigente">Tropical exigente</option>
+            <option value="cactus_sansevieria">Cactus/Sansevieria</option>
+          </select>
+        </label>
+        <label>Prioridad humidificador
+          <select name="humidifierPriority">
+            <option value="alta">Alta</option>
+            <option value="media">Media</option>
+            <option value="baja">Baja</option>
+            <option value="no" selected>No</option>
+          </select>
+        </label>
+        <label>pH actual<input type="number" name="currentPH" step="0.1" min="0" max="14"></label>
+        <label>Humedad %<input type="number" name="currentMoisture" min="0" max="100"></label>
+        <label>Luz lux<input type="number" name="currentLight" min="0"></label>
+        <label>Temperatura<input name="temperature" placeholder="Ej. 21°C"></label>
+        <label>Estado<input name="generalState" placeholder="Saludable, estrés leve..."></label>
+        <label>Frecuencia revisión<input name="reviewFrequency" placeholder="Semanal"></label>
+      </div>
+      <label>Diagnóstico<textarea name="diagnosis" rows="2"></textarea></label>
+      <label>Acciones urgentes<textarea name="urgentActions" rows="2"></textarea></label>
+      <label>Mantenimiento<textarea name="maintenanceActions" rows="2"></textarea></label>
+      <button class="primary" type="submit">Agregar planta</button>
+    </form>
+  </dialog>
+
+  <script src="app.js"></script>
+</body>
+</html>
