@@ -432,13 +432,6 @@ canvas {
   gap: 0.7rem;
 }
 
-.photo-inbox {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
-  gap: 1rem;
-  padding-bottom: 2rem;
-}
-
 .photo-card {
   background: #f9fbf5;
   border: 1px solid var(--line);
@@ -458,12 +451,6 @@ canvas {
   font-size: 0.78rem;
   margin: 0;
   padding: 0.5rem;
-}
-
-.photo-card .photo-actions {
-  display: grid;
-  gap: 0.55rem;
-  padding: 0.65rem;
 }
 
 dialog {
