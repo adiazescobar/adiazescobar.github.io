@@ -20,6 +20,7 @@ async function init() {
   state.data = saved ? JSON.parse(saved) : await fetchInitialData();
   state.data.activityLog ||= [];
   state.data.completedTasks ||= [];
+  state.data.photoInbox ||= await fetchPhotoInbox();
   state.selectedPlantId = state.data.plants[0]?.id ?? null;
   bindEvents();
   fillPlantSelects();
@@ -40,6 +41,17 @@ async function fetchInitialData() {
   const response = await fetch("data/plants.json");
   if (!response.ok) throw new Error("No se pudo cargar data/plants.json");
   return response.json();
+}
+
+async function fetchPhotoInbox() {
+  try {
+    const response = await fetch("data/photo-inbox.json");
+    if (!response.ok) return [];
+    const data = await response.json();
+    return data.photos || [];
+  } catch {
+    return [];
+  }
 }
 
 function save() {
@@ -107,6 +119,7 @@ function renderAll() {
   renderTasks();
   renderLog();
   renderPlantDetail();
+  renderPhotoInbox();
 }
 
 function renderDashboard() {
@@ -554,6 +567,60 @@ function renderPlantDetail() {
   drawChart($("#phChart"), plant.measurements || [], "ph", "#477a52");
   drawChart($("#moistureChart"), plant.measurements || [], "moisture", "#7aa7a0");
   drawChart($("#lightChart"), plant.measurements || [], "light", "#d6a334");
+}
+
+function renderPhotoInbox() {
+  const photos = (state.data.photoInbox || []).filter((photo) => !photo.assignedPlantId);
+  const count = $("#photoInboxCount");
+  if (count) count.textContent = `${photos.length} pendiente${photos.length === 1 ? "" : "s"}`;
+  const inbox = $("#photoInbox");
+  if (!inbox) return;
+  const plantOptions = state.data.plants
+    .map((plant) => `<option value="${plant.id}">${escapeHtml(plant.commonName)}</option>`)
+    .join("");
+  inbox.innerHTML = photos.map((photo) => `
+    <article class="photo-card">
+      <img src="${escapeHtml(photo.src)}" loading="lazy" alt="Foto pendiente ${escapeHtml(photo.id)}">
+      <div class="photo-actions">
+        <label>Asignar a
+          <select data-photo-select="${escapeHtml(photo.id)}">
+            <option value="">Seleccionar planta</option>
+            ${plantOptions}
+          </select>
+        </label>
+        <button class="primary assign-photo" data-photo-id="${escapeHtml(photo.id)}">Guardar foto</button>
+        <small class="muted">${escapeHtml(photo.originalName || photo.id)}</small>
+      </div>
+    </article>
+  `).join("") || `<p class="empty">No hay fotos pendientes por asignar.</p>`;
+  $$(".assign-photo").forEach((button) => {
+    button.addEventListener("click", () => {
+      const photoId = button.dataset.photoId;
+      const select = $(`[data-photo-select="${photoId}"]`);
+      const plantId = Number(select.value);
+      if (!plantId) {
+        alert("Selecciona una planta para esta foto.");
+        return;
+      }
+      assignInboxPhoto(photoId, plantId);
+    });
+  });
+}
+
+function assignInboxPhoto(photoId, plantId) {
+  const photo = (state.data.photoInbox || []).find((item) => item.id === photoId);
+  const plant = findPlant(plantId);
+  if (!photo || !plant) return;
+  photo.assignedPlantId = plant.id;
+  plant.photos ||= [];
+  plant.photos.push({
+    date: photo.date || todayISO(),
+    src: photo.src,
+    caption: photo.caption || "Foto importada"
+  });
+  state.selectedPlantId = plant.id;
+  save();
+  renderAll();
 }
 
 function renderMeasurementHistory(plant) {

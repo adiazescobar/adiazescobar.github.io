@@ -1,4 +1,4 @@
-const CACHE_NAME = "plant-care-dashboard-v1";
+const CACHE_NAME = "plant-care-dashboard-v2";
 const ASSETS = [
   "./",
   "./index.html",
@@ -6,6 +6,7 @@ const ASSETS = [
   "./app.js",
   "./manifest.webmanifest",
   "./data/plants.json",
+  "./data/photo-inbox.json",
   "./icons/icon.svg",
   "./icons/apple-touch-icon.svg",
   "./icons/icon-192.png",

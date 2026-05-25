@@ -8,6 +8,8 @@ App web estática para hacer seguimiento a plantas de interior, priorizar accion
 - `styles.css`: diseño responsive tipo dashboard botánico.
 - `app.js`: reglas de decisión, filtros, tareas, bitácora, gráficas y localStorage.
 - `data/plants.json`: datos iniciales importados desde `plantas_cuidado_dashboard.xlsx`.
+- `data/photo-inbox.json`: inventario de fotos importadas que aún pueden asignarse a plantas.
+- `photos/`: fotos iniciales comprimidas para web.
 - `manifest.webmanifest`: configuración para instalarla como web app.
 - `service-worker.js`: cache básico para abrirla más rápido y con soporte offline inicial.
 - `icons/`: íconos para Android, iPhone y navegador.
@@ -27,6 +29,8 @@ Luego abre `http://localhost:8000`. El servidor local es necesario porque el nav
 La app guarda registros, tareas completadas, nuevas plantas, mediciones y fotos en `localStorage` del navegador. Para hacer backup usa el botón `Exportar JSON`. Para restaurar o mover tus datos a otro navegador usa `Importar JSON`.
 
 Las fotos se guardan como datos base64 dentro del JSON exportado, así que el archivo puede crecer si subes muchas fotos.
+
+Las fotos importadas desde carpeta quedan como archivos en `photos/`. Cuando las asignas desde la pestaña `Fotos`, la app guarda la relación en `localStorage` y la foto aparece en la ficha individual de la planta.
 
 ## Editar o agregar plantas
 

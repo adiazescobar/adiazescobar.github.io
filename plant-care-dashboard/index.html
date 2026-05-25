@@ -37,6 +37,7 @@
       <button class="tab" data-view="tasks">Plan de acción</button>
       <button class="tab" data-view="log">Bitácora</button>
       <button class="tab" data-view="plants">Plantas</button>
+      <button class="tab" data-view="photos">Fotos</button>
     </nav>
 
     <section class="view active" id="dashboardView">
@@ -140,6 +141,17 @@
         <select id="plantSelect"></select>
       </div>
       <section class="detail" id="plantDetail"></section>
+    </section>
+
+    <section class="view" id="photosView">
+      <div class="section-title">
+        <div>
+          <h2>Fotos pendientes</h2>
+          <p>Asigna cada foto importada a su planta para construir el historial visual.</p>
+        </div>
+        <span class="chip" id="photoInboxCount">0 pendientes</span>
+      </div>
+      <section class="photo-inbox" id="photoInbox"></section>
     </section>
   </main>
 
