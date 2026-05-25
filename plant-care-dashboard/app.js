@@ -575,17 +575,15 @@ function renderPhotoInbox() {
   if (count) count.textContent = `${photos.length} pendiente${photos.length === 1 ? "" : "s"}`;
   const inbox = $("#photoInbox");
   if (!inbox) return;
-  const plantOptions = state.data.plants
-    .map((plant) => `<option value="${plant.id}">${escapeHtml(plant.commonName)}</option>`)
-    .join("");
   inbox.innerHTML = photos.map((photo) => `
     <article class="photo-card">
       <img src="${escapeHtml(photo.src)}" loading="lazy" alt="Foto pendiente ${escapeHtml(photo.id)}">
       <div class="photo-actions">
+        ${photo.suggestedPlantId ? `<div class="alert low"><strong>Sugerencia ${escapeHtml(photo.suggestionConfidence || "")}</strong><br>${escapeHtml(getPlantName(photo.suggestedPlantId))}${photo.suggestionNote ? ` · ${escapeHtml(photo.suggestionNote)}` : ""}</div>` : ""}
         <label>Asignar a
           <select data-photo-select="${escapeHtml(photo.id)}">
             <option value="">Seleccionar planta</option>
-            ${plantOptions}
+            ${state.data.plants.map((plant) => `<option value="${plant.id}" ${plant.id === photo.suggestedPlantId ? "selected" : ""}>${escapeHtml(plant.commonName)}</option>`).join("")}
           </select>
         </label>
         <button class="primary assign-photo" data-photo-id="${escapeHtml(photo.id)}">Guardar foto</button>
@@ -621,6 +619,10 @@ function assignInboxPhoto(photoId, plantId) {
   state.selectedPlantId = plant.id;
   save();
   renderAll();
+}
+
+function getPlantName(id) {
+  return findPlant(id)?.commonName || "Planta por revisar";
 }
 
 function renderMeasurementHistory(plant) {
