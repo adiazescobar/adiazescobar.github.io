@@ -184,6 +184,10 @@
   }
   .rsvp .fila{display:flex;gap:10px;}
   .rsvp .fila input{flex:1;min-width:0;}
+  .rsvp .campo-num{
+    display:flex;flex-direction:column;gap:5px;
+    font-family:"Patrick Hand",sans-serif;font-size:1.08rem;color:var(--terra2);
+  }
   .rsvp button{
     font-family:"Anton",sans-serif;text-transform:uppercase;letter-spacing:.5px;font-size:1.15rem;
     padding:13px;border-radius:40px;border:2.5px solid var(--tinta);
@@ -293,6 +297,14 @@
     <span class="mano">Quedan advertidos 😄</span>
   </div>
 
+  <div class="bloque">
+    <span class="ic">🥤</span>
+    <h3>¿Qué llevar?</h3>
+    <strong>Nada de comida</strong> — de eso nos encargamos nosotros. Si acaso, traigan
+    <strong>bebidas sin alcohol</strong> (gaseosa, jugo, agua):
+    <span class="mano">aquí solo tenemos vino y cerveza 🍷🍺</span>
+  </div>
+
   <div class="llegar">
     <h3>🧭 Cómo llegar</h3>
     <p>
@@ -314,10 +326,10 @@
     <p class="sub">Confírmanos para saber para cuántos cocinar</p>
     <form id="rsvpForm">
       <input id="rsvpNombre" type="text" placeholder="Tu nombre (ej. Tío Javier y familia)" maxlength="60" required>
-      <div class="fila">
-        <input id="rsvpCuantos" type="number" min="1" max="40" value="1" required aria-label="¿Cuántos van?">
-        <input id="rsvpNota" type="text" placeholder="Nota opcional (llevo postre 🍰)" maxlength="60">
-      </div>
+      <label class="campo-num">¿Cuántas personas van en total?
+        <input id="rsvpCuantos" type="number" min="1" max="40" value="1" required>
+      </label>
+      <input id="rsvpNota" type="text" placeholder="Nota opcional (ej. llegamos tipo 1 pm)" maxlength="60">
       <button type="submit" id="rsvpBtn">✅ Confirmar asistencia</button>
     </form>
     <div class="lista-conf">
