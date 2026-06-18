@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>Sancocho del Día del Padre 🍲</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Caveat:wght@600;700&family=Patrick+Hand&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --crema:#f4ecd6;
+    --papel:#fbf6e7;
+    --terracota:#c14a2b;
+    --terra2:#9c3a20;
+    --mostaza:#e3a829;
+    --monte:#54713f;
+    --cielo:#bfe0e6;
+    --tinta:#3a2a1c;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{
+    font-family:"Patrick Hand",ui-rounded,system-ui,sans-serif;
+    color:var(--tinta);
+    background-color:var(--crema);
+    background-image:
+      radial-gradient(rgba(58,42,28,.10) 1px, transparent 1.4px),
+      radial-gradient(circle at 15% 20%, rgba(193,74,43,.05) 0 18%, transparent 19%),
+      radial-gradient(circle at 85% 75%, rgba(84,113,63,.05) 0 20%, transparent 21%);
+    background-size:22px 22px, 100% 100%, 100% 100%;
+    font-size:1.12rem;
+    line-height:1.5;
+    padding:0 14px 60px;
+  }
+
+  /* ---- Banderines ---- */
+  .bunting{
+    display:flex;justify-content:center;flex-wrap:wrap;
+    max-width:680px;margin:0 auto;padding-top:14px;
+    position:relative;
+  }
+  .bunting::before{
+    content:"";position:absolute;top:16px;left:2%;right:2%;
+    border-top:3px solid var(--tinta);border-radius:50%;
+    transform:rotate(.4deg);
+  }
+  .flag{
+    width:0;height:0;
+    border-left:17px solid transparent;
+    border-right:17px solid transparent;
+    border-top:30px solid var(--terracota);
+    margin:0 3px;
+    filter:drop-shadow(1px 2px 0 rgba(58,42,28,.25));
+  }
+  .flag:nth-child(3n+1){border-top-color:var(--mostaza);}
+  .flag:nth-child(3n+2){border-top-color:var(--monte);}
+  .flag:nth-child(odd){transform:translateY(2px);}
+
+  /* ---- Hoja / afiche ---- */
+  .afiche{
+    max-width:600px;margin:14px auto 0;
+    background:var(--papel);
+    border:3px solid var(--tinta);
+    border-radius:255px 14px 235px 14px/14px 235px 14px 255px; /* trazo irregular */
+    padding:30px 26px 38px;
+    box-shadow:7px 9px 0 rgba(58,42,28,.18);
+    position:relative;
+  }
+
+  /* Sello rotado */
+  .sello{
+    position:absolute;top:14px;right:-6px;
+    transform:rotate(11deg);
+    border:3px double var(--terra2);
+    color:var(--terra2);
+    font-family:"Anton",sans-serif;
+    text-transform:uppercase;
+    font-size:.72rem;letter-spacing:1px;
+    padding:6px 9px;border-radius:6px;
+    text-align:center;line-height:1.1;
+    opacity:.85;
+    background:rgba(251,246,231,.6);
+  }
+
+  .kicker{
+    font-family:"Caveat",cursive;font-size:1.7rem;
+    color:var(--terracota);text-align:center;transform:rotate(-1.5deg);
+  }
+  h1{
+    font-family:"Anton",sans-serif;text-transform:uppercase;
+    font-size:clamp(2.4rem,10vw,3.8rem);line-height:.9;
+    text-align:center;letter-spacing:1px;margin:2px 0 4px;
+  }
+  h1 .pe{color:var(--terracota);display:inline-block;transform:rotate(-2deg);}
+  .fecha{
+    text-align:center;font-size:1.25rem;margin:6px 0 6px;
+  }
+  .fecha b{background:var(--mostaza);padding:1px 8px;border-radius:8px;}
+
+  .doodle-div{display:block;margin:14px auto;color:var(--monte);}
+
+  /* ---- Olla ilustrada ---- */
+  .olla-wrap{text-align:center;margin:6px 0 2px;}
+  .olla{width:118px;height:auto;}
+
+  /* Polaroid */
+  .polaroid{
+    background:#fff;padding:11px 11px 14px;width:min(250px,72%);
+    margin:8px auto 4px;box-shadow:3px 5px 12px rgba(0,0,0,.28);
+    transform:rotate(-3.5deg);border:1px solid #e3e3e3;
+  }
+  .polaroid img{width:100%;display:block;}
+  .polaroid .pie{font-family:"Caveat",cursive;font-size:1.45rem;text-align:center;margin-top:5px;color:#444;}
+
+  .intro{text-align:center;margin:18px auto 14px;max-width:94%;}
+
+  .countdown{
+    text-align:center;margin:6px auto 18px;
+    display:inline-flex;align-items:center;gap:10px;
+    width:100%;justify-content:center;
+  }
+  .countdown .num{
+    font-family:"Anton",sans-serif;font-size:2.6rem;color:#fff;
+    background:var(--terracota);line-height:1;
+    padding:8px 14px;border-radius:14px 6px 16px 6px;
+    transform:rotate(-2deg);box-shadow:2px 3px 0 var(--terra2);
+  }
+
+  /* ---- Bloques de info ---- */
+  .bloque{margin:8px 0;padding:6px 4px 6px 46px;position:relative;}
+  .bloque .ic{position:absolute;left:0;top:2px;font-size:1.9rem;line-height:1;}
+  .bloque h3{
+    font-family:"Anton",sans-serif;text-transform:uppercase;
+    font-size:1.15rem;letter-spacing:.5px;color:var(--terra2);margin-bottom:1px;
+  }
+  .bloque .mano{font-family:"Caveat",cursive;font-size:1.45rem;color:var(--monte);line-height:1.1;}
+
+  /* Cómo llegar */
+  .llegar{
+    background:var(--cielo);
+    border:2.5px solid var(--tinta);
+    border-radius:14px 230px 16px 230px/230px 16px 230px 16px;
+    padding:18px 20px 22px;margin:16px 0 8px;text-align:center;
+    position:relative;overflow:hidden;
+  }
+  .llegar .montes{position:absolute;left:0;right:0;bottom:0;display:block;}
+  .llegar h3{font-family:"Anton",sans-serif;text-transform:uppercase;font-size:1.3rem;margin-bottom:6px;position:relative;}
+  .llegar p{margin-bottom:14px;position:relative;}
+  .otra{font-family:"Caveat",cursive;font-size:1.4rem;margin-top:12px;position:relative;color:var(--terra2);}
+
+  .btn{
+    display:inline-block;text-decoration:none;
+    font-family:"Anton",sans-serif;text-transform:uppercase;letter-spacing:.5px;
+    font-size:1.15rem;padding:14px 22px;border-radius:40px;
+    border:2.5px solid var(--tinta);color:#fff;
+    box-shadow:3px 4px 0 var(--tinta);position:relative;
+    transition:transform .08s,box-shadow .08s;
+  }
+  .btn:active{transform:translate(3px,4px);box-shadow:0 0 0 var(--tinta);}
+  .btn.waze{background:#33a38a;}
+  .btn.wa{background:#1f9d55;}
+  .compartir{text-align:center;margin-top:26px;}
+
+  .pie-final{
+    text-align:center;font-family:"Caveat",cursive;font-size:1.85rem;
+    margin-top:26px;line-height:1.2;color:var(--tinta);
+  }
+
+  @media(max-width:480px){
+    .afiche{padding:26px 18px 30px;}
+    .sello{font-size:.62rem;top:10px;}
+  }
+</style>
+</head>
+<body>
+
+<div class="bunting" aria-hidden="true">
+  <span class="flag"></span><span class="flag"></span><span class="flag"></span>
+  <span class="flag"></span><span class="flag"></span><span class="flag"></span>
+  <span class="flag"></span><span class="flag"></span><span class="flag"></span>
+  <span class="flag"></span><span class="flag"></span><span class="flag"></span>
+</div>
+
+<div class="afiche">
+
+  <div class="sello">Invitación<br>familiar<br>2026</div>
+
+  <div class="kicker">¡Nos reunimos en la finca!</div>
+  <h1>Sancocho<br>del <span class="pe">Día del Padre</span></h1>
+  <div class="fecha">🗓️ Domingo <b>28 de junio</b> · Guatavita</div>
+
+  <!-- Olla de sancocho dibujada -->
+  <div class="olla-wrap" aria-hidden="true">
+    <svg class="olla" viewBox="0 0 130 130" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <!-- humo -->
+      <path d="M48 38 C42 30 54 26 48 18 C44 12 52 8 48 2" stroke="#9c8c70" stroke-width="3" stroke-linecap="round"/>
+      <path d="M68 38 C62 30 74 26 68 18 C64 12 72 8 68 2" stroke="#9c8c70" stroke-width="3" stroke-linecap="round"/>
+      <path d="M88 38 C82 30 94 26 88 18 C84 12 92 8 88 2" stroke="#9c8c70" stroke-width="3" stroke-linecap="round"/>
+      <!-- tapa/borde -->
+      <ellipse cx="65" cy="50" rx="50" ry="13" fill="#9c3a20" stroke="#3a2a1c" stroke-width="3"/>
+      <!-- cuerpo de la olla -->
+      <path d="M18 50 C18 95 38 122 65 122 C92 122 112 95 112 50 C95 64 35 64 18 50 Z" fill="#c14a2b" stroke="#3a2a1c" stroke-width="3"/>
+      <!-- brillo -->
+      <path d="M30 66 C34 86 44 104 56 112" stroke="#e6906f" stroke-width="4" stroke-linecap="round"/>
+      <!-- orejas -->
+      <path d="M16 56 C4 58 4 74 16 78" stroke="#3a2a1c" stroke-width="3"/>
+      <path d="M114 56 C126 58 126 74 114 78" stroke="#3a2a1c" stroke-width="3"/>
+    </svg>
+  </div>
+
+  <div class="polaroid">
+    <img src="foto_pa.jpg" alt="Sirviendo el sancocho en la finca">
+    <div class="pie">Con presa y todo 🍗</div>
+  </div>
+
+  <p class="intro">
+    Tíos, tías, primos y primas: nos juntamos a celebrar a los papás de la familia con un
+    <strong>sancocho de olla</strong>. ¡Quedan invitados!
+  </p>
+
+  <div style="text-align:center">
+    <div class="countdown">
+      <span class="num" id="dias">—</span>
+      <span>días para<br>el sancocho</span>
+    </div>
+  </div>
+
+  <svg class="doodle-div" width="160" height="14" viewBox="0 0 160 14" fill="none" aria-hidden="true">
+    <path d="M2 8 C20 2 28 12 46 7 C64 2 72 12 90 7 C108 2 116 12 134 7 C146 4 152 9 158 7" stroke="#54713f" stroke-width="3" stroke-linecap="round"/>
+  </svg>
+
+  <div class="bloque">
+    <span class="ic">🕛</span>
+    <h3>La hora</h3>
+    Pueden llegar <strong>desde las 12:00 del mediodía</strong>.
+    <span class="mano">¡Los esperamos puntuales! 🙏</span>
+  </div>
+
+  <div class="bloque">
+    <span class="ic">🧥</span>
+    <h3>Qué ponerse</h3>
+    <strong>Ropa de clima frío</strong> — estamos cerca al páramo. Pero metan una
+    <strong>camiseta debajo</strong>:
+    <span class="mano">si San Pedro se apiada, sale el sol ☀️</span>
+  </div>
+
+  <div class="bloque">
+    <span class="ic">🚻</span>
+    <h3>Lo del baño</h3>
+    El de la finca es <strong>seco</strong> (sí, seco).
+    ¿Lo prefiere normalito? Pare en la <strong>bomba Primax</strong> antes de subir y pídalo.
+    <span class="mano">Quedan advertidos 😄</span>
+  </div>
+
+  <div class="llegar">
+    <h3>🧭 Cómo llegar</h3>
+    <p>
+      A <strong>7 km de Guatavita</strong> por <strong>vía destapada</strong>,
+      <strong>justo al frente del Camping Yinkana</strong>.
+      Cuando vean la <strong>entrada al camping</strong>… ¡se pasaron!
+    </p>
+    <a class="btn waze" href="https://waze.com/ul?ll=4.950318,-73.779830&navigate=yes" target="_blank" rel="noopener">🚗 Navegar con Waze</a>
+    <div class="otra">¿Usan otra app? Busquen <strong>“Camping Yinkana”</strong> — la finca queda al frente.</div>
+    <!-- montañas decorativas -->
+    <svg class="montes" width="100%" height="42" viewBox="0 0 300 42" preserveAspectRatio="none" aria-hidden="true">
+      <path d="M0 42 L40 14 L70 30 L110 6 L150 30 L190 12 L230 30 L270 16 L300 42 Z" fill="#54713f" opacity=".9"/>
+      <path d="M0 42 L50 24 L95 38 L140 20 L185 38 L235 22 L300 40 L300 42 Z" fill="#3c5630"/>
+    </svg>
+  </div>
+
+  <div class="compartir">
+    <p style="margin-bottom:12px">¿Alguna duda? Escríbanle a <strong>Ana María</strong>:</p>
+    <a class="btn wa" href="https://wa.me/573125883583" target="_blank" rel="noopener">📲 312 588 3583</a>
+  </div>
+
+  <p class="pie-final">
+    Los esperamos con hambre<br>y con la olla puesta ❤️
+  </p>
+
+</div>
+
+<script>
+  (function(){
+    var target = new Date('2026-06-28T12:00:00');
+    var dias = Math.ceil((target - new Date()) / 86400000);
+    document.getElementById('dias').textContent = dias > 0 ? dias : '¡HOY!';
+  })();
+</script>
+</body>
+</html>
