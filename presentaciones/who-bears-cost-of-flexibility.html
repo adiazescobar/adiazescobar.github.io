@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Who Bears the Cost of Flexibility? — IPA</title>
+<style>
+  :root {
+    --ink: #1b2330;
+    --navy: #0b2545;
+    --navy-2: #13355f;
+    --terra: #b8492a;
+    --terra-soft: #f3e1d9;
+    --cream: #faf6ef;
+    --paper: #fffdf9;
+    --muted: #6b6f76;
+    --rule: #e4ddd0;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+    color: var(--ink); background: #0a0a0a; overflow: hidden; width: 100vw; height: 100vh;
+    -webkit-font-smoothing: antialiased;
+  }
+  .serif { font-family: "Iowan Old Style", "Charter", "Palatino Linotype", "Palatino", Georgia, serif; }
+  .presentation { width: 100vw; height: 100vh; position: relative; }
+  .slide { display: none; position: absolute; inset: 0; padding: 50px 66px 58px; background: var(--cream);
+    flex-direction: column; overflow: hidden; }
+  .slide.active { display: flex; }
+
+  /* ---------- COVER ---------- */
+  .cover { background:
+      radial-gradient(120% 120% at 85% -10%, #1a447c 0%, var(--navy) 55%, #081a33 100%);
+    color: #fff; justify-content: center; padding: 70px 78px; }
+  .cover .eyebrow { color: #e8b59c; font-size: .82em; font-weight: 700; letter-spacing: .32em;
+    text-transform: uppercase; margin-bottom: 30px; }
+  .cover h1 { font-size: 3.9em; line-height: 1.04; max-width: 16ch; margin-bottom: 26px; font-weight: 600; }
+  .cover .rule { width: 64px; height: 3px; background: var(--terra); margin-bottom: 26px; }
+  .cover h2 { color: rgba(255,255,255,.8); font-size: 1.4em; line-height: 1.5; font-weight: 400; max-width: 46ch; margin-bottom: 46px; }
+  .cover .meta { color: rgba(255,255,255,.66); line-height: 1.85; font-size: 1.02em; }
+  .cover .meta strong { color: #fff; font-weight: 600; }
+  .cover .askrow { display: flex; gap: 46px; margin-bottom: 44px; }
+  .cover .askrow .ask { max-width: 32ch; }
+  .cover .askrow .lbl { color: #e8b59c; font-size: .76em; letter-spacing: .2em; text-transform: uppercase; font-weight: 700; margin-bottom: 9px; }
+  .cover .askrow .amt2 { font-family: "Iowan Old Style", Georgia, serif; font-size: 1.5em; color: #fff; margin: 4px 0 8px; }
+  .cover .askrow p { color: rgba(255,255,255,.82); font-size: 1.08em; line-height: 1.5; }
+
+  /* ---------- PROJECT HEADER ---------- */
+  .phead { flex-shrink: 0; margin-bottom: 18px; }
+  .kicker { display: flex; align-items: center; gap: 12px; margin-bottom: 11px; }
+  .kicker .num { font-size: .78em; font-weight: 800; letter-spacing: .18em; text-transform: uppercase;
+    color: #fff; background: var(--terra); padding: 4px 11px; border-radius: 3px; }
+  .kicker .where { font-size: .8em; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: var(--muted); }
+  .phead h1 { font-size: 2.4em; line-height: 1.08; color: var(--navy); font-weight: 600; max-width: 26ch; }
+  .phead .psub { font-family: "Iowan Old Style", "Charter", "Palatino", Georgia, serif; font-style: italic;
+    color: var(--muted); font-size: 1.12em; margin-top: 9px; }
+  .fineprint { font-size: .84em; color: var(--muted); line-height: 1.35; padding: 0 2px; }
+  .fineprint strong { color: var(--terra); font-weight: 700; }
+
+  /* ---------- BODY ---------- */
+  .pbody { flex: 1; display: flex; flex-direction: column; gap: 15px; overflow: hidden; }
+
+  /* WHY hero */
+  .why { background: var(--paper); border: 1px solid var(--rule); border-left: 4px solid var(--terra);
+    border-radius: 6px; padding: 18px 24px; display: flex; gap: 26px; align-items: center; }
+  .why .stat { flex: 0 0 auto; text-align: center; padding-right: 26px; border-right: 1px solid var(--rule); }
+  .why .stat .big { font-size: 2.7em; font-weight: 700; color: var(--navy); line-height: 1; }
+  .why .stat .cap { font-size: .8em; color: var(--muted); letter-spacing: .04em; margin-top: 6px; }
+  .why .body .lbl { font-size: .73em; font-weight: 800; letter-spacing: .2em; text-transform: uppercase; color: var(--terra); margin-bottom: 6px; }
+  .why .body p { font-size: 1.12em; line-height: 1.46; color: var(--ink); }
+  .why .body p strong { color: var(--navy); }
+
+  /* trio: HOW / WHERE / WHO */
+  .trio { display: grid; grid-template-columns: 1.5fr 1fr 1fr; gap: 0; background: var(--paper);
+    border: 1px solid var(--rule); border-radius: 6px; overflow: hidden; }
+  .cell { padding: 17px 22px; border-right: 1px solid var(--rule); }
+  .cell:last-child { border-right: 0; }
+  .cell .lbl { display: flex; align-items: center; gap: 9px; font-size: .73em; font-weight: 800;
+    letter-spacing: .18em; text-transform: uppercase; color: var(--terra); margin-bottom: 10px; }
+  .cell .lbl svg { width: 17px; height: 17px; stroke: var(--terra); fill: none; stroke-width: 1.7; }
+  .cell p { font-size: 1em; line-height: 1.44; color: var(--ink); }
+  .cell p strong { color: var(--navy); font-weight: 600; }
+
+  /* HOW MUCH / measure ribbon */
+  .ribbon { background: linear-gradient(100deg, var(--navy) 0%, var(--navy-2) 100%); color: #fff;
+    border-radius: 6px; padding: 17px 26px; display: flex; align-items: center; gap: 22px; }
+  .ribbon svg { width: 32px; height: 32px; stroke: #e8b59c; fill: none; stroke-width: 1.6; flex: 0 0 auto; }
+  .ribbon .lbl { font-size: .73em; font-weight: 800; letter-spacing: .2em; text-transform: uppercase; color: #e8b59c; margin-bottom: 4px; }
+  .ribbon .amt { font-size: 1.42em; font-weight: 700; line-height: 1.18; }
+  .ribbon .amt .conf { font-size: .52em; color: #f0c9b6; font-weight: 700; vertical-align: super; letter-spacing: .06em; }
+  .ribbon .sub { color: rgba(255,255,255,.8); font-size: .98em; margin-top: 4px; }
+
+  /* intervention: lead */
+  .lead2 { font-size: 1.14em; line-height: 1.5; color: var(--ink); }
+  .lead2 strong { color: var(--navy); }
+
+  /* intervention: arms */
+  .arms { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+  .arms.four { grid-template-columns: repeat(4, 1fr); gap: 13px; }
+  .arm { background: var(--paper); border: 1px solid var(--rule); border-top: 4px solid var(--navy);
+    border-radius: 6px; padding: 18px 20px; display: flex; flex-direction: column; gap: 8px; }
+  .arms.four .arm { padding: 15px 16px; gap: 6px; }
+  .arms.four .arm h3 { font-size: 1.04em; }
+  .arms.four .arm p { font-size: .9em; line-height: 1.38; }
+
+  /* intervention: 2x2 treatment matrix */
+  .matrix { display: grid; grid-template-columns: 150px 1fr 1fr; gap: 11px; }
+  .mh { font-size: .78em; font-weight: 800; letter-spacing: .1em; text-transform: uppercase;
+    color: var(--navy); padding: 4px 10px; align-self: end; display: flex; align-items: center; gap: 8px; }
+  .mh svg { width: 16px; height: 16px; stroke: var(--terra); fill: none; stroke-width: 1.7; }
+  .mh.corner { color: var(--muted); font-size: .72em; }
+  .rh { font-size: 1em; font-weight: 700; color: var(--navy); display: flex; flex-direction: column;
+    justify-content: center; padding: 0 6px; }
+  .rh span { font-size: .68em; font-weight: 700; color: var(--terra); text-transform: uppercase; letter-spacing: .1em; margin-top: 4px; }
+  .mcell { background: var(--paper); border: 1px solid var(--rule); border-top: 3px solid var(--terra);
+    border-radius: 6px; padding: 13px 16px; position: relative; }
+  .mcell .at { position: absolute; top: 10px; right: 12px; font-size: .68em; font-weight: 800; color: #fff;
+    background: var(--terra); padding: 2px 7px; border-radius: 3px; letter-spacing: .04em; }
+  .mcell p { font-size: .94em; line-height: 1.4; color: var(--ink); padding-right: 34px; font-style: italic; }
+  .arm.t { border-top-color: var(--terra); }
+  .arm .an { display: inline-flex; align-items: center; gap: 9px; font-size: .72em; font-weight: 800;
+    letter-spacing: .16em; text-transform: uppercase; color: var(--muted); }
+  .arm .an .b { background: var(--navy); color: #fff; width: 22px; height: 22px; border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center; font-size: .95em; }
+  .arm.t .an .b { background: var(--terra); }
+  .arm h3 { color: var(--navy); font-size: 1.14em; font-weight: 600; line-height: 1.15; }
+  .arm p { color: var(--ink); font-size: .98em; line-height: 1.42; }
+
+  /* intervention: phases */
+  .phases { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; flex: 1; min-height: 0; }
+  .phase { border: 1px solid var(--rule); border-radius: 8px; padding: 22px 24px; background: var(--paper);
+    display: flex; flex-direction: column; gap: 11px; }
+  .phase.p1 { border-top: 5px solid var(--terra); }
+  .phase.p2 { border-top: 5px solid var(--navy); }
+  .phase .ph { font-size: .74em; font-weight: 800; letter-spacing: .18em; text-transform: uppercase; color: var(--terra); }
+  .phase.p2 .ph { color: var(--navy); }
+  .phase h3 { font-size: 1.32em; color: var(--navy); font-weight: 600; line-height: 1.14; }
+  .phase p { font-size: 1.02em; line-height: 1.46; color: var(--ink); }
+  .phase ul { list-style: none; display: flex; flex-direction: column; gap: 7px; margin-top: 2px; }
+  .phase ul li { padding-left: 17px; position: relative; font-size: 1em; line-height: 1.4; }
+  .phase ul li::before { content: ""; position: absolute; left: 0; top: .55em; width: 6px; height: 6px; border-radius: 50%; background: var(--terra); }
+  .phase.p2 ul li::before { background: var(--navy); }
+  .phase .cost { margin-top: auto; padding-top: 12px; border-top: 1px solid var(--rule); font-size: 1.02em; color: var(--navy); font-weight: 600; }
+  .phase .cost .conf { color: var(--terra); font-size: .72em; font-weight: 700; letter-spacing: .04em; }
+
+  /* footer */
+  .pfoot { position: absolute; left: 66px; right: 66px; bottom: 20px; display: flex; justify-content: space-between;
+    font-size: .78em; color: var(--muted); letter-spacing: .04em; }
+
+  .controls { position: fixed; bottom: 14px; right: 22px; display: flex; gap: 8px; z-index: 20; }
+  .controls button { background: rgba(0,0,0,.45); color: #fff; border: 0; border-radius: 5px; padding: 8px 12px; cursor: pointer; font-size: .95em; }
+  .counter { position: fixed; bottom: 18px; left: 50%; transform: translateX(-50%); color: rgba(120,120,120,.9); font-size: .85em; z-index: 20; }
+</style>
+</head>
+<body>
+<div class="presentation">
+
+  <!-- 1 · COVER -->
+  <section class="slide cover active">
+    <div class="eyebrow">Research partnership proposal · Prepared for IPA · June 2026</div>
+    <h1 class="serif">Who bears the cost of flexibility?</h1>
+    <div class="rule"></div>
+    <h2>Two field studies on how gender norms decide who gets flexible work — and who pays for it — in Latin America.</h2>
+    <div class="meta">
+      <strong>Ana María Díaz-Escobar</strong> &nbsp;·&nbsp; Pontificia Universidad Javeriana<br>
+      <strong>Marie Boltz</strong> &nbsp;·&nbsp; coauthor, both studies
+    </div>
+  </section>
+
+  <!-- 2 · STUDY 1 · BRIEF -->
+  <section class="slide">
+    <div class="phead">
+      <div class="kicker"><span class="num">Study 1</span><span class="where">Online expression · 8 countries</span></div>
+      <h1 class="serif">Do people hide their support for gender equality?</h1>
+      <div class="psub">Suppressed Voices: Pluralistic Ignorance about Gender Norms</div>
+    </div>
+    <div class="pbody">
+      <div class="why">
+        <div class="stat"><div class="big">19M</div><div class="cap">comments<br>analyzed</div></div>
+        <div class="body">
+          <div class="lbl">Why it matters</div>
+          <p>Attitudes on gender are shifting faster in <strong>private</strong> than in <strong>public</strong>. When support stays silent, outdated norms survive even after most people have abandoned them — slowing progress on women's work.</p>
+        </div>
+      </div>
+      <div class="trio">
+        <div class="cell">
+          <div class="lbl"><svg viewBox="0 0 24 24"><path d="M9 3h6M10 3v5l-5 9a2 2 0 0 0 2 3h10a2 2 0 0 0 2-3l-5-9V3"/></svg>How</div>
+          <p>An <strong>online field experiment</strong> in real comment sections: we post one visible, gender-equal comment on randomly chosen videos and measure whether others then speak up. <em>(Detail next.)</em></p>
+        </div>
+        <div class="cell">
+          <div class="lbl"><svg viewBox="0 0 24 24"><path d="M12 21s7-6 7-11a7 7 0 1 0-14 0c0 5 7 11 7 11z"/><circle cx="12" cy="10" r="2.4"/></svg>Where</div>
+          <p>35 Spanish-language channels across <strong>8 countries</strong> — Colombia, Mexico, Argentina, Chile, Peru, Spain and more.</p>
+        </div>
+        <div class="cell">
+          <div class="lbl"><svg viewBox="0 0 24 24"><circle cx="9" cy="8" r="3"/><path d="M3.5 20c0-3 2.7-5 5.5-5s5.5 2 5.5 5"/><path d="M16 6.2a3 3 0 0 1 0 5.6M20.5 20c0-2.3-1.4-3.9-3.5-4.6"/></svg>Who</div>
+          <p><strong>Díaz-Escobar &amp; Boltz.</strong> Data pipeline already live; one research assistant runs the experiment.</p>
+        </div>
+      </div>
+      <div class="ribbon">
+        <svg viewBox="0 0 24 24"><ellipse cx="12" cy="6" rx="7" ry="2.8"/><path d="M5 6v6c0 1.6 3.1 2.8 7 2.8s7-1.2 7-2.8V6M5 12v6c0 1.6 3.1 2.8 7 2.8s7-1.2 7-2.8v-6"/></svg>
+        <div>
+          <div class="lbl">How much</div>
+          <div class="amt">US$15–20K <span class="conf">indicative</span></div>
+          <div class="sub">One research assistant for ~6 months, plus classifier validation, pre-registration and IRB. Data and pipeline already built. Powered at 80% for a 15-point effect — ~180 videos complete in 6–8 weeks.</div>
+        </div>
+      </div>
+    </div>
+    <div class="pfoot"><span>Who bears the cost of flexibility?</span><span>Study 1 — Online expression</span></div>
+  </section>
+
+  <!-- 3 · STUDY 1 · INTERVENTION -->
+  <section class="slide">
+    <div class="phead">
+      <div class="kicker"><span class="num">Study 1 · The intervention</span></div>
+      <h1 class="serif">One seeded comment, varied two ways</h1>
+    </div>
+    <div class="pbody">
+      <p class="lead2">Within two hours of a new video, we post <strong>one norm-challenging comment</strong>, assigned at random. The four treatments cross <strong>how</strong> they challenge the norm with <strong>which</strong> norm they target.</p>
+      <div class="matrix">
+        <div class="mh corner">Seeded message</div>
+        <div class="mh"><svg viewBox="0 0 24 24"><path d="M3 21v-2a6 6 0 0 1 6-6 3.5 3.5 0 1 0-3.5-3.5"/><path d="M14 21v-2a6 6 0 0 1 6-6"/><circle cx="17" cy="6.5" r="2.5"/></svg>Women's paid work</div>
+        <div class="mh"><svg viewBox="0 0 24 24"><circle cx="9" cy="7" r="3"/><path d="M3.5 21c0-3.6 2.5-6 5.5-6s5.5 2.4 5.5 6"/><path d="M17 11v6M14 14h6"/></svg>Men's caregiving</div>
+
+        <div class="rh">Express the view <span>injunctive</span></div>
+        <div class="mcell"><span class="at">T1</span><p>"Women working outside the home benefits the whole family."</p></div>
+        <div class="mcell"><span class="at">T3</span><p>"Men who share housework and childcare are better fathers and partners."</p></div>
+
+        <div class="rh">Reveal the majority <span>social proof</span></div>
+        <div class="mcell"><span class="at">T2</span><p>"In Colombian surveys, the majority — over 59% — support women working outside the home."</p></div>
+        <div class="mcell"><span class="at">T4</span><p>"Surveys show more men than it seems want to share housework and childcare."</p></div>
+      </div>
+      <div class="ribbon">
+        <svg viewBox="0 0 24 24"><path d="M3 12h4l3 8 4-16 3 8h4"/></svg>
+        <div>
+          <div class="lbl">Control &amp; measurement</div>
+          <div class="amt" style="font-size:1.16em;">Control (T0) gets no seeded comment. A two-option like-poll runs on <em>every</em> video — an anonymous read on private opinion.</div>
+          <div class="sub">Primary outcome: does one seeded comment trigger organic norm-challenging comments in the week that follows? The poll ratio separates real belief change from imitation.</div>
+        </div>
+      </div>
+      <p class="fineprint"><strong>Tiered deployment:</strong> the expression arms (T1/T3) are withheld from male-centered channels to avoid backlash contaminating the outcome; social-proof arms and polls run everywhere.</p>
+    </div>
+    <div class="pfoot"><span>Who bears the cost of flexibility?</span><span>Study 1 — The intervention</span></div>
+  </section>
+
+  <!-- 4 · STUDY 2 · BRIEF -->
+  <section class="slide">
+    <div class="phead">
+      <div class="kicker"><span class="num">Study 2</span><span class="where">Households &amp; firms · Bogotá, Colombia</span></div>
+      <h1 class="serif">When flexibility is scarce, whose job gets it?</h1>
+    </div>
+    <div class="pbody">
+      <div class="why">
+        <div class="body" style="border:0;">
+          <div class="lbl">Why it matters</div>
+          <p>Flexible work is reshaping careers, but women take it and pay in <strong>wages and promotion</strong>. If the driver is a <strong>norm of maternal availability</strong> rather than preference, flexibility policy needs a different fix — and that distinction is what we identify.</p>
+        </div>
+      </div>
+      <div class="trio">
+        <div class="cell">
+          <div class="lbl"><svg viewBox="0 0 24 24"><path d="M9 3h6M10 3v5l-5 9a2 2 0 0 0 2 3h10a2 2 0 0 0 2-3l-5-9V3"/></svg>How</div>
+          <p>Couples face <strong>one scarce flexibility package</strong> they assign to either partner. We randomize the <strong>framing</strong> and the <strong>scarcity</strong> — first with hypothetical offers, then with a real benefit at a firm. <em>(Detail next.)</em></p>
+        </div>
+        <div class="cell">
+          <div class="lbl"><svg viewBox="0 0 24 24"><path d="M12 21s7-6 7-11a7 7 0 1 0-14 0c0 5 7 11 7 11z"/><circle cx="12" cy="10" r="2.4"/></svg>Where</div>
+          <p>Dual-earner and job-searching couples in <strong>Bogotá</strong>, then a workplace arm with <strong>partner firms</strong>.</p>
+        </div>
+        <div class="cell">
+          <div class="lbl"><svg viewBox="0 0 24 24"><circle cx="9" cy="8" r="3"/><path d="M3.5 20c0-3 2.7-5 5.5-5s5.5 2 5.5 5"/><path d="M16 6.2a3 3 0 0 1 0 5.6M20.5 20c0-2.3-1.4-3.9-3.5-4.6"/></svg>Who</div>
+          <p><strong>Díaz-Escobar &amp; Boltz</strong>, with <strong>IPA</strong> on implementation and firms for the workplace arm.</p>
+        </div>
+      </div>
+      <div class="ribbon">
+        <svg viewBox="0 0 24 24"><ellipse cx="12" cy="6" rx="7" ry="2.8"/><path d="M5 6v6c0 1.6 3.1 2.8 7 2.8s7-1.2 7-2.8V6M5 12v6c0 1.6 3.1 2.8 7 2.8s7-1.2 7-2.8v-6"/></svg>
+        <div>
+          <div class="lbl">How much</div>
+          <div class="amt">Pilot US$30–40K <span class="conf">indicative</span> &nbsp;·&nbsp; firm phase scoped with IPA</div>
+          <div class="sub">The hypothetical-offer pilot is survey-based and low-cost; the real packages at firms are the main cost lever.</div>
+        </div>
+      </div>
+    </div>
+    <div class="pfoot"><span>Who bears the cost of flexibility?</span><span>Study 2 — Households &amp; firms</span></div>
+  </section>
+
+  <!-- 5 · STUDY 2 · INTERVENTION -->
+  <section class="slide">
+    <div class="phead">
+      <div class="kicker"><span class="num">Study 2 · The intervention</span></div>
+      <h1 class="serif">From hypothetical offers to real packages at firms</h1>
+    </div>
+    <div class="pbody">
+      <div class="phases">
+        <div class="phase p1">
+          <div class="ph">Phase 1 · Pilot</div>
+          <h3>Hypothetical flexibility offers</h3>
+          <p>Both partners complete a choice exercise. We present a flexibility package and ask <strong>who should receive it</strong>, varying two things at random:</p>
+          <ul>
+            <li><strong>Framing</strong> — productivity vs. care vs. household income</li>
+            <li><strong>Scarcity</strong> — one package for the couple vs. one for each</li>
+          </ul>
+          <p>No money changes hands. It reveals which justification pushes flexibility toward the wife, and sets the design and sample size.</p>
+          <div class="cost">≈ US$30–40K <span class="conf">indicative</span> · survey-based</div>
+        </div>
+        <div class="phase p2">
+          <div class="ph">Phase 2 · Real, with firm(s)</div>
+          <h3>A genuine benefit on the job</h3>
+          <p>We partner with firm(s) employing low- and middle-income workers. The firm offers a real flexibility benefit, and we randomize <strong>how it is assigned:</strong></p>
+          <ul>
+            <li>To the worker only</li>
+            <li>To the worker, with a session for the spouse</li>
+            <li>Transferable to the spouse</li>
+            <li>Default-assigned to one partner</li>
+          </ul>
+          <p>We observe take-up, who actually uses it, job retention, hours, earnings and household time use.</p>
+          <div class="cost">Main cost lever · scoped with IPA</div>
+        </div>
+      </div>
+    </div>
+    <div class="pfoot"><span>Who bears the cost of flexibility?</span><span>Study 2 — The intervention</span></div>
+  </section>
+
+  <!-- 6 · THE ASK -->
+  <section class="slide cover">
+    <div class="eyebrow">What we're asking IPA</div>
+    <h1 class="serif" style="font-size:3em;">Two pilots, one partnership.</h1>
+    <div class="rule"></div>
+    <div class="askrow">
+      <div class="ask">
+        <div class="lbl">Study 1 · Online</div>
+        <div class="amt2 serif">US$15–20K</div>
+        <p>Fund one research assistant for ~6 months to run the seeded-comment experiment on data we have already built.</p>
+      </div>
+      <div class="ask">
+        <div class="lbl">Study 2 · Households &amp; firms</div>
+        <div class="amt2 serif">US$30–40K pilot</div>
+        <p>Fund the hypothetical-offer pilot, then co-design and scale the real-package arm with firms together.</p>
+      </div>
+    </div>
+    <div class="meta">
+      <strong>Ana María Díaz-Escobar</strong> &nbsp;·&nbsp; a.diaze@javeriana.edu.co<br>
+      <strong>Marie Boltz</strong> &nbsp;·&nbsp; coauthor, both studies
+    </div>
+  </section>
+
+</div>
+
+<div class="counter"><span id="cur">1</span> / <span id="tot">1</span></div>
+<div class="controls">
+  <button onclick="previousSlide()">Prev</button>
+  <button onclick="nextSlide()">Next</button>
+</div>
+
+<script>
+const slides = Array.from(document.querySelectorAll(".slide"));
+let currentSlide = 0;
+function showSlide(i) {
+  currentSlide = (i + slides.length) % slides.length;
+  slides.forEach(s => s.classList.remove("active"));
+  slides[currentSlide].classList.add("active");
+  document.getElementById("cur").textContent = currentSlide + 1;
+  document.getElementById("tot").textContent = slides.length;
+}
+function nextSlide() { showSlide(currentSlide + 1); }
+function previousSlide() { showSlide(currentSlide - 1); }
+document.addEventListener("keydown", e => {
+  if (e.key === "ArrowRight" || e.key === " ") nextSlide();
+  if (e.key === "ArrowLeft") previousSlide();
+});
+showSlide(0);
+</script>
+</body>
+</html>
