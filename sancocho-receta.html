@@ -54,6 +54,14 @@
     padding:2px 10px; border-radius:20px; margin:2px 4px 2px 0;
   }
   .veg{color:var(--monte)}
+  table.timing{width:100%; border-collapse:collapse; margin:8px 0; font-size:.95rem}
+  table.timing th, table.timing td{border:1px solid var(--linea); padding:6px 8px; text-align:left}
+  table.timing thead th{background:var(--monte); color:#fff; font-family:"Caveat",cursive; font-size:1.15rem}
+  table.timing tbody tr:nth-child(even){background:#fbf6ea}
+  table.timing .bell{text-align:center; font-weight:bold; color:var(--acento)}
+  table.timing .clock{white-space:nowrap; font-weight:bold; color:var(--monte)}
+  table.timing tr.serve td{background:var(--acento); color:#fff; font-weight:bold}
+  .scroll{overflow-x:auto}
   footer{text-align:center; color:#a39b88; font-size:.9rem; margin-top:40px}
   .btnbar{text-align:center; margin:18px 0}
   button{
@@ -169,6 +177,33 @@
       <li><strong>Servir:</strong> a la mesa con aguacate, arepa, panela en trocitos, mazorca y el <strong>picadillo</strong> fresco (cebolla larga + blanca + cilantro, sin aplastar).</li>
     </ol>
     <div class="note"><span class="veg">🌱 Versión vegetariana:</span> el mismo caldo pero reemplazando la proteína animal por <strong>calabaza/zapallo</strong> en trozos grandes.</div>
+  </div>
+
+  <h2>⏱️ Cronómetros (cuenta regresiva)</h2>
+  <div class="card">
+    <div class="note">Arranque del fuego a <strong>−3:30</strong> antes de servir. El único cronómetro largo es el de la <strong>carne (3:30 h)</strong>, que pones en el 🔔 1 y suena justo a la hora de servir. Los demás son cortos y se ponen en el momento.</div>
+    <div class="scroll">
+    <table class="timing">
+      <thead>
+        <tr><th>🔔</th><th>T-…</th><th>Acción</th><th>Servir 1:30 pm</th><th>Servir 2:00 pm</th></tr>
+      </thead>
+      <tbody>
+        <tr><td class="bell">Picar</td><td>−4:00</td><td>Picar todo (carnes, cebollas, ajo, yuca, papa, plátano, zanahoria, mazorca)</td><td class="clock">9:30 am</td><td class="clock">10:00 am</td></tr>
+        <tr><td class="bell">1</td><td>−3:30</td><td><strong>Arranque:</strong> agua + mazorca + carnes duras + cebollas + ajo + comino tostado + cilantro + sal + trozo de plátano. <em>(timer carne 3:30)</em></td><td class="clock">10:00 am</td><td class="clock">10:30 am</td></tr>
+        <tr><td class="bell">—</td><td>−3:15</td><td>Quitar espuma + reponer agua caliente al reducir</td><td class="clock">10:15 am</td><td class="clock">10:45 am</td></tr>
+        <tr><td class="bell">2</td><td>−1:00</td><td><strong>Zanahoria</strong> <em>(timer 60)</em></td><td class="clock">12:30 pm</td><td class="clock">1:00 pm</td></tr>
+        <tr><td class="bell">3</td><td>−0:50</td><td><strong>Plátano verde</strong> <em>(timer 45)</em></td><td class="clock">12:40 pm</td><td class="clock">1:10 pm</td></tr>
+        <tr><td class="bell">4</td><td>−0:45</td><td><strong>Yuca</strong> <em>(timer 40)</em></td><td class="clock">12:45 pm</td><td class="clock">1:15 pm</td></tr>
+        <tr><td class="bell">5</td><td>−0:35</td><td><strong>Arroz aparte</strong> (1 taza : 3–4 agua + aceite + sal) <em>(timer 22)</em></td><td class="clock">12:55 pm</td><td class="clock">1:25 pm</td></tr>
+        <tr><td class="bell">6</td><td>−0:30</td><td><strong>Pollo</strong> (+ <span class="veg">calabaza</span> en olla veg) <em>(timer 30)</em></td><td class="clock">1:00 pm</td><td class="clock">1:30 pm</td></tr>
+        <tr><td class="bell">7</td><td>−0:30</td><td><strong>Papa pastusa</strong> (lo último) <em>(timer 28)</em></td><td class="clock">1:00 pm</td><td class="clock">1:30 pm</td></tr>
+        <tr><td class="bell">8</td><td>−0:15</td><td><strong>Licuado espesante</strong> + ajustar sal</td><td class="clock">1:15 pm</td><td class="clock">1:45 pm</td></tr>
+        <tr><td class="bell">9</td><td>−0:10</td><td><strong>Picadillo</strong> + montar mesa (aguacate, arepa, panela, mazorca)</td><td class="clock">1:20 pm</td><td class="clock">1:50 pm</td></tr>
+        <tr class="serve"><td class="bell">🍲</td><td>0:00</td><td><strong>SERVIR</strong></td><td class="clock">1:30 pm</td><td class="clock">2:00 pm</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <div class="note">Si prefieres arrancar a <strong>−3:00</strong>: cambia solo el 🔔 1 (timer carne <strong>3:00</strong>); el resto de horas no se mueve.</div>
   </div>
 
   <footer>
