@@ -39,8 +39,8 @@
   .cover h2 { color: rgba(255,255,255,.8); font-size: 1.4em; line-height: 1.5; font-weight: 400; max-width: 46ch; margin-bottom: 46px; }
   .cover .meta { color: rgba(255,255,255,.66); line-height: 1.85; font-size: 1.02em; }
   .cover .meta strong { color: #fff; font-weight: 600; }
-  .cover .askrow { display: flex; gap: 46px; margin-bottom: 44px; }
-  .cover .askrow .ask { max-width: 32ch; }
+  .cover .askrow { display: flex; gap: 34px; margin-bottom: 42px; }
+  .cover .askrow .ask { max-width: 26ch; }
   .cover .askrow .lbl { color: #e8b59c; font-size: .76em; letter-spacing: .2em; text-transform: uppercase; font-weight: 700; margin-bottom: 9px; }
   .cover .askrow .amt2 { font-family: "Iowan Old Style", Georgia, serif; font-size: 1.5em; color: #fff; margin: 4px 0 8px; }
   .cover .askrow p { color: rgba(255,255,255,.82); font-size: 1.08em; line-height: 1.5; }
@@ -56,6 +56,34 @@
     color: var(--muted); font-size: 1.12em; margin-top: 9px; }
   .fineprint { font-size: .84em; color: var(--muted); line-height: 1.35; padding: 0 2px; }
   .fineprint strong { color: var(--terra); font-weight: 700; }
+
+  /* example chips */
+  .exlabel { font-size: .73em; font-weight: 800; letter-spacing: .18em; text-transform: uppercase; color: var(--terra); margin-bottom: 9px; }
+  .chips { display: flex; flex-wrap: wrap; gap: 9px; }
+  .chip { background: var(--paper); border: 1px solid var(--rule); border-left: 3px solid var(--terra);
+    border-radius: 6px; padding: 9px 13px; font-size: .95em; line-height: 1.25; color: var(--ink); }
+  .chip strong { color: var(--navy); font-weight: 700; }
+
+  /* RCT diagram (for-dummies) */
+  .rct { display: flex; flex-direction: column; gap: 13px; flex: 1; min-height: 0; }
+  .rct-pop { background: linear-gradient(100deg, var(--navy), var(--navy-2)); color: #fff; border-radius: 10px; padding: 16px 24px; text-align: center; }
+  .rct-pop .big { font-size: 1.35em; font-weight: 700; }
+  .rct-pop .sub { color: rgba(255,255,255,.82); font-size: .98em; margin-top: 5px; line-height: 1.4; }
+  .rct-pop .sub b { color: #ffd9c2; font-weight: 700; }
+  .rct-split { text-align: center; color: var(--terra); font-weight: 800; font-size: .78em; letter-spacing: .16em; text-transform: uppercase; }
+  .rct-arms { display: grid; grid-template-columns: repeat(4, 1fr); gap: 13px; }
+  .rct-arm { background: var(--paper); border: 1px solid var(--rule); border-top: 4px solid var(--terra);
+    border-radius: 10px; padding: 15px 17px; display: flex; flex-direction: column; gap: 7px; }
+  .rct-arm.control { border-top-color: var(--navy); }
+  .rct-arm .badge { font-size: .72em; font-weight: 800; letter-spacing: .06em; color: #fff; background: var(--terra);
+    padding: 3px 10px; border-radius: 4px; align-self: flex-start; }
+  .rct-arm.control .badge { background: var(--navy); }
+  .rct-arm h4 { color: var(--navy); font-size: 1.1em; font-weight: 700; }
+  .rct-arm p { font-size: .93em; color: var(--ink); line-height: 1.38; }
+  .rct-out { background: var(--lilac); border-left: 6px solid var(--navy); border-radius: 8px; padding: 15px 22px; }
+  .rct-out .lbl { font-size: .73em; font-weight: 800; letter-spacing: .18em; text-transform: uppercase; color: var(--terra); margin-bottom: 6px; }
+  .rct-out p { font-size: 1.05em; color: var(--ink); line-height: 1.45; }
+  .rct-out p strong { color: var(--red); }
 
   /* ---------- BODY ---------- */
   .pbody { flex: 1; display: flex; flex-direction: column; gap: 15px; overflow: hidden; }
@@ -158,12 +186,12 @@
   <!-- 1 · COVER -->
   <section class="slide cover active">
     <div class="eyebrow">Research partnership proposal · Prepared for IPA · June 2026</div>
-    <h1 class="serif">Who bears the cost of flexibility?</h1>
+    <h1 class="serif">Who bears the cost of gender norms?</h1>
     <div class="rule"></div>
-    <h2>Two field studies on how gender norms decide who gets flexible work — and who pays for it — in Latin America.</h2>
+    <h2>Three field studies in Latin America on how gender norms shape women's work — in what people <em>express</em> online, <em>allocate</em> at home, and <em>reveal</em> in digital markets.</h2>
     <div class="meta">
       <strong>Ana María Díaz-Escobar</strong> &nbsp;·&nbsp; Pontificia Universidad Javeriana<br>
-      <strong>Marie Boltz</strong> &nbsp;·&nbsp; coauthor, both studies
+      <strong>Marie Boltz</strong> &nbsp;·&nbsp; coauthor, all three studies
     </div>
   </section>
 
@@ -205,7 +233,7 @@
         </div>
       </div>
     </div>
-    <div class="pfoot"><span>Who bears the cost of flexibility?</span><span>Study 1 — Online expression</span></div>
+    <div class="pfoot"><span>Who bears the cost of gender norms?</span><span>Study 1 — Online expression</span></div>
   </section>
 
   <!-- 3 · STUDY 1 · INTERVENTION -->
@@ -239,13 +267,13 @@
       </div>
       <p class="fineprint"><strong>Tiered deployment:</strong> the expression arms (T1/T3) are withheld from male-centered channels to avoid backlash contaminating the outcome; social-proof arms and polls run everywhere.</p>
     </div>
-    <div class="pfoot"><span>Who bears the cost of flexibility?</span><span>Study 1 — The intervention</span></div>
+    <div class="pfoot"><span>Who bears the cost of gender norms?</span><span>Study 1 — The intervention</span></div>
   </section>
 
   <!-- 4 · STUDY 2 · BRIEF -->
   <section class="slide">
     <div class="phead">
-      <div class="kicker"><span class="num">Study 2</span><span class="where">Households &amp; firms · Bogotá, Colombia</span></div>
+      <div class="kicker"><span class="num">Study 2</span><span class="where">Households · online · nationwide Colombia</span></div>
       <h1 class="serif">When flexibility is scarce, whose job gets it?</h1>
     </div>
     <div class="pbody">
@@ -258,11 +286,11 @@
       <div class="trio">
         <div class="cell">
           <div class="lbl"><svg viewBox="0 0 24 24"><path d="M9 3h6M10 3v5l-5 9a2 2 0 0 0 2 3h10a2 2 0 0 0 2-3l-5-9V3"/></svg>How</div>
-          <p>Couples face <strong>one scarce flexibility package</strong> they assign to either partner. We randomize the <strong>framing</strong> and the <strong>scarcity</strong> — first with hypothetical offers, then with a real benefit at a firm. <em>(Detail next.)</em></p>
+          <p>Couples face <strong>one scarce flexibility package</strong> they assign to either partner. We randomize the <strong>framing</strong> and the <strong>scarcity</strong> — first with hypothetical offers, then with real packages. <em>(Two interventions next.)</em></p>
         </div>
         <div class="cell">
           <div class="lbl"><svg viewBox="0 0 24 24"><path d="M12 21s7-6 7-11a7 7 0 1 0-14 0c0 5 7 11 7 11z"/><circle cx="12" cy="10" r="2.4"/></svg>Where</div>
-          <p>Dual-earner and job-searching couples in <strong>Bogotá</strong>, then a workplace arm with <strong>partner firms</strong>.</p>
+          <p>Couples <strong>across Colombia</strong>, recruited and run <strong>online</strong> — beyond Bogotá, at scale. Optional firm arm later.</p>
         </div>
         <div class="cell">
           <div class="lbl"><svg viewBox="0 0 24 24"><circle cx="9" cy="8" r="3"/><path d="M3.5 20c0-3 2.7-5 5.5-5s5.5 2 5.5 5"/><path d="M16 6.2a3 3 0 0 1 0 5.6M20.5 20c0-2.3-1.4-3.9-3.5-4.6"/></svg>Who</div>
@@ -273,71 +301,173 @@
         <svg viewBox="0 0 24 24"><ellipse cx="12" cy="6" rx="7" ry="2.8"/><path d="M5 6v6c0 1.6 3.1 2.8 7 2.8s7-1.2 7-2.8V6M5 12v6c0 1.6 3.1 2.8 7 2.8s7-1.2 7-2.8v-6"/></svg>
         <div>
           <div class="lbl">How much</div>
-          <div class="amt">Pilot US$30–40K <span class="conf">indicative</span> &nbsp;·&nbsp; firm phase scoped with IPA</div>
-          <div class="sub">The hypothetical-offer pilot is survey-based and low-cost; the real packages at firms are the main cost lever.</div>
+          <div class="amt">Online pilot <span class="conf">cost to confirm</span> &nbsp;·&nbsp; real packages = main cost lever</div>
+          <div class="sub">Running online nationwide makes the hypothetical stage cheap per couple and large; delivering real packages is where the budget scales.</div>
         </div>
       </div>
     </div>
-    <div class="pfoot"><span>Who bears the cost of flexibility?</span><span>Study 2 — Households &amp; firms</span></div>
+    <div class="pfoot"><span>Who bears the cost of gender norms?</span><span>Study 2 — Households &amp; firms</span></div>
   </section>
 
-  <!-- 5 · STUDY 2 · INTERVENTION -->
+  <!-- 5 · STUDY 2 · INTERVENTION 1 (ONLINE PILOT) -->
   <section class="slide">
     <div class="phead">
-      <div class="kicker"><span class="num">Study 2 · The intervention</span></div>
-      <h1 class="serif">From hypothetical offers to real packages at firms</h1>
+      <div class="kicker"><span class="num">Study 2 · Intervention 1</span><span class="where">Online pilot · nationwide Colombia</span></div>
+      <h1 class="serif">The online pilot — a randomized test of framing</h1>
     </div>
     <div class="pbody">
-      <div class="phases">
-        <div class="phase p1">
-          <div class="ph">Phase 1 · Pilot</div>
-          <h3>Hypothetical flexibility offers</h3>
-          <p>Both partners complete a choice exercise. We present a flexibility package and ask <strong>who should receive it</strong>, varying two things at random:</p>
-          <ul>
-            <li><strong>Framing</strong> — productivity vs. care vs. household income</li>
-            <li><strong>Scarcity</strong> — one package for the couple vs. one for each</li>
-          </ul>
-          <p>No money changes hands. It reveals which justification pushes flexibility toward the wife, and sets the design and sample size.</p>
-          <div class="cost">≈ US$30–40K <span class="conf">indicative</span> · survey-based</div>
+      <div class="rct">
+        <div class="rct-pop">
+          <div class="big">~2,500 couples online, across Colombia</div>
+          <div class="sub">Both partners · stratified by child under 6 · each offered <b>ONE</b> scarce package (2 WFH days · childcare backup · transport · protected school-run time) for <b>either</b> partner</div>
         </div>
-        <div class="phase p2">
-          <div class="ph">Phase 2 · Real, with firm(s)</div>
-          <h3>A genuine benefit on the job</h3>
-          <p>We partner with firm(s) employing low- and middle-income workers. The firm offers a real flexibility benefit, and we randomize <strong>how it is assigned:</strong></p>
-          <ul>
-            <li>To the worker only</li>
-            <li>To the worker, with a session for the spouse</li>
-            <li>Transferable to the spouse</li>
-            <li>Default-assigned to one partner</li>
-          </ul>
-          <p>We observe take-up, who actually uses it, job retention, hours, earnings and household time use.</p>
-          <div class="cost">Main cost lever · scoped with IPA</div>
+        <div class="rct-split">↓ &nbsp; randomly assign the justification (frame) &nbsp; ↓</div>
+        <div class="rct-arms">
+          <div class="rct-arm control"><span class="badge">Control</span><h4>Neutral</h4><p>"Either of you can use it."</p></div>
+          <div class="rct-arm"><span class="badge">T1</span><h4>Care</h4><p>"…so a parent can be there for the children."</p></div>
+          <div class="rct-arm"><span class="badge">T2</span><h4>Productivity</h4><p>"…so the recipient does better at work."</p></div>
+          <div class="rct-arm"><span class="badge">T3</span><h4>Income</h4><p>"…so the household protects its earnings."</p></div>
+        </div>
+        <div class="rct-out">
+          <div class="lbl">What we test</div>
+          <p>Each partner nominates privately, then the couple decides together. <strong>Does the frame push the package toward the wife?</strong> Cross-cut by scarcity (one package vs. one each); a subset wins its choice for real.</p>
         </div>
       </div>
     </div>
-    <div class="pfoot"><span>Who bears the cost of flexibility?</span><span>Study 2 — The intervention</span></div>
+    <div class="pfoot"><span>Who bears the cost of gender norms?</span><span>Study 2 — Online pilot</span></div>
   </section>
 
-  <!-- 6 · THE ASK -->
+  <!-- 6 · STUDY 2 · INTERVENTION 2 (FIRM) -->
+  <section class="slide">
+    <div class="phead">
+      <div class="kicker"><span class="num">Study 2 · Intervention 2</span><span class="where">Real packages · partner firms</span></div>
+      <h1 class="serif">The firm experiment — who can the benefit go to?</h1>
+    </div>
+    <div class="pbody">
+      <div class="rct">
+        <div class="rct-pop">
+          <div class="big">Workers (and their partners) at partner firms</div>
+          <div class="sub">Each worker is offered a <b>REAL</b> flexibility benefit (flexible &amp; predictable schedule · WFH days · childcare subsidy · transport)</div>
+        </div>
+        <div class="rct-split">↓ &nbsp; randomly assign WHO can receive it &nbsp; ↓</div>
+        <div class="rct-arms">
+          <div class="rct-arm control"><span class="badge">Control</span><h4>Worker only</h4><p>The benefit stays with the employee.</p></div>
+          <div class="rct-arm"><span class="badge">T1</span><h4>Transferable</h4><p>The worker can pass it to the spouse.</p></div>
+          <div class="rct-arm"><span class="badge">T2</span><h4>Default to partner</h4><p>Pre-assigned to one partner unless changed.</p></div>
+          <div class="rct-arm"><span class="badge">T3</span><h4>+ Spouse session</h4><p>Worker keeps it, after a joint info session.</p></div>
+        </div>
+        <div class="rct-out">
+          <div class="lbl">What we test</div>
+          <p>Take-up, <strong>who actually uses it</strong>, job retention, hours, earnings, childcare time and spousal bargaining — <strong>does making flexibility transferable change who bears the cost?</strong></p>
+        </div>
+      </div>
+    </div>
+    <div class="pfoot"><span>Who bears the cost of gender norms?</span><span>Study 2 — Firm experiment</span></div>
+  </section>
+
+  <!-- 6 · STUDY 3 · BRIEF -->
+  <section class="slide">
+    <div class="phead">
+      <div class="kicker"><span class="num">Study 3</span><span class="where">Digital labor markets · AR · BR · CO · MX</span></div>
+      <h1 class="serif">Does AI close the gender gap — or reveal it was never about style?</h1>
+      <div class="psub">A randomized experiment with Latin American freelancers · with OpenAI</div>
+    </div>
+    <div class="pbody">
+      <div class="why">
+        <div class="stat"><div class="big">+12</div><div class="cap">search ranks<br>lower for women</div></div>
+        <div class="body">
+          <div class="lbl">Why it matters</div>
+          <p>On freelance platforms, women earn less, rank ~12 places lower, and hold far fewer skill certifications than comparable men (<strong>0.4% vs 5.2%</strong>) — despite slightly higher ratings. Controlling for writing style does <strong>not</strong> absorb the gap, so it isn't just women presenting themselves modestly.</p>
+        </div>
+      </div>
+      <div class="trio">
+        <div class="cell">
+          <div class="lbl"><svg viewBox="0 0 24 24"><path d="M9 3h6M10 3v5l-5 9a2 2 0 0 0 2 3h10a2 2 0 0 0 2-3l-5-9V3"/></svg>How</div>
+          <p>A three-arm RCT giving freelancers access to a generative-AI writing assistant. If AI <strong>closes</strong> the gap, the constraint is supply-side self-presentation; if it <strong>persists</strong>, it is demand-side discrimination on signals AI can't change — photo, name, country. <em>(Detail next.)</em></p>
+        </div>
+        <div class="cell">
+          <div class="lbl"><svg viewBox="0 0 24 24"><path d="M12 21s7-6 7-11a7 7 0 1 0-14 0c0 5 7 11 7 11z"/><circle cx="12" cy="10" r="2.4"/></svg>Where</div>
+          <p>~1,200 active <strong>Workana</strong> freelancers in Argentina, Brazil, Colombia, Mexico — on a live panel of <strong>7,712 profiles across 18 countries</strong>.</p>
+        </div>
+        <div class="cell">
+          <div class="lbl"><svg viewBox="0 0 24 24"><circle cx="9" cy="8" r="3"/><path d="M3.5 20c0-3 2.7-5 5.5-5s5.5 2 5.5 5"/><path d="M16 6.2a3 3 0 0 1 0 5.6M20.5 20c0-2.3-1.4-3.9-3.5-4.6"/></svg>Who</div>
+          <p><strong>Díaz-Escobar (PI) &amp; Boltz</strong>, in partnership with <strong>OpenAI</strong> (model access + privacy-safe usage data). Panel already built.</p>
+        </div>
+      </div>
+      <div class="ribbon">
+        <svg viewBox="0 0 24 24"><ellipse cx="12" cy="6" rx="7" ry="2.8"/><path d="M5 6v6c0 1.6 3.1 2.8 7 2.8s7-1.2 7-2.8V6M5 12v6c0 1.6 3.1 2.8 7 2.8s7-1.2 7-2.8v-6"/></svg>
+        <div>
+          <div class="lbl">How much</div>
+          <div class="amt">≈ US$10K recruitment + RA <span class="conf">indicative</span> &nbsp;·&nbsp; AI access &amp; usage data in-kind from OpenAI</div>
+          <div class="sub">Outcomes come from the existing Workana scraper at zero marginal cost — recruitment ads are the main expense.</div>
+        </div>
+      </div>
+    </div>
+    <div class="pfoot"><span>Who bears the cost of gender norms?</span><span>Study 3 — Digital labor markets</span></div>
+  </section>
+
+  <!-- 7 · STUDY 3 · INTERVENTION -->
+  <section class="slide">
+    <div class="phead">
+      <div class="kicker"><span class="num">Study 3 · The intervention</span></div>
+      <h1 class="serif">Three arms: does AI equalize or amplify?</h1>
+    </div>
+    <div class="pbody">
+      <p class="lead2">Freelancers are randomly assigned (stratified by gender × country) to one of three arms. The design separates <strong>access</strong> to AI from <strong>structured guidance</strong> on how to use it.</p>
+      <div class="arms">
+        <div class="arm t">
+          <div class="an"><span class="b">T1</span> Coach</div>
+          <h3>A custom "Freelance Coach" GPT</h3>
+          <p>Pre-loaded prompts for rewriting bios, drafting proposals and portfolios, and translation, with a short onboarding.</p>
+        </div>
+        <div class="arm t">
+          <div class="an"><span class="b">T2</span> Access only</div>
+          <h3>ChatGPT Plus, no guidance</h3>
+          <p>Access without onboarding or curated prompts — isolates the effect of access from structured help.</p>
+        </div>
+        <div class="arm">
+          <div class="an"><span class="b">C</span> Control</div>
+          <h3>No access until endline</h3>
+          <p>The baseline of what freelancers achieve on their own; receives access after the study.</p>
+        </div>
+      </div>
+      <div class="ribbon">
+        <svg viewBox="0 0 24 24"><path d="M3 12h4l3 8 4-16 3 8h4"/></svg>
+        <div>
+          <div class="lbl">The key test</div>
+          <div class="amt" style="font-size:1.16em;">Does the gender × Coach effect on rank and earnings <em>close</em> the gap, or leave it intact?</div>
+          <div class="sub">Outcomes (rank, ratings, certifications, bio style) come from the existing panel. Heterogeneity by country-level gender norms: if AI helps most where norms are most conservative, the supply-side reading is corroborated.</div>
+        </div>
+      </div>
+    </div>
+    <div class="pfoot"><span>Who bears the cost of gender norms?</span><span>Study 3 — The intervention</span></div>
+  </section>
+
+  <!-- 8 · THE ASK -->
   <section class="slide cover">
-    <div class="eyebrow">What we're asking IPA</div>
-    <h1 class="serif" style="font-size:3em;">Two pilots, one partnership.</h1>
+    <div class="eyebrow">One agenda · three studies</div>
+    <h1 class="serif" style="font-size:2.7em;">Where IPA comes in.</h1>
     <div class="rule"></div>
     <div class="askrow">
       <div class="ask">
         <div class="lbl">Study 1 · Online</div>
         <div class="amt2 serif">US$15–20K</div>
-        <p>Fund one research assistant for ~6 months to run the seeded-comment experiment on data we have already built.</p>
+        <p>Fund one RA for ~6 months to run the seeded-comment experiment on data already built.</p>
       </div>
       <div class="ask">
-        <div class="lbl">Study 2 · Households &amp; firms</div>
-        <div class="amt2 serif">US$30–40K pilot</div>
-        <p>Fund the hypothetical-offer pilot, then co-design and scale the real-package arm with firms together.</p>
+        <div class="lbl">Study 2 · Households</div>
+        <div class="amt2 serif">Online pilot</div>
+        <p>Fund the online couples pilot (conjoint + real-package lottery), then scale to real packages nationwide.</p>
+      </div>
+      <div class="ask">
+        <div class="lbl">Study 3 · Freelancers</div>
+        <div class="amt2 serif">With OpenAI</div>
+        <p>AI access in-kind from OpenAI; IPA could support Latin American recruitment (~US$10K ads).</p>
       </div>
     </div>
     <div class="meta">
       <strong>Ana María Díaz-Escobar</strong> &nbsp;·&nbsp; a.diaze@javeriana.edu.co<br>
-      <strong>Marie Boltz</strong> &nbsp;·&nbsp; coauthor, both studies
+      <strong>Marie Boltz</strong> &nbsp;·&nbsp; coauthor, all three studies
     </div>
   </section>
 
