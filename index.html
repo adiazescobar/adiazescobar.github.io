@@ -3,133 +3,184 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Ana María Díaz Escobar — Economista, investigadora y profesora asociada en la Pontificia Universidad Javeriana.">
+  <meta name="description" content="Ana María Díaz Escobar — Profesora Asociada de Economía en la Pontificia Universidad Javeriana. Economía laboral, género y experimentos de campo.">
   <title>Ana María Díaz Escobar</title>
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Ana María Díaz Escobar">
+  <meta property="og:description" content="Profesora Asociada de Economía · P. Universidad Javeriana. Economía laboral, normas de género y experimentos de campo en América Latina.">
+  <meta property="og:url" content="https://www.adiazescobar.com">
+  <meta name="twitter:card" content="summary">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --paper:#FCFCFB; --surface:#FFFFFF; --ink:#17181A; --muted:#6A6C70;
+      --line:#E7E7E3; --frame:#DADAD4; --accent:#C0562F;
+    }
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    html{-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+    body{background:var(--paper);color:var(--ink);
+      font-family:"Hanken Grotesk",system-ui,sans-serif;font-size:17px;line-height:1.6}
+    a{color:inherit;text-decoration:none}
+    .mono{font-family:"JetBrains Mono",ui-monospace,monospace}
+    .label{font-family:"JetBrains Mono",monospace;font-size:.7rem;font-weight:500;
+      letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+
+    /* framed, art-directed container */
+    .frame{max-width:1000px;margin:2.2rem auto;position:relative;
+      border:1px solid var(--frame);padding:2.6rem 3rem 2.6rem}
+    .frame > .reg{position:absolute;font-family:"JetBrains Mono",monospace;
+      color:var(--accent);font-size:.9rem;line-height:1;user-select:none}
+    .reg.tl{top:-.55rem;left:-.46rem} .reg.tr{top:-.55rem;right:-.46rem}
+    .reg.bl{bottom:-.62rem;left:-.46rem} .reg.br{bottom:-.62rem;right:-.46rem}
+
+    .meta{font-family:"JetBrains Mono",monospace;font-size:.66rem;color:var(--muted);
+      letter-spacing:.06em;display:flex;justify-content:space-between;
+      border-bottom:1px solid var(--line);padding-bottom:.85rem;margin-bottom:2.4rem}
+
+    .masthead{display:flex;justify-content:space-between;align-items:baseline;gap:1rem;flex-wrap:wrap}
+    .masthead .site{font-family:"JetBrains Mono",monospace;font-weight:500;font-size:.82rem;letter-spacing:.03em}
+    .nav{font-family:"JetBrains Mono",monospace;font-size:.76rem;display:flex;gap:1.2rem;flex-wrap:wrap}
+    .nav a{color:var(--muted);padding:.15rem 0}
+    .nav a:hover{color:var(--accent)}
+
+    .hero{padding:3.4rem 0 2.8rem;display:grid;grid-template-columns:1.55fr 1fr;
+      gap:3rem;align-items:end;border-bottom:1px solid var(--line)}
+    .hero h1{font-weight:600;font-size:clamp(2.5rem,6vw,4.6rem);line-height:1.0;letter-spacing:-.02em}
+    .hero h1 .em{color:var(--accent)}
+    .role{font-family:"JetBrains Mono",monospace;font-size:.74rem;color:var(--muted);
+      margin-top:1.2rem;letter-spacing:.03em}
+    .bio{font-size:1rem;color:var(--ink);opacity:.86;margin-bottom:1.1rem}
+    .bio a{color:var(--accent);border-bottom:1px solid var(--line)}
+    .bio a:hover{border-color:var(--accent)}
+    .tags{display:flex;flex-wrap:wrap;gap:.45rem;margin-top:1.2rem}
+    .tag{font-family:"JetBrains Mono",monospace;font-size:.66rem;color:var(--muted);
+      border:1px solid var(--line);padding:.26rem .55rem}
+    .social{font-family:"JetBrains Mono",monospace;font-size:.76rem;margin-top:1.5rem;
+      display:flex;flex-wrap:wrap;gap:1rem}
+    .social a{color:var(--ink);border-bottom:1px solid var(--ink);padding:.35rem 0 .15rem}
+    .social a:hover{color:var(--accent);border-color:var(--accent)}
+
+    .section{padding:2.8rem 0 .5rem}
+    .section > .label{margin-bottom:1.2rem}
+    .index a.row{display:grid;grid-template-columns:auto 1fr auto;gap:1.3rem;align-items:baseline;
+      padding:1.05rem 0;border-top:1px solid var(--line);color:inherit;transition:padding-left .18s ease}
+    .index a.row:last-child{border-bottom:1px solid var(--line)}
+    .index .num{font-family:"JetBrains Mono",monospace;font-size:.72rem;color:var(--accent);width:2.5ch}
+    .index .title{font-size:1.4rem;font-weight:600;line-height:1.2}
+    .index .desc{font-size:.9rem;color:var(--muted);display:block;margin-top:.18rem}
+    .index .arrow{font-family:"JetBrains Mono",monospace;color:var(--accent);opacity:0;
+      transition:opacity .18s;font-size:.85rem}
+    .index a.row:hover{padding-left:.5rem}
+    .index a.row:hover .arrow{opacity:1}
+    .index a.row:hover .title{color:var(--accent)}
+
+    footer{font-family:"JetBrains Mono",monospace;font-size:.68rem;color:var(--muted);
+      letter-spacing:.05em;padding-top:2.2rem;margin-top:1.6rem;border-top:1px solid var(--line);
+      display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap}
+
+    @media (max-width:720px){
+      .frame{margin:1.2rem;padding:1.8rem 1.4rem}
+      .hero{grid-template-columns:1fr;gap:1.8rem;padding:2.4rem 0 2.2rem}
+      .nav{gap:.9rem}
+    }
+  </style>
 </head>
 <body>
 
-  <div class="accent-bar"></div>
+  <main class="frame">
+    <span class="reg tl">+</span><span class="reg tr">+</span>
+    <span class="reg bl">+</span><span class="reg br">+</span>
 
-  <section class="hero">
-    <div class="container">
-      <div class="avatar">AM</div>
-      <h1>Ana María Díaz Escobar</h1>
-      <p class="role">Profesora Asociada de Economía</p>
-      <p class="institution">Pontificia Universidad Javeriana &middot; Bogotá, Colombia</p>
-      <div class="tags">
-        <span class="tag">Labor Economics</span>
-        <span class="tag">Gender &amp; Family</span>
-        <span class="tag">Field Experiments</span>
-        <span class="tag">Causal Inference</span>
-      </div>
-      <div class="social">
-        <a href="mailto:a.diaze@javeriana.edu.co">Email</a>
-        <span class="sep">·</span>
-        <a href="https://ideas.repec.org/e/pdi179.html" target="_blank" rel="noopener">RePEC</a>
-        <span class="sep">·</span>
-        <a href="https://x.com/adiazescobar" target="_blank" rel="noopener">Twitter&nbsp;/&nbsp;X</a>
-        <span class="sep">·</span>
-        <a href="https://github.com/adiazescobar" target="_blank" rel="noopener">GitHub</a>
-      </div>
+    <div class="meta">
+      <span>AMDE · BOGOTÁ, CO</span>
+      <span>PROFESORA ASOCIADA · ECONOMÍA</span>
     </div>
-  </section>
 
-  <section class="resources">
-    <div class="container">
-      <p class="section-label">Recursos</p>
-      <div class="grid">
+    <div class="masthead">
+      <div class="site">Ana María Díaz Escobar</div>
+      <nav class="nav">
+        <a href="publications.html">Publicaciones</a>
+        <a href="videos.html">Videos</a>
+        <a href="presentaciones/index.html">Presentaciones</a>
+        <a href="https://adiazescobar.github.io/ana-maria-diaz-cv/" target="_blank" rel="noopener">CV</a>
+      </nav>
+    </div>
 
-        <a href="https://adiazescobar.github.io/ana-maria-diaz-cv/" target="_blank" class="card">
-          <div class="card-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/>
-            </svg>
-          </div>
-          <div class="card-body">
-            <h2>Curriculum Vitae</h2>
-            <p>Trayectoria académica, publicaciones, proyectos de investigación y financiamiento.</p>
-          </div>
-          <div class="card-arrow">→</div>
-        </a>
-
-        <a href="publications.html" class="card">
-          <div class="card-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 0 3-3h7z"/>
-            </svg>
-          </div>
-          <div class="card-body">
-            <h2>Publicaciones</h2>
-            <p>Artículos en revistas indexadas sobre economía laboral, género, cuidado y métodos de evaluación de impacto.</p>
-          </div>
-          <div class="card-arrow">→</div>
-        </a>
-
-        <a href="https://adiazescobar.github.io/libro-econometria/" target="_blank" class="card">
-          <div class="card-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/>
-            </svg>
-          </div>
-          <div class="card-body">
-            <h2>Libro de Econometría</h2>
-            <p>Fundamentos de econometría: mínimos cuadrados ordinarios, inferencia y álgebra matricial.</p>
-          </div>
-          <div class="card-arrow">→</div>
-        </a>
-
-        <a href="https://adiazescobar.github.io/libro_cortes/" target="_blank" class="card">
-          <div class="card-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-              <line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/>
-            </svg>
-          </div>
-          <div class="card-body">
-            <h2>Libro de Econometría Avanzada</h2>
-            <p>Métodos de identificación causal: RCT, diferencias en diferencias, variables instrumentales y más.</p>
-          </div>
-          <div class="card-arrow">→</div>
-        </a>
-
-        <a href="presentaciones/index.html" class="card">
-          <div class="card-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-              <rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/>
-            </svg>
-          </div>
-          <div class="card-body">
-            <h2>Presentaciones</h2>
-            <p>Charlas y ponencias de investigación sobre economía laboral, género y experimentos de campo.</p>
-          </div>
-          <div class="card-arrow">→</div>
-        </a>
-
-        <a href="videos.html" class="card">
-          <div class="card-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-              <polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2" ry="2"/>
-            </svg>
-          </div>
-          <div class="card-body">
-            <h2>Videos</h2>
-            <p>Charlas, entrevistas y clases sobre economía laboral, género, métodos y política económica.</p>
-          </div>
-          <div class="card-arrow">→</div>
-        </a>
-
+    <section class="hero">
+      <div>
+        <h1>Ana María<br>Díaz <span class="em">Escobar</span></h1>
+        <p class="role">Profesora Asociada de Economía / P. Universidad Javeriana</p>
       </div>
-    </div>
-  </section>
+      <div>
+        <p class="bio">Investigo economía laboral, normas de género y trabajo de cuidado mediante experimentos de campo en América Latina. Ph.D. UCLouvain (2011).</p>
+        <div class="tags">
+          <span class="tag">Labor Economics</span>
+          <span class="tag">Gender &amp; Family</span>
+          <span class="tag">Field Experiments</span>
+          <span class="tag">Causal Inference</span>
+        </div>
+        <div class="social">
+          <a href="mailto:a.diaze@javeriana.edu.co">Email</a>
+          <a href="https://ideas.repec.org/e/pdi179.html" target="_blank" rel="noopener">RePEc</a>
+          <a href="https://x.com/adiazescobar" target="_blank" rel="noopener">Twitter/X</a>
+          <a href="https://github.com/adiazescobar" target="_blank" rel="noopener">GitHub</a>
+        </div>
+      </div>
+    </section>
 
-  <footer>
-    <div class="container">
-      <p>&copy; 2026 Ana María Díaz Escobar &middot; Bogotá, Colombia</p>
-    </div>
-  </footer>
+    <section class="section index">
+      <p class="label">Índice · Recursos</p>
+
+      <a class="row" href="https://adiazescobar.github.io/ana-maria-diaz-cv/" target="_blank" rel="noopener">
+        <span class="num">01</span>
+        <span><span class="title">Curriculum Vitae</span>
+        <span class="desc">Trayectoria académica, publicaciones, proyectos de investigación y financiamiento.</span></span>
+        <span class="arrow">→</span>
+      </a>
+
+      <a class="row" href="publications.html">
+        <span class="num">02</span>
+        <span><span class="title">Publicaciones</span>
+        <span class="desc">Artículos en revistas indexadas sobre economía laboral, género, cuidado y evaluación de impacto.</span></span>
+        <span class="arrow">→</span>
+      </a>
+
+      <a class="row" href="https://adiazescobar.github.io/libro-econometria/" target="_blank" rel="noopener">
+        <span class="num">03</span>
+        <span><span class="title">Libro de Econometría</span>
+        <span class="desc">Fundamentos: mínimos cuadrados ordinarios, inferencia y álgebra matricial.</span></span>
+        <span class="arrow">→</span>
+      </a>
+
+      <a class="row" href="https://adiazescobar.github.io/libro_cortes/" target="_blank" rel="noopener">
+        <span class="num">04</span>
+        <span><span class="title">Libro de Econometría Avanzada</span>
+        <span class="desc">Identificación causal: RCT, diferencias en diferencias, variables instrumentales y más.</span></span>
+        <span class="arrow">→</span>
+      </a>
+
+      <a class="row" href="presentaciones/index.html">
+        <span class="num">05</span>
+        <span><span class="title">Presentaciones</span>
+        <span class="desc">Charlas y ponencias de investigación sobre economía laboral, género y experimentos de campo.</span></span>
+        <span class="arrow">→</span>
+      </a>
+
+      <a class="row" href="videos.html">
+        <span class="num">06</span>
+        <span><span class="title">Videos</span>
+        <span class="desc">Charlas, entrevistas y clases sobre economía laboral, género, métodos y política económica.</span></span>
+        <span class="arrow">→</span>
+      </a>
+    </section>
+
+    <footer>
+      <span>© 2026 Ana María Díaz Escobar · Bogotá, Colombia</span>
+      <span>a.diaze@javeriana.edu.co</span>
+    </footer>
+  </main>
 
 </body>
 </html>
