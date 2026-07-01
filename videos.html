@@ -154,6 +154,11 @@
     .video-title{ font-size:.8rem; }
     .cat-badge{ font-family:var(--mono); border-radius:999px !important; letter-spacing:.05em; background:rgba(255,255,255,.94); color:var(--accent); box-shadow:none !important; }
     .play-circle svg{ fill:var(--accent); }
+    .thumb{ background:var(--border) !important; }
+    .site-nav{ display:flex; justify-content:space-between; align-items:center; gap:1rem; flex-wrap:wrap; margin-bottom:1.8rem; }
+    .site-nav-links{ display:flex; gap:1.2rem; flex-wrap:wrap; font-family:var(--mono); font-size:.8rem; }
+    .site-nav-links a{ color:var(--muted); text-decoration:none; padding:.15rem 0; }
+    .site-nav-links a:hover,.site-nav-links a.current{ color:var(--accent); }
   </style>
 </head>
 <body>
@@ -164,9 +169,15 @@
     <span>AMDE · Videos</span>
     <span>Bogotá, CO · Jun 2026</span>
   </div>
-  <div class="nav-bar">
-    <a href="index.html" class="back-link">← Inicio</a>
-  </div>
+  <nav class="site-nav">
+    <div class="site-nav-links">
+      <a href="index.html">Inicio</a>
+      <a href="publications.html">Publicaciones</a>
+      <a href="videos.html" class="current">Videos</a>
+      <a href="presentaciones/index.html">Presentaciones</a>
+      <a href="https://adiazescobar.github.io/ana-maria-diaz-cv/" target="_blank" rel="noopener">CV</a>
+    </div>
+  </nav>
 
   <header class="page-header">
     <h1>Videos de Econometría</h1>

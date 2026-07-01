@@ -243,18 +243,30 @@
     .back-link,.btn,.pub-link,.filter-pill{ background:var(--card) !important; color:var(--muted) !important; border:1px solid var(--border) !important; box-shadow:none !important; backdrop-filter:none !important; }
     .back-link:hover,.btn:hover,.pub-link:hover,.filter-pill:hover{ color:var(--accent) !important; border-color:var(--accent) !important; }
     .filter-pill.active{ background:var(--accent) !important; color:#fff !important; border-color:var(--accent) !important; }
+    .metaline{ font-family:var(--mono); font-size:.66rem; color:var(--muted); letter-spacing:.06em; text-transform:uppercase; display:flex; justify-content:space-between; gap:1rem; border-bottom:1px solid var(--border); padding-bottom:.8rem; margin-bottom:1.4rem; }
+    .site-nav{ display:flex; justify-content:space-between; align-items:center; gap:1rem; flex-wrap:wrap; margin-bottom:1.8rem; }
+    .site-nav-links{ display:flex; gap:1.2rem; flex-wrap:wrap; font-family:var(--mono); font-size:.8rem; }
+    .site-nav-links a{ color:var(--muted); text-decoration:none; padding:.15rem 0; }
+    .site-nav-links a:hover,.site-nav-links a.current{ color:var(--accent); }
     @media print{ .page{ border:none; padding:0; } .page::before,.page::after{ content:none; } }
   </style>
 </head>
 <body>
   <div class="page">
-    <div class="header-bar">
-      <div style="display:flex;gap:.5rem;flex-wrap:wrap;">
-        <a href="index.html" class="back-link">← CV</a>
-        <a href="videos-econometria.html" class="back-link">🎥 Videos</a>
+    <div class="metaline">
+      <span>AMDE · Publicaciones</span>
+      <span>Bogotá, CO · Jun 2026</span>
+    </div>
+    <nav class="site-nav">
+      <div class="site-nav-links">
+        <a href="index.html">Inicio</a>
+        <a href="publications.html" class="current">Publicaciones</a>
+        <a href="videos.html">Videos</a>
+        <a href="presentaciones/index.html">Presentaciones</a>
+        <a href="https://adiazescobar.github.io/ana-maria-diaz-cv/" target="_blank" rel="noopener">CV</a>
       </div>
       <button class="btn" onclick="toggleTheme()">Toggle Theme</button>
-    </div>
+    </nav>
 
     <header class="hero-shell">
       <div class="hero">
@@ -288,8 +300,8 @@
           <span class="pub-meta-item"><strong>DOI:</strong> 10.1111/gwao.70117</span>
         </div>
         <div class="pub-links">
-          <a href="https://onlinelibrary.wiley.com/doi/10.1111/gwao.70117" target="_blank" rel="noopener" class="pub-link">📄 Journal Article</a>
-          <a href="https://ideas.repec.org/p/idb/brikps/12819.html" target="_blank" rel="noopener" class="pub-link">📑 IDB WP 12819</a>
+          <a href="https://onlinelibrary.wiley.com/doi/10.1111/gwao.70117" target="_blank" rel="noopener" class="pub-link">Journal Article</a>
+          <a href="https://ideas.repec.org/p/idb/brikps/12819.html" target="_blank" rel="noopener" class="pub-link">IDB WP 12819</a>
         </div>
       </div>
       <div class="pub-abstract">
@@ -317,9 +329,9 @@
           <span class="pub-meta-item"><strong>Year:</strong> 2023</span>
         </div>
         <div class="pub-links">
-          <a href="https://ideas.repec.org/a/ucp/ecdecc/doi10.1086-718645.html" target="_blank" rel="noopener" class="pub-link">📄 Journal Article</a>
-          <a href="https://ideas.repec.org/p/idb/brikps/10248.html" target="_blank" rel="noopener" class="pub-link">📑 Working Paper (IDB 10248)</a>
-          <a href="https://ideas.repec.org/e/pdi179.html" target="_blank" rel="noopener" class="pub-link">🔗 RePEc Profile</a>
+          <a href="https://ideas.repec.org/a/ucp/ecdecc/doi10.1086-718645.html" target="_blank" rel="noopener" class="pub-link">Journal Article</a>
+          <a href="https://ideas.repec.org/p/idb/brikps/10248.html" target="_blank" rel="noopener" class="pub-link">Working Paper (IDB 10248)</a>
+          <a href="https://ideas.repec.org/e/pdi179.html" target="_blank" rel="noopener" class="pub-link">RePEc Profile</a>
         </div>
       </div>
       <div class="pub-abstract">
@@ -346,10 +358,10 @@
           <span class="pub-meta-item"><strong>Year:</strong> 2023</span>
         </div>
         <div class="pub-links">
-          <a href="https://ideas.repec.org/a/bla/brjirl/v61y2023i1p159-187.html" target="_blank" rel="noopener" class="pub-link">📄 Journal Article</a>
-          <a href="https://ideas.repec.org/p/ces/ceswps/_8663.html" target="_blank" rel="noopener" class="pub-link">📑 CESifo WP 8663</a>
-          <a href="https://ideas.repec.org/p/iza/izadps/dp13825.html" target="_blank" rel="noopener" class="pub-link">📑 IZA DP 13825</a>
-          <a href="https://ideas.repec.org/p/ctl/louvir/2020030.html" target="_blank" rel="noopener" class="pub-link">📑 LIDAM IRES 2020030</a>
+          <a href="https://ideas.repec.org/a/bla/brjirl/v61y2023i1p159-187.html" target="_blank" rel="noopener" class="pub-link">Journal Article</a>
+          <a href="https://ideas.repec.org/p/ces/ceswps/_8663.html" target="_blank" rel="noopener" class="pub-link">CESifo WP 8663</a>
+          <a href="https://ideas.repec.org/p/iza/izadps/dp13825.html" target="_blank" rel="noopener" class="pub-link">IZA DP 13825</a>
+          <a href="https://ideas.repec.org/p/ctl/louvir/2020030.html" target="_blank" rel="noopener" class="pub-link">LIDAM IRES 2020030</a>
         </div>
       </div>
       <div class="pub-abstract">
@@ -377,7 +389,7 @@
           <span class="pub-meta-item"><strong>Year:</strong> 2022</span>
         </div>
         <div class="pub-links">
-          <a href="https://doi.org/10.1007/s10657-021-09723-4" target="_blank" rel="noopener" class="pub-link">📄 Journal Article</a>
+          <a href="https://doi.org/10.1007/s10657-021-09723-4" target="_blank" rel="noopener" class="pub-link">Journal Article</a>
         </div>
       </div>
       <div class="pub-abstract">
@@ -405,8 +417,8 @@
           <span class="pub-meta-item"><strong>Year:</strong> 2020</span>
         </div>
         <div class="pub-links">
-          <a href="https://ideas.repec.org/a/eee/regeco/v83y2020ics0166046219302637.html" target="_blank" rel="noopener" class="pub-link">📄 Journal Article</a>
-          <a href="https://ideas.repec.org/a/col/000416/017218.html" target="_blank" rel="noopener" class="pub-link">📑 Earlier Version (Vniversitas)</a>
+          <a href="https://ideas.repec.org/a/eee/regeco/v83y2020ics0166046219302637.html" target="_blank" rel="noopener" class="pub-link">Journal Article</a>
+          <a href="https://ideas.repec.org/a/col/000416/017218.html" target="_blank" rel="noopener" class="pub-link">Earlier Version (Vniversitas)</a>
         </div>
       </div>
       <div class="pub-abstract">
@@ -434,8 +446,8 @@
           <span class="pub-meta-item"><strong>Year:</strong> 2018</span>
         </div>
         <div class="pub-links">
-          <a href="https://ideas.repec.org/a/col/000090/016107.html" target="_blank" rel="noopener" class="pub-link">📄 Journal Article</a>
-          <a href="https://ideas.repec.org/p/col/000108/015304.html" target="_blank" rel="noopener" class="pub-link">📑 Working Paper</a>
+          <a href="https://ideas.repec.org/a/col/000090/016107.html" target="_blank" rel="noopener" class="pub-link">Journal Article</a>
+          <a href="https://ideas.repec.org/p/col/000108/015304.html" target="_blank" rel="noopener" class="pub-link">Working Paper</a>
         </div>
       </div>
       <div class="pub-abstract">
@@ -462,8 +474,8 @@
           <span class="pub-meta-item"><strong>Year:</strong> 2016</span>
         </div>
         <div class="pub-links">
-          <a href="https://ideas.repec.org/a/col/000090/014290.html" target="_blank" rel="noopener" class="pub-link">📄 Journal Article</a>
-          <a href="https://ideas.repec.org/p/ctl/louvir/2011014.html" target="_blank" rel="noopener" class="pub-link">📑 Working Paper (LIDAM IRES 2011014)</a>
+          <a href="https://ideas.repec.org/a/col/000090/014290.html" target="_blank" rel="noopener" class="pub-link">Journal Article</a>
+          <a href="https://ideas.repec.org/p/ctl/louvir/2011014.html" target="_blank" rel="noopener" class="pub-link">Working Paper (LIDAM IRES 2011014)</a>
         </div>
       </div>
       <div class="pub-abstract">
@@ -491,7 +503,7 @@
           <span class="pub-meta-item"><strong>Year:</strong> 2013</span>
         </div>
         <div class="pub-links">
-          <a href="https://ideas.repec.org/a/bdr/ensayo/v31y2013i70p316-366.html" target="_blank" rel="noopener" class="pub-link">📄 Journal Article</a>
+          <a href="https://ideas.repec.org/a/bdr/ensayo/v31y2013i70p316-366.html" target="_blank" rel="noopener" class="pub-link">Journal Article</a>
         </div>
       </div>
       <div class="pub-abstract">
@@ -519,8 +531,8 @@
           <span class="pub-meta-item"><strong>Year:</strong> 2011</span>
         </div>
         <div class="pub-links">
-          <a href="https://ideas.repec.org/a/col/000416/010087.html" target="_blank" rel="noopener" class="pub-link">📄 Journal Article</a>
-          <a href="https://ideas.repec.org/p/ctl/louvir/2011015.html" target="_blank" rel="noopener" class="pub-link">📑 Working Paper (LIDAM IRES 2011015)</a>
+          <a href="https://ideas.repec.org/a/col/000416/010087.html" target="_blank" rel="noopener" class="pub-link">Journal Article</a>
+          <a href="https://ideas.repec.org/p/ctl/louvir/2011015.html" target="_blank" rel="noopener" class="pub-link">Working Paper (LIDAM IRES 2011015)</a>
         </div>
       </div>
       <div class="pub-abstract">
@@ -546,7 +558,7 @@
           <span class="pub-meta-item"><strong>Year:</strong> 2012</span>
         </div>
         <div class="pub-links">
-          <a href="#" class="pub-link">📄 Journal Article</a>
+          <a href="#" class="pub-link">Journal Article</a>
         </div>
       </div>
       <div class="pub-abstract">
@@ -566,7 +578,7 @@
           <span class="pub-meta-item"><strong>Year:</strong> 2026</span>
         </div>
         <div class="pub-links">
-          <a href="https://ideas.repec.org/p/idb/brikps/13439.html" target="_blank" rel="noopener" class="pub-link">📑 IDB WP 13439</a>
+          <a href="https://ideas.repec.org/p/idb/brikps/13439.html" target="_blank" rel="noopener" class="pub-link">IDB WP 13439</a>
         </div>
       </div>
       <div class="pub-abstract">
@@ -610,7 +622,7 @@
           <span class="pub-meta-item"><strong>Year:</strong> 2025</span>
         </div>
         <div class="pub-links">
-          <a href="https://beta.u-strasbg.fr/WP/2025/2025-37.pdf" target="_blank" rel="noopener" class="pub-link">📑 PDF</a>
+          <a href="https://beta.u-strasbg.fr/WP/2025/2025-37.pdf" target="_blank" rel="noopener" class="pub-link">PDF</a>
         </div>
       </div>
       <div class="pub-abstract">
@@ -634,7 +646,7 @@
           <span class="pub-meta-item"><strong>Series:</strong> IDB Working Papers</span>
         </div>
         <div class="pub-links">
-          <a href="https://ideas.repec.org/s/idb/brikps.html" target="_blank" rel="noopener" class="pub-link">📑 IDB Series</a>
+          <a href="https://ideas.repec.org/s/idb/brikps.html" target="_blank" rel="noopener" class="pub-link">IDB Series</a>
         </div>
       </div>
       <div class="pub-abstract">
@@ -678,7 +690,7 @@
           <span class="pub-meta-item"><strong>Number:</strong> 566 / 6789</span>
         </div>
         <div class="pub-links">
-          <a href="https://ideas.repec.org/p/idb/brikps/6789.html" target="_blank" rel="noopener" class="pub-link">📑 RePEc</a>
+          <a href="https://ideas.repec.org/p/idb/brikps/6789.html" target="_blank" rel="noopener" class="pub-link">RePEc</a>
         </div>
       </div>
       <div class="pub-abstract">
@@ -737,7 +749,7 @@
     </article>
 
     <footer style="margin-top:2rem;text-align:center;color:var(--muted);font-size:.85rem;">
-      Last updated: June 2026 · <a href="index.html">Back to CV</a>
+      Última actualización: Junio 2026 · <a href="index.html">← Inicio</a>
     </footer>
   </div>
 
