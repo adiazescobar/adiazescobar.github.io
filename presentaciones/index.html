@@ -9,10 +9,45 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../style.css">
+  <style>
+    :root{
+      --bg:#FCFCFB; --surface:#FFFFFF; --border:#E7E7E3; --text:#17181A; --muted:#6A6C70;
+      --accent:#C0562F; --accent-l:#C0562F; --radius:3px; --radius-lg:3px; --shadow:none;
+      --mono:"JetBrains Mono",ui-monospace,monospace; --frame:#DADAD4;
+    }
+    body{ font-family:"Hanken Grotesk",system-ui,-apple-system,"Segoe UI",sans-serif; background:var(--bg); -webkit-font-smoothing:antialiased; }
+    .accent-bar{ display:none; }
+    .frame{ position:relative; max-width:1040px; margin:2.2rem auto; border:1px solid var(--frame); padding:2.2rem 2.4rem 2.4rem; }
+    .frame::before,.frame::after{ content:"+"; position:absolute; font-family:var(--mono); color:var(--accent); font-size:.9rem; line-height:1; }
+    .frame::before{ top:-.55rem; left:-.46rem; }
+    .frame::after{ bottom:-.62rem; right:-.46rem; }
+    .metaline{ font-family:var(--mono); font-size:.66rem; color:var(--muted); letter-spacing:.06em; text-transform:uppercase; display:flex; justify-content:space-between; gap:1rem; border-bottom:1px solid var(--border); padding-bottom:.8rem; margin-bottom:1.4rem; }
+    .hero{ background:none !important; border:none !important; padding:1rem 0 1.4rem !important; text-align:left !important; }
+    .hero .container,.resources .container{ max-width:none; padding:0; }
+    .hero h1{ font-family:"Hanken Grotesk",sans-serif !important; font-size:clamp(2rem,4.5vw,3rem) !important; font-weight:600; letter-spacing:-.025em; }
+    .resources{ padding:1.5rem 0 0 !important; }
+    .section-label{ font-family:var(--mono); text-align:left !important; letter-spacing:.12em; margin-bottom:1rem; }
+    .grid{ display:block !important; }
+    .card{ display:grid !important; grid-template-columns:1fr auto; gap:1.2rem; align-items:baseline; background:none !important; border:none !important; border-top:1px solid var(--border) !important; border-radius:0 !important; box-shadow:none !important; padding:1.2rem 0 !important; transition:padding-left .18s ease; }
+    .card:hover{ transform:none !important; box-shadow:none !important; padding-left:.5rem !important; }
+    .card::before{ display:none !important; }
+    .card-icon{ display:none !important; }
+    .card-body h2{ font-family:"Hanken Grotesk",sans-serif; font-size:1.35rem; font-weight:600; margin-bottom:.35rem; }
+    .card:hover .card-body h2{ color:var(--accent); }
+    .card-arrow{ color:var(--accent); align-self:center; }
+    .resources .grid .card:last-of-type{ border-bottom:1px solid var(--border); }
+    footer{ background:none !important; border:none !important; }
+  </style>
 </head>
 <body>
 
   <div class="accent-bar"></div>
+
+  <main class="frame">
+    <div class="metaline">
+      <span>AMDE · Presentaciones</span>
+      <span>Bogotá, CO · Jun 2026</span>
+    </div>
 
   <section class="hero" style="padding: 3rem 1.5rem 2.5rem;">
     <div class="container">
@@ -114,6 +149,8 @@
       <p>&copy; 2026 Ana María Díaz Escobar &middot; Bogotá, Colombia</p>
     </div>
   </footer>
+
+  </main>
 
 </body>
 </html>
