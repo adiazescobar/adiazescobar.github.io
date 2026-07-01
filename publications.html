@@ -7,41 +7,44 @@
   <meta name="description" content="Complete list of publications by Ana María Díaz Escobar with abstracts and links." />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Crimson+Pro:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
   <style>
     :root{
-      --bg: #050816;
-      --bg-soft: radial-gradient(circle at top left,#1e293b,#020617 55%,#000 100%);
-      --card: #020617;
-      --ink: #e5e7eb;
-      --muted: #9ca3af;
-      --accent: #60a5fa;
-      --accent-2: #e879f9;
-      --accent-soft: rgba(96,165,250,.12);
-      --border: rgba(148, 163, 184, 0.45);
-      --shadow: 0 18px 50px rgba(15,23,42,.85);
-      --radius-lg: 22px;
-      --radius-md: 18px;
+      --bg: #FCFCFB;
+      --bg-soft: #FCFCFB;
+      --card: #FFFFFF;
+      --ink: #17181A;
+      --muted: #6A6C70;
+      --accent: #C0562F;
+      --accent-2: #C0562F;
+      --accent-soft: rgba(192,86,47,.08);
+      --border: #E7E7E3;
+      --shadow: none;
+      --radius-lg: 3px;
+      --radius-md: 3px;
+      --mono: "JetBrains Mono", ui-monospace, monospace;
+      --frame: #DADAD4;
       scroll-behavior: smooth;
     }
 
-    [data-theme="light"]{
-      --bg:#f5f7fb;
-      --bg-soft: radial-gradient(circle at top left,#e5edff,#f9fafb 55%,#ffffff 100%);
-      --card:#ffffff;
-      --ink:#020617;
-      --muted:#6b7280;
-      --accent:#1d4ed8;
-      --accent-2:#ea580c;
-      --accent-soft: rgba(59,130,246,.08);
-      --border: #d1d5db;
-      --shadow: 0 14px 40px rgba(148,163,184,.55);
+    [data-theme="dark"]{
+      --bg:#16150F;
+      --bg-soft:#16150F;
+      --card:#1E1D16;
+      --ink:#EDE8DC;
+      --muted:#9C9585;
+      --accent:#E0954A;
+      --accent-2:#E0954A;
+      --accent-soft: rgba(224,149,74,.12);
+      --border:#332F26;
+      --frame:#3A362B;
+      --shadow: none;
     }
 
     *{box-sizing:border-box}
     html,body{
       margin:0;padding:0;background:var(--bg-soft);color:var(--ink);
-      font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+      font-family:"Hanken Grotesk",system-ui,-apple-system,"Segoe UI",sans-serif;-webkit-font-smoothing:antialiased;
       line-height:1.6;
     }
     a{color:var(--accent);text-decoration:none}
@@ -218,6 +221,30 @@
     const preferred = localStorage.getItem('theme');
     if(preferred){ document.documentElement.setAttribute('data-theme', preferred); }
   </script>
+  <style>
+    .page{ position:relative; border:1px solid var(--frame); padding:2.4rem 2.4rem 2rem; }
+    .page::before,.page::after{ content:"+"; position:absolute; font-family:var(--mono); color:var(--accent); font-size:.9rem; line-height:1; }
+    .page::before{ top:-.55rem; left:-.46rem; }
+    .page::after{ bottom:-.62rem; right:-.46rem; }
+    .section-header{ font-family:var(--mono); font-weight:500; letter-spacing:.12em; }
+    .filter-pill,.pub-link,.chip,.tag{ border-radius:2px !important; }
+    .filter-pill,.chip,.tag,.pub-link{ font-family:var(--mono); }
+    .btn,.back-link{ font-family:var(--mono); font-weight:500; box-shadow:none; }
+    .pub-card,.card{ box-shadow:none; }
+    .page-header h1,.header-bar h1{ font-weight:600; letter-spacing:-.02em; }
+    .hero-shell{ background:none !important; box-shadow:none; padding:0; border:1px solid var(--border); border-radius:3px; overflow:visible; margin-bottom:1.6rem; }
+    .hero{ background:none !important; border-radius:0; padding:1.2rem 1.4rem; }
+    .hero h1{ color:var(--ink); letter-spacing:-.015em; font-weight:600; }
+    .hero p{ color:var(--muted); }
+    .card{ box-shadow:none !important; border-radius:3px; }
+    .card::before{ display:none !important; }
+    .pub-title a{ border-bottom:1px solid var(--border); }
+    .pub-title a:hover{ color:var(--accent); border-bottom-color:var(--accent); }
+    .back-link,.btn,.pub-link,.filter-pill{ background:var(--card) !important; color:var(--muted) !important; border:1px solid var(--border) !important; box-shadow:none !important; backdrop-filter:none !important; }
+    .back-link:hover,.btn:hover,.pub-link:hover,.filter-pill:hover{ color:var(--accent) !important; border-color:var(--accent) !important; }
+    .filter-pill.active{ background:var(--accent) !important; color:#fff !important; border-color:var(--accent) !important; }
+    @media print{ .page{ border:none; padding:0; } .page::before,.page::after{ content:none; } }
+  </style>
 </head>
 <body>
   <div class="page">
@@ -530,6 +557,40 @@
       </div>
     </article>
 
+    <article class="card pub" data-type="journal">
+      <div class="pub-header">
+        <div class="pub-title">Gender Disparities in Valuing Remote and Hybrid Work in Latin America</div>
+        <div class="pub-authors">with Luz Magdalena Salas, Claudia Piras, and Agustina Suaya</div>
+        <div class="pub-meta">
+          <span class="pub-meta-item"><strong>Journal:</strong> Journal of Development Effectiveness</span>
+          <span class="pub-meta-item"><strong>Year:</strong> 2026</span>
+        </div>
+        <div class="pub-links">
+          <a href="https://ideas.repec.org/p/idb/brikps/13439.html" target="_blank" rel="noopener" class="pub-link">📑 IDB WP 13439</a>
+        </div>
+      </div>
+      <div class="pub-abstract">
+        <div class="pub-abstract-title">Abstract</div>
+        <div class="pub-abstract-text">Evidence on workers' willingness to pay (WTP) for location flexibility in Latin America remains scarce. Using a discrete choice experiment with 4,785 working-age participants in Argentina, Chile, Colombia, Mexico, and Peru, we estimate WTP for hybrid and fully remote formal jobs in manufacturing and information technology. Conditional logit models show that participants sacrifice 10% of wages, or USD 109 monthly, for hybrid work and 6%, or USD 60, for fully remote work. Women value both arrangements more than men, with statistically significant gender differences. Heterogeneity by age and commuting distance is limited; caregiving differences are not detected. Robustness checks confirm results.</div>
+      </div>
+    </article>
+
+    <article class="card pub" data-type="journal">
+      <div class="pub-header">
+        <div class="pub-title">Hidden Biases: Misperceptions About Women's Labor Force Participation Among Couples in Colombia</div>
+        <div class="pub-authors">with Marie Boltz and Luz Salas</div>
+        <div class="pub-meta">
+          <span class="pub-meta-item"><strong>Journal:</strong> Revue d'économie du développement</span>
+          <span class="pub-meta-item"><strong>Vol:</strong> 32, pp. 57–66</span>
+          <span class="pub-meta-item"><strong>Year:</strong> 2025</span>
+        </div>
+      </div>
+      <div class="pub-abstract">
+        <div class="pub-abstract-title">Abstract</div>
+        <div class="pub-abstract-placeholder">Abstract to be added.</div>
+      </div>
+    </article>
+
     <div class="section-header">Working Papers</div>
 
     <article class="card pub" data-type="wp">
@@ -543,6 +604,7 @@
           with Marie Boltz, Monserrat Bustelo, Ana María Díaz, and Agustina Suaya
         </div>
         <div class="pub-meta">
+          <span class="pub-meta-item"><strong>Status:</strong> Revise &amp; Resubmit — <em>Economic Development and Cultural Change</em></span>
           <span class="pub-meta-item"><strong>Series:</strong> Working Papers of BETA</span>
           <span class="pub-meta-item"><strong>Number:</strong> 2025-37</span>
           <span class="pub-meta-item"><strong>Year:</strong> 2025</span>
@@ -555,33 +617,6 @@
         <div class="pub-abstract-title">Abstract</div>
         <div class="pub-abstract-text">
           We conduct a field experiment with 1,732 cohabiting couples with young children in Bogotá, Colombia, to examine how misperceptions about gender norms affect maternal employment decisions. We find that despite almost universal personal support for working mothers, both men and women substantially underestimate others' support for maternal employment, particularly that of men. An intervention providing personalized information about prevailing attitudes narrowed belief gaps and led to behavioral changes: treated men were 7–8 percentage points more likely to nominate their wives for career-building opportunities, and treated women intensified job-search efforts. These results suggest that correcting misperceptions about social norms can help reduce barriers to maternal employment.
-        </div>
-      </div>
-    </article>
-
-    <article class="card pub" data-type="wp">
-      <div class="pub-header">
-        <div class="pub-title">
-          <a href="https://ideas.repec.org/p/idb/brikps/13439.html" target="_blank" rel="noopener">
-            Gender Disparities in Valuing Remote and Hybrid Work in Latin America
-          </a>
-        </div>
-        <div class="pub-authors">
-          with Luz Magdalena Salas Bahamón, Claudia Piras, and Agustina Suaya
-        </div>
-        <div class="pub-meta">
-          <span class="pub-meta-item"><strong>Series:</strong> IDB Working Papers</span>
-          <span class="pub-meta-item"><strong>Number:</strong> 13439</span>
-          <span class="pub-meta-item"><strong>Year:</strong> 2024</span>
-        </div>
-        <div class="pub-links">
-          <a href="https://ideas.repec.org/p/idb/brikps/13439.html" target="_blank" rel="noopener" class="pub-link">📑 RePEc</a>
-        </div>
-      </div>
-      <div class="pub-abstract">
-        <div class="pub-abstract-title">Abstract</div>
-        <div class="pub-abstract-placeholder">
-          Abstract available on RePEc. <a href="https://ideas.repec.org/p/idb/brikps/13439.html" target="_blank" rel="noopener">View working paper</a>
         </div>
       </div>
     </article>
@@ -619,7 +654,7 @@
           with Diego Astorga-Rojas
         </div>
         <div class="pub-meta">
-          <span class="pub-meta-item"><strong>Status:</strong> Submitted — <em>Transportation Research Part A</em></span>
+          <span class="pub-meta-item"><strong>Status:</strong> Revise &amp; Resubmit — <em>Transportation Research Part A</em></span>
         </div>
       </div>
       <div class="pub-abstract">
@@ -702,13 +737,13 @@
     </article>
 
     <footer style="margin-top:2rem;text-align:center;color:var(--muted);font-size:.85rem;">
-      Last updated: March 2026 · <a href="index.html">Back to CV</a>
+      Last updated: June 2026 · <a href="index.html">Back to CV</a>
     </footer>
   </div>
 
   <script>
     function toggleTheme(){
-      const current = document.documentElement.getAttribute('data-theme') || 'dark';
+      const current = document.documentElement.getAttribute('data-theme') || 'light';
       const next = current === 'dark' ? 'light' : 'dark';
       document.documentElement.setAttribute('data-theme', next);
       localStorage.setItem('theme', next);
