@@ -13,7 +13,8 @@
 - **Reference sites:** rajchetty.com (minimal académico), emilyoster.net (editorial cálido). Deliberadamente más técnica y menos "crema + serif" que ambas.
 
 ## Typography
-- **Display/Hero:** Hanken Grotesk 600 — grotesca humanista con carácter, moderna sin ser genérica.
+- **Display (home "Field Note"):** Fraunces (serif de alto contraste, óptico) — SOLO para el nombre, el eyebrow, los títulos del índice y el monograma. Le da voz editorial/literaria. Itálica para "Escobar", eyebrow y monograma.
+- **Display/Hero (páginas internas):** Hanken Grotesk 600 — grotesca humanista con carácter.
 - **Body:** Hanken Grotesk 400 — misma familia, coherente.
 - **UI/Labels/Nav/Meta:** JetBrains Mono 500 — monoespaciada; da la precisión técnica de econometrista.
 - **Loading:** Google Fonts vía `<link>` (Hanken Grotesk + JetBrains Mono).
@@ -53,3 +54,4 @@
 | Date | Decision | Rationale |
 |------|----------|-----------|
 | 2026-06-30 | Sistema de diseño inicial "Mono claro" creado por /design-consultation | Rediseño desde look genérico de tarjetas azules; elegido tras comparar direcciones editorial/grotesca/técnica/oscura. Terracota como acento. |
+| 2026-07-01 | Home elevado a concepto "Field Note" | El home se sentía genérico/simple. Se agregó Fraunces (display), eyebrow+tagline, riel "Trabajo actual" (R&R/RCTs), vertebra terracota, textura de papel, footer con monograma. Tras dos agentes de diseño (typografía + arte). |
