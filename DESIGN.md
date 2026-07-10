@@ -48,10 +48,12 @@
 
 ## Implementation notes
 - `index.html` es self-contained (estilos en `<style>`), independiente de `style.css`.
-- **Pendiente:** migrar `publications.html`, `videos.html` y `presentaciones/` a este sistema para consistencia (hoy usan el `style.css` anterior).
+- **Pendiente:** migrar `videos.html` y `presentaciones/` a este sistema para consistencia (hoy usan el `style.css` anterior). `publications.html` ya migrada (2026-07-10).
 
 ## Decisions Log
 | Date | Decision | Rationale |
 |------|----------|-----------|
 | 2026-06-30 | Sistema de diseño inicial "Mono claro" creado por /design-consultation | Rediseño desde look genérico de tarjetas azules; elegido tras comparar direcciones editorial/grotesca/técnica/oscura. Terracota como acento. |
 | 2026-07-01 | Home elevado a concepto "Field Note" | El home se sentía genérico/simple. Se agregó Fraunces (display), eyebrow+tagline, riel "Trabajo actual" (R&R/RCTs), vertebra terracota, textura de papel, footer con monograma. Tras dos agentes de diseño (typografía + arte). |
+| 2026-07-10 | `publications.html` migrada a "Mono claro" + capa de motion | Se consolidaron 3 bloques de overrides con `!important` en una sola hoja idéntica al home (marco + marcas `+`, masthead/nav con hover de subrayado, hero Fraunces, footer con monograma); se eliminó el dark mode ámbar fuera de sistema. Interfaz en inglés (papers y audiencia internacional; el home sigue en español). Motion con criterio: reveal escalonado en carga + scroll, hover de fila con flecha terracota, feedback de pulsación, filtro con FLIP — todo bajo `prefers-reduced-motion`. Paper JDEff (WTP remote/hybrid, 2026) subido al inicio con título enlazado al DOI. Skills: impeccable + design-motion-principles. |
+| 2026-07-10 | CV (`ana-maria-diaz-cv/index.html`, repo aparte) rediseñado por densidad | Complaint: "mucha info, difícil de seguir, poco design-oriented". Se convirtieron las 14 cards en secciones editoriales (label mono + hairline), rail izquierdo pegajoso con índice numerado de secciones (scrollspy), toolbar jerarquizada (un primario al final), títulos de listas del cuerpo a Fraunces, misma capa de motion. CV se mantiene completo (norma académica). Dark mode eliminado por consistencia. Revisión estética por subagente (general-purpose + agent-browser): detectó y se corrigieron 2 bugs (grid móvil no colapsaba, scrollspy marcaba sección equivocada arriba) + hueco hero móvil. Skills: impeccable + design-motion-principles. |
